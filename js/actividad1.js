@@ -1,4 +1,4 @@
-var titulos = 'exploro';
+var titulos = 'evaluacion';
 numero_pagina(10);
 
 var loadValues = {
@@ -412,30 +412,89 @@ function comparar() {
 
 }
 
+var enteros = [];
+var enteros2 = [];
+var enteros3 = [];
+var enteros4 = [];
+var enteros5 = [];
+var enteros6 = [];
 
-var sum = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+for (var i = 0; i < 9; i++) {
+    enteros[i] = Math.round(Math.random() * i) + 1;
+    enteros2[i] = Math.round(Math.random() * i) + 1;
+}
+for (var i = 5; i < 9; i++) {
+    enteros3[i] = Math.round(Math.random() * i) + 1;
+    enteros4[i] = Math.round(Math.random() * i) + 1;
+}
+for (var i = 0; i < 5; i++) {
+    enteros5[i] = Math.round(Math.random() * i) + 1;
+    enteros6[i] = Math.round(Math.random() * i) + 1;
+}
+
+
+
+
 var sumaNum = document.getElementsByClassName('sum');
-sum.sort(f_randomico);
+enteros.sort(f_randomico);
 for (i = 0; i < sumaNum.length; i++) {
 
-        $('#' + sumaNum[i].id).html('<div width="50px">' + sum[i] + '</div> ');
+    $('#' + sumaNum[i].id).html('<div width="50px">' + enteros[i] + '</div> ');
+
+}
+
+var sumaNume = document.getElementsByClassName('sum2');
+enteros2.sort(f_randomico);
+for (i = 0; i < sumaNume.length; i++) {
+
+    $('#' + sumaNume[i].id).html('<div width="50px">' + enteros2[i] + '</div> ');
+
+}
+/////////////////////////////Restas///////////////////////////////////////////////////
+var sumaNumer = document.getElementsByClassName('sum3');
+enteros3.sort(f_randomico);
+for (i = 0; i < sumaNumer.length; i++) {
+
+    $('#' + sumaNumer[i].id).html('<div width="50px">' + enteros3[i] + '</div> ');
+
+}
+var sumaNumero = document.getElementsByClassName('sum4');
+enteros5.sort(f_randomico);
+for (i = 0; i < sumaNumero.length; i++) {
+
+    $('#' + sumaNumero[i].id).html('<div width="50px">' + enteros5[i] + '</div> ');
+
+}
+var resNume = document.getElementsByClassName('sum5');
+enteros4.sort(f_randomico);
+for (i = 0; i < resNume.length; i++) {
+
+    $('#' + resNume[i].id).html('<div width="50px">' + enteros4[i] + '</div> ');
+
+}
+var resNumero = document.getElementsByClassName('sum6');
+enteros6.sort(f_randomico);
+for (i = 0; i < resNumero.length; i++) {
+
+    $('#' + resNumero[i].id).html('<div width="50px">' + enteros6[i] + '</div> ');
 
 }
 ///////////////////////////////pregunta 5 /////////////////////////////////////////////////////////
 
-var enteros = [];
-
-var i = 1;
-
-
-for (var i = 0; i <= 20; i++) {
-    enteros[i] = Math.round(Math.random() * i)+1;
-}
 
 function Sumas() {
     var arr1 = [],
         arr2 = [],
-        res = [];
+        res = [],
+        arr3 = [],
+        arr4 = [],
+        res2 = [],
+        arr5 = [],
+        arr6 = [],
+        res3 = [],
+        arr7 = [],
+        arr8 = [],
+        res4 = [];
 
     Array.from(document.querySelectorAll('#fila1 td div div')).forEach(elemento => { arr1.push(elemento.textContent) });
     var Snum1 = parseInt(arr1.join(''));
@@ -445,9 +504,143 @@ function Sumas() {
     var Rsuma = parseInt(res.join(''));
     var suma = parseInt(Snum1) + parseInt(Snum2);
     if (Rsuma == suma) {
-        alert("bien");
+        $('#rsSuma1').css("background", "#00e600");
+        $('#rsSuma2').css("background", "#00e600");
+        $('#rsSuma3').css("background", "#00e600");
     } else {
-        alert("fracasaste")
+        $('#rsSuma1').css("background", "#ff6666");
+        $('#rsSuma2').css("background", "#ff6666");
+        $('#rsSuma3').css("background", "#ff6666");
+    }
+
+    Array.from(document.querySelectorAll('#fila3 td div div')).forEach(elemento => { arr3.push(elemento.textContent) });
+    var Snum3 = parseInt(arr3.join(''));
+    Array.from(document.querySelectorAll('#fila4 td div div')).forEach(elemento => { arr4.push(elemento.textContent) });
+    var Snum4 = parseInt(arr4.join(''));
+    Array.from(document.querySelectorAll('#resp2 td input')).forEach(elemento => { res2.push(elemento.value) });
+    var Rsuma2 = parseInt(res2.join(''));
+    var suma2 = parseInt(Snum3) + parseInt(Snum4);
+    if (Rsuma2 == suma2) {
+        $('#rsSuma4').css("background", "#00e600");
+        $('#rsSuma5').css("background", "#00e600");
+        $('#rsSuma6').css("background", "#00e600");
+        $('#rsSuma7').css("background", "#00e600");
+    } else {
+        $('#rsSuma4').css("background", "#ff6666");
+        $('#rsSuma5').css("background", "#ff6666");
+        $('#rsSuma6').css("background", "#ff6666");
+        $('#rsSuma7').css("background", "#ff6666");
+    }
+
+    Array.from(document.querySelectorAll('#fila5 td div div')).forEach(elemento => { arr5.push(elemento.textContent) });
+    var Rnum5 = parseInt(arr5.join(''));
+    Array.from(document.querySelectorAll('#fila6 td div div')).forEach(elemento => { arr6.push(elemento.textContent) });
+    var Rnum6 = parseInt(arr6.join(''));
+    Array.from(document.querySelectorAll('#resp3 td input')).forEach(elemento => { res3.push(elemento.value) });
+    var Rresta3 = parseInt(res3.join(''));
+    var resta3 = parseInt(Rnum5) - parseInt(Rnum6);
+    if (Rresta3 == resta3) {
+        $('#rsResta1').css("background", "#00e600");
+        $('#rsResta2').css("background", "#00e600");
+        $('#rsResta3').css("background", "#00e600");
+    } else {
+        $('#rsResta1').css("background", "#ff6666");
+        $('#rsResta2').css("background", "#ff6666");
+        $('#rsResta3').css("background", "#ff6666");
+    }
+
+    Array.from(document.querySelectorAll('#fila7 td div div')).forEach(elemento => { arr7.push(elemento.textContent) });
+    var Rnum7 = parseInt(arr7.join(''));
+    Array.from(document.querySelectorAll('#fila8 td div div')).forEach(elemento => { arr8.push(elemento.textContent) });
+    var Rnum8 = parseInt(arr8.join(''));
+    Array.from(document.querySelectorAll('#resp4 td input')).forEach(elemento => { res4.push(elemento.value) });
+    var Rresta4 = parseInt(res4.join(''));
+    var resta4 = parseInt(Rnum7) - parseInt(Rnum8);
+    if (Rresta4 == resta4) {
+        $('#rsResta4').css("background", "#00e600");
+        $('#rsResta5').css("background", "#00e600");
+        $('#rsResta6').css("background", "#00e600");
+        $('#rsResta7').css("background", "#00e600");
+    } else {
+        $('#rsResta4').css("background", "#ff6666");
+        $('#rsResta5').css("background", "#ff6666");
+        $('#rsResta6').css("background", "#ff6666");
+        $('#rsResta7').css("background", "#ff6666");
+    }
+
+}
+
+////////////////////////////////pregunta 7/////////////////////////////////////////////////////
+
+
+
+var interesult = [],
+    numeroInt = 0,
+    interesult2 = [],
+    numeroInt2 = 0;
+
+var IntNum = Math.floor(Math.random() * (50 - 1)) + 1;
+var h = 1;
+for (var h = 0; h <= 6; h++) {
+
+    numeroInt = parseInt(numeroInt) + parseInt(IntNum);
+    interesult[h] = numeroInt;
+
+}
+document.getElementById('numI1').value = interesult[0];
+document.getElementById('numI2').value = interesult[1];
+document.getElementById('numI3').value = interesult[4];
+document.getElementById('numI4').value = interesult[6];
+
+var IntNum2 = Math.round(Math.random() * (99 - 1) + 1);
+
+var h = 1;
+for (var j = 0; j <= 6; j++) {
+    numeroInt2 = parseInt(numeroInt2) + parseInt(IntNum2);
+    interesult2[j] = numeroInt2;
+}
+interesult2.sort(function(a, b) { return b - a; });
+document.getElementById('numR1').value = interesult2[0];
+document.getElementById('numR2').value = interesult2[1];
+document.getElementById('numR3').value = interesult2[5];
+
+
+
+
+
+function verificarIntervalos() {
+    var suc = document.getElementById('succ1').value;
+    var suc2 = document.getElementById('succ2').value;
+    var suc3 = document.getElementById('succ3').value;
+    if (interesult[2] == suc) {
+        $('#succ1').addClass('valid')
+    } else {
+        $('#succ1').addClass('no-valid')
+    }
+    if (interesult[3] == suc2) {
+        $('#succ2').addClass('valid')
+    } else {
+        $('#succ2').addClass('no-valid')
+    }
+    if (interesult[5] == suc3) {
+        $('#succ3').addClass('valid')
+    } else {
+        $('#succ3').addClass('no-valid')
+    }
+    var pt = ['+', interesult[0]]
+    var ptron = pt.join('');
+    var resPtr1 = 0;
+    for (var i = 1; i <= 6; i++) {
+        var p = $('#ptr' + [i] + '').val();
+        if (p == ptron) {
+            resPtr1 = parseInt(resPtr1) + 1;
+            $('#ptr' + [i] + '').addClass('valid');
+
+        } else {
+            $('#ptr' + [i] + '').removeClass('valid');
+            $('#ptr' + [i] + '').addClass('no-valid');
+
+        }
     }
 
 }
