@@ -17,13 +17,17 @@
     background-color: red;
     color: black;
 }
+.markRespocor{
+    background-color: green;
+    color: black;
+}
 .btnAccordion{
     white-space: normal;
 }
 .notaAbiertaAccordion{
 width: 55px;
 border: solid;
-background: none;   
+background: none;
 border-width: 1px;
 border-color: #ffffff;
 text-align: right;
