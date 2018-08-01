@@ -1,6 +1,3 @@
-var titulos = 'evaluacion';
-numero_pagina(10);
-
 var loadValues = {
     preg1: [568, 1742, 2050, 'seis mil trescientos cinco', 'siete mil noventa y ocho', 'nueve mil ochocientos'],
     preg2: [
@@ -240,7 +237,7 @@ function pregunta4() {
 
             }
         } else if (signo == ">") {
-            if (num1 > num2) {
+            if (num1 >= num2) {
                 nt = 1;
                 $('#n1').css("background", "#00e600");
             } else {
@@ -250,7 +247,7 @@ function pregunta4() {
 
 
         } else if (signo == "<") {
-            if (num1 < num2) {
+            if (num1 <= num2) {
                 nt = 1;
                 $('#n1').css("background", "#00e600");
 
@@ -277,7 +274,7 @@ function pregunta4() {
 
             }
         } else if (signo2 == ">") {
-            if (num3 > num4) {
+            if (num3 >= num4) {
                 nt2 = 1;
                 $('#n2').css("background", "#00e600");
             } else {
@@ -287,7 +284,7 @@ function pregunta4() {
 
 
         } else if (signo2 == "<") {
-            if (num3 < num4) {
+            if (num3 <= num4) {
                 nt2 = 1;
                 $('#n2').css("background", "#00e600");
 
@@ -311,7 +308,7 @@ function pregunta4() {
 
             }
         } else if (signo3 == ">") {
-            if (num5 > num6) {
+            if (num5 >= num6) {
                 nt3 = 1;
                 $('#n3').css("background", "#00e600");
             } else {
@@ -321,7 +318,7 @@ function pregunta4() {
 
 
         } else if (signo3 == "<") {
-            if (num5 < num6) {
+            if (num5 <= num6) {
                 nt3 = 1;
                 $('#n3').css("background", "#00e600");
 
@@ -776,10 +773,7 @@ function pregunt7() {
     var respuesta = 0,
         respuesta1 = 0,
         respuesta2 = 0;
-    if ((tx1 == "") || (tx2 == "") || (tx3 == "")) {
-        alert("Hay campos vacios");
 
-    } else {
         if (tx1 == "a") {
             $('#tx1').css("background", "#00e600");
             respuesta = 1;
@@ -809,7 +803,7 @@ function pregunt7() {
         var subtotalR7 = parseInt(respuesta) + parseInt(respuesta1) + parseInt(respuesta2);
         var totalR7 = (subtotalR7 * 1) / 3;
         $('#nota1_7').val(parseFloat(totalR7).toFixed(2));
-    }
+
 
 }
 /////////////////////Pregunta 8///////////////////////////
@@ -914,16 +908,18 @@ function pregunta9(argument) {
     var per8 = parseInt($('span[id=s7]').text());
     var per9 = parseInt($('span[id=s8]').text());
 
-    var per10 = parseInt($('span[id=s4]').text());
-    var per11 = parseInt($('span[id=s5]').text());
-    var per12 = parseInt($('span[id=s6]').text());
-    var per13 = parseInt($('span[id=s7]').text());
-    var per14 = parseInt($('span[id=s8]').text());
+    var per10 = parseInt($('span[id=s9]').text());
+    var per11 = parseInt($('span[id=s10]').text());
+    var per12 = parseInt($('span[id=s11]').text());
+    var per13 = parseInt($('span[id=s12]').text());
+    var per14 = parseInt($('span[id=s13]').text());
 
     var reperi = per1 + per2 + per3 + per4;
     var reperi2 = per5 + per6 + per7 + per8 + per9;
     var reperi3 = per10 + per11 + per12 + per13 + per14;
-    var resP9_1 = 0,resP9_2 = 0,resP9_3 = 0;
+    var resP9_1 = 0,
+        resP9_2 = 0,
+        resP9_3 = 0;
 
 
     if (reperi == perim) {
@@ -953,8 +949,8 @@ function pregunta9(argument) {
 
     }
 
-    var subRP9= parseInt(resP9_1)+parseInt(resP9_2)+parseInt(resP9_3);
-    var tltrp9 = (subRP9*1)/3;
+    var subRP9 = parseInt(resP9_1) + parseInt(resP9_2) + parseInt(resP9_3);
+    var tltrp9 = (subRP9 * 1) / 3;
     $('#nota1_9').val(parseFloat(tltrp9).toFixed(2));
 
 
@@ -972,25 +968,83 @@ function pregunta11() {
     var txtAng2 = document.getElementById('ang2').value;
     var txtAng3 = document.getElementById('ang3').value;
     var txtAng4 = document.getElementById('ang4').value;
+    var Rp11_1 = 0,
+        Rp11_2 = 0,
+        Rp11_3 = 0,
+        Rp11_4 = 0;
     if (txtAng == "recto") {
+        $('#ang1').css("background", "#00e600");
+        Rp11_1 = 1;
 
-    }else {
-
-    }
-    if (txtAng == "agudo") {
-
-    }else {
+    } else {
+        $('#ang1').css("background", "#ff6666");
 
     }
-    if (txtAng == "llano") {
+    if (txtAng2 == "agudo") {
+        $('#ang2').css("background", "#00e600");
+        Rp11_2 = 1;
 
-    }else {
-
-    }
-    if (txtAng == "obtuso") {
-
-    }else {
+    } else {
+        $('#ang2').css("background", "#ff6666");
 
     }
+    if (txtAng3 == "llano") {
+        $('#ang3').css("background", "#00e600");
+        Rp11_3 = 1;
 
+    } else {
+        $('#ang3').css("background", "#ff6666");
+
+    }
+    if (txtAng4 == "obtuso") {
+        $('#ang4').css("background", "#00e600");
+        Rp11_4 = 1;
+
+    } else {
+        $('#ang4').css("background", "#ff6666");
+
+    }
+    var subRp11 = parseInt(Rp11_1) + parseInt(Rp11_2) + parseInt(Rp11_3) + parseInt(Rp11_4);
+    var subRp11_1 = (subRp11 * 0.5) / 4;
+    $('#nota1_11').val(parseFloat(subRp11_1).toFixed(2));
+    //var TtlRp11 = subRp11_1/2;
+
+}
+
+
+function calcularTotal() {
+    var nota11_10 = document.getElementById('nota1_10').value;
+    if (nota11_10 == "") {
+        alert("Ingrese la nota de la pregunta 10");
+    } else {
+        pregunta1();
+        pregunta2();
+        pregunta3();
+        pregunta4();
+        pregunta5();
+        pregunta6();
+        pregunt7();
+        pregunta8();
+        pregunta9();
+        pregunta11();
+        var nota11_1 = document.getElementById('nota1_1').value;
+        var nota11_2 = document.getElementById('nota1_2').value;
+        var nota11_3 = document.getElementById('nota1_3').value;
+        var nota11_4 = document.getElementById('nota1_4').value;
+        var nota11_5 = document.getElementById('nota1_5').value;
+        var nota11_6 = document.getElementById('nota1_6').value;
+        var nota11_7 = document.getElementById('nota1_7').value;
+        var nota11_8 = document.getElementById('nota1_8').value;
+        var nota11_9 = document.getElementById('nota1_9').value;
+        var nota11_11 = document.getElementById('nota1_11').value;
+
+        var SuperTotal = parseFloat(nota11_1) + parseFloat(nota11_2) + parseFloat(nota11_3) + parseFloat(nota11_4) + parseFloat(nota11_5) + parseFloat(nota11_6) + parseFloat(nota11_7) + parseFloat(nota11_8) + parseFloat(nota11_9) + parseFloat(nota11_10) + parseFloat(nota11_11);
+
+        $('#txtNota').html(SuperTotal.toFixed(2));
+        document.getElementById('bt_comprobar').disabled = true;
+        $('input').attr("disabled", true);
+
+
+
+    }
 }

@@ -126,7 +126,7 @@ table tr th div span {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="calcularTotal()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -173,7 +173,7 @@ table tr th div span {
                                 <button type="button" class="btn btn-primary" data-toggle="collapse" style="background-image: url(img/algebra_funciones_ico.png); background-repeat: no-repeat; background-position:right;">
                                     <!--INICIO COLOCAR AQUI LA PREGUNTA CON EL INPUT PARA INDICAR LA NOTA-->
                                     <div class="text-question">
-                                        <input type="text" maxlength="3" size="2" style="text-align:center" id="nA1" class="notaAbiertaAccordion" min="0" max="10">&nbsp;<span style="word-break: break-word" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1"><b>Álgebra y funciones</b></span>&emsp;&nbsp;
+                                        <span style="word-break: break-word" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1"><b>Álgebra y funciones (Has click)</b></span>&emsp;&nbsp;
                                     </div>
                                     <!--FIN COLOCAR AQUI LA PREGUNTA CON EL INPUT PARA INDICAR LA NOTA-->
                                 </button>
@@ -261,7 +261,7 @@ table tr th div span {
                                             </tr>
                                         </table>
                                     </div>
-                                    <button onclick="pregunta1()">verificar</button>
+
                                 </div>
                                 <br>
                                 <br>
@@ -338,7 +338,6 @@ table tr th div span {
                                             </tr>
                                         </table>
                                     </div>
-                                    <button onclick="pregunta2()">verificar</button>
                                 </div>
                                 <br>
                                 <div class="text-question">
@@ -401,7 +400,7 @@ table tr th div span {
                                                                                         <td id="div6" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
                                             </tr>
                                         </table>
-                                        <button onclick="pregunta3()">verificar</button>
+
                                     </div>
                                 </div>
                                 <div class="text-question">
@@ -482,7 +481,7 @@ table tr th div span {
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <button onclick="pregunta4()">comparar</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -720,7 +719,7 @@ table tr th div span {
                                             </tr>
                                         </table>
                                     </div>
-                                    <button onclick="pregunta5()">comparar</button>
+
                                 </div>
                                 <br>
                                 <div class="text-question">
@@ -863,7 +862,7 @@ table tr th div span {
                                             </tr>
                                         </table>
                                     </div>
-                                    <button onclick="pregunta6()">comparar</button>
+
                                 </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
                             </div>
@@ -877,7 +876,7 @@ table tr th div span {
                                 <button type="button" class="btn btn-primary" data-toggle="collapse">
                                     <!--INICIO COLOCAR AQUI LA PREGUNTA CON EL INPUT PARA INDICAR LA NOTA-->
                                     <div class="text-question">
-                                        <input type="text" maxlength="2" size="2" style="text-align:center" class="notaAbiertaAccordion" min="0" max="10" id="nAAC" readonly> &nbsp;
+
                                         <span style="word-break: break-word" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2"><b> Geometría y medida</b></span>
                                     </div>
                                     <!--FIN COLOCAR AQUI LA PREGUNTA CON EL INPUT PARA INDICAR LA NOTA-->
@@ -914,17 +913,17 @@ table tr th div span {
                                             <div>(4,
                                                 <input size="1" maxlength="1" type="text" class="form" id="tx3" onKeyUp="this.value=this.value.toLowerCase();" name="">)</div>
                                         </div>
-                                        <button onclick="pregunt7()">verificar</button>
+
                                     </div>
                                 </div>
                                 <br>
                                 <div class="text-question">
                                     <input type="text" name="" id="nota1_8" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>8.-</b> José tiene el segmento <b style="color: #19AF93">|-----------|</b> y necesita construir una figura como la siguiente. ¿Cuántas líneas estimas que necesita para poder dibujarla? <b>Colorea</b> la respuesta correcta.</span>
-                                    <div>
-                                        <div style="float: left;width: 50%;"> <img class="img-responsive" src="img/i3_p13_act1.jpg"></img>
-                                        </div>
-                                        <div style="float: left;width: 50%;">
-                                            <table style="width:auto;">
+                                    <div  align="center">
+                                        <table class="table" style="width: 50%;">
+                                            <tr>
+                                                <td><img class="img-responsive" src="img/i3_p13_act1.jpg"></img></td>
+                                                <td><table style="width:auto;">
                                                 <tr>
                                                     <td>
                                                         <h4><b style="color: #337ab7">a)</b></h4></td>
@@ -953,10 +952,10 @@ table tr th div span {
                                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 numerosAl" id="numAle4"></div>
                                                     </td>
                                                 </tr>
-                                            </table>
-                                        </div>
-                                        <button onclick="pregunta8()">verificarIntervalos</button>
-                                    </div>
+                                            </table></td>
+                                            </tr>
+                                        </table>
+                                         </div>
                                 </div>
                                 <br>
                                 <div class="text-question">
@@ -1129,7 +1128,7 @@ table tr th div span {
                                                 </td>
                                             </tr>
                                         </table>
-                                        <button onclick="pregunta9()">verificarIntervalos</button>
+
                                     </div>
                                 </div>
                                 <div class="text-question">
@@ -1148,7 +1147,7 @@ table tr th div span {
                                     </div>
                                 </div>
                                 <div class="text-question">
-                                    <input type="text" name="" id="notaLectLit" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>11.- Completa</b> las afirmaciones y relaciona con líneas el texto y el gráfico correspondiente.</span>
+                                    <input type="text" name="" id="nota1_11" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>11.- Completa</b> las afirmaciones y relaciona con líneas el texto y el gráfico correspondiente.</span>
                                     <div>
                                         <table class="table">
                                             <tr style="text-align: center;">
@@ -1166,7 +1165,7 @@ table tr th div span {
                                                     <br><img src="img/i7_p13_act1.jpg" alt="" class="img-responsive"></td>
                                             </tr>
                                         </table>
-                                        <button onclick="pregunta11();">verificar</button>
+
                                     </div>
                                 </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
@@ -1228,6 +1227,10 @@ table tr th div span {
     <script src="js/dragNdrop.js"></script>
     <script src="js/calcularNotas.js"></script>
     <script src="js/actividad1.js"></script>
+    <script type="text/javascript">
+        var titulos = 'evaluacion';
+numero_pagina(10);
+    </script>
 </body>
 
 </html>
