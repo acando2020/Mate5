@@ -19,7 +19,7 @@
 .cajas {
     max-width: 95%;
     max-height: 200px;
-    border: 1px #98007f solid;
+    border: 1px #005ca4 solid;
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
@@ -27,7 +27,7 @@
 
 .cajas1 {
 
-    border: 1px #98007f solid;
+    border: 1px #005ca4 solid;
 }
 
 .actividad1 {
@@ -54,6 +54,23 @@
 
 #cabecera .badge {
     background-color: #232956;
+}
+
+
+
+.pasos {
+    background-color: #F9B000;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.borderTable {
+    border: 1px #76B82A solid;
+}
+
+.borderTable2 {
+    border: 1px #85BCEB solid;
 }
 </style>
 
@@ -101,7 +118,7 @@
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad5()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad7()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -136,56 +153,67 @@
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <span>A partir de la información planteada, <b>reflexiona</b> y <b>responde</b>.</span>
-                    <br>
-                    <div>
-                         <input type="text" id="num5_1" placeholder="0" class="nota-abierta cajas1" min="0" max="10"><span> <b style="color:#005CA9">a)</b> ¿Cuántas cifras tiene el número 8 848?</span><br>
-                        <br>
-                        <input type="text" name="" class="form-control">
-                    </div>
-                    <br>
-                    <div>
-                         <input type="text" id="num5_2" placeholder="0" class="nota-abierta cajas1" min="0" max="10"><span> <b style="color:#005CA9">b)</b> ¿Qué sucede si al número le aumentas 1 152?</span><br>
-                        <br>
-                        <input type="text" name="" class="form-control">
-                        <br>
-                        <span>Al aumentar 1 152 al 8 848, se reagrupan las unidades, luego las decenas, las centenas y las unidades de mil.</span>
-                        <div align="center">
-                            <img class="img-responsive" src="img/i1_p16_act5.jpg"></img>
-                        </div>
-                    </div>
-                    <div>
-                         <input type="text" id="num5_3" placeholder="0" class="nota-abierta cajas1" min="0" max="10"><span> <b style="color:#005CA9">c)</b> En el número 189 700, ¿Cuál es el valor posicional ocupan el 9?</span><br>
-                        <br>
-                        <input type="text" name="" class="form-control">
-                        <span>Un dígito que ocupa un valor posicional mayor a las unidades de mil corresponde a las decenas de mil y un dígito que ocupa un valor posicional mayor a la decena de mil corresponde a las centenas de mil.</span>
-                        <div class="center">
-                            <img class="img-responsive" src="img/i2_p16_act5.jpg"></img>
-                        </div>
-                        <span>La cantidad se lee de izquierda a derecha: centenas, decenas, unidades, añadiendo la palabra mil, y luego se leen las centenas, decenas y unidades.</span>
-                        <br>
-                        <span>El número 8 848 tiene cuatro cifras.</span>
-                        <table>
+                    <img class="img-responsive" src="img/practica_individual.png"></img>
+                    <input type="text" id="num7_1" hidden placeholder="0" class="nota-abierta cajas1" min="0" max="10"><span><b style="color:#005CA9">1.</b> <b>Escribe</b> correctamente las siguientes cantidades.</span>
+                    <div class="table-responsive">
+                        <table class="table">
                             <tr>
-                                <td><img class="img-responsive" src="img/i3_p16_act5.jpg"></img></td>
-                                <td>ocho mil ochocientos cuarenta y ocho</td>
+                                <td>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" id="caja_img1"></div>
+                                </td>
+                                <td>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" id="caja_img2"></div>
+                                </td>
+                                <td>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" id="caja_img3"></div>
+                                </td>
                             </tr>
                             <tr>
-                                <td colspan="2">El número 198 700 tiene seis cifras. </td>
-
-                            </tr>
-                            <tr>
-                                <td><img class="img-responsive" src="img/i4_p16_act5.jpg"></img></td>
-                                <td><input type="text" placeholder="Escribe tu respuesta" class="form-control"></input></td>
+                                <td>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" id="caja_img4"></div>
+                                </td>
+                                <td>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" id="caja_img5"></div>
+                                </td>
+                                <td>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" id="caja_img6"></div>
+                                </td>
                             </tr>
                         </table>
                     </div>
-                    <br>
-                    <div>
-                         <input type="text" id="num5_4" placeholder="0" class="nota-abierta cajas1" min="0" max="10"><span> <b style="color:#005CA9">d)</b> En la tabla de valor posicional, ¿qué valor posicional ocupa los dígitos 1 y 8 del número 189 700?</span><br>
-                        <br><input type="text" placeholder="Escribe tu respuesta" class="form-control">
-
-
+                </div>
+                <br>
+                <div class="text-question">
+                    <input type="text" id="num7_2" hidden placeholder="0" class="nota-abierta cajas1" min="0" max="10"><span><b style="color:#005CA9">2.</b> <b>Escribe</b> cada uno de los números en cifras.</span>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 texto" id="caja_txt1"></div>
+                            </tr>
+                            <tr>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 texto" id="caja_txt2"></div>
+                            </tr>
+                            <tr>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 texto" id="caja_txt3"></div>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <br>
+                <div class="text-question">
+                    <input type="text" id="num7_3" hidden placeholder="0" class="nota-abierta cajas1" min="0" max="10"><span><b style="color:#005CA9">3.</b> <b>Escribe</b> en palabras los siguientes números.</span>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 texto3" id="caja_text1"></div>
+                            </tr>
+                            <tr>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 texto3" id="caja_text2"></div>
+                            </tr>
+                            <tr>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 texto3" id="caja_text3"></div>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -233,12 +261,11 @@
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad5.js"></script>
-        <script src="js/validacionesExtras.js"></script>
+        <script src="js/actividad7.js"></script>
         <script type="text/javascript">
-        var titulos = "reflexiono";
+        var titulos = "aplico";
         $("#txtNota").html("0");
-        $("#n_pagina").html("16");
+        $("#n_pagina").html("17");
         </script>
 </body>
 
