@@ -56,12 +56,7 @@
     background-color: #232956;
 }
 
-input {
-    text-align: center;
-    border: 0;
-    border-bottom: 1px solid #85BCEB;
-    width: 30px;
-}
+
 
 .bordeT {
     border: 1px #76B82A solid;
@@ -77,6 +72,23 @@ input {
     color: #ffffff;
     border-radius: 20px;
     padding: 5px;
+}
+
+.salto {
+    height: 8px;
+}
+
+
+.ach {
+    width: 50px;
+}
+
+.sb {
+    border: none;
+}
+
+table {
+    margin: 0 auto;
 }
 </style>
 
@@ -124,7 +136,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad10()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad11()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -160,7 +172,7 @@ input {
                 <!--pregunats de la actividad-->
                 <div class="text-question">
                     <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <span><b style="color: #005ca4">1.</b> <b>Escribe</b> el valor posicional de los dígitos marcados. <b>Observa</b> el ejemplo.</span>
+                    <input type="text" id="total1" name="" style="display: none;"><span><b style="color: #005ca4">1.</b> <b>Escribe</b> el valor posicional de los dígitos marcados. <b>Observa</b> el ejemplo.</span>
                     <br>
                     <table style="width: 80%;">
                         <tr style="background:#FEEDDD" class="">
@@ -179,7 +191,7 @@ input {
                             <td class="bordeT2">4</td>
                             <td class="bordeT2">7</td>
                             <td class="bordeT2">3</td>
-                            <td class="bordeT2">9 unidades de mil = 9 000</td>
+                            <td>9 unidades de mil = 9 000</td>
                         </tr>
                         <tr class="bordeT">
                             <td class="bordeT2">7</td>
@@ -188,7 +200,9 @@ input {
                             <td class="bordeT2">1</td>
                             <td class="bordeT2">5</td>
                             <td class="bordeT2">2</td>
-                            <td class="bordeT2"><input type="text" name="" class="form-control"></td>
+                            <td class="bordeT2">
+                                <input type="text" id="num1" name="" class="form-control">
+                            </td>
                         </tr>
                         <tr class="bordeT">
                             <td class="bordeT2">5</td>
@@ -197,14 +211,161 @@ input {
                             <td class="bordeT2">9</td>
                             <td class="bordeT2">6</td>
                             <td class="bordeT2">4</td>
-                            <td class="bordeT2"><input type="text" name="" class="form-control"></td>
+                            <td class="bordeT2">
+                                <input type="text" id="num2" name="" class="form-control">
+                            </td>
                         </tr>
                     </table>
                 </div>
                 <br>
                 <div class="text-question">
                     <span><b style="color: #005ca4">2.</b> <b>Completa</b> la descomposición de los siguientes números.</span>
-
+                    <table>
+                        <tr>
+                            <td colspan="2"><b style="color: #005ca4">a) </b>864 327</td>
+                            <td colspan="2"><b style="color: #005ca4">b) </b>307 261</td>
+                        </tr>
+                        <tr>
+                            <td><b style="color: #00A4CB">(1):</b> 8 cm + 6 dm +</td>
+                            <td>
+                                <input class="form-control" id="num3" type="text"></input>
+                            </td>
+                            <td><b style="color: #66338A">(1):</b> 3 cm +</td>
+                            <td>
+                                <input class="form-control" id="num4" type="text"></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b style="color: #00A4CB">(2):</b> 800 000 +</td>
+                            <td>
+                                <input class="form-control" id="num5" type="text"></input>
+                            </td>
+                            <td><b style="color: #66338A">(2):</b> 3300 000 +</td>
+                            <td>
+                                <input class="form-control" id="num6" type="text"></input>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <div class="text-question">
+                    <span><b style="color: #005ca4">3.</b>En tu cuaderno, <b>realiza</b> la descomposición de los números 612 849 y 225 906.</span>
+                </div>
+                <br>
+                <div class="text-question">
+                    <input type="text" id="total2" name="" style="display: none;"><span><b style="color: #005ca4">4.</b> <b>Ubica</b> en la semirrecta numérica las letras que corresponden a los siguientes números y <b>ordénalos</b> de menor a mayor. A: 135; B: 110; C: 155; D: 125</span>
+                    <div class="col-md-12 text-center">
+                        <table class="table-responsive">
+                            <tr>
+                                <td>
+                                    <input id="C1" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C2" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C3" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C4" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C5" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C6" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C7" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C8" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C9" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C10" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C11" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C12" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C13" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C14" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C15" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C16" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C17" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C18" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C19" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C20" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C21" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C22" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C23" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C24" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C25" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                                <td>
+                                    <input id="C26" type="checkbox" style="border-bottom: 1px solid white;" readonly="readonly">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="26"><img style="margin: 0 auto;" src="img/i11_p19_act11.jpg" class="img-responsive" alt=""></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <div class="table-responsive">
+                        <table class="table" style="width: auto;">
+                            <tr>
+                                <td>
+                                    <input class="form-control" id="num7" type="number" name="">
+                                </td>
+                                <td>
+                                    <</td>
+                                        <td>
+                                            <input class="form-control" id="num8" type="number" name="">
+                                        </td>
+                                        <td>
+                                            <</td>
+                                                <td>
+                                                    <input class="form-control" id="num9" type="number" name="">
+                                                </td>
+                                                <td>
+                                                    <</td>
+                                                        <td>
+                                                            <input class="form-control" id="num10" type="number" name="">
+                                                        </td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,11 +412,11 @@ input {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad10.js"></script>
+        <script src="js/actividad11.js"></script>
         <script type="text/javascript">
         var titulos = "aplico";
         $("#txtNota").html("0");
-        $("#n_pagina").html("15");
+        $("#n_pagina").html("19");
         </script>
 </body>
 
