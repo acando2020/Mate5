@@ -26,7 +26,7 @@ function actividad10() {
         RsA3_16 = 0,
         RsA3_17 = 0;
 
-    if ((num1 == "6 dígitos")||(num1 == "6 digitos")) {
+    if ((num1 == "6 dígitos") || (num1 == "6 digitos")) {
         RsA3_1 = 1;
         $('#num1').css("background", "#00e600");
 
@@ -94,8 +94,10 @@ function actividad10() {
     }
 
     var subtotal = parseFloat(RsA3_1) + parseFloat(RsA3_2) + parseFloat(RsA3_3) + parseFloat(RsA3_4) + parseFloat(RsA3_5) + parseFloat(RsA3_6) + parseFloat(RsA3_7);
-    var total = (subtotal*10)/7;
+    var total = (subtotal * 10) / 7;
     $('#txtNota').html(total.toFixed(2));
     document.getElementById('bt_comprobar').disabled = true;
     $('input').attr("disabled", true);
+
+    $('#txtAlumno').attr("disabled", false);
 }

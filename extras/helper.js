@@ -3,7 +3,7 @@ $(document).ready(function () {
     var agrega_salir= "<li><button  class='btn button button_1 btnSalir' onclick='salir()' data-toggle='tooltip' data-placement='top' title='Cerrar Actividad'><span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span></button></li>"
                 $( ".navbar-left" ).append( agrega_salir);
     // $('[data-toggle="tooltip"]').tooltip();
-    
+
 });
 
 function f_titulos(){
@@ -193,9 +193,9 @@ function demoFromHTML() {
             // to an actual DOM element from which the text will be scraped.
             , source = $('#activity')[0]
 
-            // we support special element handlers. Register them with jQuery-style 
+            // we support special element handlers. Register them with jQuery-style
             // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
-            // There is no support for any other type of selectors 
+            // There is no support for any other type of selectors
             // (class, of compound) at this time.
             , specialElementHandlers = {
                 // element with id of "bypass" - jQuery style selector
@@ -222,7 +222,7 @@ function demoFromHTML() {
                 , 'elementHandlers': specialElementHandlers
             },
             function (dispose) {
-                // dispose: object with X, Y of the last line add to the PDF 
+                // dispose: object with X, Y of the last line add to the PDF
                 //          this allow the insertion of new lines after html
                 pdf.save('Test.pdf');
             },
@@ -330,3 +330,4 @@ function filter(__val__) {
 $('.nota-abierta').keypress(function (event) {
     return filterFloat(event, this);
 })
+

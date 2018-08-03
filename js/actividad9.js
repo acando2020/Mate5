@@ -151,7 +151,7 @@ function actividad9() {
 
     }
 
-    if ((num13 == "123 615")||(num13 == "123615")) {
+    if ((num13 == "123 615") || (num13 == "123615")) {
         RsA3_13 = 1;
 
         $('#num13').css("background", "#00e600");
@@ -161,7 +161,7 @@ function actividad9() {
         $('#num13').css("background", "#ff6666");
 
     }
-     if ((num14 == "118 292")||(num14 == "118292")) {
+    if ((num14 == "118 292") || (num14 == "118292")) {
         RsA3_14 = 1;
 
         $('#num14').css("background", "#00e600");
@@ -171,7 +171,7 @@ function actividad9() {
         $('#num14').css("background", "#ff6666");
 
     }
-     if ((num15 == "3 000 + 600 + 15 + 5")||(num15 == "3000+600+15+5")) {
+    if ((num15 == "3 000 + 600 + 15 + 5") || (num15 == "3000+600+15+5")) {
         RsA3_15 = 1;
 
         $('#num15').css("background", "#00e600");
@@ -181,7 +181,7 @@ function actividad9() {
         $('#num15').css("background", "#ff6666");
 
     }
-     if ((num16 == "8 000 + 200 + 90 + 2")||(num16 == "8000+200+90+2")) {
+    if ((num16 == "8 000 + 200 + 90 + 2") || (num16 == "8000+200+90+2")) {
         RsA3_16 = 1;
 
         $('#num16').css("background", "#00e600");
@@ -191,9 +191,11 @@ function actividad9() {
         $('#num16').css("background", "#ff6666");
 
     }
-    var subtotal = parseFloat(RsA3_1) + parseFloat(RsA3_2) + parseFloat(RsA3_3) + parseFloat(RsA3_4) + parseFloat(RsA3_5) + parseFloat(RsA3_6) + parseFloat(RsA3_7) + parseFloat(RsA3_8) + parseFloat(RsA3_9) + parseFloat(RsA3_10) + parseFloat(RsA3_11)+ parseFloat(RsA3_12)+ parseFloat(RsA3_13)+ parseFloat(RsA3_14)+ parseFloat(RsA3_15)+ parseFloat(RsA3_16);
-    var total = (subtotal*10)/16;
+    var subtotal = parseFloat(RsA3_1) + parseFloat(RsA3_2) + parseFloat(RsA3_3) + parseFloat(RsA3_4) + parseFloat(RsA3_5) + parseFloat(RsA3_6) + parseFloat(RsA3_7) + parseFloat(RsA3_8) + parseFloat(RsA3_9) + parseFloat(RsA3_10) + parseFloat(RsA3_11) + parseFloat(RsA3_12) + parseFloat(RsA3_13) + parseFloat(RsA3_14) + parseFloat(RsA3_15) + parseFloat(RsA3_16);
+    var total = (subtotal * 10) / 16;
     $('#txtNota').html(total.toFixed(2));
     document.getElementById('bt_comprobar').disabled = true;
     $('input').attr("disabled", true);
+
+    $('#txtAlumno').attr("disabled", false);
 }

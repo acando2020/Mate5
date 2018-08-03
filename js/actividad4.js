@@ -120,4 +120,6 @@ function actividad4() {
     $('#txtNota').html(subtotal.toFixed(2));
     document.getElementById('bt_comprobar').disabled = true;
     $('input').attr("disabled", true);
+
+$('#txtAlumno').attr("disabled", false);
 }

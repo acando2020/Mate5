@@ -59,34 +59,23 @@
 input {
     text-align: center;
     border: 0;
-
-    width: 30px;
+    border-bottom: 1px solid #85BCEB;
+    width: 50px;
 }
 
-.bordeT {
-    border: 1px #76B82A solid;
-}
-
-td {
-    text-align: center;
-}
-
-.bordeT2 {
-    border: 1px #76B82A solid;
-    text-align: center;
-}
-
-.paso {
+.pasos {
     background-color: #F9B000;
     color: #ffffff;
     border-radius: 20px;
     padding: 5px;
 }
 
-.respuesta {
-    text-align: center;
+.borderTable {
+    border: 1px #76B82A solid;
+}
 
-    border-top: 2px solid #393939;
+.borderTable2 {
+    border: 1px #85BCEB solid;
 }
 </style>
 
@@ -94,7 +83,7 @@ td {
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Resuelve las siguientes sumas.
+        Escribe la respuesta correcta en los espacios en blanco.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -134,7 +123,7 @@ td {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad16()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad9()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -169,40 +158,98 @@ td {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <span><b style="color:#005ca4">2.</b> <b>Escribe</b> la cifra correcta en cada espacio.</span>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <div style="float: left;width: 100%;">
-                                        <div style="float: left;width: 5%;"><b style="color: #005ca4">a)</b>
-                                            <h3>+</h3></div>
-                                        <div style="float: left;width: 95%;">
-                                            <div id="sumaNum1" class="sum"></div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div style="float: left;width: 100%;">
-                                        <div style="float: left;width: 5%;"><b style="color: #005ca4">b)</b>
-                                            <h3>+</h3></div>
-                                        <div style="float: left;width: 95%;">
-                                            <div id="sumaNum2" class="sum"></div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div style="float: left;width: 100%;">
-                                        <div style="float: left;width: 5%;"><b style="color: #005ca4">c)</b>
-                                            <h3>+</h3></div>
-                                        <div style="float: left;width: 95%;">
-                                            <div id="sumaNum3" class="sum"></div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                    <div style="float: left;width: 100%;">
+                        <div style="float: left;width: 20%;">
+                            <img class="img-responsive" src="img/i1_p22_act20.jpg"></img>
+                        </div>
+                        <div style="float: left;width: 80%;">
+                            A partir de la información planteada, realiza las siguientes actividades:
+                            <br>
+                            <b style="color: #005CA9">1.</b> Encuentra el total de playasque hay en la Ruta del Spondylus
+                            <table>
+                                <tr>
+                                    <td>17 + 39 + 20 =</td>
+                                    <td>
+                                        <input type="number" name="" placeholder="0" id="num1">
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+                            <b style="color: #005CA9">2.</b> <b>Calcula</b> mentalmente la suma o total de estas operaciones:
+                            <table>
+                                <tr>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td> <b style="color: #005CA9">a)</b></td>
+                                                <td>17 + 39 + 20 =
+                                                    <input type="number" name="" placeholder="0" id="num1">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> <b style="color: #005CA9">b)</b></td>
+                                                <td>20 + 17 + 39 =
+                                                    <input type="number" name="" placeholder="0" id="num1">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> <b style="color: #005CA9">c)</b></td>
+                                                <td>20 + (17 + 39) = 20 +
+                                                    <input type="number" name="" placeholder="0" id="num1"> =
+                                                    <input type="number" name="" placeholder="0" id="num1">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td rowspan="4"><b style="color: #005CA9">d)</b></td>
+                                                <td>17</td>
+                                                <td>=</td>
+                                                <td>10</td>
+                                                <td>+</td>
+                                                <td>7</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>39</td>
+                                                <td>=</td>
+                                                <td>30</td>
+                                                <td>+</td>
+                                                <td>9</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>20</td>
+                                                <td>=</td>
+                                                <td style=" border-bottom: 2px solid #000000;">20</td>
+                                                <td style=" border-bottom: 2px solid #000000;"></td>
+                                                <td style=" border-bottom: 2px solid #000000;"></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+
+                                                <td></td>
+                                                <td></td>
+                                                <td>60</td>
+                                                <td>+</td>
+                                                <td><input type="number" name=""></td>
+                                                <td>=</td>
+                                                <td><input type="number" name=""></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+                             <b style="color: #005CA9">3.</b> <b>Responde</b>.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -250,11 +297,11 @@ td {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad16.js"></script>
+        <script src="js/actividad9.js"></script>
         <script type="text/javascript">
-        var titulos = "aplico";
+        var titulos = "reflexiono";
         $("#txtNota").html("0");
-        $("#n_pagina").html("15");
+        $("#n_pagina").html("14");
         </script>
 </body>
 

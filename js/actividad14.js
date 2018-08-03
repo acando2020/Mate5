@@ -40,6 +40,8 @@ function actividad13() {
         $('#txtNota').html(Ract13.toFixed(2));
         document.getElementById('bt_comprobar').disabled = true;
         $('input').attr("disabled", true);
+
+        $('#txtAlumno').attr("disabled", false);
         $('#numR1').css("background", "#00e600");
         $('#numR2').css("background", "#00e600");
         $('#numR3').css("background", "#00e600");

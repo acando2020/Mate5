@@ -76,7 +76,7 @@ function actividad11_1() {
     ///////////////////////////////////////////////////
 
     var subtotal = parseFloat(RsA3_1) + parseFloat(RsA3_2) + parseFloat(RsA3_3) + parseFloat(RsA3_4) + parseFloat(RsA3_5) + parseFloat(RsA3_6) + parseFloat(RsA3_7) + parseFloat(RsA3_8) + parseFloat(RsA3_9) + parseFloat(RsA3_10);
-    var total1 = (subtotal*5)/6;
+    var total1 = (subtotal * 5) / 6;
     $('#total1').val(parseFloat(total1).toFixed(2));
 
 }
@@ -116,7 +116,7 @@ function actividad11_2() {
     } else {
 
     }
-//////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////
     if (num7 == "110") {
         RsA3_7 = 1;
 
@@ -158,7 +158,7 @@ function actividad11_2() {
 
     }
     var subtotal = parseInt(resp11_1) + parseInt(resp11_2) + parseInt(resp11_3) + parseInt(resp11_4) + parseFloat(RsA3_7) + parseFloat(RsA3_8) + parseFloat(RsA3_9) + parseFloat(RsA3_10);
-    var total2 = (subtotal*5)/8;
+    var total2 = (subtotal * 5) / 8;
     $('#total2').val(parseFloat(total2).toFixed(2));
 
 
@@ -174,9 +174,9 @@ function actividad11() {
     total1 = document.getElementById('total1').value;
     total2 = document.getElementById('total2').value;
 
-    var total = parseFloat(total1)+parseFloat(total2);
-     $('#txtNota').html(total.toFixed(2));
+    var total = parseFloat(total1) + parseFloat(total2);
+    $('#txtNota').html(total.toFixed(2));
     document.getElementById('bt_comprobar').disabled = true;
     $('input').attr("disabled", true);
+    $('#txtAlumno').attr("disabled", false);
 }
-

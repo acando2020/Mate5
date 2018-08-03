@@ -188,4 +188,6 @@ function actividad15() {
     $('#txtNota').html(total.toFixed(2));
     document.getElementById('bt_comprobar').disabled = true;
     $('input').attr("disabled", true);
+
+$('#txtAlumno').attr("disabled", false);
 }

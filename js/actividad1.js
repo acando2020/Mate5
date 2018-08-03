@@ -774,35 +774,35 @@ function pregunt7() {
         respuesta1 = 0,
         respuesta2 = 0;
 
-        if (tx1 == "a") {
-            $('#tx1').css("background", "#00e600");
-            respuesta = 1;
-        } else {
-            $('#tx1').css("background", "#ff6666");
-            respuesta = 0;
-        }
-        if (tx2 == "d") {
-            $('#tx2').css("background", "#00e600");
-            respuesta1 = 1;
+    if (tx1 == "a") {
+        $('#tx1').css("background", "#00e600");
+        respuesta = 1;
+    } else {
+        $('#tx1').css("background", "#ff6666");
+        respuesta = 0;
+    }
+    if (tx2 == "d") {
+        $('#tx2').css("background", "#00e600");
+        respuesta1 = 1;
 
-        } else {
-            $('#tx2').css("background", "#ff6666");
-            respuesta1 = 0;
+    } else {
+        $('#tx2').css("background", "#ff6666");
+        respuesta1 = 0;
 
-        }
-        if (tx3 == "b") {
-            $('#tx3').css("background", "#00e600");
-            respuesta2 = 1;
+    }
+    if (tx3 == "b") {
+        $('#tx3').css("background", "#00e600");
+        respuesta2 = 1;
 
-        } else {
-            $('#tx3').css("background", "#ff6666");
-            respuesta2 = 0;
+    } else {
+        $('#tx3').css("background", "#ff6666");
+        respuesta2 = 0;
 
 
-        }
-        var subtotalR7 = parseInt(respuesta) + parseInt(respuesta1) + parseInt(respuesta2);
-        var totalR7 = (subtotalR7 * 1) / 3;
-        $('#nota1_7').val(parseFloat(totalR7).toFixed(2));
+    }
+    var subtotalR7 = parseInt(respuesta) + parseInt(respuesta1) + parseInt(respuesta2);
+    var totalR7 = (subtotalR7 * 1) / 3;
+    $('#nota1_7').val(parseFloat(totalR7).toFixed(2));
 
 
 }
@@ -1043,6 +1043,7 @@ function calcularTotal() {
         $('#txtNota').html(SuperTotal.toFixed(2));
         document.getElementById('bt_comprobar').disabled = true;
         $('input').attr("disabled", true);
+        $('#txtAlumno').attr("disabled", false);
 
 
 

@@ -40,6 +40,8 @@ function actividad5() {
         $('#num5_3').css("background", "#00e600");
         $('#num5_4').css("background", "#00e600");
 
+$('#txtAlumno').attr("disabled", false);
+
     }
 
 }

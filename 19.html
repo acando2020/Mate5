@@ -56,19 +56,12 @@
     background-color: #232956;
 }
 
-input {
-    text-align: center;
-    border: 0;
-
-    width: 30px;
-}
-
-.bordeT {
+i .bordeT {
     border: 1px #76B82A solid;
 }
 
 td {
-    text-align: center;
+    text-align: justify;
 }
 
 .bordeT2 {
@@ -85,8 +78,16 @@ td {
 
 .respuesta {
     text-align: center;
-
+    border: 0;
     border-top: 2px solid #393939;
+    border-bottom: 1px solid #85BCEB;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #85BCEB;
+    size: 2;
+    text-align: center;
 }
 </style>
 
@@ -134,7 +135,7 @@ td {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad16()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad19()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -169,41 +170,27 @@ td {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <span><b style="color:#005ca4">2.</b> <b>Escribe</b> la cifra correcta en cada espacio.</span>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <div style="float: left;width: 100%;">
-                                        <div style="float: left;width: 5%;"><b style="color: #005ca4">a)</b>
-                                            <h3>+</h3></div>
-                                        <div style="float: left;width: 95%;">
-                                            <div id="sumaNum1" class="sum"></div>
-                                        </div>
+                    <img class="img-responsive" src="img/problema.png"></img>
+                    <table class="table">
+                        <tr>
+                            <td style="width: 40%; background-color: #EEE5F3"> <span><b style="color:#005ca4">1.</b> En el Valle del Chota, Rafael, Agustín y Laura venden ovos a una microempresa dedicada a la elaboración de mermeladas, helados, jugos y vinos. Si Rafael entrega 58 630 ovos, Agustín 140 800 y Laura 70 450, ¿cuántos ovos vendieron en total a la microempresa?</span>
+                                <div style="background-color: white;"><b style="color:#005ca4">R.</b> En total se vendieron
+                                    <input type="number" id="num1" class="" name="">ovos.</div>
+                            </td>
+                            <td style="width: 60%; background-color: #E0F1F8">
+                                <div style="float: left;width: 100%;">
+                                    <div style="float: left;width: 50%;">
+                                        <span><b style="color:#005ca4">2.</b> El teleférico de Quito es el más alto de Sudamérica. En el 2015 el ingreso registrado de turistas locales y extranjeros en tres meses fue de 28 974, 32 864 y 26 049. ¿Cuántas personas subieron al teleférico en esos tres meses?</span>
+                                        <div style="background-color: white;"><b style="color:#005ca4">R.</b> El total fue de
+                                            <input type="number" id="num2" name="">personas.</div>
                                     </div>
-                                </td>
-                                <td>
-                                    <div style="float: left;width: 100%;">
-                                        <div style="float: left;width: 5%;"><b style="color: #005ca4">b)</b>
-                                            <h3>+</h3></div>
-                                        <div style="float: left;width: 95%;">
-                                            <div id="sumaNum2" class="sum"></div>
-                                        </div>
+                                    <div style="float: left;width: 50%;">
+                                        <img class="img-responsive" src="img/i1_p21_act19.jpg"></img>
                                     </div>
-                                </td>
-                                <td>
-                                    <div style="float: left;width: 100%;">
-                                        <div style="float: left;width: 5%;"><b style="color: #005ca4">c)</b>
-                                            <h3>+</h3></div>
-                                        <div style="float: left;width: 95%;">
-                                            <div id="sumaNum3" class="sum"></div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -250,11 +237,42 @@ td {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad16.js"></script>
+        <script src="js/actividad18.js"></script>
         <script type="text/javascript">
         var titulos = "aplico";
         $("#txtNota").html("0");
-        $("#n_pagina").html("15");
+        $("#n_pagina").html("21");
+        </script>
+        <script type="text/javascript">
+        function actividad19() {
+            var num1 = document.getElementById('num1').value;
+            var num2 = document.getElementById('num2').value;
+            var resp1 = 0,
+                resp2 = 0;
+            if (num1 == "269880") {
+                resp1 = 5;
+                $('#num1').css("background", "#00e600");
+
+
+            } else {
+                $('#num1').css("background", "#ff6666");
+
+            }
+            if (num2 == "87887") {
+                resp2 = 5;
+                $('#num2').css("background", "#00e600");
+
+
+            } else {
+                $('#num2').css("background", "#ff6666");
+
+            }
+            var total = parseInt(resp1) + parseInt(resp2);
+            $('#txtNota').html(total.toFixed(2));
+            document.getElementById('bt_comprobar').disabled = true;
+            $('input').attr("disabled", true);
+            $('#txtAlumno').attr("disabled", false);
+        }
         </script>
 </body>
 

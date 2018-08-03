@@ -230,12 +230,14 @@ function actividad7() {
     var num1 = document.getElementById('num7_1').value;
     var num2 = document.getElementById('num7_2').value;
     var num3 = document.getElementById('num7_3').value;
-    var total = (parseInt(num1)+parseInt(num2)+parseInt(num3))/3;
+    var total = (parseInt(num1) + parseInt(num2) + parseInt(num3)) / 3;
 
 
     $('#txtNota').html(total.toFixed(2) + ' ');
     document.getElementById('bt_comprobar').disabled = true;
     $('input').attr("disabled", true);
+
+    $('#txtAlumno').attr("disabled", false);
 
 }
 /*function actividad6() {

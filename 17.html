@@ -55,39 +55,6 @@
 #cabecera .badge {
     background-color: #232956;
 }
-
-input {
-    text-align: center;
-    border: 0;
-
-    width: 30px;
-}
-
-.bordeT {
-    border: 1px #76B82A solid;
-}
-
-td {
-    text-align: center;
-}
-
-.bordeT2 {
-    border: 1px #76B82A solid;
-    text-align: center;
-}
-
-.paso {
-    background-color: #F9B000;
-    color: #ffffff;
-    border-radius: 20px;
-    padding: 5px;
-}
-
-.respuesta {
-    text-align: center;
-
-    border-top: 2px solid #393939;
-}
 </style>
 
 <body>
@@ -134,7 +101,7 @@ td {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad16()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad17()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -170,40 +137,123 @@ td {
                 <!--pregunats de la actividad-->
                 <div class="text-question">
                     <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <span><b style="color:#005ca4">2.</b> <b>Escribe</b> la cifra correcta en cada espacio.</span>
+                    <input type="number" id="R17_1" name="" style="display: none;"><span><b style="color:#005ca4">3.</b> <b>Calcula</b> mentalmente y <b>escribe</b> el resultado.</span>
                     <div class="table-responsive">
                         <table class="table">
                             <tr>
                                 <td>
-                                    <div style="float: left;width: 100%;">
-                                        <div style="float: left;width: 5%;"><b style="color: #005ca4">a)</b>
-                                            <h3>+</h3></div>
-                                        <div style="float: left;width: 95%;">
-                                            <div id="sumaNum1" class="sum"></div>
-                                        </div>
-                                    </div>
+                                    <table>
+                                        <tr id="suma1">
+                                            <td>
+                                                <div class="sum" id="sumaNum1"></div>
+                                            </td>
+                                            <td>&nbsp;+&nbsp;</td>
+                                            <td>
+                                                <div class="sum" id="sumaNum2"></div>
+                                            </td>
+                                            <td>&nbsp;=</td>
+                                            <td>
+                                                <input type="number" id="num17_1" class="form-control" name="">
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                                 <td>
-                                    <div style="float: left;width: 100%;">
-                                        <div style="float: left;width: 5%;"><b style="color: #005ca4">b)</b>
-                                            <h3>+</h3></div>
-                                        <div style="float: left;width: 95%;">
-                                            <div id="sumaNum2" class="sum"></div>
-                                        </div>
-                                    </div>
+                                    <table>
+                                        <tr id="suma2">
+                                            <td>
+                                                <div class="sum" id="sumaNum3"></div>
+                                            </td>
+                                            <td>&nbsp;+&nbsp;</td>
+                                            <td>
+                                                <div class="sum" id="sumaNum4"></div>
+                                            </td>
+                                            <td>&nbsp;=</td>
+                                            <td>
+                                                <input type="number" id="num17_2" class="form-control" name="">
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                                 <td>
-                                    <div style="float: left;width: 100%;">
-                                        <div style="float: left;width: 5%;"><b style="color: #005ca4">c)</b>
-                                            <h3>+</h3></div>
-                                        <div style="float: left;width: 95%;">
-                                            <div id="sumaNum3" class="sum"></div>
-                                        </div>
-                                    </div>
+                                    <table>
+                                        <tr id="suma3">
+                                            <td>
+                                                <div class="sum" id="sumaNum5"></div>
+                                            </td>
+                                            <td>&nbsp;+&nbsp;</td>
+                                            <td>
+                                                <div class="sum" id="sumaNum6"></div>
+                                            </td>
+                                            <td>&nbsp;=</td>
+                                            <td>
+                                                <input type="number" id="num17_3" class="form-control" name="">
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                             </tr>
                         </table>
                     </div>
+                </div>
+                <div class="text-question">
+                    <input type="number" id="R17_2" name="" style="display: none;"><span><b style="color:#005ca4">4.</b> <b>Escribe</b> el número que falta para completar la igualdad.</span>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <div style="float: left;width: 100%">
+                                    <div style="float: left;width: 5%"><b style="color:#005ca4">a) &nbsp;</b></div>
+                                    <div style="float: left;width: 95%">
+                                        <div class="com" id="completar1"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: left;width: 100%">
+                                    <div style="float: left;width: 5%"><b style="color:#005ca4">d)&nbsp;</b></div>
+                                    <div style="float: left;width: 95%">
+                                        <div class="com" id="completar2"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="float: left;width: 100%">
+                                    <div style="float: left;width: 5%"><b style="color:#005ca4">b)&nbsp;</b></div>
+                                    <div style="float: left;width: 95%">
+                                        <div class="com" id="completar3"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: left;width: 100%">
+                                    <div style="float: left;width: 5%"><b style="color:#005ca4">e)&nbsp;</b></div>
+                                    <div style="float: left;width: 95%">
+                                        <div class="com" id="completar4"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="float: left;width: 100%">
+                                    <div style="float: left;width: 5%"><b style="color:#005ca4">c)&nbsp;</b></div>
+                                    <div style="float: left;width: 95%">
+                                        <div class="com" id="completar5"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: left;width: 100%">
+                                    <div style="float: left;width: 5%"><b style="color:#005ca4">f)&nbsp;</b></div>
+                                    <div style="float: left;width: 95%">
+                                        <div class="com" id="completar6"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -250,7 +300,7 @@ td {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad16.js"></script>
+        <script src="js/actividad17.js"></script>
         <script type="text/javascript">
         var titulos = "aplico";
         $("#txtNota").html("0");
