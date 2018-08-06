@@ -56,26 +56,24 @@
     background-color: #232956;
 }
 
-input {
+
+/*input {
     text-align: center;
     border: 0;
     border-bottom: 1px solid #85BCEB;
     width: 50px;
-}
+}*/
 
 .pasos {
     background-color: #F9B000;
     color: #ffffff;
     border-radius: 20px;
     padding: 5px;
+    border: #76B82A;
 }
 
-.borderTable {
+.bordesTab {
     border: 1px #76B82A solid;
-}
-
-.borderTable2 {
-    border: 1px #85BCEB solid;
 }
 </style>
 
@@ -83,7 +81,7 @@ input {
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-       A partir de la información planteada, realiza las siguientes actividades.
+        Escribe la respuesta correcta en los espacios en blanco.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -123,7 +121,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad20()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad21()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -158,116 +156,67 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <div style="float: left;width: 100%;">
-                        <div style="float: left;width: 20%;">
-                            <img class="img-responsive" src="img/i1_p22_act20.jpg"></img>
-                        </div>
-                        <div style="float: left;width: 80%;">
-                            A partir de la información planteada, realiza las siguientes actividades:
-                            <br>
-                            <input type="text" id="nota1" name="" style="display: none;"><b style="color: #005CA9">1.</b> Encuentra el total de playasque hay en la Ruta del Spondylus
-                            <table>
-                                <tr>
-                                    <td>17 + 39 + 20 =</td>
-                                    <td>
-                                        <input type="number" id="n1_1" name="" placeholder="0">
-                                    </td>
-                                </tr>
-                            </table>
-                            <br>
-                            <input type="text" id="nota2" name="" style="display: none;"><b style="color: #005CA9">2.</b> <b>Calcula</b> mentalmente la suma o total de estas operaciones:
-                            <table>
-                                <tr>
-                                    <td>
-                                        <table>
-                                            <tr>
-                                                <td> <b style="color: #005CA9">a)</b></td>
-                                                <td>17 + 39 + 20 =
-                                                    <input type="number" id="n2_1" name="" placeholder="0" >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <b style="color: #005CA9">b)</b></td>
-                                                <td>20 + 17 + 39 =
-                                                    <input type="number" id="n2_2" name="" placeholder="0" >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td> <b style="color: #005CA9">c)</b></td>
-                                                <td>20 + (17 + 39) = 20 +
-                                                    <input type="number" name="" id="n2_3" placeholder="0"> =
-                                                    <input type="number" name="" id="n2_4" placeholder="0">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td>
-                                        <table>
-                                            <tr>
-                                                <td rowspan="4"><b style="color: #005CA9">d)</b></td>
-                                                <td>17</td>
-                                                <td>=</td>
-                                                <td>10</td>
-                                                <td>+</td>
-                                                <td>7</td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>39</td>
-                                                <td>=</td>
-                                                <td>30</td>
-                                                <td>+</td>
-                                                <td>9</td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>20</td>
-                                                <td>=</td>
-                                                <td style=" border-bottom: 2px solid #000000;">20</td>
-                                                <td style=" border-bottom: 2px solid #000000;"></td>
-                                                <td style=" border-bottom: 2px solid #000000;"></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td>60</td>
-                                                <td>+</td>
-                                                <td>
-                                                    <input type="number" id="n2_5" placeholder="0" name="">
-                                                </td>
-                                                <td>=</td>
-                                                <td>
-                                                    <input type="number" id="n2_6" placeholder="0"  name="">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            <br>
-                            <b style="color: #005CA9">3.</b> <b>Responde</b>.
-                            <input type="text" id="nota3" name="" style="display: none;"><span>
-                                 ¿Cuál fue el resultado de las operaciones anteriores de los ejercicios 1 y 2?<input type="number"  id="n3_1" name="" placeholder="0"><br>
-                                 ¿En cuál de estas operaciones anteriores te tomó menos tiempo en obtener el resultado? ¿Por qué?<br>
-                                 ¿En qué se diferencia la operación de la actividad 1 con las operaciones de la actividad 2?<br>
-                                 <input type="text" class="nota-abierta cajas1" name="" id="nota4" placeholder="0"><b>Completa</b> la respuesta. <br>
-                                 En las sumas del ejercicio 2 se aplicó en el ítem
-                                 <table>
-                                     <tr><td><b style="color: #005CA9">a)</b> </td>
-                                        <td>el redondeo por descomposición, en el</td></tr>
-                                     <tr><td><b style="color: #005CA9">b)</b> </td>
-                                        <td><input type="text" class="form-control" name=""></td>
-                                     </tr>
-                                     <tr><td><b style="color: #005CA9">c)</b></td><td><input type="text" class="form-control" name=""></td></tr>
-                                     <tr><td><b style="color: #005CA9">d)</b></td><td><input type="text" class="form-control" name=""></td></tr>
-                                     <tr><td colspan="2">Por lo tanto, a lo largo de la Ruta del Spondylus hay 76 playas.</td></tr>
-                                 </table>
-                             </span>
-                        </div>
+                    <img class="img-responsive" src="img/practica_guiada.png"></img>
+                    <span><b>Aplica</b> las estrategias de redondeo con compensación, las propiedades conmutativa y asociativa de la suma y la descomposición aditiva de sus cifras para resolver la siguiente suma: <h style="background-color: #FFF5D8">4 345 + 105 + 500</h></span>
+                    <div>
+                        <table class="table bordesTab">
+                            <tr class="bordesTab">
+                                <td> <span class="pasos">Paso 1</span><br><b>Realizamos</b> el redondeo con compensación. A uno de los sumando 3 845 le redondeamos a la decena más próxima, 4 350, para lo cual se necesita 5 unidades que se puede tomar del 105, que se convierte en 100. En este proceso de redondeo no lo tomamos en consideración al número 500, porque no tiene unidades. De esta forma se pasa de la suma: 4 345 + 105 + 500, a su equivalente: 4 350 + 100 + 500. Ahora resulta más sencillo efectuar la operación: 4 350 + 100 + 500 =
+                                    <input id="num1" type="number" style="text-align: center;border: 0;border-bottom: 1px solid #85BCEB;width: 50px;" placeholder="0" name="">.
+                                    <br>
+                                </td>
+                            </tr>
+                            <tr class="bordesTab">
+                                <td>
+                                    <br><span class="pasos">Paso 2</span><br><b>Aplicamos</b> las propiedades conmutativa y asociativa de la suma. Se puede cambiar el orden de los sumandos y la suma o total no se altera o agrupamos dos de los tres sumandos, los que mejor convenga, y la suma o total tampoco se altera.
+                                    <table style="text-align: right;">
+                                        <tr>
+                                            <td>Propiedad conmutativa: 4 345 + 105 + 500 =</td>
+                                            <td>
+                                                <input id="num2" type="text" class="form-control" name="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4 950 =</td>
+                                            <td>
+                                                <input id="num3" type="text" class="form-control" name="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Propiedad asociativa: 4 345 + 105 + 500 =</td>
+                                            <td>
+                                                <input id="num4" type="text" class="form-control" name="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>=</td>
+                                            <td>
+                                                <input id="num5" type="text" class="form-control" name="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>=</td>
+                                            <td>
+                                                <input id="num6" type="text" class="form-control" name="">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr class="bordesTab">
+                                <td class="bordesTab">
+                                    <br><span class="pasos">Paso 3</span>
+                                    <table>
+                                        <tr>
+                                            <td><b>Aplicamos</b> la descomposición aditiva de sus cifras. Primero descomponemos el número 4 345 en unidades de mil, centenas decenas y unidades. El número 105 y 500 en centenas, decenas y unidades. Al final realizamos la composición con los valores obtenidos.
+                                            <img class="img-responsive" src="img/i1_p23_act21.jpg"></img>
+                                            </td>
+                                            <td><img class="img-responsive" src="img/i2_p23_act21.jpg"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -315,12 +264,11 @@ input {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad20.js"></script>
-        <script src="js/validacionesExtras.js"></script>
+        <script src="js/actividad21.js"></script>
         <script type="text/javascript">
-        var titulos = "reflexiono";
+        var titulos = "aplico";
         $("#txtNota").html("0");
-        $("#n_pagina").html("22");
+        $("#n_pagina").html("15");
         </script>
 </body>
 
