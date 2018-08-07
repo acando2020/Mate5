@@ -1,3 +1,39 @@
+var coordenadas = [
+    ['<td><img class="img-responsive" src="img/i3_p15_act4.jpg"></img></td>' +
+        '<td>(' +
+        '<input id="num1" type="number" name="">;' +
+        '<input id="num2" type="number" name="">)</td>'
+    ],
+    ['<td><img class="img-responsive" src="img/i4_p15_act4.jpg"></img></td>' +
+        '<td>(' +
+        '<input id="num3" type="number" name="">;' +
+        '<input id="num4" type="number" name="">)</td>'
+    ],
+    ['<td><img class="img-responsive" src="img/i5_p15_act4.jpg"></img></td>' +
+        '<td>(' +
+        '<input id="num5" type="number" name="">;' +
+        '<input id="num6" type="number" name="">)</td>'
+    ],
+    ['<td><img class="img-responsive" src="img/i6_p15_act4.jpg"></img></td>' +
+        '<td>(' +
+        '<input id="num7" type="number" name="">;' +
+        '<input id="num8" type="number" name="">)</td>'
+    ],
+    ['<td><img class="img-responsive" src="img/i7_p15_act4.jpg"></img></td>' +
+        '<td>(' +
+        '<input id="num9" type="number" name="">;' +
+        '<input id="num10" type="number" name="">)</td>'
+    ],
+]
+
+var completar = document.getElementsByClassName('com');
+coordenadas.sort(f_randomico);
+for (i = 0; i < completar.length; i++) {
+
+    $('#' + completar[i].id).html(coordenadas[i]);
+
+}
+
 function actividad4() {
     var num1 = document.getElementById('num1').value;
     var num2 = document.getElementById('num2').value;
@@ -121,5 +157,5 @@ function actividad4() {
     document.getElementById('bt_comprobar').disabled = true;
     $('input').attr("disabled", true);
 
-$('#txtAlumno').attr("disabled", false);
+    $('#txtAlumno').attr("disabled", false);
 }

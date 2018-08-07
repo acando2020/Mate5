@@ -56,11 +56,33 @@
     background-color: #232956;
 }
 
-input {
+
+
+
+
+
+
+
+/*input {
     text-align: center;
     border: 0;
     border-bottom: 1px solid #85BCEB;
-    width: 30px;
+    width: 50px;
+}*/
+
+.pasos {
+    background-color: #F9B000;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.borderTable {
+    border: 1px #76B82A solid;
+}
+
+.borderTable2 {
+    border: 1px #85BCEB solid;
 }
 </style>
 
@@ -108,7 +130,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad4()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad27()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -143,39 +165,33 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <div>
-                        <table>
-                            <tr>
-                                <td style="width:20%;"><b>Observa</b> el gráfico y escribe el par ordenado que le corresponde al punto de ubicación de cada fruta.</td>
-                                <td style="width:20%;"><img class="img-responsive" src="img/i1_p15_act4.jpg"></img>
-                                </td>
-                                <td style="width:60%;">
-                                    <table>
-                                        <tr>
-                                            <td><img class="img-responsive" src="img/i2_p15_act4.jpg"></img>
-                                            </td>
-                                            <td>( 1; 5)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar1"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar2"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar3"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar4"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar5"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
+                    <div style="float: left;width: 100%;">
+                        <div style="float: left;width: 30%;">
+                            <img class="img-responsive" src="img/i1_p26_act27.jpg"></img>
+                        </div>
+                        <div style="float: left;width: 70%;">
+                            <span>A partir de la información planteada, <b>responde</b>.</span>
+                            <br>
+                            <input type="text" name="" id="nt1" class="nota-abierta cajas1" placeholder="0"> <span>Del total de rosas exportadas, ¿cuántas se enviaron a los Estados Unidos?</span>
+                            <br>
+                            <br>
+                            <input class="form-control" type="text"></input>
+                            <br>
+                            <input type="text" name="" id="nt2" class="nota-abierta cajas1" placeholder="0"> <span><span>¿Crees que la cantidad de rosas exportadas a Rusia fue mayor o menor a la cantidad enviada a los Estados Unidos? ¿Por qué?</span>
+                            <br>
+                            <input class="form-control" type="text"></input>
+                            <br>
+                            <span>Para determinar el número de rosas que se exportaron a Rusia, se debe realizar una resta entre el número de rosas de exportación y el número de rosas enviadas a Estados Unidos.</span>
+                            <img class="img-responsive" src="img/i2_p26_act27.jpg"></img>
+                            <br>
+                            <span>Para restar estas dos cantidades, se escriben una debajo de otra, de tal forma que queden unidades debajo de unidades, decenas debajo de decenas, centenas debajo de centenas, unidades de mil debajo de unidades de mil, etc. Se aplica el mismo proceso que se sigue para restar números de 4 cifras, pero se continúa hasta las decenas y centenas de mil. Se identifican los términos de la sustracción:</span>
+                            <div align="left"><img class="img-responsive" src="img/i3_p26_act27.jpg"></img>
+                            </div>
+                            <span>Para comprobar si la diferencia es correcta, se suma el sustraendo con la diferencia y se obtiene como resultado el minuendo.</span>
+                            <div align="left"><img class="img-responsive" src="img/i4_p26_act27.jpg"></img>
+                            </div>
+                            <span>La diferencia de la sustracción anterior es correcta. <br> Por lo tanto, a Rusia se exportaron 410 022 rosas.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -223,11 +239,35 @@ input {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad4.js"></script>
+        <script src="js/actividad9.js"></script>
+        <script src="js/validacionesExtras.js"></script>
         <script type="text/javascript">
-        var titulos = "aplico";
+        var titulos = "reflexiono";
         $("#txtNota").html("0");
-        $("#n_pagina").html("15");
+        $("#n_pagina").html("14");
+        document.getElementById('nt1').addEventListener('keypress', () => {
+            validNumero(0, 5, 1);
+        });
+        document.getElementById('nt1').addEventListener('keyup', () => {
+            validMaxIngreso(document.getElementById('nt1'), 5)
+        });
+        document.getElementById('nt2').addEventListener('keypress', () => {
+            validNumero(0, 5, 1);
+        });
+        document.getElementById('nt2').addEventListener('keyup', () => {
+            validMaxIngreso(document.getElementById('nt2'), 5)
+        });
+
+        function actividad27() {
+            var nt1 = document.getElementById('nt1').value;
+            var nt2 = document.getElementById('nt2').value;
+            var total = parseFloat(nt1) + parseFloat(nt2);
+            $('#txtNota').html(total.toFixed(2));
+            document.getElementById('bt_comprobar').disabled = true;
+            $('input').attr("disabled", true);
+            $('#txtAlumno').attr("disabled", false);
+
+        }
         </script>
 </body>
 

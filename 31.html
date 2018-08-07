@@ -59,8 +59,48 @@
 input {
     text-align: center;
     border: 0;
-    border-bottom: 1px solid #85BCEB;
+
     width: 30px;
+}
+
+.bordeT {
+    border: 1px #76B82A solid;
+}
+
+td {
+    text-align: center;
+}
+
+.bordeT2 {
+    border: 1px #76B82A solid;
+    text-align: center;
+}
+
+.paso {
+    background-color: #F9B000;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.respuesta {
+    text-align: center;
+    border: 0;
+    border-top: 2px solid #393939;
+    border-bottom: 1px solid #85BCEB;
+}
+
+.respuesta2 {
+    border-bottom: 2px solid #393939;
+}
+
+.tdcolor {
+    background: #3FB498;
+    color: white;
+}
+
+.tabletd {
+    border: 1px #009DC5 solid;
 }
 </style>
 
@@ -68,7 +108,7 @@ input {
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Escribe la respuesta correcta en los espacios en blanco.
+        Resuelve las siguientes restas.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -108,7 +148,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad4()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad31()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -144,39 +184,124 @@ input {
                 <!--pregunats de la actividad-->
                 <div class="text-question">
                     <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <div>
+                    <input type="text" id="nota1" name="" style="display: none;"><span><b style="color:#005ca4">3.</b> <b>Completa</b> la tabla.</span>
+                    <div class="table-responsive">
                         <table>
                             <tr>
-                                <td style="width:20%;"><b>Observa</b> el gráfico y escribe el par ordenado que le corresponde al punto de ubicación de cada fruta.</td>
-                                <td style="width:20%;"><img class="img-responsive" src="img/i1_p15_act4.jpg"></img>
+                                <td style="background: #009DC5; color: white;"><img class="img-responsive" src="img/flecha.png"></img>
                                 </td>
-                                <td style="width:60%;">
-                                    <table>
-                                        <tr>
-                                            <td><img class="img-responsive" src="img/i2_p15_act4.jpg"></img>
-                                            </td>
-                                            <td>( 1; 5)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar1"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar2"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar3"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar4"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar5"></td>
-                                        </tr>
-                                    </table>
+                                <td class="tdcolor">500</td>
+                                <td class="tdcolor">1 000</td>
+                                <td class="tdcolor">10 300</td>
+                                <td class="tdcolor">40 000</td>
+                                <td class="tdcolor">100 000</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #CAE8F3;">
+                                    <div class="sut" id="sutraendo1"></div>
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="num1_1" name="">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="num1_2" name="">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="num1_3" name="">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="num1_4" name="">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="num1_5" name="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background: #CAE8F3;">
+                                    <div class="sut" id="sutraendo2"></div>
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="num2_1" name="">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="num2_2" name="">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="num2_3" name="">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="num2_4" name="">
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" id="num2_5" name="">
                                 </td>
                             </tr>
                         </table>
                     </div>
+                </div>
+                <br>
+                <div class="text-question">
+                    <input type="text" id="nota2" name="" style="display: none;"><span><b style="color:#005ca4">4.</b><b>Encuentra</b> la diferencia en forma mental. Di qué estrategia usaste.</span>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td><b style="color:#005ca4">a)</b> </td>
+                                        <td><div class="sutr" id="su1"></div></td>
+                                        <td>-</td>
+                                        <td><div class="dif" id="di1"></div></td>
+                                        <td>=</td>
+                                        <td>
+                                            <input type="number" id="t4_1" class="form-control" min="0" name="">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td><b style="color:#005ca4">b)</b> </td>
+                                        <td><div class="sutr" id="su2"></div></td>
+                                        <td>-</td>
+                                        <td><div class="dif" id="di2"></div></td>
+                                        <td>=</td>
+                                        <td>
+                                            <input type="number" id="t4_2" class="form-control" min="0" name="">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td><b style="color:#005ca4">c)</b> </td>
+                                        <td><div class="sutr" id="su3"></div></td>
+                                        <td>-</td>
+                                        <td><div class="dif" id="di3"></div></td>
+                                        <td>=</td>
+                                        <td>
+                                            <input type="number" id="t4_3" class="form-control" min="0" name="">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td><b style="color:#005ca4">d)</b> </td>
+                                        <td><div class="sutr" id="su4"></div></td>
+                                        <td>-</td>
+                                        <td><div class="dif" id="di4"></div></td>
+                                        <td>=</td>
+                                        <td>
+                                            <input type="number" id="t4_4" class="form-control" min="0" name="">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -223,7 +348,7 @@ input {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad4.js"></script>
+        <script src="js/actividad31.js"></script>
         <script type="text/javascript">
         var titulos = "aplico";
         $("#txtNota").html("0");

@@ -56,11 +56,51 @@
     background-color: #232956;
 }
 
+
+
+.pasos {
+    background-color: #F9B000;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.borderTable {
+    border: 1px #76B82A solid;
+}
+
+.borderTable2 {
+    border: 1px #85BCEB solid;
+}
+
 input {
     text-align: center;
     border: 0;
+
+    width: 25px;
+}
+
+.pasos {
+    background-color: #F9B000;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.borderTable {
+    border: 1px #76B82A solid;
+    text-align: justify;
+}
+
+.borderTable2 {
+    border: 1px #85BCEB solid;
+    text-align: justify;
+}
+
+.respuesta {
+    text-align: justify;
+    border: 0;
     border-bottom: 1px solid #85BCEB;
-    width: 30px;
 }
 </style>
 
@@ -108,7 +148,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad4()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad28()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -143,37 +183,96 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_individual.png"></img>
+                    <img class="img-responsive" src="img/practica_guiada.png"></img>
+                    <span><b>Resuelve</b> la siguiente resta: 6 962 – 6 268.</span>
                     <div>
-                        <table>
-                            <tr>
-                                <td style="width:20%;"><b>Observa</b> el gráfico y escribe el par ordenado que le corresponde al punto de ubicación de cada fruta.</td>
-                                <td style="width:20%;"><img class="img-responsive" src="img/i1_p15_act4.jpg"></img>
+                        <table class="table borderTable">
+                            <tr class="borderTable">
+                                <td><span class="pasos">Paso 1</span>
+                                    <br><b>Identificamos</b> los términos de la resta.
                                 </td>
-                                <td style="width:60%;">
+                                <td><img src="img/i1_p27_act28.jpg"></td>
+                            </tr>
+                            <tr>
+                                <td class="borderTable"><span class="pasos">Paso 2</span>
+                                    <br><b>Ubicamos</b> las cantidades una debajo de otra, según el valor posicional de cada dígito, y <b>resolvemos</b> la operación
+                                    <br>
+                                    <img src="img/i2_p27_act28.jpg" class="img-responsive">
+                                </td>
+                                <td><span class="pasos">Paso 3</span>
+                                    <br><b>Comprobamos</b> la diferencia, para lo cual <b>sumamos</b> el sustraendo y la diferencia. Así, se debe obtener el minuendo.
                                     <table>
                                         <tr>
-                                            <td><img class="img-responsive" src="img/i2_p15_act4.jpg"></img>
+                                            <td><b>+</b></td>
+                                            <td>
+                                                <table class="borderTable2">
+                                                    <tr class="borderTable2" id="trnum1">
+                                                        <td class="borderTable2">
+                                                            <span>6</span>
+                                                        </td>
+                                                        <td class="borderTable2">
+                                                            <span>2</span>
+                                                        </td>
+                                                        <td class="borderTable2">
+                                                            <span>6</span>
+                                                        </td>
+                                                        <td class="borderTable2">
+                                                            <span>8</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="borderTable2" id="trnum2">
+                                                        <td class="borderTable2">
+                                                        </td>
+                                                        <td class="borderTable2">
+                                                            6
+                                                        </td>
+                                                        <td class="borderTable2">
+                                                            9
+                                                        </td>
+                                                        <td class="borderTable2">
+                                                            4
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="borderTable2" id="totalsum" style="border-top: 2px solid #000000;">
+                                                        <td class="borderTable2">
+                                                            <input type="text" class="respuesta" name="" placeholder="0" id="num1" maxlength="1">
+                                                        </td>
+                                                        <td class="borderTable2">
+                                                            <input type="text" class="respuesta" name="" placeholder="0" id="num2" maxlength="1">
+                                                        </td>
+                                                        <td class="borderTable2">
+                                                            <input type="text" class="respuesta" name="" placeholder="0" id="num3" maxlength="1">
+                                                        </td>
+                                                        <td class="borderTable2">
+                                                            <input type="text" class="respuesta" name="" placeholder="0" id="num4" maxlength="1">
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </td>
-                                            <td>( 1; 5)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar1"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar2"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar3"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar4"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="com" id="completar5"></td>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td style="color: #009870">
+                                                            <--- </td>
+                                                                <td style="color: #283583">Sustraendo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color: #009870">
+                                                            <--- </td>
+                                                                <td style="color: #283583">Diferencia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color: #009870">
+                                                            <--- </td>
+                                                                <td>
+                                                                    <input type="text" class="form-control" name="" id="txt">
+                                                                </td>
+                                                    </tr>
+                                                </table>
+                                                </td>
                                         </tr>
                                     </table>
-                                </td>
+                                    </td>
                             </tr>
                         </table>
                     </div>
@@ -223,11 +322,11 @@ input {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad4.js"></script>
+        <script src="js/actividad28.js"></script>
         <script type="text/javascript">
         var titulos = "aplico";
         $("#txtNota").html("0");
-        $("#n_pagina").html("15");
+        $("#n_pagina").html("17");
         </script>
 </body>
 
