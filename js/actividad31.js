@@ -15,7 +15,7 @@ for (i = 0; i < sumaNum.length; i++) {
 
 var act4_1 = [];
 for (var i = 0; i < 5; i++) {
-    act4_1[i] = Math.floor(Math.random() * 100) + 50;
+    act4_1[i] = Math.floor(Math.random() * 50) + 50;
 
 }
 
