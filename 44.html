@@ -17,17 +17,18 @@
 </head>
 <style type="text/css">
 .cajas {
-    max-width: 95%;
-    max-height: 200px;
-    border: 1px #98007f solid;
+    max-width: 500px;
+    height: 250px;
+    border: 1px #005ca4 solid;
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
 }
 
+
 .cajas1 {
 
-    border: 1px #98007f solid;
+    border: 1px #005ca4 solid;
 }
 
 .actividad1 {
@@ -57,26 +58,42 @@
 }
 
 input {
-    text-align: center;
+    text-align: left;
     border: 0;
     border-bottom: 1px solid #85BCEB;
-    width: 50px;
+    width: 70px;
 }
 
-.pasos {
+
+.bordeT {
+    border: 1px #76B82A solid;
+}
+
+.bordeT2 {
+    border: 1px #76B82A solid;
+    text-align: center;
+}
+
+.paso {
     background-color: #F9B000;
     color: #ffffff;
     border-radius: 20px;
     padding: 5px;
 }
 
-.borderTable {
-    border: 1px #76B82A solid;
+.respuesta {
+    text-align: center;
+    border: 0;
+    border-top: 2px solid #393939;
+    border-bottom: 1px solid #85BCEB;
 }
 
-.borderTable2 {
-    border: 1px #85BCEB solid;
-    text-align: center;
+td {
+    text-align: right;
+}
+
+.dndAligned {
+    display: grid;
 }
 </style>
 
@@ -84,7 +101,7 @@ input {
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Escribe la respuesta correcta en los espacios en blanco.
+        Completa las igualdades.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -124,7 +141,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad37()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad44()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -159,33 +176,128 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <div style="float: left;width: 100%;">
-                        <div style="float: left;width: 30%;">
-                            <img class="img-responsive" src="img/i1_p30_act37.jpg"></img>
-                        </div>
-                        <div style="float: left;width: 70%;">
-                            Realiza las siguientes actividades:
-                            <br>
-                            <input type="text" id="nota1" class="nota-abierta cajas1" name=""><b style="color: #005ca4">a)</b> <b>Escribe</b> la cantidad que ahorrará la familia
-                            <br>
-                            <br>
-                            <input type="text" name="" class="form-control" style="text-align: left;">
-                            <br>
-                            <input type="text" id="nota2" class="nota-abierta cajas1" name=""><b style="color: #005ca4">b)</b> <b>Escribe</b> los gastos relacionados con las vacaciones de la familia en Galápagos.
-                            <br>
-                            <br>
-                            <input type="text" name="" class="form-control" style="text-align: left;">
-                            <span>A partir de la información planteada, <b>reflexiona</b> y <b>responde</b>. <br> Para resolver el problema se forman dos sucesiones: la del ahorro mensual y la del pago diario del hotel.</span>
-                            <br>
-                            <br>
-                            <span><b style="color: #98007f ">Ahorro mensual.</b> Se trata de una sucesión creciente basada en la suma. Los $ 150 que la familia ahorrará cada mes constituyen el patrón de esta sucesión.</span>
-                            <img class="img-responsive" src="img/i2_p30_act37.jpg"></img>
-                            <span>Al cabo de cinco meses la familia Andrade tendrá $ 1 595.</span>
-                            <br>
-                            <br><span><b style="color: #98007f ">Pago del hotel.</b> Se trata de una sucesión decreciente basada en la resta. Los $ 85 diarios del pago del hotel, que se descontarán del ahorro total de la familia, constituye el patrón de esta segunda sucesión.</span>
-                            <img class="img-responsive" src="img/i3_p30_act37.jpg"></img>
-                            <span>A la familia Andrade le quedan $ 1 085 para los demás gastos.</span>
-                        </div>
+                    <span><b style="color: #005ca4">5.</b> <b>Compara</b> los siguientes números y <b>escribe</b> el signo >, < o = según corresponda.</span>
+                    <div class="table-responsive" align="center">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><b style="color: #005ca4">a)</b></td>
+                                            <td class="com" id="completar1"></td>
+                                            <td>
+                                                <select>
+                                                    <option value=">">
+                                                        <h4>></h4></option>
+                                                    <option value="=">
+                                                        <h4>=</h4></option>
+                                                    <option value="<">
+                                                        <h4><</h4></option>
+                                                </select>
+                                            </td>
+                                            <td class="com" id="completar2"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><b style="color: #005ca4">c)</b></td>
+                                            <td class="com" id="completar3"></td>
+                                            <td>
+                                                <select>
+                                                    <option value=">">
+                                                        <h4>></h4></option>
+                                                    <option value="=">
+                                                        <h4>=</h4></option>
+                                                    <option value="<">
+                                                        <h4><</h4></option>
+                                                </select>
+                                            </td>
+                                            <td class="com" id="completar4"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><b style="color: #005ca4">e)</b></td>
+                                            <td class="com" id="completar5"></td>
+                                            <td>
+                                                <select>
+                                                    <option value=">">
+                                                        <h4>></h4></option>
+                                                    <option value="=">
+                                                        <h4>=</h4></option>
+                                                    <option value="<">
+                                                        <h4><</h4></option>
+                                                </select>
+                                            </td>
+                                            <td class="com" id="completar6"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><b style="color: #005ca4">b)</b></td>
+                                            <td class="com" id="completar7"></td>
+                                            <td>
+                                                <select>
+                                                    <option value=">">
+                                                        <h4>></h4></option>
+                                                    <option value="=">
+                                                        <h4>=</h4></option>
+                                                    <option value="<">
+                                                        <h4><</h4></option>
+                                                </select>
+                                            </td>
+                                            <td class="com" id="completar8"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><b style="color: #005ca4">d)</b></td>
+                                            <td class="com" id="completar9"></td>
+                                            <td>
+                                                <select>
+                                                    <option value=">">
+                                                        <h4>></h4></option>
+                                                    <option value="=">
+                                                        <h4>=</h4></option>
+                                                    <option value="<">
+                                                        <h4><</h4></option>
+                                                </select>
+                                            </td>
+                                            <td class="com" id="completar10"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td><b style="color: #005ca4">f)</b></td>
+                                            <td class="com" id="completar11"></td>
+                                            <td>
+                                                <select>
+                                                    <option value=">">
+                                                        <h4>></h4></option>
+                                                    <option value="=">
+                                                        <h4>=</h4></option>
+                                                    <option value="<">
+                                                        <h4><</h4></option>
+                                                </select>
+                                            </td>
+                                            <td class="com" id="completar12"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -233,42 +345,11 @@ input {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/validacionesExtras.js"></script>
+        <script src="js/actividad44.js"></script>
         <script type="text/javascript">
-        var titulos = "reflexiono";
+        var titulos = "refuerzo";
         $("#txtNota").html("0");
-        $("#n_pagina").html("30");
-        document.getElementById('nota1').addEventListener('keypress', () => {
-            validNumero(0, 5, 1);
-        });
-        document.getElementById('nota1').addEventListener('keyup', () => {
-            validMaxIngreso(document.getElementById('nota1'), 5)
-        });
-        document.getElementById('nota2').addEventListener('keypress', () => {
-            validNumero(0, 5, 1);
-        });
-        document.getElementById('nota2').addEventListener('keyup', () => {
-            validMaxIngreso(document.getElementById('nota2'), 5)
-        });
-
-        function actividad37() {
-            var nota1 = document.getElementById('nota1').value;
-            var nota2 = document.getElementById('nota2').value;
-            if ((nota1 == "") || (nota2 == "")) {
-                alert("Preguntas sin calificar");
-            } else {
-
-
-                var total = parseFloat(nota1) + parseFloat(nota2);
-                $('#nota1').css("background", "#00e600");
-                $('#nota2').css("background", "#00e600");
-                $('#txtNota').html(total.toFixed(2));
-                document.getElementById('bt_comprobar').disabled = true;
-                $('input').attr("disabled", true);
-                $('#txtAlumno').attr("disabled", false);
-            }
-
-        }
+        $("#n_pagina").html("32");
         </script>
 </body>
 

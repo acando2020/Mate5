@@ -17,17 +17,18 @@
 </head>
 <style type="text/css">
 .cajas {
-    max-width: 95%;
-    max-height: 200px;
-    border: 1px #98007f solid;
+    max-width: 500px;
+    height: 250px;
+    border: 1px #005ca4 solid;
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
 }
 
+
 .cajas1 {
 
-    border: 1px #98007f solid;
+    border: 1px #005ca4 solid;
 }
 
 .actividad1 {
@@ -56,24 +57,39 @@
     background-color: #232956;
 }
 
-
-/*input {
+input {
     text-align: center;
     border: 0;
     border-bottom: 1px solid #85BCEB;
-    width: 50px;
-}*/
+    width: 70px;
+}
 
-.pasos {
+
+.bordeT {
+    border: 1px #76B82A solid;
+}
+
+.bordeT2 {
+    border: 1px #76B82A solid;
+    text-align: center;
+}
+
+.paso {
     background-color: #F9B000;
     color: #ffffff;
     border-radius: 20px;
     padding: 5px;
-    border: #76B82A;
 }
 
-.bordesTab {
-    border: 1px #76B82A solid;
+.respuesta {
+    text-align: center;
+    border: 0;
+    border-top: 2px solid #393939;
+    border-bottom: 1px solid #85BCEB;
+}
+
+.dndAligned {
+    display: grid;
 }
 </style>
 
@@ -81,7 +97,7 @@
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Escribe la respuesta correcta en los espacios en blanco.
+        Ubica los siguientes números en la tabla de valor posicional.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -121,7 +137,7 @@
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad21()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad42()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -156,62 +172,115 @@
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_guiada.png"></img>
-                    <span><b>Aplica</b> las estrategias de redondeo con compensación, las propiedades conmutativa y asociativa de la suma y la descomposición aditiva de sus cifras para resolver la siguiente suma: <h style="background-color: #FFF5D8">4 345 + 105 + 500</h></span>
-                    <div>
-                        <table class="table bordesTab">
-                            <tr class="bordesTab">
-                                <td> <span class="pasos">Paso 1</span><br><b>Realizamos</b> el redondeo con compensación. A uno de los sumando 3 845 le redondeamos a la decena más próxima, 4 350, para lo cual se necesita 5 unidades que se puede tomar del 105, que se convierte en 100. En este proceso de redondeo no lo tomamos en consideración al número 500, porque no tiene unidades. De esta forma se pasa de la suma: 4 345 + 105 + 500, a su equivalente: 4 350 + 100 + 500. Ahora resulta más sencillo efectuar la operación: 4 350 + 100 + 500 =
-                                    <input id="num1" type="number" style="text-align: center;border: 0;border-bottom: 1px solid #85BCEB;width: 50px;" placeholder="0" name="">.
-                                    <br>
-                                </td>
-                            </tr>
-                            <tr class="bordesTab">
+                    <span><b style="color: #005ca4">3.</b> <b>Ubica</b> los siguientes números en la tabla de valor posicional.</span>
+                    <div class="table-responsive" align="center">
+                        <table>
+                            <tr>
                                 <td>
-                                    <br><span class="pasos">Paso 2</span><br><b>Aplicamos</b> las propiedades conmutativa y asociativa de la suma. Se puede cambiar el orden de los sumandos y la suma o total no se altera o agrupamos dos de los tres sumandos, los que mejor convenga, y la suma o total tampoco se altera.
-                                    <table style="text-align: right;">
+                                    <table>
                                         <tr>
-                                            <td>Propiedad conmutativa: 4 345 + 105 + 500 =</td>
-                                            <td>
-                                                <input id="num2" type="text" class="form-control" name="">
-                                            </td>
+                                            <td style="color: white; background: #26BBE4">Número</td>
                                         </tr>
                                         <tr>
-                                            <td>4 950 =</td>
-                                            <td>
-                                                <input id="num3" type="text" class="form-control" name="">
-                                            </td>
+                                            <td class="com" id="completar1"></td>
                                         </tr>
                                         <tr>
-                                            <td>Propiedad asociativa: 4 345 + 105 + 500 =</td>
-                                            <td>
-                                                <input id="num4" type="text" class="form-control" name="">
-                                            </td>
+                                            <td class="com1" id="completa1"></td>
                                         </tr>
                                         <tr>
-                                            <td>=</td>
-                                            <td>
-                                                <input id="num5" type="text" class="form-control" name="">
-                                            </td>
+                                            <td class="com1" id="completa2"></td>
                                         </tr>
                                         <tr>
-                                            <td>=</td>
-                                            <td>
-                                                <input id="num6" type="text" class="form-control" name="">
-                                            </td>
+                                            <td class="com" id="completar2"></td>
                                         </tr>
                                     </table>
                                 </td>
-                            </tr>
-                            <tr class="bordesTab">
-                                <td class="bordesTab">
-                                    <br><span class="pasos">Paso 3</span>
-                                    <table>
-                                        <tr>
-                                            <td><b>Aplicamos</b> la descomposición aditiva de sus cifras. Primero descomponemos el número 4 345 en unidades de mil, centenas decenas y unidades. El número 105 y 500 en centenas, decenas y unidades. Al final realizamos la composición con los valores obtenidos.
-                                            <img class="img-responsive" src="img/i1_p23_act21.jpg"></img>
+                                <td>
+                                    <table class="borderTable2" border="1">
+                                        <tr style="background:#FEEDDD" class="borderTable2">
+                                            <td class="borderTable2" style="color: #76B82A;text-align: center;">cm</td>
+                                            <td class="borderTable2" style="color: #E6007E;text-align: center;">dm</td>
+                                            <td class="borderTable2" style="color: #009FE3;text-align: center;">um</td>
+                                            <td class="borderTable2" style="color: #76B82A;text-align: center;">c</td>
+                                            <td class="borderTable2" style="color: #E6007E;text-align: center;">d</td>
+                                            <td class="borderTable2" style="color: #009FE3;text-align: center;">u</td>
+                                        </tr>
+                                        <tr id="numero1" class="borderTable2">
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num1" maxlength="1">
                                             </td>
-                                            <td><img class="img-responsive" src="img/i2_p23_act21.jpg"></td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num2" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num3" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num4" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num5" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num6" maxlength="1">
+                                            </td>
+                                        </tr>
+                                        <tr id="numero2" class="borderTable2">
+                                            <td class="borderTable2" id="num12" ></td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num7" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num8" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num9" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num10" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num11" maxlength="1">
+                                            </td>
+                                        </tr>
+                                        <tr id="numero3" class="borderTable2">
+                                            <td class="borderTable2" id="num18">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num13" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num14" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num15" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num16" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num17" maxlength="1">
+                                            </td>
+                                        </tr>
+                                        <tr id="numero4" class="borderTable2">
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num19" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num20" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num21" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num22" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num23" maxlength="1">
+                                            </td>
+                                            <td class="borderTable2">
+                                                <input type="text" name="" id="num24" maxlength="1">
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>
@@ -264,11 +333,11 @@
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad21.js"></script>
+        <script src="js/actividad42.js"></script>
         <script type="text/javascript">
-        var titulos = "aplico";
+        var titulos = "refuerzo";
         $("#txtNota").html("0");
-        $("#n_pagina").html("23");
+        $("#n_pagina").html("32");
         </script>
 </body>
 

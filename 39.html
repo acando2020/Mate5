@@ -17,13 +17,14 @@
 </head>
 <style type="text/css">
 .cajas {
-    max-width: 95%;
-    max-height: 200px;
-    border: 1px #98007f solid;
+    max-width: 500px;
+    height: 250px;
+    border: 1px #005ca4 solid;
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
 }
+
 
 .cajas1 {
 
@@ -63,6 +64,9 @@ input {
     width: 50px;
     text-align: center;
 }
+td{
+    text-align: center;
+}
 
 .bordeT {
     border: 1px #76B82A solid;
@@ -86,13 +90,17 @@ input {
     border-top: 2px solid #393939;
     border-bottom: 1px solid #85BCEB;
 }
+
+.dndAligned {
+    display: grid;
+}
 </style>
 
 <body>
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Completa la tabla con los números que se encuentra en la actividad y resuelve la suma.
+       En la actividad 1 encuentra el patrón y completa las sucesiones, en la actividad 2 arrastra el cuadro <img class="img-responsive" src="img/i1_p31_act39.png"> al espacio en blanco hasta completar la succesion.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -132,7 +140,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad39_1()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad39()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -169,110 +177,168 @@ input {
                 <div class="text-question">
                     <img class="img-responsive" src="img/practica_individual.png"></img>
                     <span><b style="color: #005ca4">1.</b><b>Encuentra</b> el patrón y <b>completa</b> las sucesiones. <b>Resuelve</b> en tu cuaderno.</span>
-                    <div class="table-responsive">
-                    <table class="table">
-                        <tr>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td><b style="color: #005ca4">a)</b></td>
-                                        <td>Sucesión:</td>
-                                        <td>
-                                            <input type="number" class="form-control" id="num1" name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="num2" name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="num3" name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="num4" name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" name="" id="num5" disabled>
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" name="" id="num6" disabled>
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" name="" id="num7" disabled>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><b style="color: #005ca4">b)</b></td>
-                                        <td>Sucesión:</td>
-                                        <td>
-                                            <input type="number" class="form-control" id="nume1" disabled name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="nume2" disabled name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="nume3" name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="nume4" name="" disabled>
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="nume5" name="" disabled>
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="nume6" name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="nume7" name="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><b style="color: #005ca4">c)</b></td>
-                                        <td>Sucesión:</td>
-                                        <td>
-                                            <input type="number" class="form-control" id="numer1" disabled name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="numer2" disabled name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="numer3" name="" disabled>
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="numer4" name="" disabled>
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="numer5" name="" disabled>
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="numer6" name="" style="display: none;"><input id="sr1" type="number" class="form-control" name="">
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control" id="numer7" name="" style="display: none;"><input id="sr2" type="number" class="form-control" name="">
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td>Patrón:</td>
-                                        <td colspan="2"><input class="form-control" id="patron1" placeholder="+0"></input></td>
+                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" id="nota1" name="" style="display: none;"><b style="color: #005ca4">a)</b></td>
+                                                <td><h4 style="background: #C7E7F2">Sucesión:</h4></td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="num1" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="num2" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="num3" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="num4" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" name="" id="num5" disabled>
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" name="" id="num6" disabled>
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" name="" id="num7" disabled>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" id="nota2" name="" style="display: none;"><b style="color: #005ca4">b)</b></td>
+                                                <td><h4 style="background: #FFE7A2">Sucesión:</h4></td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="nume1" disabled name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="nume2" disabled name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="nume3" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="nume4" name="" disabled>
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="nume5" name="" disabled>
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="nume6" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="nume7" name="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" id="nota3" name="" style="display: none;"><b style="color: #005ca4">c)</b></td>
+                                                <td><h4 style="background: #FAD1D6">Sucesión:</h4></td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="numer1" disabled name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="numer2" disabled name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="numer3" name="" disabled>
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="numer4" name="" disabled>
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="numer5" name="" disabled>
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="numer6" name="" style="display: none;">
+                                                    <input id="sr1" type="number" class="form-control" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" id="numer7" name="" style="display: none;">
+                                                    <input id="sr2" type="number" class="form-control" name="">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td><h4 style="background: #C7E7F2">Patrón:</h4></td>
+                                                <td colspan="2">
+                                                    <input class="form-control" id="patron1" placeholder="+0"></input>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4 style="background: #FFE7A2">Patrón:</h4></td>
+                                                <td colspan="2">
+                                                    <input class="form-control" id="patron2" placeholder="-0"></input>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4 style="background: #FAD1D6">Patrón:</h4></td>
+                                                <td>
+                                                    <input class="form-control" id="patron3" placeholder="+0"></input>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" id="patron4" placeholder="-0"></input>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-question">
+                    <input type="text" id="nota4" name="" style="display: none;"><span><b style="color: #005ca4">2.</b> <b>Dibuja</b> el quinto término de la sucesión.</span>
+                    <br>
+                    <div  align="center">
+                        <img class="drag" src="img/i1_p31_act39.png" id="b2" alt="base 10"></p>
+                    </div>
+                    <table class="table table-bordered">
+                        <tr >
+                            <td><h4 style="background: #C9D3ED">Sucesión:</h4></td>
+                            <td ><img class="img-responsive" src="img/i1_p31_act39.png"></td>
+                            <td >
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png"></td>
+                            <td ><img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png"></td>
+                            <td ><img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png"></td>
+                            <td id="actividad39_2" >
+                                <div class="c_destino drop dndAligned cajas">
 
-                                    </tr>
-                                    <tr>
-                                        <td>Patrón:</td>
-                                        <td colspan="2"><input class="form-control" id="patron2" placeholder="-0"></input></td>
+                                </div>
 
-                                    </tr>
-                                    <tr>
-                                        <td>Patrón:</td>
-                                        <td><input class="form-control" id="patron3" placeholder="+0"></input></td>
-                                        <td><input class="form-control" id="patron4" placeholder="-0"></input></td>
-                                    </tr>
-                                </table>
                             </td>
                         </tr>
+                        <tr>
+                            <td><h4 style="background: #FAD3D7">Términos:</h4></td>
+                            <td>1.°</td>
+                            <td>2.°</td>
+                            <td>3.°</td>
+                            <td>4.°</td>
+                            <td>5.°</td>
+                        </tr>
                     </table>
-                    </div>
                 </div>
             </div>
         </div>
@@ -323,7 +389,7 @@ input {
         <script type="text/javascript">
         var titulos = "aplico";
         $("#txtNota").html("0");
-        $("#n_pagina").html("15");
+        $("#n_pagina").html("31");
         </script>
 </body>
 
