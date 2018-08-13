@@ -17,14 +17,13 @@
 </head>
 <style type="text/css">
 .cajas {
-    max-width: 500px;
-    height: 250px;
-    border: 1px #005ca4 solid;
+    max-width: 95%;
+    max-height: 200px;
+    border: 1px #98007f solid;
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
 }
-
 
 .cajas1 {
 
@@ -59,11 +58,10 @@
 
 input {
     text-align: left;
-    border: 0;
+    border: 1;
     border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    width: 50px;
 }
-
 
 .bordeT {
     border: 1px #76B82A solid;
@@ -87,21 +85,13 @@ input {
     border-top: 2px solid #393939;
     border-bottom: 1px solid #85BCEB;
 }
-
-td {
-    text-align: right;
-}
-
-.dndAligned {
-    display: grid;
-}
 </style>
 
 <body>
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Completa las igualdades.
+        Encuentra el patrón y completa las sucesiones.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -141,7 +131,7 @@ td {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad44()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad50()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -176,107 +166,85 @@ td {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <span><b style="color: #005ca4">5.</b> <b>Compara</b> los siguientes números y <b>escribe</b> el signo >, < o = según corresponda.</span>
-                    <div class="table-responsive" align="center">
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">a)&nbsp;</b></td>
-                                            <td class="com" id="completar1"></td>
-                                            <td>
-                                                <select id="select1">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar2"></td>
-                                        </tr>
-                                    </table>
+                    <span><b style="color:#005ca4">8.</b> <b>Encuentra</b>  el patrón y <b>completa</b> la sucesión.</span>
+                    <br>
+                    <br>
+                    <div class="table-responsive">
+                        <table style="text-align:center;">
+                            <tr style="text-align:center;">
+                                <td><span>Patrón: </span></td>
+                                <td align="right"><img class="img-responsive" src="img/flecha1.png"></img>
                                 </td>
                                 <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">c)&nbsp;</b></td>
-                                            <td class="com" id="completar3"></td>
-                                            <td>
-                                                <select id="select2">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar4"></td>
-                                        </tr>
-                                    </table>
+                                    <input style="text-align:center;" id="ptr1" class="" type="text" placeholder="+0"></input>
+                                </td>
+                                <td><img class="img-responsive" src="img/flecha2.png"></img>
                                 </td>
                                 <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">e)&nbsp;</b></td>
-                                            <td class="com" id="completar5"></td>
-                                            <td>
-                                                <select id="select3">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar6"></td>
-                                        </tr>
-                                    </table>
+                                    <input style="text-align:center;" id="ptr2" class="" type="text" placeholder="-0"></input>
+                                </td>
+                                <td><img class="img-responsive" src="img/flecha2.png"></img>
+                                </td>
+                                <td>
+                                    <input style="text-align:center;" id="ptr3" class="" type="text" placeholder="+0"></input>
+                                </td>
+                                <td><img class="img-responsive" src="img/flecha2.png"></img>
+                                </td>
+                                <td>
+                                    <input style="text-align:center;" id="ptr4" class="" type="text" placeholder="-0"></input>
+                                </td>
+                                <td><img class="img-responsive" src="img/flecha2.png"></img>
+                                </td>
+                                <td>
+                                    <input style="text-align:center;" id="ptr5" class="" type="text" placeholder="+0"></input>
+                                </td>
+                                <td><img class="img-responsive" src="img/flecha2.png"></img>
+                                </td>
+                                <td>
+                                    <input style="text-align:center;" id="ptr6" class="" type="text" placeholder="-0"></input>
+                                </td>
+                                <td align="left"><img class="img-responsive" src="img/flecha2.png"></img>
+                                </td>
+                                <td>
+                                    <input style="text-align:center;" id="ptr7" class="" type="text" placeholder="+0"></input>
+                                </td>
+                                <td align="left"><img class="img-responsive" src="img/flecha3.png"></img>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr style="text-align:center;">
+                                <td><span>Sucesión:</span></td>
                                 <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">b)&nbsp;</b></td>
-                                            <td class="com" id="completar7"></td>
-                                            <td>
-                                                <select id="select4">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar8"></td>
-                                        </tr>
-                                    </table>
+                                    <input style="text-align:center;" id="numer1" disabled type="text" class="" name="">
                                 </td>
+                                <td></td>
                                 <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">d)&nbsp;</b></td>
-                                            <td class="com" id="completar9"></td>
-                                            <td>
-                                                <select id="select5">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar10"></td>
-                                        </tr>
-                                    </table>
+                                    <input style="text-align:center;" id="numer2" disabled type="text" class="" name="">
                                 </td>
+                                <td></td>
                                 <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">f)&nbsp;</b></td>
-                                            <td class="com" id="completar11"></td>
-                                            <td>
-                                                <select id="select6">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar12"></td>
-                                        </tr>
-                                    </table>
+                                    <input style="text-align:center;" id="numer3" disabled type="text" placeholder="0" class="" name="">
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input style="text-align:center;" id="numer4" disabled type="text" placeholder="0" class="" name="">
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input style="text-align:center;" id="numer5" disabled type="text" class="" name="">
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input style="text-align:center;" id="numer6" disabled type="text" placeholder="0" class="" name="">
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input style="text-align:center; display: none;" id="numer7" type="text" class="" placeholder="0" name="">
+                                    <input style="text-align:center;" id="numero7" type="text" class="" placeholder="0" name="">
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input style="text-align:center; display: none;" id="numer8" type="text" class="" placeholder="0" name="">
+                                    <input style="text-align:center;" id="numero8" type="text" class="" placeholder="0" name="">
                                 </td>
                             </tr>
                         </table>
@@ -327,11 +295,11 @@ td {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad44.js"></script>
+        <script src="js/actividad50.js"></script>
         <script type="text/javascript">
         var titulos = "refuerzo";
         $("#txtNota").html("0");
-        $("#n_pagina").html("32");
+        $("#n_pagina").html("31");
         </script>
 </body>
 

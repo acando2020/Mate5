@@ -17,18 +17,17 @@
 </head>
 <style type="text/css">
 .cajas {
-    max-width: 500px;
-    height: 250px;
-    border: 1px #005ca4 solid;
+    max-width: 95%;
+    max-height: 200px;
+    border: 1px #98007f solid;
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
 }
 
-
 .cajas1 {
 
-    border: 1px #005ca4 solid;
+    border: 1px #98007f solid;
 }
 
 .actividad1 {
@@ -59,14 +58,18 @@
 
 input {
     text-align: left;
-    border: 0;
-    border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
 }
-
 
 .bordeT {
     border: 1px #76B82A solid;
+}
+
+td {
+    text-align: center;
 }
 
 .bordeT2 {
@@ -87,21 +90,13 @@ input {
     border-top: 2px solid #393939;
     border-bottom: 1px solid #85BCEB;
 }
-
-td {
-    text-align: right;
-}
-
-.dndAligned {
-    display: grid;
-}
 </style>
 
 <body>
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Completa las igualdades.
+        Resuelve las siguientes sumas.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -141,7 +136,7 @@ td {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad44()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad48()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -176,111 +171,19 @@ td {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <span><b style="color: #005ca4">5.</b> <b>Compara</b> los siguientes números y <b>escribe</b> el signo >, < o = según corresponda.</span>
-                    <div class="table-responsive" align="center">
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">a)&nbsp;</b></td>
-                                            <td class="com" id="completar1"></td>
-                                            <td>
-                                                <select id="select1">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar2"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">c)&nbsp;</b></td>
-                                            <td class="com" id="completar3"></td>
-                                            <td>
-                                                <select id="select2">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar4"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">e)&nbsp;</b></td>
-                                            <td class="com" id="completar5"></td>
-                                            <td>
-                                                <select id="select3">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar6"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">b)&nbsp;</b></td>
-                                            <td class="com" id="completar7"></td>
-                                            <td>
-                                                <select id="select4">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar8"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">d)&nbsp;</b></td>
-                                            <td class="com" id="completar9"></td>
-                                            <td>
-                                                <select id="select5">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar10"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">f)&nbsp;</b></td>
-                                            <td class="com" id="completar11"></td>
-                                            <td>
-                                                <select id="select6">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar12"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
+                    <input type="text" name="" id="nota1" style="display: none;"><span><b style="color:#005ca4">8.</b> <b>Aplica</b> la propiedad conmutativa y <b>resuelve.</b></span>
+                    <div class="row">
+                        <div class="col-sm-6">Julio llega a la playa con su cargamento de pescado. Trae consigo 860 picudos, 475 lenguados y 628 dorados.
+                            <br>
+                            <br>
+                            <b style="color:#005ca4">a)</b> ¿Cuántos peces suman en total?
+                            <br><b style="color:#005ca4">b)</b> Si guardó para su consumo y el de sus familiares 65 peces, y el resto los vendió en el mismo lugar, ¿cuántos peces vendió?
+                            <input class="form-control" id="num1"></input>
+                            <input class="form-control" id="num2"></input>
+                        </div>
+                        <div class="col-sm-6"><img src="img/i1_p33_act48.jpg" class="img-responsive"></div>
                     </div>
+                    <span><b style="color:#005ca4">R.</b> Julio pescó en total <input type="number" name="" id="num3">peces, de los cuales vendió en el mismo lugar <input type="number" name="" id="num4"></span>
                 </div>
             </div>
         </div>
@@ -327,11 +230,11 @@ td {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad44.js"></script>
+        <script src="js/actividad49.js"></script>
         <script type="text/javascript">
         var titulos = "refuerzo";
         $("#txtNota").html("0");
-        $("#n_pagina").html("32");
+        $("#n_pagina").html("27");
         </script>
 </body>
 

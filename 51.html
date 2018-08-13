@@ -17,14 +17,13 @@
 </head>
 <style type="text/css">
 .cajas {
-    max-width: 500px;
-    height: 250px;
-    border: 1px #005ca4 solid;
+    max-width: 95%;
+    max-height: 200px;
+    border: 1px #98007f solid;
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
 }
-
 
 .cajas1 {
 
@@ -59,11 +58,10 @@
 
 input {
     text-align: left;
-    border: 0;
+    border: 1;
     border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    width: 300px;
 }
-
 
 .bordeT {
     border: 1px #76B82A solid;
@@ -87,21 +85,13 @@ input {
     border-top: 2px solid #393939;
     border-bottom: 1px solid #85BCEB;
 }
-
-td {
-    text-align: right;
-}
-
-.dndAligned {
-    display: grid;
-}
 </style>
 
 <body>
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Completa las igualdades.
+        Encuentra el patrón y completa las sucesiones.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -141,7 +131,7 @@ td {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad44()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad50()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -176,107 +166,44 @@ td {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <span><b style="color: #005ca4">5.</b> <b>Compara</b> los siguientes números y <b>escribe</b> el signo >, < o = según corresponda.</span>
-                    <div class="table-responsive" align="center">
-                        <table class="table">
+                    <img src="img/aplicaestrategia.png" class="img-responsive" alt="">
+                    <div class="table-responsive">
+                        <table class="table" style="border-width: 4px; border-style: dotted; border-color: #76b828; ">
                             <tr>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">a)&nbsp;</b></td>
-                                            <td class="com" id="completar1"></td>
-                                            <td>
-                                                <select id="select1">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar2"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">c)&nbsp;</b></td>
-                                            <td class="com" id="completar3"></td>
-                                            <td>
-                                                <select id="select2">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar4"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">e)&nbsp;</b></td>
-                                            <td class="com" id="completar5"></td>
-                                            <td>
-                                                <select id="select3">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar6"></td>
-                                        </tr>
-                                    </table>
+                                <td style="border-width: 4px; border-style: dotted; border-color: #76b828; " colspan="2">
+                                    <div class="row">
+                                        <div class="col-lg-6" align="justify"><b style="color:#005ca4;">1.</b> Carmen tiene en su pastelería 25 dulces, vende 8, llega de la cocina una bandeja con 18 y otra con 12 más. Luego, recibe un pedido de 27 dulces variados. ¿Cuántos dulces le quedan?
+                                            <br>
+                                            <br><b style="color:#005ca4">R.</b> A Carmen le quedan
+                                            <input type="number" name="" id="num1"> dulces.</div>
+                                        <div class="col-lg-6"><img src="img/i1_p35_act51.jpg" class="img-responsive"></div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">b)&nbsp;</b></td>
-                                            <td class="com" id="completar7"></td>
-                                            <td>
-                                                <select id="select4">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar8"></td>
-                                        </tr>
-                                    </table>
+                                <td style="border-width: 4px; border-style: dotted; border-color: #76b828; "><b style="color:#005ca4;">2.</b>Ernesto tiene un local de arreglo de celulares. Tiene 13 celulares listos para entregar. Recibe 15 celulares más entrega 8. Luego entrega 3 más y recibe 7. ¿Cuántos celulares le quedan para arreglar?
+                                    <br>
+                                    <br><b style="color:#005ca4;">R.</b>
+                                    <input class="" type="text" id="num2"></input>
                                 </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">d)&nbsp;</b></td>
-                                            <td class="com" id="completar9"></td>
-                                            <td>
-                                                <select id="select5">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar10"></td>
-                                        </tr>
-                                    </table>
+                                <td style="border-width: 4px; border-style: dotted; border-color: #76b828; "><b style="color:#005ca4;">4.</b>En una campaña para adornar la escuela, los niños de los 3 paralelos de 5.° grado llevaron 15, 9 y 12 plantas, respectivamente. Si del primer grupo no crecieron 2 plantas, del segundo 1 y del tercero 4, ¿cuántas plantas sobrevivieron?
+                                    <br>
+                                    <br> <b style="color:#005ca4;">R.</b>
+                                    <input class="" type="text" id="num3"></input>
                                 </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">f)&nbsp;</b></td>
-                                            <td class="com" id="completar11"></td>
-                                            <td>
-                                                <select id="select6">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar12"></td>
-                                        </tr>
-                                    </table>
+                            </tr>
+                            <tr>
+                                <td style="border-width: 4px; border-style: dotted; border-color: #76b828; "><b style="color:#005ca4;">3.</b> Marcia inicia un juego con 8 canicas. Gana 2, gana 6 y pierde 7. Luego gana 12 y pierde 5. ¿Cuántas canicas tiene al finalizar el juego?
+                                    <br>
+                                    <br><b style="color:#005ca4;">R.</b>
+                                    <input type="text" name="" id="num4">
+                                    <br>
+                                </td>
+                                <td style="border-width: 4px; border-style: dotted; border-color: #76b828; "><b style="color:#005ca4;">5.</b> En una distribuidora tienen 65 autos, venden 8 y envían a otro distribuidor 28. Si reciben 5 autos y venden 22, ¿cuántos autos quedan?
+                                    <br>
+                                    <br><b style="color:#005ca4;">R.</b>
+                                    <input type="text" name="" id="num5">
+                                    <br>
                                 </td>
                             </tr>
                         </table>
@@ -327,11 +254,11 @@ td {
         <script src="js/helper.js"></script>
         <script src="js/activities.js"></script>
         <script src="js/Utilitario.js"></script>
-        <script src="js/actividad44.js"></script>
+        <script src="js/actividad51.js"></script>
         <script type="text/javascript">
-        var titulos = "refuerzo";
+        var titulos = "aplico";
         $("#txtNota").html("0");
-        $("#n_pagina").html("32");
+        $("#n_pagina").html("31");
         </script>
 </body>
 
