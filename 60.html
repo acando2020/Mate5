@@ -57,8 +57,8 @@
 }
 
 input {
-    text-align: left;
-    border: 0;
+    text-align: center;
+    border: 1;
     border-bottom: 1px solid #85BCEB;
     width: 200px;
 }
@@ -78,8 +78,8 @@ input {
     border: 1px #85BCEB solid;
 }
 
-.sobrelinea{
-text-decoration: overline;
+.sobrelinea {
+    text-decoration: overline;
 }
 </style>
 
@@ -87,7 +87,7 @@ text-decoration: overline;
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Escribe la respuesta correcta en los espacios en blanco.
+        Observa las figuras y completa en los espacios en blanco.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -127,7 +127,7 @@ text-decoration: overline;
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad54()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad60()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -162,97 +162,127 @@ text-decoration: overline;
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_guiada.png"></img>
-                    <span> <b>Identifica</b> las líneas que delimitan la figura geométrica.</span>
+                    <img src="img/practica_guiada.png" alt="">
                     <br>
-                    <img class="img-responsive" src="img/i1_p36_act54.jpg"></img>
-                    <div class="row">
-                        <div class="col-lg-6 borderTable"><span class="pasos">Paso 1</span>
-                            <br><b>Observamos</b> detalladamente la figura y <b>analizamos</b> las líneas que la delimitan.
-                            <br><br>
-                            <span><b>•</b> La figura es un cuadrado, está delimitado por <input type="text" name="" id="txt1"></span><br><br></div>
-                        <div class="col-lg-6 borderTable"><span class="pasos">Paso 2</span>
-                            <br><b>Ubicamos</b> las cantidades en una tabla de valor posicional. <br>
-                            <br>Como tenemos un cuadrado, sabemos que 4 segmentos de recta lo delimitan. Estos se denotan así: <span class="sobrelinea">AB</span>, <span class="sobrelinea">BC</span>, <span class="sobrelinea">CD</span>, <span class="sobrelinea">DA</span>. <br><br></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal Guardar PDF-->
-        <div class="modal fade animated pulse" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
-                        <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form id="modal_form" class="form-horizontal">
-                            <div class="form-group ">
-                                <div class="col-sm-2">
-                                    <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
-                                </div>
-                                <div class="col-sm-10">
-                                    <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
-                                    <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
-                                    <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
-                                        <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <span class="glyphicon glyphicon-info-sign error-color" aria-hidden="true"></span> Debes ingresar tu nombre</div>
-                                </div>
+                    <span><b style="color:#005ca4;">1.</b> <b>Identifica</b> las líneas en los siguientes objetos, considerando su posición relativa.</span>
+                    <br>
+                    <div class="row" align="justify">
+                        <div class="col-lg-12">
+                            <div class="col-lg-4"><img src="img/i1_p38_act60.jpg" class="img-responsive">
                             </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <div class="col-lg-4"><img src="img/i2_p38_act60.jpg" class="img-responsive">
+                            </div>
+                            <div class="col-lg-4"><img src="img/i3_p38_act60.jpg" class="img-responsive">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 borderTable">
+                            <div class="col-lg-6 ">
+                                <span class="pasos">Pasos 1</span>
+                                <br> Observamos las líneas y las comparamos de acuerdo a la posición con la que se relacionan.
+                                <br>
+                                <span><b style="color:#005ca4;">a)</b>L<sub>1</sub> || L<sub>2</sub></span>
+                                <br>
+                                <span><b style="color:#005ca4;">b)</b>L<sub>3</sub> <s>|| L<sub>4</sub></s></span>
+                                <br>
+                                <span><b style="color:#005ca4;">c)</b>L<sub>5</sub> || L<sub>6</sub></span>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <span class="pasos">Pasos 2</span>
+                                <br>
+                                <span><b>Identificamos</b> la relación de acuerdo a la posición de las líneas.</span>
+                                <br>
+                                <span><b style="color:#005ca4;">a)</b> Las rectas L<sub>1</sub> y L<sub>2</sub> son <input id="txt1" type="text" name="" class="text-lowercase"></span>
+                                <br>
+                                <span><b style="color:#005ca4;">b)</b>L<sub>3</sub> y L<sub>4</sub> son secantes no perpendiculares.</span>
+                                <br>
+                                <span><b style="color:#005ca4;">c)</b>L<sub>5</sub> y L<sub>6</sub> son secantes perpendiculares.</span>
+                                <br>
+                                <span><b style="color:#005ca4;">c)</b>L<sub>2</sub> y L<sub>3</sub> son <input id="txt2" type="text" name="" class="text-lowercase"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-        <!--generador de pdf-->
-        <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
-        <script src="js/screenfull.js"></script>
-        <script src="js/helper.js"></script>
-        <script src="js/activities.js"></script>
-        <script src="js/Utilitario.js"></script>
+    </div>
+    <!-- Modal Guardar PDF-->
+    <div class="modal fade animated pulse" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
+                    <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="modal_form" class="form-horizontal">
+                        <div class="form-group ">
+                            <div class="col-sm-2">
+                                <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
+                            </div>
+                            <div class="col-sm-10">
+                                <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
+                                <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
+                                <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
+                                    <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <span class="glyphicon glyphicon-info-sign error-color" aria-hidden="true"></span> Debes ingresar tu nombre</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/activities.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script type="text/javascript">
+    var titulos = "aplico";
+    $("#txtNota").html("0");
+    $("#n_pagina").html("37");
 
-        <script type="text/javascript">
-        var titulos = "aplico";
-        $("#txtNota").html("0");
-        $("#n_pagina").html("37");
-
-         function actividad54() {
-        var txt1 = document.getElementById('txt1').value;
-
+    function actividad60() {
+        var txt1 = document.getElementById('txt1').value.toLowerCase();
+        var txt2 = document.getElementById('txt2').value.toLowerCase();
         var nota1 = 0,
-            nota2 = 0,
-            nota3 = 0,
-            nota4 = 0;
-
-        if ((txt1 == "4 líneas rectas") || (txt1 == "4 lineas rectas")|| (txt1 == "4")) {
+            nota2 = 0;
+        if (txt1 == "perpendiculares") {
             $('#txt1').css("background", "#00e600");
-            nota1 = 10;
-
+            nota1 = 5;
 
         } else {
             $('#txt1').css("background", "#ff6666");
 
         }
 
+        if (txt2 == "paralelas") {
+            $('#txt2').css("background", "#00e600");
+            nota2 = 5;
 
-        //var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4)
-        $('#txtNota').html(nota1.toFixed(2));
+        } else {
+            $('#txt2').css("background", "#ff6666");
+
+        }
+        var total = parseInt(nota1) + parseInt(nota2);
+        $('#txtNota').html(total.toFixed(2));
         document.getElementById('bt_comprobar').disabled = true;
         $('input').attr("disabled", true);
         $('#txtAlumno').attr("disabled", false);
+
     }
-        </script>
+    </script>
 </body>
 
 </html>

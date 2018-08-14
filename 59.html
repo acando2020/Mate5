@@ -57,8 +57,8 @@
 }
 
 input {
-    text-align: left;
-    border: 0;
+    text-align: center;
+    border: 1;
     border-bottom: 1px solid #85BCEB;
     width: 200px;
 }
@@ -78,8 +78,8 @@ input {
     border: 1px #85BCEB solid;
 }
 
-.sobrelinea{
-text-decoration: overline;
+.sobrelinea {
+    text-decoration: overline;
 }
 </style>
 
@@ -87,7 +87,7 @@ text-decoration: overline;
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Escribe la respuesta correcta en los espacios en blanco.
+        Observa las figuras y completa en los espacios en blanco.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -127,7 +127,7 @@ text-decoration: overline;
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad54()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad59()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -162,97 +162,78 @@ text-decoration: overline;
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_guiada.png"></img>
-                    <span> <b>Identifica</b> las líneas que delimitan la figura geométrica.</span>
                     <br>
-                    <img class="img-responsive" src="img/i1_p36_act54.jpg"></img>
-                    <div class="row">
-                        <div class="col-lg-6 borderTable"><span class="pasos">Paso 1</span>
-                            <br><b>Observamos</b> detalladamente la figura y <b>analizamos</b> las líneas que la delimitan.
+                    <div class="row" align="justify">
+                        <div class="col-lg-3">
+                            <img class="img-responsive" src="img/i1_p37_act59.jpg"></img>
+                        </div>
+                        <div class="col-lg-9">
+                            <img class="img-responsive" src="img/i2_p37_act59.jpg"></img>
+                            <span>A partir de la información planteada, <b>completa</b> las afirmaciones.</span>
+                            <br>
+                            <span>Las líneas de la montaña se unen en la cima formando un ángulo <input type="text" class="text-lowercase" id="txt1" name="">. Estas líneas son secantes oblicuas, porque se cortan en forma inclinada.</span>
                             <br><br>
-                            <span><b>•</b> La figura es un cuadrado, está delimitado por <input type="text" name="" id="txt1"></span><br><br></div>
-                        <div class="col-lg-6 borderTable"><span class="pasos">Paso 2</span>
-                            <br><b>Ubicamos</b> las cantidades en una tabla de valor posicional. <br>
-                            <br>Como tenemos un cuadrado, sabemos que 4 segmentos de recta lo delimitan. Estos se denotan así: <span class="sobrelinea">AB</span>, <span class="sobrelinea">BC</span>, <span class="sobrelinea">CD</span>, <span class="sobrelinea">DA</span>. <br><br></div>
+                            <span>Los rieles del tren están separados por una distancia fija y <input type="text" class="text-lowercase" id="txt2" name="">. Estas líneas se llaman <b style="color: #98007f;">paralelas</b>.</span>
+                            <br><br>
+                            <span>Las líneas horizontales de las ventanas están separadas por la misma distancia y no se unen, y lo mismo pasa con las líneas verticales. Por lo tanto, son <input type="text" class="text-lowercase" id="txt3" name="">.</span>
+                            <br><br>
+                            <span>Las líneas consecutivas de las ventanas se unen formando un ángulo recto. Estas líneas se llaman <b style="color: #98007f;">secantes perpendiculares</b>.
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Modal Guardar PDF-->
-        <div class="modal fade animated pulse" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
-                        <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form id="modal_form" class="form-horizontal">
-                            <div class="form-group ">
-                                <div class="col-sm-2">
-                                    <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
-                                </div>
-                                <div class="col-sm-10">
-                                    <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
-                                    <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
-                                    <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
-                                        <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <span class="glyphicon glyphicon-info-sign error-color" aria-hidden="true"></span> Debes ingresar tu nombre</div>
-                                </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+    <div class="modal fade animated pulse" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
+                    <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="modal_form" class="form-horizontal">
+                        <div class="form-group ">
+                            <div class="col-sm-2">
+                                <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
                             </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+                            <div class="col-sm-10">
+                                <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
+                                <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
+                                <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
+                                    <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <span class="glyphicon glyphicon-info-sign error-color" aria-hidden="true"></span> Debes ingresar tu nombre</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-        <!--generador de pdf-->
-        <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
-        <script src="js/screenfull.js"></script>
-        <script src="js/helper.js"></script>
-        <script src="js/activities.js"></script>
-        <script src="js/Utilitario.js"></script>
-
-        <script type="text/javascript">
-        var titulos = "aplico";
-        $("#txtNota").html("0");
-        $("#n_pagina").html("37");
-
-         function actividad54() {
-        var txt1 = document.getElementById('txt1').value;
-
-        var nota1 = 0,
-            nota2 = 0,
-            nota3 = 0,
-            nota4 = 0;
-
-        if ((txt1 == "4 líneas rectas") || (txt1 == "4 lineas rectas")|| (txt1 == "4")) {
-            $('#txt1').css("background", "#00e600");
-            nota1 = 10;
-
-
-        } else {
-            $('#txt1').css("background", "#ff6666");
-
-        }
-
-
-        //var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4)
-        $('#txtNota').html(nota1.toFixed(2));
-        document.getElementById('bt_comprobar').disabled = true;
-        $('input').attr("disabled", true);
-        $('#txtAlumno').attr("disabled", false);
-    }
-        </script>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/activities.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/actividad59.js"></script>
+    <script type="text/javascript">
+    var titulos = "reflexiono";
+    $("#txtNota").html("0");
+    $("#n_pagina").html("37");
+    </script>
 </body>
 
 </html>
