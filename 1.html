@@ -50,6 +50,13 @@ table tr th div span {
     background: #fff;
 }
 
+.saltos {
+    text-align: center;
+    border: 1;
+    border-bottom: 1px solid #85BCEB;
+    width: 50px;
+}
+
 .correcto {
     color: #ffffff;
     background-color: #8FB435;
@@ -406,8 +413,7 @@ table tr th div span {
                                 <div class="text-question">
                                     <input type="text" maxlength="2" id="nota1_4" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>4.- Compara</b>  los números. <b>Escribe</b> los signos <b style="color:#22a9f7"><</b>, <b style="color:#22a9f7">></b>, o <b style="color:#22a9f7">=</b>, según corresponda.</span>
                                     <br>
-                                    <div class="row">
-                                        <br>
+                                    <div class="col-lg-12 row">
                                         <div class="col-lg-6" align="center">
                                             <table>
                                                 <tr style="align-content: center;">
@@ -490,8 +496,9 @@ table tr th div span {
                                     <div class="row">
                                         <div class="col-lg-3">
                                             <div style="float: left;width: 100%;"></div>
-                                            <div style="float: left;width: 20%;">+</div>
-                                            <div style="float: left;width: 80%;">
+                                            <div style="float: left;width: 10%;"><b style="color:#005ca4">a)</b>
+                                                <h3>+</h3></div>
+                                            <div style="float: left;width: 90%;">
                                                 <table style="text-align: center;">
                                                     <thead>
                                                         <tr style="background-color:#FEEDDD;">
@@ -538,155 +545,170 @@ table tr th div span {
                                                 </table>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3">+
-                                            <table style="text-align: center;">
-                                                <tr style="background-color:#FEEDDD;">
-                                                    <td><b style="color: #009ED4">um</b></td>
-                                                    <td><b style="color: #76B82A">c</b></td>
-                                                    <td><b style="color: #E6007E">d</b></td>
-                                                    <td><b style="color: #009FE3">u</b></td>
-                                                </tr>
-                                                <tr id="fila3">
-                                                    <td>
-                                                        <div class="sum2" id="sumaNume1"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum2" id="sumaNume2"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum2" id="sumaNume3"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum2" id="sumaNume4"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr id="fila4">
-                                                    <td>
-                                                        <div class="sum2" id="sumaNume5"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum2" id="sumaNume6"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum2" id="sumaNume7"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum2" id="sumaNume8"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr id="resp2">
-                                                    <td>
-                                                        <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma4">
-                                                    </td>
-                                                    <td>
-                                                        <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma5">
-                                                    </td>
-                                                    <td>
-                                                        <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma6">
-                                                    </td>
-                                                    <td>
-                                                        <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma7">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <div class="col-lg-3">-
-                                            <table style="text-align: center;">
-                                                <thead>
+                                        <div class="col-lg-3">
+                                            <div style="float: left;width: 100%;"></div>
+                                            <div style="float: left;width: 10%;"><b style="color:#005ca4">b)</b>
+                                                <h3>+</h3></div>
+                                            <div style="float: left;width: 90%;">
+                                                <table style="text-align: center;">
                                                     <tr style="background-color:#FEEDDD;">
+                                                        <td><b style="color: #009ED4">um</b></td>
                                                         <td><b style="color: #76B82A">c</b></td>
                                                         <td><b style="color: #E6007E">d</b></td>
                                                         <td><b style="color: #009FE3">u</b></td>
                                                     </tr>
-                                                    <tr id="fila5">
+                                                    <tr id="fila3">
                                                         <td>
-                                                            <div class=" sum3" id="sumaNumer5"></div>
+                                                            <div class="sum2" id="sumaNume1"></div>
                                                         </td>
                                                         <td>
-                                                            <div class=" sum3" id="sumaNumer6"></div>
+                                                            <div class="sum2" id="sumaNume2"></div>
                                                         </td>
                                                         <td>
-                                                            <div class=" sum3" id="sumaNumer7"></div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr id="fila6">
-                                                        <td>
-                                                            <div class=" sum4" id="sumaNumero1"></div>
+                                                            <div class="sum2" id="sumaNume3"></div>
                                                         </td>
                                                         <td>
-                                                            <div class=" sum4" id="sumaNumero2"></div>
-                                                        </td>
-                                                        <td>
-                                                            <div class=" sum4" id="sumaNumero3"></div>
+                                                            <div class="sum2" id="sumaNume4"></div>
                                                         </td>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr id="resp3">
+                                                    <tr id="fila4">
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta1">
+                                                            <div class="sum2" id="sumaNume5"></div>
                                                         </td>
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta2">
+                                                            <div class="sum2" id="sumaNume6"></div>
                                                         </td>
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta3">
+                                                            <div class="sum2" id="sumaNume7"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="sum2" id="sumaNume8"></div>
                                                         </td>
                                                     </tr>
-                                                </tbody>
-                                            </table>
+                                                    <tr id="resp2">
+                                                        <td>
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma4">
+                                                        </td>
+                                                        <td>
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma5">
+                                                        </td>
+                                                        <td>
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma6">
+                                                        </td>
+                                                        <td>
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma7">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-3">-
-                                            <table style="text-align: center;">
-                                                <tr style="background-color:#FEEDDD;">
-                                                    <td><b style="color: #009ED4">um</b></td>
-                                                    <td><b style="color: #76B82A">c</b></td>
-                                                    <td><b style="color: #E6007E">d</b></td>
-                                                    <td><b style="color: #009FE3">u</b></td>
-                                                </tr>
-                                                <tr id="fila7">
-                                                    <td>
-                                                        <div class="sum5" id="resNume1"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum5" id="resNume2"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum5" id="resNume3"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum5" id="resNume4"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr id="fila8">
-                                                    <td>
-                                                        <div class="sum6" id="resNumero5"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum6" id="resNumero6"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum6" id="resNumero7"></div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="sum6" id="resNumero8"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr id="resp4">
-                                                    <td>
-                                                        <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta4">
-                                                    </td>
-                                                    <td>
-                                                        <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta5">
-                                                    </td>
-                                                    <td>
-                                                        <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta6">
-                                                    </td>
-                                                    <td>
-                                                        <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta7">
-                                                    </td>
-                                                </tr>
-                                            </table>
+                                        <div class="col-lg-3">
+                                            <div style="float: left;width: 100%;"></div>
+                                            <div style="float: left;width: 10%;"><b style="color:#005ca4">c)</b>
+                                                <h3>-</h3></div>
+                                            <div style="float: left;width: 90%;">
+                                                <table style="text-align: center;">
+                                                    <thead>
+                                                        <tr style="background-color:#FEEDDD;">
+                                                            <td><b style="color: #76B82A">c</b></td>
+                                                            <td><b style="color: #E6007E">d</b></td>
+                                                            <td><b style="color: #009FE3">u</b></td>
+                                                        </tr>
+                                                        <tr id="fila5">
+                                                            <td>
+                                                                <div class=" sum3" id="sumaNumer5"></div>
+                                                            </td>
+                                                            <td>
+                                                                <div class=" sum3" id="sumaNumer6"></div>
+                                                            </td>
+                                                            <td>
+                                                                <div class=" sum3" id="sumaNumer7"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="fila6">
+                                                            <td>
+                                                                <div class=" sum4" id="sumaNumero1"></div>
+                                                            </td>
+                                                            <td>
+                                                                <div class=" sum4" id="sumaNumero2"></div>
+                                                            </td>
+                                                            <td>
+                                                                <div class=" sum4" id="sumaNumero3"></div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr id="resp3">
+                                                            <td>
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta1">
+                                                            </td>
+                                                            <td>
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta2">
+                                                            </td>
+                                                            <td>
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta3">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div style="float: left;width: 100%;"></div>
+                                            <div style="float: left;width: 10%;"><b style="color:#005ca4">d)</b>
+                                                <h3>-</h3></div>
+                                            <div style="float: left;width: 90%;">
+                                                <table style="text-align: center;">
+                                                    <tr style="background-color:#FEEDDD;">
+                                                        <td><b style="color: #009ED4">um</b></td>
+                                                        <td><b style="color: #76B82A">c</b></td>
+                                                        <td><b style="color: #E6007E">d</b></td>
+                                                        <td><b style="color: #009FE3">u</b></td>
+                                                    </tr>
+                                                    <tr id="fila7">
+                                                        <td>
+                                                            <div class="sum5" id="resNume1"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="sum5" id="resNume2"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="sum5" id="resNume3"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="sum5" id="resNume4"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="fila8">
+                                                        <td>
+                                                            <div class="sum6" id="resNumero5"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="sum6" id="resNumero6"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="sum6" id="resNumero7"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="sum6" id="resNumero8"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="resp4">
+                                                        <td>
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta4">
+                                                        </td>
+                                                        <td>
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta5">
+                                                        </td>
+                                                        <td>
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta6">
+                                                        </td>
+                                                        <td>
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta7">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -700,32 +722,32 @@ table tr th div span {
                                                 <td align="right"><img class="img-responsive" src="img/flecha1.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="ptr1" class="form-control" type="text" placeholder="+0"></input>
+                                                    <input style="text-align:center;" id="ptr1" class="saltos" type="text" placeholder="+0"></input>
                                                 </td>
                                                 <td><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="ptr2" class="form-control" type="text" placeholder="+0"></input>
+                                                    <input style="text-align:center;" id="ptr2" class="saltos" type="text" placeholder="+0"></input>
                                                 </td>
                                                 <td><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="ptr3" class="form-control" type="text" placeholder="+0"></input>
+                                                    <input style="text-align:center;" id="ptr3" class="saltos" type="text" placeholder="+0"></input>
                                                 </td>
                                                 <td><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="ptr4" class="form-control" type="text" placeholder="+0"></input>
+                                                    <input style="text-align:center;" id="ptr4" class="saltos" type="text" placeholder="+0"></input>
                                                 </td>
                                                 <td><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="ptr5" class="form-control" type="text" placeholder="+0"></input>
+                                                    <input style="text-align:center;" id="ptr5" class="saltos" type="text" placeholder="+0"></input>
                                                 </td>
                                                 <td><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="ptr6" class="form-control" type="text" placeholder="+0"></input>
+                                                    <input style="text-align:center;" id="ptr6" class="saltos" type="text" placeholder="+0"></input>
                                                 </td>
                                                 <td align="left"><img class="img-responsive" src="img/flecha3.png"></img>
                                                 </td>
@@ -733,31 +755,31 @@ table tr th div span {
                                             <tr style="text-align:center;">
                                                 <td><span>Sucesión:</span></td>
                                                 <td>
-                                                    <input style="text-align:center;" id="numI1" disabled type="text" class="form-control" name="">
+                                                    <input style="text-align:center;" id="numI1" disabled type="text" class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" id="numI2" disabled type="text" class="form-control" name="">
+                                                    <input style="text-align:center;" id="numI2" disabled type="text" class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succ1" class="form-control" name="">
+                                                    <input style="text-align:center;" type="text" placeholder="0" id="succ1" class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succ2" class="form-control" name="">
+                                                    <input style="text-align:center;" type="text" placeholder="0" id="succ2" class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" id="numI3" disabled type="text" class="form-control" name="">
+                                                    <input style="text-align:center;" id="numI3" disabled type="text" class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succ3" class="form-control" name="">
+                                                    <input style="text-align:center;" type="text" placeholder="0" id="succ3" class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" id="numI4" disabled type="text" class="form-control" name="">
+                                                    <input style="text-align:center;" id="numI4" disabled type="text" class="saltos" name="">
                                                 </td>
                                             </tr>
                                         </table>
@@ -769,32 +791,32 @@ table tr th div span {
                                                 <td align="right"><img class="img-responsive" src="img/flecha1.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="patron1" class="form-control" type="text" placeholder="-0"></input>
+                                                    <input style="text-align:center;" id="patron1" class="saltos" type="text" placeholder="-0"></input>
                                                 </td>
                                                 <td align="right"><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="patron2" class="form-control" type="text" placeholder="-0"></input>
+                                                    <input style="text-align:center;" id="patron2" class="saltos" type="text" placeholder="-0"></input>
                                                 </td>
                                                 <td align="right"><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="patron3" class="form-control" type="text" placeholder="-0"></input>
+                                                    <input style="text-align:center;" id="patron3" class="saltos" type="text" placeholder="-0"></input>
                                                 </td>
                                                 <td align="right"><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="patron4" class="form-control" type="text" placeholder="-0"></input>
+                                                    <input style="text-align:center;" id="patron4" class="saltos" type="text" placeholder="-0"></input>
                                                 </td>
                                                 <td align="right"><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="patron5" class="form-control" type="text" placeholder="-0"></input>
+                                                    <input style="text-align:center;" id="patron5" class="saltos" type="text" placeholder="-0"></input>
                                                 </td>
                                                 <td align="right"><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="patron6" class="form-control" type="text" placeholder="-0"></input>
+                                                    <input style="text-align:center;" id="patron6" class="saltos" type="text" placeholder="-0"></input>
                                                 </td>
                                                 <td align="left"><img class="img-responsive" src="img/flecha3.png"></img>
                                                 </td>
@@ -802,31 +824,31 @@ table tr th div span {
                                             <tr style="text-align:center;">
                                                 <td><span>Sucesión:</span></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" id="numR1" disabled class="form-control" name="">
+                                                    <input style="text-align:center;" type="text" id="numR1" disabled class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" id="numR2" disabled class="form-control" name="">
+                                                    <input style="text-align:center;" type="text" id="numR2" disabled class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe1" class="form-control" name="">
+                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe1" class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe2" class="form-control" name="">
+                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe2" class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe3" class="form-control" name="">
+                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe3" class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" id="numR3" disabled class="form-control" name="">
+                                                    <input style="text-align:center;" type="text" id="numR3" disabled class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe4" class="form-control" name="">
+                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe4" class="saltos" name="">
                                                 </td>
                                             </tr>
                                         </table>
@@ -855,23 +877,17 @@ table tr th div span {
                                 <!--INICIO COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
                                 <div class="text-question">
                                     <input type="text" name="" id="nota1_7" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>7.- Relaciona</b> cada figura geométrica con sus características. <b>Observa</b> el ejemplo.</span>
-                                    <div>
-                                        <div style="float: left;width:90%;">
-                                            <table>
-                                                <tr>
-                                                    <td><img class="img-responsive" src="img/i1_p13_act1.jpg"></img>
-                                                    </td>
-                                                    <td> <b style="color: #337ab7">a)</b> Tengo 3 lados y 3 vértices.
-                                                        <br>
-                                                        <b style="color: #337ab7">b)</b> Tengo 4 lados y 4 vértices.
-                                                        <br>
-                                                        <b style="color: #337ab7">c)</b> No tengo lados ni vértices.
-                                                        <br>
-                                                        <b style="color: #337ab7">d)</b> Tengo 5 lados y 5 vértices.</td>
-                                                </tr>
-                                            </table>
+                                    <div class="row">
+                                        <div class="col-lg-4"><img class="img-responsive" src="img/i1_p13_act1.jpg"></img>
                                         </div>
-                                        <div style="float: left;width:10%;">
+                                        <div class="col-lg-4"><b style="color: #337ab7">a)</b> Tengo 3 lados y 3 vértices.
+                                            <br>
+                                            <b style="color: #337ab7">b)</b> Tengo 4 lados y 4 vértices.
+                                            <br>
+                                            <b style="color: #337ab7">c)</b> No tengo lados ni vértices.
+                                            <br>
+                                            <b style="color: #337ab7">d)</b> Tengo 5 lados y 5 vértices.</div>
+                                        <div class="col-lg-4">
                                             <div>(1,c)</div>
                                             <div>(2,
                                                 <input size="1" maxlength="1" type="text" class="form" id="tx1" onKeyUp="this.value=this.value.toLowerCase();" name="">)</div>
@@ -929,174 +945,172 @@ table tr th div span {
                                 <br>
                                 <div class="text-question">
                                     <input type="text" name="" id="nota1_9" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>9.- Calcula</b> Calcula el perímetro de las siguientes figuras:</span>
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <tr>
-                                                <td align="center">
-                                                    <table>
-                                                        <tr>
-                                                            <td style="color: transparent;">cm</td>
-                                                            <td style="color: transparent;">cm</td>
-                                                            <td style="color: transparent;">cm</td>
-                                                            <td style="color: transparent;">cm</td>
-                                                            <td style="color: transparent;">cm</td>
-                                                            <td style="color: transparent;">cm</td>
-                                                            <td style="color: transparent;">cm</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td>
-                                                                <div class="numerosAletorio" id="nAlt1"></div>
-                                                            </td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="numerosAletorio" id="nAlt2"></div>
-                                                            </td>
-                                                            <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                            <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                            <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                            <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                            <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                            <td>
-                                                                <div class="numerosAletorio" id="nAlt3"></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="7" style="text-align:center;">
-                                                                <div class="numerosAletorio" id="nAlt4"></div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    P=
-                                                    <input type="number" name="" style="width:50px; border-radius: 10px;" id="peri1" min="0">cm
-                                                </td>
-                                                <td align="center">
-                                                    <table>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>
-                                                                <div class="numerosAletorio" id="nAlt5"></div>
-                                                            </td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td rowspan="2">
-                                                                <div class="numerosAletorio" id="nAlt6"></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>
-                                                                <div class="numerosAletorio" id="nAlt7"></div>
-                                                            </td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="numerosAletorio" id="nAlt8"></div>
-                                                            </td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="8" style="text-align:center;">
-                                                                <div class="numerosAletorio" id="nAlt9"></div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <div align="center">P=
-                                                        <input type="number" style="width:50px; border-radius: 10px;" id="peri2" min="0">cm</div>
-                                                </td>
-                                                <td align="center">
-                                                    <table>
-                                                        <tr>
-                                                            <td colspan="8" style="text-align:center;">
-                                                                <div class="numerosAletorio" id="nAlt10"></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                            <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                            <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                            <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                            <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                            <td>
-                                                                <div class="numerosAletorio" id="nAlt11"></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>
-                                                                <div class="numerosAletorio" id="nAlt12"></div>
-                                                            </td>
-                                                            <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                            <td>
-                                                                <div class="numerosAletorio" id="nAlt13"></div>
-                                                            </td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="8" style="text-align:center;">
-                                                                <div class="numerosAletorio" id="nAlt14"></div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <div align="center">P=
-                                                        <input type="number" style="width:50px; border-radius: 10px;" id="peri3" min="0">cm</div>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <div class="row">
+                                        <div class="col-lg-4" class="center">
+                                            <table>
+                                                <tr>
+                                                    <td style="color: transparent;">cm</td>
+                                                    <td style="color: transparent;">cm</td>
+                                                    <td style="color: transparent;">cm</td>
+                                                    <td style="color: transparent;">cm</td>
+                                                    <td style="color: transparent;">cm</td>
+                                                    <td style="color: transparent;">cm</td>
+                                                    <td style="color: transparent;">cm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="numerosAletorio" id="nAlt1"></div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="numerosAletorio" id="nAlt2"></div>
+                                                    </td>
+                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
+                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
+                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
+                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
+                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
+                                                    <td>
+                                                        <div class="numerosAletorio" id="nAlt3"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="7" style="text-align:center;">
+                                                        <div class="numerosAletorio" id="nAlt4"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div>P=
+                                                <input type="number" name="" style="width:50px; border-radius: 10px;" id="peri1" min="0">cm</div>
+                                        </div>
+                                        <div class="col-lg-4" class="center">
+                                            <table>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="numerosAletorio" id="nAlt5"></div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td rowspan="2">
+                                                        <div class="numerosAletorio" id="nAlt6"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="numerosAletorio" id="nAlt7"></div>
+                                                    </td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="numerosAletorio" id="nAlt8"></div>
+                                                    </td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="8" style="text-align:center;">
+                                                        <div class="numerosAletorio" id="nAlt9"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <span align="center">P=
+                                                <input type="number" style="width:50px; border-radius: 10px;" id="peri2" min="0">cm</span>
+                                        </div>
+                                        <div class="col-lg-4" class="center">
+                                            <table>
+                                                <tr>
+                                                    <td colspan="8" style="text-align:center;">
+                                                        <div class="numerosAletorio" id="nAlt10"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
+                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
+                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
+                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
+                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
+                                                    <td>
+                                                        <div class="numerosAletorio" id="nAlt11"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="numerosAletorio" id="nAlt12"></div>
+                                                    </td>
+                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
+                                                    <td>
+                                                        <div class="numerosAletorio" id="nAlt13"></div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="8" style="text-align:center;">
+                                                        <div class="numerosAletorio" id="nAlt14"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                           <span> P=
+                                                <input type="number" style="width:50px; border-radius: 10px;" id="peri3" min="0">cm <br></span>
+                                            <br>
+                                        </div>
+                                        <br>
                                     </div>
                                 </div>
                                 <div class="text-question">
@@ -1116,23 +1130,19 @@ table tr th div span {
                                 </div>
                                 <div class="text-question">
                                     <input type="text" name="" id="nota1_11" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>11.- Completa</b> las afirmaciones y relaciona con líneas el texto y el gráfico correspondiente.</span>
-                                    <div>
-                                        <table class="table">
-                                            <tr style="text-align: center;">
-                                                <td align="center">Un ángulo
-                                                    <input id="ang1" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name="">mide 90°
-                                                    <br><img src="img/i4_p13_act1.jpg" alt="" class="img-responsive"></td>
-                                                <td align="center">Un ángulo
-                                                    <input id="ang2" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide menos de 90°
-                                                    <br><img src="img/i5_p13_act1.jpg" alt="" class="img-responsive"></td>
-                                                <td align="center">Un ángulo
-                                                    <input id="ang3" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide 180°
-                                                    <br><img src="img/i6_p13_act1.jpg" alt="" class="img-responsive"></td>
-                                                <td align="center">Un ángulo
-                                                    <input id="ang4" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide más de 90° pero menos de 180°
-                                                    <br><img src="img/i7_p13_act1.jpg" alt="" class="img-responsive"></td>
-                                            </tr>
-                                        </table>
+                                    <div class="row">
+                                        <div class="col-lg-3" align="left">Un ángulo
+                                            <input id="ang1" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name="">mide 90°
+                                            <br><br><img src="img/i4_p13_act1.jpg" alt="" class="img-responsive"></div>
+                                        <div class="col-lg-3" align="left">Un ángulo
+                                            <input id="ang2" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide menos de 90°
+                                            <br><br><img src="img/i5_p13_act1.jpg" alt="" class="img-responsive"></div>
+                                        <div class="col-lg-3" align="left">Un ángulo
+                                            <input id="ang3" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide 180°
+                                            <br><br><img src="img/i6_p13_act1.jpg" alt="" class="img-responsive"></div>
+                                        <div class="col-lg-3" align="left">Un ángulo
+                                            <input id="ang4" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide más de 90° pero menos de 180°
+                                            <br><br><img src="img/i7_p13_act1.jpg" alt="" class="img-responsive"></div>
                                     </div>
                                 </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
