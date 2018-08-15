@@ -23,6 +23,7 @@
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
+    width: auto;
 }
 
 .nota-abierta1 {
@@ -48,13 +49,11 @@
 .correcto {
     color: #ffffff;
     background-color: #8FB435;
-    font-weight: 700;
 }
 
 .incorrecto {
     color: #ffffff;
     background-color: #E76E80;
-    font-weight: 700;
 }
 
 .desactivar {
@@ -69,9 +68,11 @@
 
 input {
     text-align: center;
-    border: 0;
+    border: 1;
     border-bottom: 1px solid #85BCEB;
     width: 100px;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 .pasos {
@@ -95,6 +96,9 @@ input {
 
 .tachado {
     text-decoration: line-through;
+}
+.dndAligned {
+    display: grid;
 }
 </style>
 
@@ -142,7 +146,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad68()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" >
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -177,31 +181,116 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
+                    <img class="img-responsive" src="img/practica_individual.png"></img>
                     <div class="row" align="">
-                        <div class="col-lg-3"><img src="img/i1_p44_act68.jpg" class="img-responsive"></img>
+                        <div class="col-lg-12">
+                            <input type="text" name="" class="nota-abierta" id="nota1" style="display: none;"><span><b style="color: #005ca4">1.</b> <b>Escribe</b> el siglo en el que aparecieron los siguientes inventos.</span>
+                            <table>
+                                <tr>
+                                    <td><b style="color: #005ca4">a)</b></td>
+                                    <td class="sum" id="sumaNum1"></td>
+                                </tr>
+                                <tr>
+                                    <td><b style="color: #005ca4">b)</b></td>
+                                    <td class="sum" id="sumaNum2"></td>
+                                </tr>
+                                <tr>
+                                    <td><b style="color: #005ca4">c)</b></td>
+                                    <td class="sum" id="sumaNum3"></td>
+                                </tr>
+                                <tr>
+                                    <td><b style="color: #005ca4">d)</b></td>
+                                    <td class="sum" id="sumaNum4"></td>
+                                </tr>
+                                <tr>
+                                    <td><b style="color: #005ca4">e)</b></td>
+                                    <td class="sum" id="sumaNum5"></td>
+                                </tr>
+                            </table>
                         </div>
-                        <div class="col-lg-9">
-                            <div class="text-question">
-                                <input type="text" name="" class="nota-abierta1" id="nota1"><span><b>Repasa</b> la lectura, <b>reflexiona</b> y <b>responde</b> las preguntas.</span>
-                                <br>
-                                <br>
-                                <span><b style="color: #98007f">•</b>¿Cuantos años han pasado desde la inauguración del Cristo Redentor hasta el año 2018?</span>
-                                <br>
-                                <span><h style="background: #FFEBB3;border-radius:40px;padding: 5px;">Han pasado</h> <input type="text" id="txt1" name=""></span>
-                                <br>
-                                <br>
-                                <span><b style="color: #98007f">•</b>Sabiendo que un siglo son 100 años, consideras que ya ha pasado un siglo desde la inauguración del Cristo Redentor.</span>
-                                <br>
-                                <span>¿Cuántos años han pasado desde la inauguración hasta el año 2018? <input type="text" id="txt2" name="" class="form-control"></span>
-                            </div>
-                            <div class="text-question">
-                                 <input type="text" name="" class="nota-abierta1" id="nota2" disabled><span><b>Lee</b> y <b>completa</b>.</span>
-                                <br><br>
-                                <span><b style="color: #98007f">•</b>  <h style="background: #A2D9F1;border-radius:40px;padding: 5px;">1 siglo</h> = 100 años; entonces, hace menos de un <input type="text" id="txt3" name=""> que se inauguró el Cristo Redentor.</span><br><br>
-                                <span><b style="color: #98007f">•</b>  <h style="background: #FFEBB3;border-radius:40px;padding: 5px;">1 década</h> = 10 años; entonces, hace <input type="text" id="txt4" name=""> décadas y 7 años que se inauguró el Cristo Redentor.</span><br><br>
-                                <span><b style="color: #98007f">•</b>  <h style="background: #DECBE4;border-radius:40px;padding: 5px;">1 lustro</h> = 5 años; entonces, hace 17 lustros y <input type="text" id="txt5" name=""> años que se inauguró el Cristo Redentor.</span>
-                            </div>
+                    </div>
+                </div>
+                <div class="text-question">
+                    <input type="text" name="" class="nota-abierta" id="nota2" style="display: none;"><span><b style="color: #005ca4">2.</b> <b>Completa</b> las equivalencias.</span>
+                    <div class="row" align="">
+                        <div class="col-lg-12">
+                            <br>
+
+                            <table>
+                                <tr>
+                                    <td><b style="color: #005ca4">a)</b></td>
+                                    <td class="sum1" id="suma1Num1"></td>
+                                </tr>
+                                <tr>
+                                    <td><b style="color: #005ca4">b)</b></td>
+                                    <td class="sum1" id="suma1Num2"></td>
+                                </tr>
+                                <tr>
+                                    <td><b style="color: #005ca4">c)</b></td>
+                                    <td class="sum1" id="suma1Num3"></td>
+                                </tr>
+                                <tr>
+                                    <td><b style="color: #005ca4">d)</b></td>
+                                    <td class="sum1" id="suma1Num4"></td>
+                                </tr>
+                                <tr>
+                                    <td><b style="color: #005ca4">e)</b></td>
+                                    <td class="sum1" id="suma1Num5"></td>
+                                </tr>
+                                <tr>
+                                    <td><b style="color: #005ca4">f)</b></td>
+                                    <td class="sum1" id="suma1Num6"></td>
+                                </tr>
+                            </table>
                         </div>
+                    </div>
+                </div>
+                <div class="text-question">
+                    <br>
+                    <input type="text" name="" class="nota-abierta" id="nota3" style="display: none;"><span><b style="color: #005ca4">3.</b> Relaciona con una línea cada momento histórico el tiempo transcurrido hasta el año 2018.</span>
+                    <div class="table-responsive actividad1" style="align-content: center;">
+                        <table class="">
+                            <tr>
+                                <td>
+                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas dndAligned imagen" id="caja_img1"></div>
+                                </td>
+                                <td>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas dndAligned texto" id="caja_txt1"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas dndAligned imagen" id="caja_img2"></div>
+                                </td>
+                                <td>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas dndAligned texto" id="caja_txt2"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas dndAligned imagen" id="caja_img3"></div>
+                                </td>
+                                <td>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas dndAligned texto" id="caja_txt3"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas dndAligned imagen" id="caja_img4"></div>
+                                </td>
+                                <td>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas dndAligned texto" id="caja_txt4"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas dndAligned imagen" id="caja_img5"></div>
+                                </td>
+                                <td>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas dndAligned texto" id="caja_txt5"></div>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -251,9 +340,10 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad68.js"></script>
+    <script src="js/actividad70.js"></script>
+    <script src="js/dragNdrop.js"></script>
     <script type="text/javascript">
-    var titulos = "reflexiono";
+    var titulos = "aplico";
     $("#txtNota").html("0");
     $("#n_pagina").html("37");
     </script>

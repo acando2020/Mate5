@@ -142,7 +142,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad68()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad69()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -178,30 +178,30 @@ input {
                 <!--pregunats de la actividad-->
                 <div class="text-question">
                     <div class="row" align="">
-                        <div class="col-lg-3"><img src="img/i1_p44_act68.jpg" class="img-responsive"></img>
+                        <div class="col-lg-6" align="justify">El uso de la brújula se extendió en Europa alrededor del año 1197 y la bicicleta se inventó en el año 1842. <b>Calcula</b> los siglos en los que se dieron estos hechos.</div>
+                        <div class="col-lg-6"><img class="img-responsive" src="img/i1_p44_act69.jpg"></img>
                         </div>
-                        <div class="col-lg-9">
-                            <div class="text-question">
-                                <input type="text" name="" class="nota-abierta1" id="nota1"><span><b>Repasa</b> la lectura, <b>reflexiona</b> y <b>responde</b> las preguntas.</span>
-                                <br>
-                                <br>
-                                <span><b style="color: #98007f">•</b>¿Cuantos años han pasado desde la inauguración del Cristo Redentor hasta el año 2018?</span>
-                                <br>
-                                <span><h style="background: #FFEBB3;border-radius:40px;padding: 5px;">Han pasado</h> <input type="text" id="txt1" name=""></span>
-                                <br>
-                                <br>
-                                <span><b style="color: #98007f">•</b>Sabiendo que un siglo son 100 años, consideras que ya ha pasado un siglo desde la inauguración del Cristo Redentor.</span>
-                                <br>
-                                <span>¿Cuántos años han pasado desde la inauguración hasta el año 2018? <input type="text" id="txt2" name="" class="form-control"></span>
-                            </div>
-                            <div class="text-question">
-                                 <input type="text" name="" class="nota-abierta1" id="nota2" disabled><span><b>Lee</b> y <b>completa</b>.</span>
-                                <br><br>
-                                <span><b style="color: #98007f">•</b>  <h style="background: #A2D9F1;border-radius:40px;padding: 5px;">1 siglo</h> = 100 años; entonces, hace menos de un <input type="text" id="txt3" name=""> que se inauguró el Cristo Redentor.</span><br><br>
-                                <span><b style="color: #98007f">•</b>  <h style="background: #FFEBB3;border-radius:40px;padding: 5px;">1 década</h> = 10 años; entonces, hace <input type="text" id="txt4" name=""> décadas y 7 años que se inauguró el Cristo Redentor.</span><br><br>
-                                <span><b style="color: #98007f">•</b>  <h style="background: #DECBE4;border-radius:40px;padding: 5px;">1 lustro</h> = 5 años; entonces, hace 17 lustros y <input type="text" id="txt5" name=""> años que se inauguró el Cristo Redentor.</span>
-                            </div>
+                        <div class="col-lg-6"><span class="pasos">Paso 1</span>
+                            <br><span><b>Eliminamos</b> las cifras de las unidades y las decenas.</span>
+                            <br>
+                            <span><b style="color: #005ca4">a)</b> 1197 → 1100</span>
+                            <br>
+                            <span><b style="color: #005ca4">b)</b> 1 842 → 1800</span>
                         </div>
+                        <div class="col-lg-6"><span class="pasos">Paso 2</span>
+                            <br><span><b>Eliminamos</b> los ceros del número. Es el número que queda al dividir para 100, que son los años que tiene un siglo.</span>
+                            <br>
+                            <span><b style="color: #005ca4">a)</b> 1100 ÷ 100 = 11</span>
+                            <br>
+                            <span><b style="color: #005ca4">b)</b> 1 800 ÷ 100 = 18</span></div>
+                        <div class="col-lg-6"><span class="pasos">Paso 3</span><span><br><b>Sumamos</b> una unidad al número y el resultado es el siglo al que corresponde ese año.</span>
+                            <br>
+                            <span><b style="color: #005ca4">a)</b> 11 + 1 = <input type="text" id="num1" name=""></span>
+                            <br>
+                            <span><b style="color: #005ca4">b)</b> 18 + 1 = <input type="text" id="num2" name=""></span></div>
+                        <div class="col-lg-6"><span class="pasos">Paso 4</span>
+                            <br><b>Respondemos.</b>
+                            <br> El uso de la brújula se generalizó en Europa en el siglo 12, y la bicicleta se inventó en el siglo 19.</div>
                     </div>
                 </div>
             </div>
@@ -251,11 +251,40 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad68.js"></script>
     <script type="text/javascript">
-    var titulos = "reflexiono";
+    var titulos = "aplico";
     $("#txtNota").html("0");
     $("#n_pagina").html("37");
+
+    function actividad69() {
+        var num1 = document.getElementById('num1').value;
+        var num2 = document.getElementById('num2').value;
+        var nota1 = 0,
+            nota2 = 0;
+        if (num1 == "12") {
+            nota1 = 5;
+            $('#num1').css("background", "#00e600");
+
+        } else {
+            $('#num1').css("background", "#ff6666");
+
+        }
+
+        if (num2 == "19") {
+            nota2 = 5;
+            $('#num2').css("background", "#00e600");
+
+        } else {
+            $('#num2').css("background", "#ff6666");
+
+        }
+        var total = parseFloat(nota1) + parseFloat(nota2);
+        $('#txtNota').html(total.toFixed(2));
+        document.getElementById('bt_comprobar').disabled = true;
+        $('input').attr("disabled", true);
+        $('#txtAlumno').attr("disabled", false);
+
+    }
     </script>
 </body>
 

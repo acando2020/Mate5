@@ -23,6 +23,7 @@
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
+    width: auto;
 }
 
 .nota-abierta1 {
@@ -48,13 +49,11 @@
 .correcto {
     color: #ffffff;
     background-color: #8FB435;
-    font-weight: 700;
 }
 
 .incorrecto {
     color: #ffffff;
     background-color: #E76E80;
-    font-weight: 700;
 }
 
 .desactivar {
@@ -69,9 +68,11 @@
 
 input {
     text-align: center;
-    border: 0;
+    border: 1;
     border-bottom: 1px solid #85BCEB;
     width: 100px;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 .pasos {
@@ -95,6 +96,10 @@ input {
 
 .tachado {
     text-decoration: line-through;
+}
+
+.dndAligned {
+    display: grid;
 }
 </style>
 
@@ -142,7 +147,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad68()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad71()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -177,31 +182,25 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
+                    <img class="img-responsive" src="img/problema.png"></img>
                     <div class="row" align="">
-                        <div class="col-lg-3"><img src="img/i1_p44_act68.jpg" class="img-responsive"></img>
+                        <div class="col-lg-12">
+                            <input type="text" name="" class="nota-abierta" id="nota1" style="display: none;"><span><b style="color: #005ca4">1.</b> <b>Lee, marca</b> las edades en la línea de tiempo y <b>resuelve</b> la siguiente situación. Jacinto y su mamá cumplen años el mismo día. Jacinto nació el 15 de agosto del año 2011 y su mamá, en año 1981. ¿Qué edad tenía la mamá cuando nació Jacinto? <b>Exprésala</b> en décadas.</span>
+                            <img class="img-responsive" src="img/i1_p45_act71.png"></img>
+                            <textarea cols="30" rows="2" style="resize: none" class="form-control" placeholder="resuelve"></textarea>
+                            <br>
+                            <span><b style="color: #005ca4">R.</b> La mamá de Jacinto tenía <input type="number" id="num1" name="">años, que equivalen a <input type="number" id="num2" name="">décadas.</span>
                         </div>
-                        <div class="col-lg-9">
-                            <div class="text-question">
-                                <input type="text" name="" class="nota-abierta1" id="nota1"><span><b>Repasa</b> la lectura, <b>reflexiona</b> y <b>responde</b> las preguntas.</span>
-                                <br>
-                                <br>
-                                <span><b style="color: #98007f">•</b>¿Cuantos años han pasado desde la inauguración del Cristo Redentor hasta el año 2018?</span>
-                                <br>
-                                <span><h style="background: #FFEBB3;border-radius:40px;padding: 5px;">Han pasado</h> <input type="text" id="txt1" name=""></span>
-                                <br>
-                                <br>
-                                <span><b style="color: #98007f">•</b>Sabiendo que un siglo son 100 años, consideras que ya ha pasado un siglo desde la inauguración del Cristo Redentor.</span>
-                                <br>
-                                <span>¿Cuántos años han pasado desde la inauguración hasta el año 2018? <input type="text" id="txt2" name="" class="form-control"></span>
-                            </div>
-                            <div class="text-question">
-                                 <input type="text" name="" class="nota-abierta1" id="nota2" disabled><span><b>Lee</b> y <b>completa</b>.</span>
-                                <br><br>
-                                <span><b style="color: #98007f">•</b>  <h style="background: #A2D9F1;border-radius:40px;padding: 5px;">1 siglo</h> = 100 años; entonces, hace menos de un <input type="text" id="txt3" name=""> que se inauguró el Cristo Redentor.</span><br><br>
-                                <span><b style="color: #98007f">•</b>  <h style="background: #FFEBB3;border-radius:40px;padding: 5px;">1 década</h> = 10 años; entonces, hace <input type="text" id="txt4" name=""> décadas y 7 años que se inauguró el Cristo Redentor.</span><br><br>
-                                <span><b style="color: #98007f">•</b>  <h style="background: #DECBE4;border-radius:40px;padding: 5px;">1 lustro</h> = 5 años; entonces, hace 17 lustros y <input type="text" id="txt5" name=""> años que se inauguró el Cristo Redentor.</span>
-                            </div>
-                        </div>
+                        <br>
+                        <br>
+                        <div class="col-lg-6">
+                            <br><b style="color: #005ca4">2.</b>La edad de Ramiro es una década, tres lustros y cuatro años. ¿Cuántos años tiene Ramiro?
+                            <br>
+                            <br><span><b style="color: #005ca4">R.</b>Ramiro tiene <input type="number" id="num3" name=""> años.</span></div>
+                        <div class="col-lg-6">
+                            <br><b style="color: #005ca4">3.</b>¿Cuántos años debo añadir a 184 para tener 39 lustros?
+                            <br>
+                            <br><span><b style="color: #005ca4">R.</b>Debo añadir <input type="number" id="num4" name=""> años.</span></div>
                     </div>
                 </div>
             </div>
@@ -251,11 +250,68 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad68.js"></script>
+    <script src="js/actividad70.js"></script>
+    <script src="js/dragNdrop.js"></script>
     <script type="text/javascript">
-    var titulos = "reflexiono";
+    var titulos = "aplico";
     $("#txtNota").html("0");
     $("#n_pagina").html("37");
+
+    function actividad71() {
+        var num1 = document.getElementById('num1').value;
+        var num2 = document.getElementById('num2').value;
+        var num3 = document.getElementById('num3').value;
+        var num4 = document.getElementById('num4').value;
+        var nota1 = 0,
+            nota2 = 0,
+            nota3 = 0,
+            nota4 = 0;
+
+        if (num1 == "30") {
+            $('#num1').css("background", "#00e600");
+            nota1 = 1;
+
+        } else {
+            $('#num1').css("background", "#ff6666");
+
+
+        }
+        if (num2 == "3") {
+            $('#num2').css("background", "#00e600");
+            nota2 = 1;
+
+        } else {
+            $('#num2').css("background", "#ff6666");
+
+
+        }
+        if (num3 == "29") {
+            $('#num3').css("background", "#00e600");
+            nota3 = 1;
+
+        } else {
+            $('#num3').css("background", "#ff6666");
+
+
+        }
+        if (num4 == "11") {
+            $('#num4').css("background", "#00e600");
+            nota4 = 1;
+
+        } else {
+            $('#num4').css("background", "#ff6666");
+
+
+        }
+        var subtotal = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4);
+        var total = (subtotal*10)/4;
+
+        $('#txtNota').html(total.toFixed(2));
+        document.getElementById('bt_comprobar').disabled = true;
+        $('input').attr("disabled", true);
+        $('#txtAlumno').attr("disabled", false);
+
+    }
     </script>
 </body>
 
