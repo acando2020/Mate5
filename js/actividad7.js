@@ -32,16 +32,19 @@ function finitimg2() {
     var caja_txt = document.getElementsByClassName('texto');
     text.sort(f_randomico);
     for (i = 0; i < caja_txt.length; i++) {
-        $('#' + caja_txt[i].id).html('<table class="table"><tr><td><input class="form-control" alt="' + text[i][2] + '" id="T' + text[i][0] + '" value="' + text[i][1] + '" disabled></td><td><input id="V' + text[i][0] + '" type="text" name="" class="form-control"></td></tr></table>');
+        $('#' + caja_txt[i].id).html(' <div class="row">' +
+            '<div class="col-lg-6"><input class="form-control" alt="' + text[i][2] + '" id="T' + text[i][0] + '" value="' + text[i][1] + '" disabled></div>' +
+            '<div class="col-lg-6"><input id="V' + text[i][0] + '" type="text" name="" class="form-control"></div>' +
+            '</div>');
     }
 
 }
 
 
 var txt = [
-    ["1", "237 111", "Doscientos treinta y siete mil ciento once"],
-    ["2", "856 703", "Ochocientos cincuenta y seis mil setecientos tres"], //respuesta correcta
-    ["3", "175 258", "Ciento setenta y cinco mil doscientos cincuenta y ocho"],
+    ["1", "237 111", "doscientos treinta y siete mil ciento once"],
+    ["2", "856 703", "ochocientos cincuenta y seis mil setecientos tres"], //respuesta correcta
+    ["3", "175 258", "ciento setenta y cinco mil doscientos cincuenta y ocho"],
 ]
 finitimg3();
 
@@ -49,7 +52,7 @@ function finitimg3() {
     var caja_text = document.getElementsByClassName('texto3');
     txt.sort(f_randomico);
     for (i = 0; i < caja_text.length; i++) {
-        $('#' + caja_text[i].id).html('<table class="table"><tr><td><input class="form-control" alt="' + txt[i][2] + '" id="P' + txt[i][0] + '" value="' + txt[i][1] + '" disabled></td><td><input id="W' + txt[i][0] + '" type="text" name="" class="form-control"></td></tr></table>');
+        $('#' + caja_text[i].id).html('<table class="table"><tr><td><input class="form-control" alt="' + txt[i][2] + '" id="P' + txt[i][0] + '" value="' + txt[i][1] + '" disabled></td><td><input id="W' + txt[i][0] + '" type="text" name="" class="text-lowercase form-control"></td></tr></table>');
     }
 
 }
@@ -172,11 +175,11 @@ function actividad7_2() {
 }
 
 function actividad7_3() {
-    var t1 = document.getElementById("W1").value;
+    var t1 = document.getElementById("W1").value.toLowerCase();
     var v1 = $("#P1")[0].alt;
-    var t2 = document.getElementById("W2").value;
+    var t2 = document.getElementById("W2").value.toLowerCase();
     var v2 = $("#P2")[0].alt;
-    var t3 = document.getElementById("W3").value;
+    var t3 = document.getElementById("W3").value.toLowerCase();
     var v3 = $("#P3")[0].alt;
 
     var res1 = 0,

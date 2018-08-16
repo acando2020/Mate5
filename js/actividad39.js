@@ -76,6 +76,8 @@ document.getElementById('numer7').value = parseInt(numero6) - parseInt(resta);
 
 
 
+
+
 function actividad39_1() {
     var num1 = document.getElementById('num1').value;
     var num2 = document.getElementById('num2').value;
@@ -193,14 +195,17 @@ function actividad39_3() {
 
     if (sr1 == numer6) {
         $('#sr1').css("background", "#00e600");
+        nota1 = 1;
     } else {
         $('#sr1').css("background", "#ff6666");
     }
 
     if (sr2 == numer7) {
         $('#sr2').css("background", "#00e600");
+        nota2 = 1;
     } else {
         $('#sr2').css("background", "#ff6666");
+
     }
     if (patron3 == ptron1) {
         $('#patron3').css("background", "#00e600");
@@ -232,7 +237,7 @@ function actividad39() {
     var nota3 = document.getElementById('nota3').value;
     var nota4 = document.getElementById('nota4').value;
 
-    var subtotal = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3)+ parseFloat(nota4);
+    var subtotal = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4);
     total = (subtotal * 10) / 14;
     $('#txtNota').html(total.toFixed(2));
     document.getElementById('bt_comprobar').disabled = true;
@@ -274,7 +279,7 @@ function f_iniciar() {
 
 function actividad39_4() {
     var cajas = $('.cajas .drag').length;
-    var resp =0;
+    var resp = 0;
     if (cajas == 15) {
         resp = 1;
         $('#actividad39_2').css("background", "#00e600");

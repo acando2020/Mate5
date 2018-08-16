@@ -31,6 +31,7 @@ function actividad9() {
         RsA3_12 = 0,
         RsA3_13 = 0,
         RsA3_14 = 0,
+        RsA3_15 = 0,
         RsA3_16 = 0,
         RsA3_17 = 0;
 
