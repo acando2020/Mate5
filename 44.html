@@ -101,7 +101,7 @@ td {
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Completa las igualdades.
+        Compara los siguientes números y <b>selecciona</b> el signo >, < o = según corresponda.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -177,109 +177,131 @@ td {
                 <!--pregunats de la actividad-->
                 <div class="text-question">
                     <span><b style="color: #005ca4">5.</b> <b>Compara</b> los siguientes números y <b>escribe</b> el signo >, < o = según corresponda.</span>
-                    <div class="table-responsive" align="center">
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">a)&nbsp;</b></td>
-                                            <td class="com" id="completar1"></td>
-                                            <td>
-                                                <select id="select1">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar2"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">c)&nbsp;</b></td>
-                                            <td class="com" id="completar3"></td>
-                                            <td>
-                                                <select id="select2">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar4"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">e)&nbsp;</b></td>
-                                            <td class="com" id="completar5"></td>
-                                            <td>
-                                                <select id="select3">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar6"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">b)&nbsp;</b></td>
-                                            <td class="com" id="completar7"></td>
-                                            <td>
-                                                <select id="select4">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar8"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">d)&nbsp;</b></td>
-                                            <td class="com" id="completar9"></td>
-                                            <td>
-                                                <select id="select5">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar10"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><b style="color: #005ca4">f)&nbsp;</b></td>
-                                            <td class="com" id="completar11"></td>
-                                            <td>
-                                                <select id="select6">
-                                                    <option value="<"><h4><</h4></option>
-                                                    <option value="="><h4>=</h4></option>
-                                                    <option value=">"><h4>></h4></option>
-                                                </select>
-                                            </td>
-                                            <td class="com" id="completar12"></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-4">
+                                <table>
+                                    <tr>
+                                        <td><b style="color: #005ca4">a)&nbsp;</b></td>
+                                        <td class="com" id="completar1"></td>
+                                        <td>
+                                            <select id="select1">
+                                                <option value="<">
+                                                    <h4><</h4></option>
+                                                <option value="=">
+                                                    <h4>=</h4></option>
+                                                <option value=">">
+                                                    <h4>></h4></option>
+                                            </select>
+                                        </td>
+                                        <td class="com" id="completar2"></td>
+                                    </tr>
+                                </table>
+                                <br>
+                            </div>
+                            <div class="col-lg-4">
+                                <table>
+                                    <tr>
+                                        <td><b style="color: #005ca4">c)&nbsp;</b></td>
+                                        <td class="com" id="completar3"></td>
+                                        <td>
+                                            <select id="select2">
+                                                <option value="<">
+                                                    <h4><</h4></option>
+                                                <option value="=">
+                                                    <h4>=</h4></option>
+                                                <option value=">">
+                                                    <h4>></h4></option>
+                                            </select>
+                                        </td>
+                                        <td class="com" id="completar4"></td>
+                                    </tr>
+                                </table>
+                                <br>
+                            </div>
+                            <div class="col-lg-4">
+                                <table>
+                                    <tr>
+                                        <td><b style="color: #005ca4">e)&nbsp;</b></td>
+                                        <td class="com" id="completar5"></td>
+                                        <td>
+                                            <select id="select3">
+                                                <option value="<">
+                                                    <h4><</h4></option>
+                                                <option value="=">
+                                                    <h4>=</h4></option>
+                                                <option value=">">
+                                                    <h4>></h4></option>
+                                            </select>
+                                        </td>
+                                        <td class="com" id="completar6"></td>
+                                    </tr>
+                                </table>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-4">
+                                <table>
+                                    <tr>
+                                        <td><b style="color: #005ca4">b)&nbsp;</b></td>
+                                        <td class="com" id="completar7"></td>
+                                        <td>
+                                            <select id="select4">
+                                                <option value="<">
+                                                    <h4><</h4></option>
+                                                <option value="=">
+                                                    <h4>=</h4></option>
+                                                <option value=">">
+                                                    <h4>></h4></option>
+                                            </select>
+                                        </td>
+                                        <td class="com" id="completar8"></td>
+                                    </tr>
+                                </table>
+                                <br>
+                            </div>
+                            <div class="col-lg-4">
+                                <table>
+                                    <tr>
+                                        <td><b style="color: #005ca4">d)&nbsp;</b></td>
+                                        <td class="com" id="completar9"></td>
+                                        <td>
+                                            <select id="select5">
+                                                <option value="<">
+                                                    <h4><</h4></option>
+                                                <option value="=">
+                                                    <h4>=</h4></option>
+                                                <option value=">">
+                                                    <h4>></h4></option>
+                                            </select>
+                                        </td>
+                                        <td class="com" id="completar10"></td>
+                                    </tr>
+                                </table>
+                                <br>
+                            </div>
+                            <div class="col-lg-4">
+                                <table>
+                                    <tr>
+                                        <td><b style="color: #005ca4">f)&nbsp;</b></td>
+                                        <td class="com" id="completar11"></td>
+                                        <td>
+                                            <select id="select6">
+                                                <option value="<">
+                                                    <h4><</h4></option>
+                                                <option value="=">
+                                                    <h4>=</h4></option>
+                                                <option value=">">
+                                                    <h4>></h4></option>
+                                            </select>
+                                        </td>
+                                        <td class="com" id="completar12"></td>
+                                    </tr>
+                                </table>
+                                <br>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -24,6 +24,14 @@
     padding: 15px;
     margin: 5px;
 }
+.inputCaja {
+    text-align: center;
+    border: 1;
+    border-bottom: 1px solid #85BCEB;
+    width: 70px;
+    border-radius: 10px;
+}
+
 
 .cajas1 {
 
@@ -96,7 +104,7 @@ table {
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Escribe la respuesta correcta en los espacios en blanco.
+        Ubica los números en las semirrectas numéricas haciendo click en los recuedros pequeños y ordénalos de menor a mayor en las cajas en blanco.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -286,33 +294,33 @@ table {
                             <table class="table" style="width: auto;">
                                 <tr>
                                     <td>
-                                        <input class="form-control" id="num1" type="number" name="">
+                                        <input class="inputCaja" id="num1" type="number" name="">
                                     </td>
                                     <td>
                                         <b><</b>
                                     </td>
                                     <td>
-                                        <input class="form-control" id="num2" type="number" name="">
+                                        <input class="inputCaja" id="num2" type="number" name="">
                                     </td>
                                     <td>
                                         <b><</b></td>
                                     <td>
-                                        <input class="form-control" id="num3" type="number" name="">
+                                        <input class="inputCaja" id="num3" type="number" name="">
                                     </td>
                                     <td>
                                         <b><</b></td>
                                     <td>
-                                        <input class="form-control" id="num4" type="number" name="">
+                                        <input class="inputCaja" id="num4" type="number" name="">
                                     </td>
                                     <td>
                                         <b><</b></td>
                                     <td>
-                                        <input class="form-control" id="num5" type="number" name="">
+                                        <input class="inputCaja" id="num5" type="number" name="">
                                     </td>
                                     <td>
                                         <b><</b></td>
                                     <td>
-                                        <input class="form-control" id="num6" type="number" name="">
+                                        <input class="inputCaja" id="num6" type="number" name="">
                                     </td>
                                 </tr>
                             </table>
@@ -456,33 +464,33 @@ table {
                             <table class="table" style="width: auto;">
                                 <tr>
                                     <td>
-                                        <input class="form-control" id="num7" type="number" name="">
+                                        <input class="inputCaja" id="num7" type="number" name="">
                                     </td>
                                     <td>
                                         <b><</b>
                                     </td>
                                     <td>
-                                        <input class="form-control" id="num8" type="number" name="">
+                                        <input class="inputCaja" id="num8" type="number" name="">
                                     </td>
                                     <td>
                                         <b><</b></td>
                                     <td>
-                                        <input class="form-control" id="num9" type="number" name="">
+                                        <input class="inputCaja" id="num9" type="number" name="">
                                     </td>
                                     <td>
                                         <b><</b></td>
                                     <td>
-                                        <input class="form-control" id="num10" type="number" name="">
+                                        <input class="inputCaja" id="num10" type="number" name="">
                                     </td>
                                     <td>
                                         <b><</b></td>
                                     <td>
-                                        <input class="form-control" id="num11" type="number" name="">
+                                        <input class="inputCaja" id="num11" type="number" name="">
                                     </td>
                                     <td>
                                         <b><</b></td>
                                     <td>
-                                        <input class="form-control" id="num12" type="number" name="">
+                                        <input class="inputCaja" id="num12" type="number" name="">
                                     </td>
                                 </tr>
                             </table>
@@ -538,7 +546,7 @@ table {
         <script type="text/javascript">
         var titulos = "refuerzo";
         $("#txtNota").html("0");
-        $("#n_pagina").html("19");
+        $("#n_pagina").html("32");
         </script>
 </body>
 

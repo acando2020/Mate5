@@ -7,7 +7,7 @@ var tablas = [
         '</td>' +
         '</tr>' +
         '<tr>' +
-        '<td>=</td>' +
+        '<td style=" text-align: right;">=</td>' +
         '<td>' +
         '<input type="text" id="d2" class="form-control" name="">' +
         '</td>' +
@@ -22,7 +22,7 @@ var tablas = [
         '</td>' +
         '</tr>' +
         '<tr>' +
-        '<td>=</td>' +
+        '<td style=" text-align: right;">=</td>' +
         '<td>' +
         '<input type="text" id="g2" class="form-control" name="">' +
         '</td>' +
@@ -37,7 +37,7 @@ var tablas = [
         '</td>' +
         '</tr>' +
         '<tr>' +
-        '<td>=</td>' +
+        '<td style=" text-align: right;">=</td>' +
         '<td>' +
         '<input type="text" id="b2" class="form-control" name="">' +
         '</td>' +
@@ -52,7 +52,7 @@ var tablas = [
         '</td>' +
         '</tr>' +
         '<tr>' +
-        '<td>=</td>' +
+        '<td style=" text-align: right;">=</td>' +
         '<td>' +
         '<input type="text" id="e2" class="form-control" name="">' +
         '</td>' +
@@ -67,7 +67,7 @@ var tablas = [
         '</td>' +
         '</tr>' +
         '<tr>' +
-        '<td>=</td>' +
+        '<td style=" text-align: right;">=</td>' +
         '<td>' +
         '<input type="text" id="h2" class="form-control" name="">' +
         '</td>' +
@@ -82,7 +82,7 @@ var tablas = [
         '</td>' +
         '</tr>' +
         '<tr>' +
-        '<td>=</td>' +
+        '<td style=" text-align: right;">=</td>' +
         '<td>' +
         '<input type="text" id="c2" class="form-control" name="">' +
         '</td>' +
@@ -97,7 +97,7 @@ var tablas = [
         '</td>' +
         '</tr>' +
         '<tr>' +
-        '<td>=</td>' +
+        '<td style=" text-align: right;">=</td>' +
         '<td>' +
         '<input type="text" id="f2" class="form-control" name="">' +
         '</td>' +
@@ -112,7 +112,7 @@ var tablas = [
         '</td>' +
         '</tr>' +
         '<tr>' +
-        '<td>=</td>' +
+        '<td style=" text-align: right;">=</td>' +
         '<td>' +
         '<input type="text"  id="i2" class="form-control" name="">' +
         '</td>' +

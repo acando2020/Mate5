@@ -64,7 +64,7 @@ input {
     width: 50px;
 }
 
-td{
+td {
     text-align: center;
 }
 
@@ -100,7 +100,8 @@ td{
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-       En la actividad 1 encuentra el patrón y completa las sucesiones, en la actividad 2 arrastra el cuadro <img class="img-responsive" src="img/i1_p31_act39.png"> al espacio en blanco hasta completar la succesion.
+        <b>1.</b> Encuentra el patrón y completa las sucesiones. <br>
+        <b>2.</b> Debes hacer click en la imagen <img src="img/i1_p31_act39.png"> para agregar al espacio en blanco hasta completar la succesion.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -186,7 +187,8 @@ td{
                                             <tr>
                                                 <td>
                                                     <input type="text" id="nota1" name="" style="display: none;"><b style="color: #005ca4">a)</b></td>
-                                                <td><h4 style="background: #C7E7F2">Sucesión:</h4></td>
+                                                <td>
+                                                    <h4 style="background: #C7E7F2">Sucesión:</h4></td>
                                                 <td>
                                                     <input type="number" class="" id="num1" name="">
                                                 </td>
@@ -212,7 +214,8 @@ td{
                                             <tr>
                                                 <td>
                                                     <input type="text" id="nota2" name="" style="display: none;"><b style="color: #005ca4">b)</b></td>
-                                                <td><h4 style="background: #FFE7A2">Sucesión:</h4></td>
+                                                <td>
+                                                    <h4 style="background: #FFE7A2">Sucesión:</h4></td>
                                                 <td>
                                                     <input type="number" class="" id="nume1" disabled name="">
                                                 </td>
@@ -238,7 +241,8 @@ td{
                                             <tr>
                                                 <td>
                                                     <input type="text" id="nota3" name="" style="display: none;"><b style="color: #005ca4">c)</b></td>
-                                                <td><h4 style="background: #FAD1D6">Sucesión:</h4></td>
+                                                <td>
+                                                    <h4 style="background: #FAD1D6">Sucesión:</h4></td>
                                                 <td>
                                                     <input type="number" class="" id="numer1" disabled name="">
                                                 </td>
@@ -268,19 +272,22 @@ td{
                                     <td>
                                         <table>
                                             <tr>
-                                                <td><h4 style="background: #C7E7F2">Patrón:</h4></td>
+                                                <td>
+                                                    <h4 style="background: #C7E7F2">Patrón:</h4></td>
                                                 <td colspan="2">
                                                     <input class="" id="patron1" placeholder="+0"></input>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><h4 style="background: #FFE7A2">Patrón:</h4></td>
+                                                <td>
+                                                    <h4 style="background: #FFE7A2">Patrón:</h4></td>
                                                 <td colspan="2">
                                                     <input class="" id="patron2" placeholder="-0"></input>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><h4 style="background: #FAD1D6">Patrón:</h4></td>
+                                                <td>
+                                                    <h4 style="background: #FAD1D6">Patrón:</h4></td>
                                                 <td>
                                                     <input class="" id="patron3" placeholder="+0"></input>
                                                 </td>
@@ -298,40 +305,49 @@ td{
                 <div class="text-question">
                     <input type="text" id="nota4" name="" style="display: none;"><span><b style="color: #005ca4">2.</b> <b>Dibuja</b> el quinto término de la sucesión.</span>
                     <br>
-                    <div  align="center">
-                        <img class="drag" src="img/i1_p31_act39.png" id="b2" alt="base 10"></p>
+                    <div align="center">
+                        <table>
+                            <tr>
+                                <td>Has click en la imagen</td>
+                                <td><img class="drag" src="img/i1_p31_act39.png" id="b2" alt="base 10" onclick="agregar(this);" width="50px" height="50px"></td>
+                            </tr>
+                        </table>
+
                     </div>
                     <table class="table table-bordered">
-                        <tr >
-                            <td><h4 style="background: #C9D3ED">Sucesión:</h4></td>
-                            <td ><img class="img-responsive" src="img/i1_p31_act39.png"></td>
-                            <td >
+                        <tr>
+                            <td>
+                                <h4 style="background: #C9D3ED">Sucesión:</h4></td>
+                            <td><img class="img-responsive" src="img/i1_p31_act39.png"></td>
+                            <td>
                                 <img class="img-responsive" src="img/i1_p31_act39.png">
                                 <img class="img-responsive" src="img/i1_p31_act39.png">
                                 <img class="img-responsive" src="img/i1_p31_act39.png"></td>
-                            <td ><img class="img-responsive" src="img/i1_p31_act39.png">
-                                <img class="img-responsive" src="img/i1_p31_act39.png">
-                                <img class="img-responsive" src="img/i1_p31_act39.png">
-                                <img class="img-responsive" src="img/i1_p31_act39.png">
-                                <img class="img-responsive" src="img/i1_p31_act39.png">
-                                <img class="img-responsive" src="img/i1_p31_act39.png"></td>
-                            <td ><img class="img-responsive" src="img/i1_p31_act39.png">
-                                <img class="img-responsive" src="img/i1_p31_act39.png">
-                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                            <td><img class="img-responsive" src="img/i1_p31_act39.png">
                                 <img class="img-responsive" src="img/i1_p31_act39.png">
                                 <img class="img-responsive" src="img/i1_p31_act39.png">
                                 <img class="img-responsive" src="img/i1_p31_act39.png">
                                 <img class="img-responsive" src="img/i1_p31_act39.png">
                                 <img class="img-responsive" src="img/i1_p31_act39.png"></td>
-                            <td id="actividad39_2" >
-                                <div class="c_destino drop dndAligned cajas">
-
+                            <td><img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                                <img class="img-responsive" src="img/i1_p31_act39.png">
+                            </td>
+                            <td id="actividad39_2">
+                                <div id="caja4" class=" dndAligned cajas">
                                 </div>
-
                             </td>
                         </tr>
                         <tr>
-                            <td><h4 style="background: #FAD3D7">Términos:</h4></td>
+                            <td>
+                                <h4 style="background: #FAD3D7">Términos:</h4></td>
                             <td>1.°</td>
                             <td>2.°</td>
                             <td>3.°</td>

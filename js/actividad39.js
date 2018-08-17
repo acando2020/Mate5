@@ -1,3 +1,13 @@
+var img1 = "img/i1_p31_act39.png";
+
+var ir = [];
+
+function agregar(x) {
+
+    ir.push('<img src="' + img1 + '" />')
+    $('#caja4').html('').append(ir);
+
+}
 function sinEspacios(inputs) {
     $(inputs).on('keypress', function(e) {
         if (e.which == 32)
@@ -280,7 +290,7 @@ function f_iniciar() {
 function actividad39_4() {
     var cajas = $('.cajas .drag').length;
     var resp = 0;
-    if (cajas == 15) {
+    if (ir.length == 15) {
         resp = 1;
         $('#actividad39_2').css("background", "#00e600");
     } else {

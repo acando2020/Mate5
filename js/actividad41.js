@@ -1,23 +1,23 @@
 var act40 = [
-    ['<td style="text-align: right;">13 745</td>' +
-        '<td>' +
-        '<input type="text" id="num1" class="form-control"></input>' +
-        '</td>'
+    ['<div class="col-lg-1" style="">13 745</div>' +
+        '<div class="col-lg-11">' +
+        '<input type="text" id="num1" class="form-control text-lowercase"></input>' +
+        '</div> <br>'
     ],
-    ['<td style="text-align: right;width: 10%;">248 927</td>' +
-        '<td>' +
-        '<input type="text" id="num2" class="form-control"></input>' +
-        '</td>'
+    ['<div class="col-lg-1" style="">248 927</div>' +
+        '<div class="col-lg-11">' +
+        '<input type="text" id="num2" class="form-control text-lowercase"></input>' +
+        '</div> <br>'
     ],
-    ['<td style="text-align: right;">566 318</td>' +
-        '<td>' +
-        '<input type="text" id="num3" class="form-control"></input>' +
-        '</td>'
+    ['<div class="col-lg-1" style="">566 318</div>' +
+        '<div class="col-lg-11">' +
+        '<input type="text" id="num3" class="form-control text-lowercase"></input>' +
+        '</div> <br>'
     ],
-    ['<td style="text-align: right;">799 246</td>' +
-        '<td>' +
-        '<input type="text" id="num4" class="form-control"></input>' +
-        '</td>'
+    ['<div class="col-lg-1" style="">799 246</div>' +
+        '<div class="col-lg-11">' +
+        '<input type="text" id="num4" class="form-control text-lowercase"></input>' +
+        '</div> <br>'
     ],
 
 ];
@@ -39,10 +39,10 @@ for (i = 0; i < completar.length; i++) {
 sinEspacios(".text-question input");*/
 
 function actividad41() {
-    var num1 = document.getElementById('num1').value;
-    var num2 = document.getElementById('num2').value;
-    var num3 = document.getElementById('num3').value;
-    var num4 = document.getElementById('num4').value;
+    var num1 = document.getElementById('num1').value.toLowerCase();
+    var num2 = document.getElementById('num2').value.toLowerCase();
+    var num3 = document.getElementById('num3').value.toLowerCase();
+    var num4 = document.getElementById('num4').value.toLowerCase();
 
 
     var r1 = 0,

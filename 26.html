@@ -163,107 +163,104 @@ input {
                 <div class="text-question">
                     <img class="img-responsive" src="img/problema.png"></img>
                     <span><b>Resuelve</b> los problemas aplicando la estrategia indicada.</span>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tr>
-                                <td class="tdborde">
-                                    <input type="numbre" id="nt1" name="" style="display: none;"><span style="background: #BDE3F3"><b style="color: #005ca4">1. &nbsp;</b>Por descomposición en los valores posicionales de los dígitos:</span>
-                                    <br>
-                                    <div style="width: 100%;">
-                                        <div style="float: left;width: 50%;text-align: justify;">Para la final de fútbol interescolar, se vendieron las siguientes entradas: 3 128 de preferencia, 8 510 de general, 111 de palco y 2 130 de tribuna. ¿Cuántas entradas se vendieron en total?</div>
-                                        <div style="float: left;width: 50%;"><img src="img/i1_p25_act26.jpg" class="img-responsive"></div>
-                                    </div>
-                                    <span><b style="color: #005ca4">R. &nbsp;</b>En total se vendieron <input type="number" name="" id="act1"> entradas.</span>
-                                </td>
-                                <td class="tdborde"><span style="background: #BDE3F3"><b style="color: #005ca4">4. &nbsp;</b>Por la propiedad asociativa de la suma:</span>
-                                    <br>En un local de comida rápida trabajan 14 personas en el turno de la mañana, 17 en el turno de la tarde y 13 en el turno de la noche. ¿Cuántas personas trabajan en total en el local?
-                                    <br> 14 + 17 + 13 = 14 + (17 + 13) = 44
-                                    <br>
-                                    <br>
-                                    <span><b style="color: #005ca4">R. &nbsp;</b>En el local trabajan en total <input type="number" name="" id="act4"> personas.</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: justify;" class="tdborde">
-                                    <input type="text" id="nt2" name="" style="display: none;"><span style="background: #BDE3F3"><b style="color: #005ca4">2. &nbsp;</b> <b>Comprueba</b> el resultado aplicando la propiedad conmutativa de la suma.</span>
-                                    <br>Pablo revisa los recibos de los servicios básicos de este mes. Por el consumo de luz eléctrica, debe cancelar $ 26; por agua, $ 18; y por teléfono, $ 42. Esto le da un total de $ 86. ¿Es correcta la suma?
-                                    <table style="text-align: right;">
-                                        <tr>
-                                            <td>26 + 18 + 42</td>
-                                            <td>=</td>
-                                            <td>
-                                                <input type="text" class="form-control" id="act2_1" name="">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input type="text" class="form-control" id="act2_2" name="">
-                                            </td>
-                                            <td>=</td>
-                                            <td>
-                                                <input type="text" class="form-control" id="act2_3" name="">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <br><span><b style="color: #005ca4">R. &nbsp;</b><input type="text" style=" width: 200px;" name=""  id="act2_4"></span>
-                                </td>
-                                <td style="text-align: justify;" class="tdborde">
-                                    <input type="text" id="nt3" name="" style="display: none;"><span style="background: #BDE3F3"><b style="color: #005ca4">5. &nbsp;</b> Por redondeo y compensación:</span>
-                                    <br> Carla sale de casa en la mañana, llega a un cajero que está a 720 metros de su casa. Camina hasta una cafetería que está a 280 metros del cajero, para desayunar y luego recorre 150 metros hasta su trabajo. ¿Cuántos metros recorre Carla desde su casa al trabajo?
-                                    <br><span><b style="color: #005ca4">R. &nbsp;</b> Carla recorre<input type="text" id="act5_1" style=" width: 200px;" name=""> metros.</span>
-                                    <br>
-                                    <br>
-                                    <input type="text" id="act5_2" style="width: 50%;" name="" class="form-control">
-                                    <input type="text" id="act5_3" style="width: 50%;" name="" class="form-control">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: justify;" class="tdborde"><img src="img/conecSociales.png" class="img-responsive">
-                                    <input type="text" id="nt4" name="" style="display: none;"><span style="background: #BDE3F3"><b style="color: #005ca4">3. &nbsp;</b> Por la descomposición aditiva de las cantidades:</span>
-                                    <br> La provincia de Santo Domingo de los Tsáchilas tiene dos cantones: La Concordia, donde habitan 42 924 personas, y Santo Domingo de los Colorados, donde habitan 368 013 personas.
-                                    <br>
-                                    <h6>(http://goo.gl/2iS3jJ)</h6> ¿Cuántos habitantes tiene la provincia de Santo Domingo de los Tsáchilas?
-                                    <table>
-                                        <tr>
-                                            <td>42 924</td>
-                                            <td>=</td>
-                                            <td>
-                                                <input class="form-control" id="act3_1" type="text" style="width: 300px;"></input>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>368 013</td>
-                                            <td>=</td>
-                                            <td>
-                                                <input class="form-control" id="act3_2" type="text" style="width: 300px;"></input>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td>
-                                                <input class="form-control" id="act3_3" type="text" style="width: 300px;"></input>
-                                            </td>
-                                        </tr>
+                    <div class="row tdborde">
+                        <div class="col-lg-12 tdborde">
+                            <div class="col-lg-6">
+                                <input type="numbre" id="nt1" name="" style="display: none;"><span style="background: #BDE3F3"><b style="color: #005ca4">1. &nbsp;</b>Por descomposición en los valores posicionales de los dígitos:</span>
+                                <br>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-6">Para la final de fútbol interescolar, se vendieron las siguientes entradas: 3 128 de preferencia, 8 510 de general, 111 de palco y 2 130 de tribuna. ¿Cuántas entradas se vendieron en total?</div>
+                                    <div class="col-lg-6"><img src="img/i1_p25_act26.jpg" class="img-responsive"></div>
+                                </div>
+                                <span><b style="color: #005ca4">R. &nbsp;</b>En total se vendieron <input type="number" name="" id="act1"> entradas.</span>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <input type="text" id="nt2" name="" style="display: none;"><span style="background: #BDE3F3"><b style="color: #005ca4">2. &nbsp;</b> <b>Comprueba</b> el resultado aplicando la propiedad conmutativa de la suma.</span>
+                                <br>Pablo revisa los recibos de los servicios básicos de este mes. Por el consumo de luz eléctrica, debe cancelar $ 26; por agua, $ 18; y por teléfono, $ 42. Esto le da un total de $ 86. ¿Es correcta la suma?
+                                <table style="text-align: right;">
+                                    <tr>
+                                        <td>26 + 18 + 42</td>
+                                        <td>=</td>
+                                        <td>
+                                            <input type="text" class="form-control" id="act2_1" name="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" id="act2_2" name="">
+                                        </td>
+                                        <td>=</td>
+                                        <td>
+                                            <input type="text" class="form-control" id="act2_3" name="">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br><span><b style="color: #005ca4">R. &nbsp;</b><input type="text" style=" width: 200px;" name=""  id="act2_4"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 tdborde">
+                            <div class="col-lg-6"><img src="img/conecSociales.png" class="img-responsive">
+                                <input type="text" id="nt4" name="" style="display: none;"><span style="background: #BDE3F3"><b style="color: #005ca4">3. &nbsp;</b> Por la descomposición aditiva de las cantidades:</span>
+                                <br> La provincia de Santo Domingo de los Tsáchilas tiene dos cantones: La Concordia, donde habitan 42 924 personas, y Santo Domingo de los Colorados, donde habitan 368 013 personas.
+                                <br>
+                                <h6>(http://goo.gl/2iS3jJ)</h6> ¿Cuántos habitantes tiene la provincia de Santo Domingo de los Tsáchilas?
+                                <table>
+                                    <tr>
+                                        <td>42 924</td>
+                                        <td>=</td>
+                                        <td>
+                                            <input class="form-control" id="act3_1" type="text" style="width: 300px;"></input>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>368 013</td>
+                                        <td>=</td>
+                                        <td>
+                                            <input class="form-control" id="act3_2" type="text" style="width: 300px;"></input>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <input class="form-control" id="act3_3" type="text" style="width: 300px;"></input>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br><span><b style="color: #005ca4">R. &nbsp;</b> La provincia de los Tsáchilas tiene<input type="text" id="act3_4" style=" width: 200px;" name=""></span>
+                            </div>
+                            <div class="col-lg-6"><span style="background: #BDE3F3"><b style="color: #005ca4">4. &nbsp;</b>Por la propiedad asociativa de la suma:</span>
+                                <br>En un local de comida rápida trabajan 14 personas en el turno de la mañana, 17 en el turno de la tarde y 13 en el turno de la noche. ¿Cuántas personas trabajan en total en el local?
+                                <br> 14 + 17 + 13 = 14 + (17 + 13) = 44
+                                <br>
+                                <br>
+                                <span><b style="color: #005ca4">R. &nbsp;</b>En el local trabajan en total <input type="number" name="" id="act4"> personas.</span>
+                            </div>
 
-                                    </table>
-                                    <br><span><b style="color: #005ca4">R. &nbsp;</b> La provincia de los Tsáchilas tiene<input type="text" id="act3_4" style=" width: 200px;" name=""></span>
-                                </td>
-                                <td class="tdborde">
-                                    <img src="img/conecEF.png" class="img-responsive">
-                                    <input type="text" id="nt5" name="" style="display: none;"><span style="background: #BDE3F3"><b style="color: #005ca4">6. &nbsp;</b> Por la propiedad asociativa:</span>
-                                    <div style="width: 100%;">
-                                        <div style="float: left;width: 50%;text-align: justify;">Gerardo practica ciclismo los fines de semana. Si el sábado recorre 2 250 metros en la mañana y 2 750 metros en la tarde; y el domingo recorre 2 400 metros en la mañana y 2 370 metros en la tarde. ¿Cuántos metros recorre Gerardo en los dos días?</div>
-                                        <div style="float: left;width: 50%;"><img src="img/i2_p25_act26.png" class="img-responsive"></div>
-                                    </div>
-                                    <br>
-                                    <input type="text" class="form-control" id="act6_1" style="text-align: left;">
-                                    <input type="text" class="form-control" id="act6_2" style="text-align: left;">
-                                    <input type="text" class="form-control" id="act6_3" style="text-align: left;">
-                                    <br><span><b style="color: #005ca4">R. &nbsp;</b> Gerardo recorre<input type="text" id="act6_4" style=" width: 200px;" name="">fin de semana.</span>
-                                </td>
-                            </tr>
-                        </table>
+                        </div>
+                        <div class="col-lg-12 tdborde">
+                             <div class="col-lg-6 ">
+                                <input type="text" id="nt3" name="" style="display: none;"><span style="background: #BDE3F3"><b style="color: #005ca4">5. &nbsp;</b> Por redondeo y compensación:</span>
+                                <br> Carla sale de casa en la mañana, llega a un cajero que está a 720 metros de su casa. Camina hasta una cafetería que está a 280 metros del cajero, para desayunar y luego recorre 150 metros hasta su trabajo. ¿Cuántos metros recorre Carla desde su casa al trabajo?
+                                <br><span><b style="color: #005ca4">R. &nbsp;</b> Carla recorre<input type="text" id="act5_1" style=" width: 200px;" name=""> metros.</span>
+                                <br>
+                                <br>
+                                <input type="text" id="act5_2" style="width: 50%;" name="" class="form-control">
+                                <input type="text" id="act5_3" style="width: 50%;" name="" class="form-control">
+                            </div>
+
+                            <div class="col-lg-6"><img src="img/conecEF.png" class="img-responsive">
+                                <input type="text" id="nt5" name="" style="display: none;"><span style="background: #BDE3F3"><b style="color: #005ca4">6. &nbsp;</b> Por la propiedad asociativa:</span>
+                                <div style="width: 100%;">
+                                    <div style="float: left;width: 50%;text-align: justify;">Gerardo practica ciclismo los fines de semana. Si el sábado recorre 2 250 metros en la mañana y 2 750 metros en la tarde; y el domingo recorre 2 400 metros en la mañana y 2 370 metros en la tarde. ¿Cuántos metros recorre Gerardo en los dos días?</div>
+                                    <div style="float: left;width: 50%;"><img src="img/i2_p25_act26.png" class="img-responsive"></div>
+                                </div>
+                                <br>
+                                <input type="text" class="form-control" id="act6_1" style="text-align: left;">
+                                <input type="text" class="form-control" id="act6_2" style="text-align: left;">
+                                <input type="text" class="form-control" id="act6_3" style="text-align: left;">
+                                <br><span><b style="color: #005ca4">R. &nbsp;</b> Gerardo recorre<input type="text" id="act6_4" style=" width: 200px;" name="">fin de semana.</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
