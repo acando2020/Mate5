@@ -140,8 +140,7 @@ table tr th div span {
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         Lee cuidadosamente las preguntas, contesta cada una de ellas.
-        <br>
-        <b>6.</b> Se debe hacer click en la imagen <img src="img/i1_p31_act39.png" alt=""> para agregar sucesion correspondiente.
+
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
         <br>
         <span id="ayudas"></span>
@@ -182,7 +181,7 @@ table tr th div span {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="pregunta1()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="calcularTotal()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -515,29 +514,156 @@ table tr th div span {
                                 </div>
                                 <br>
                                 <div class="text-question">
-                                    <input type="text" maxlength="2" id="nota1_2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>2.- Resuelve</b> el problema.</span>
+                                    <input type="text" id="nota1_2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10">&nbsp;<span><b>2.- Resuelve</b> el problema.</span>
                                     <br>
-                                    <span>Fernando tiene ahorrados $ 320 y espera ahorrar mensualmente $ 125 durante cinco meses para comprar una computadora que cuesta $ 900.</span><br><br>
-                                    <span>¿Podrá Fernando ahorrar lo suficiente para comprar la computadora?</span><br>
-                                    <textarea class="form-control" rows="5" style="resize: none;"></textarea><br>
-
+                                    <span>Fernando tiene ahorrados $ 320 y espera ahorrar mensualmente $ 125 durante cinco meses para comprar una computadora que cuesta $ 900.</span>
+                                    <br>
+                                    <br>
+                                    <span>¿Podrá Fernando ahorrar lo suficiente para comprar la computadora?</span>
+                                    <br>
+                                    <textarea class="form-control" rows="5" style="resize: none;"></textarea>
+                                    <br>
                                 </div>
                                 <div class="text-question">
-                                     <input type="text" maxlength="2" id="nota1_2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>3.- Aplica</b> una estrategia de cálculo para realizar la siguiente suma:</span>
+                                    <input type="text" maxlength="2" id="nota1_3" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>3.- Aplica</b> una estrategia de cálculo para realizar la siguiente suma:</span>
                                     <br>
                                     <table>
-                                        <tr>
+                                        <tr style="background: #A0DCFF; border-radius: 15px;">
                                             <td id="sumaNum1" class="prg3"></td>
-                                            <td></td>
+                                            <td>+</td>
                                             <td id="sumaNum2" class="prg3"></td>
-                                            <td></td>
+                                            <td>+</td>
                                             <td id="sumaNum3" class="prg3"></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>=</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5">
+                                                <input class="form-control input" type="text-question" placeholder="Aplica la estrategia"></input>
+                                            </td>
+                                            <td>=</td>
+                                            <td colspan="6">
+                                                <input class="form-control input" id="Totalprg3" type="text-question" placeholder="Total"></input>
+                                            </td>
                                         </tr>
                                     </table>
-
-
+                                </div>
+                                <div class="text-question">
+                                    <br>
+                                    <br>
+                                    <input type="text" maxlength="2" id="nota1_4" size="2" style="text-align:center" class="nota-abierta" min="0" max="10">&nbsp;<span><b>4.- Aplica</b> Aplica estrategias de cálculo y <b>resuelve</b> el problema. Luego <b>comprueba</b> con la calculadora.</span>
+                                    <br>
+                                    <br>
+                                    <span>En una granja avícola se recolectaron 424 huevos en la primera semana y 415 en la segunda. De ellos, 728 se vendieron en la ciudad; y el resto, en la propia localidad.</span>
+                                    <br>
+                                    <img class="img-responsive" src="img/i1_p50_act74.jpg"></img>
+                                    <br>
+                                    <span><b style="color: #337ab7">a)</b> ¿Cuántos huevos se recolectaron en las dos semanas?</span>
+                                    <br>
+                                    <span><b style="color: #337ab7">b)</b> ¿Cuántos huevos se vendieron en la propia localidad?</span>
+                                    <br>
+                                    <textarea cols="30" rows="5" class="form-control" style="resize: none;"></textarea>
+                                    <br>
+                                    <br>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_5" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>5.- Realiza</b> la descomposición aditiva del siguiente número por su valor posicional y por su equivalencia en unidades:</span>
+                                    <br>
+                                    <table class="table">
+                                        <tr>
+                                            <td style="background: #FEEFE0; border-radius: 15px; text-align: center;" id="sNum1" class="prg4"></td>
+                                            <td>
+                                                <input class="form-control input" id="act4Posicional" placeholder="valor posicional" type="text-question"></input>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <input class="form-control input" id="act4Equivalencia" placeholder="Equivalencias" type="text-question"></input>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_6" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>6.- Ubica</b> los siguientes números en la semirrecta numérica y ordénalos de menor a mayor:</span>
+                                    <br>
+                                    <table class="table">
+                                        <tr>
+                                            <td> <span class="prg6" id="pgr6Num1" style="background:#D5E8C9; border-radius: 20px;padding: 10px;"></span> </td>
+                                            <td> <span class="prg6" id="pgr6Num2" style="background:#FDDBBA; border-radius: 20px;padding: 10px;"></span> </td>
+                                            <td> <span class="prg6" id="pgr6Num3" style="background:#DECBE4; border-radius: 20px;padding: 10px;"></span> </td>
+                                            <td><span class="prg6" id="pgr6Num4" style="background:#BDE3F0; border-radius: 20px;padding: 10px;"></span> </td>
+                                        </tr>
+                                    </table>
+                                    <div class="table-responsive">
+                                        <table>
+                                            <tr>
+                                                <td colspan="9"><img class="img-responsive" src="img/i2_p50_act74.jpg"></img>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>0</td>
+                                                <td>
+                                                    <input type="number" name="" style="border: 0 ;" readonly="readonly">
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="act6_1" style="border-radius: 15px; text-align:center;width: 100px;">
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" style="border: 0; width: 140px;" readonly="readonly">
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="act6_2" style="border-radius: 15px; text-align:center;width: 100px;">
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" style="border: 0;width: 130px;" readonly="readonly">
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="act6_3" style="border-radius: 15px; text-align:center;width: 100px;">
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" style="border: 0;width: 110px;" readonly="readonly">
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="act6_4" style="border-radius: 15px; text-align:center;width: 100px;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                        <div align="center">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <input type="number" id="act6_5" style="border-radius: 15px;text-align: center;" name="">
+                                                    </td>
+                                                    <td><b><</b></td>
+                                                    <td>
+                                                        <input type="number" id="act6_6" style="border-radius: 15px;text-align: center;" name="">
+                                                    </td>
+                                                    <td><b><</b></td>
+                                                    <td>
+                                                        <input type="number" id="act6_7" style="border-radius: 15px;text-align: center;" name="">
+                                                    </td>
+                                                    <td><b><</b></td>
+                                                    <td>
+                                                        <input type="number" id="act6_8" style="border-radius: 15px;text-align: center;" name="">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_7" size="2" style="text-align:center" class="nota-abierta" min="0" max="10">&nbsp;<span><b>7.- Escribe</b> los pares ordenados de los puntos marcados en el recorrido que realizan los niños de la escuela a su casa, así como de los lugares que visitaron.</span>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-lg-6"><b style="color: #337ab7">•</b> Pares ordenados: (2; 1);
+                                            <textarea cols="30" rows="5" class="form-control" style="resize: none;"></textarea>
+                                            <b style="color: #337ab7">•</b> Lugares que visitaron:
+                                            <textarea cols="30" rows="5" class="form-control" style="resize: none;"></textarea>
+                                        </div>
+                                        <div class="col-lg-6"><img class="img-responsive" src="img/i3_p50_act74.jpg"></img>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
                             </div>
@@ -548,7 +674,7 @@ table tr th div span {
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title">
-                                <button type="button" class="btn btn-primary" data-toggle="collapse">
+                                <button type="button" class="btn btn-danger" data-toggle="collapse">
                                     <!--INICIO COLOCAR AQUI LA PREGUNTA CON EL INPUT PARA INDICAR LA NOTA-->
                                     <div class="text-question">
                                         <span style="word-break: break-word" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2"><b> Geometría y medida</b></span>
@@ -561,8 +687,39 @@ table tr th div span {
                             <div class="panel-body">
                                 <!--INICIO COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
                                 <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_8" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>8.- Identifica</b> las siguientes líneas:</span>
+                                    <div class="row">
+                                        <div class="col-lg-4 prg8" id="pgr8Num1" align="center">
+                                        </div>
+                                        <div class="col-lg-4 prg8" id="pgr8Num2" align="center">
+                                        </div>
+                                        <div class="col-lg-4 prg8" id="pgr8Num3" align="center">
+                                        </div>
+                                    </div>
                                 </div>
                                 <br>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_9" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>9.- Mide</b> los ángulos indicados.</span>
+                                    <div class="row">
+                                        <div class="col-lg-4 prg9" id="pgr9Num1" align="center">
+                                        </div>
+                                        <div class="col-lg-4 prg9" id="pgr9Num2" align="center">
+                                        </div>
+                                        <div class="col-lg-4 prg9" id="pgr9Num3" align="center">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_10" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>10.- Lee</b>  el problema y <b>completa</b>.</span>
+                                    <br>
+                                    <span>El 2 de agosto de 1810 ocurrió el asesinato de los próceres de la Independencia. ¿Cuántos siglos han transcurrido aproximadamente desde este acontecimiento?</span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        <b>R.</b>Han transcurrido aproximadamente <input type="number" id="act10_1" style="border-radius: 20px; width: 50px;text-align: center;" name="">siglos.
+                                    </span>
+                                </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
                             </div>
                         </div>
