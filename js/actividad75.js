@@ -1,68 +1,71 @@
-var loadValues = {
-    preg1: [568, 1742, 2050, 'seis mil trescientos cinco', 'siete mil noventa y ocho', 'nueve mil ochocientos'],
-    preg2: [
-        ['4 um + 1 c + 7 d + 6 u', '9 000 + 200 + 10 + 5', '6 um + 2 c + 7 d + 8 u', '3 000 + 600 + 50 + 2', '2 um + 4 c + 9 u', '1 000 + 800 + 90 + 3'],
-        [6278, 1893, 3652, 9215, 2409, 4176],
-        ['9 um + 2 c + 1 d + 5 u', '3 um + 6 c + 5 d + 2 u', '1 um + 8 c + 9 d + 3 u', '4 000 + 100 + 70 + 6', '6 000 + 200 + 70 + 8', '2 000 + 400 + 9']
-    ]
-};
-var respCor = {
-    preg1: [
-        ['568', 'quinientos sesenta y ocho'],
-        ['1742', 'mil setecientos cuarenta y dos'],
-        ['2050', 'dos mil cincuenta'],
-        ['seis mil trescientos cinco', '6305'],
-        ['siete mil noventa y ocho', '7098'],
-        ['nueve mil ochocientos', '9800']
+/////////////////////pregunta1//////////////////////////
+var act75_1 = [
+    ['<div class="col-lg-1">295802</div>' +
+        '<div class="col-lg-11">' +
+        '<input type="text" id="prg1_1" onKeyUp="this.value=this.value.toLowerCase();" class="form-control" name="">' +
+        '<br>' +
+        '</div>'
     ],
-    preg2: [
-        ['6 000 + 200 + 70 + 8', '6 um + 2 c + 7 d + 8 u', '6278'],
-        ['1 000 + 800 + 90 + 3', '1 um + 8 c + 9 d + 3 u', '1893'],
-        ['3 000 + 600 + 50 + 2', '3 um + 6 c + 5 d + 2 u', '3652'],
-        ['9 000 + 200 + 10 + 5', '9 um + 2 c + 1 d + 5 u', '9215'],
-        ['2 000 + 400 + 9', '2 um + 4 c + 9 u', '2409'],
-        ['4 000 + 100 + 70 + 6', '4 um + 1 c + 7 d + 6 u', '4176']
-    ]
-};
-var valuesAdic = {
-    selectorsAct1: ['.tabact1 tr td div span', '.tabact1 tr td div input'],
-    selectorsAct2: ['.columna1draggable span', '.columna1droppable', '.columna3draggable span']
-};
-var classes = {
-    preg2DnD: ['dndAligned']
-};
-initElementos('.preg1', 'span', loadValues.preg1, true);
-initElementos('.columna1draggable', 'span', loadValues.preg2[0], true);
-initElementos('.columna1droppable', 'span', loadValues.preg2[1], true);
-initElementos('.columna3draggable', 'span', loadValues.preg2[2], true);
+    ['<div class="col-lg-1">851326</div>' +
+        '<div class="col-lg-11">' +
+        '<input type="text" id="prg1_2" onKeyUp="this.value=this.value.toLowerCase();" class="form-control" name="">' +
+        '<br>' +
+        '</div>'
+    ],
+    ['<div class="col-lg-1">603794</div>' +
+        '<div class="col-lg-11">' +
+        '<input type="text" id="prg1_3" onKeyUp="this.value=this.value.toLowerCase();" class="form-control" name="">' +
+        ' <br>' +
+        '</div>'
+    ],
+];
+var pgr1Num = document.getElementsByClassName('prg1');
 
-insertAttributeDraggableElements('.columna1draggable');
-insertAttributeDroppableElements('.columna1droppable', classes.preg2DnD);
-insertAttributeDraggableElements('.columna3draggable');
+act75_1.sort(f_randomico);
+for (i = 0; i < pgr1Num.length; i++) {
 
+    $('#' + pgr1Num[i].id).html('<div width="50px">' + act75_1[i] + '</div> ');
+
+
+}
 
 function pregunta1() {
-    calcLinkActivity(valuesAdic.selectorsAct1, respCor.preg1, valuesAdic.selectorsAct1[1], 'nota1_1', 1);
+    var prg1_1 = document.getElementById('prg1_1').value;
+    var prg1_2 = document.getElementById('prg1_2').value;
+    var prg1_3 = document.getElementById('prg1_3').value;
+    var nt1 = 0,
+        nt2 = 0,
+        nt3 = 0;
+
+    if (prg1_1 == "doscientos noventa y cinco mil ochocientos dos") {
+        $('#prg1_1').css("background", "#00e600");
+        nt1 = 1;
+
+    } else {
+        $('#prg1_1').css("background", "#ff6666");
+
+    }
+
+    if ((prg1_2 == "ochocientos cincuenta y un mil trescientos veintiséis") || (prg1_2 == "ochocientos cincuenta y un mil trescientos veintiseis")) {
+        $('#prg1_2').css("background", "#00e600");
+        nt2 = 1;
+
+    } else {
+        $('#prg1_2').css("background", "#ff6666");
+
+    }
+    if (prg1_3 == "seiscientos tres mil setecientos noventa y cuatro") {
+        $('#prg1_3').css("background", "#00e600");
+        nt3 = 1;
+
+    } else {
+        $('#prg1_3').css("background", "#ff6666");
+
+    }
+    subtotal = parseInt(nt1) + parseInt(nt2) + parseInt(nt3);
+    total = (subtotal * 1) / 3;
+    $('#nota1_1').val(parseFloat(total).toFixed(2));
 }
-
-function pregunta2() {
-    var selector = [];
-    selector.push(valuesAdic.selectorsAct2[1]);
-    calcMultiLinkActivity(selector, respCor.preg2, valuesAdic.selectorsAct2[1], 'nota1_2', 1, true);
-
-}
-
-Array.from(document.getElementsByClassName('nota-abierta')).forEach((elemento => {
-    elemento.addEventListener('keypress', () => {
-        validNumero(0, 9);
-    });
-    elemento.addEventListener('keyup', () => {
-        validMaxIngreso(elemento, 10);
-    });
-}));
-
-
-
 
 
 
@@ -85,7 +88,7 @@ var cajasImg = document.getElementsByClassName('imagen');
 arreglo.sort(f_randomico);
 for (i = 0; i < cajasImg.length; i++) {
 
-    $('#' + cajasImg[i].id).html('<div id="drag' + [i] + '" draggable="true" ondragstart="drag(event)">' + arreglo[i] + '</div> ');
+    $('#' + cajasImg[i].id).html('<h4><div id="drag' + [i] + '" draggable="true" ondragstart="drag(event)">' + arreglo[i] + '</div></h4> ');
 
 
 }
@@ -118,29 +121,7 @@ for (i = 0; i < cajasNume.length; i++) {
     }
 }
 
-
-
-/*function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("Text", ev.target.id);
-}
-
-function drop(ev) {
-    var data = ev.dataTransfer.getData("Text");
-    ev.target.appendChild(document.getElementById(data));
-    ev.preventDefault();
-}*/
-
-
-
-
-
-
-
-function pregunta3() {
+function pregunta2() {
     var ordenado = [];
     ordenado = arreglo.sort((a, b) => a - b);
     var nota = 0,
@@ -189,259 +170,11 @@ function pregunta3() {
     }
     var subtotal = parseInt(nota) + parseInt(nota2) + parseInt(nota3) + parseInt(nota4) + parseInt(nota5) + parseInt(nota6);
     var total = (subtotal * 1) / 6;
-    $("#nota1_3").val(total.toFixed(2));
+    $("#nota1_2").val(total.toFixed(2));
 }
 
 //////////////////////pregunta 4//////////////////////////////////////////////////////
-function pregunta4() {
-    var num1 = $('div#cajasNum1').children("div").html();
-    var signo = document.getElementById('n1').value;
-    var num2 = $('div#cajasNum3').children("div").html();
-    /////////////////////////////////////////////////////
-    var num3 = $('div#cajasNum2').children("div").html();
-    var signo2 = document.getElementById('n2').value;
-    var num4 = $('div#cajasNum5').children("div").html();
-    /////////////////////////////////////////////////////
-    var num5 = $('div#cajasNum4').children("div").html();
-    var signo3 = document.getElementById('n3').value;
-    var num6 = $('div#cajasNum6').children("div").html();
-    /////////////////////////////////////////////////////
-    var num7 = $('div#cajasNume1').children("div").html();
-    var signo4 = document.getElementById('n4').value;
-    var num8 = $('div#cajasNume2').children("div").html();
-    /////////////////////////////////////////////////////
-    var num9 = $('div#cajasNume4').children("div").html();
-    var signo5 = document.getElementById('n5').value;
-    var num10 = $('div#cajasNume3').children("div").html();
-    /////////////////////////////////////////////////////
-    var num11 = $('div#cajasNume5').children("div").html();
-    var signo6 = document.getElementById('n6').value;
-    var num12 = $('div#cajasNume6').children("div").html();
-    var nt = 0,
-        nt2 = 0,
-        nt3 = 0,
-        nt4 = 0,
-        nt5 = 0,
-        nt6 = 0;
 
-    if (signo == "") {
-        $('#n1').css("background", "#ff6666");
-    } else {
-        if (signo == "=") {
-            if (num1 == num2) {
-                nt = 1;
-                $('#n1').css("background", "#00e600");
-
-            } else {
-                $('#n1').css("background", "#ff6666");
-
-            }
-        } else if (signo == ">") {
-            if (num1 >= num2) {
-                nt = 1;
-                $('#n1').css("background", "#00e600");
-            } else {
-                $('#n1').css("background", "#ff6666");
-
-            }
-
-
-        } else if (signo == "<") {
-            if (num1 <= num2) {
-                nt = 1;
-                $('#n1').css("background", "#00e600");
-
-            } else {
-                $('#n1').css("background", "#ff6666");
-
-            }
-        }
-    }
-
-
-    ///////////////////////2//////////////////////////////
-    if (signo2 == "") {
-        $('#n2').css("background", "#ff6666");
-
-    } else {
-        if (signo2 == "=") {
-            if (num3 == num4) {
-                nt2 = 1;
-                $('#n2').css("background", "#00e600");
-
-            } else {
-                $('#n2').css("background", "#ff6666");
-
-            }
-        } else if (signo2 == ">") {
-            if (num3 >= num4) {
-                nt2 = 1;
-                $('#n2').css("background", "#00e600");
-            } else {
-                $('#n2').css("background", "#ff6666");
-
-            }
-
-
-        } else if (signo2 == "<") {
-            if (num3 <= num4) {
-                nt2 = 1;
-                $('#n2').css("background", "#00e600");
-
-            } else {
-                $('#n2').css("background", "#ff6666");
-            }
-        }
-    }
-
-    //////////////////////3//////////////////////////
-    if (signo3 == "") {
-        $('#n3').css("background", "#ff6666");
-    } else {
-        if (signo3 == "=") {
-            if (num5 == num6) {
-                nt3 = 1;
-                $('#n3').css("background", "#00e600");
-
-            } else {
-                $('#n3').css("background", "#ff6666");
-
-            }
-        } else if (signo3 == ">") {
-            if (num5 >= num6) {
-                nt3 = 1;
-                $('#n3').css("background", "#00e600");
-            } else {
-                $('#n3').css("background", "#ff6666");
-
-            }
-
-
-        } else if (signo3 == "<") {
-            if (num5 <= num6) {
-                nt3 = 1;
-                $('#n3').css("background", "#00e600");
-
-            } else {
-                $('#n3').css("background", "#ff6666");
-
-            }
-        }
-    }
-
-    ////////////////////4/////////////////////////////
-    if (signo4 == "") {
-        $('#n4').css("background", "#ff6666");
-
-    } else {
-        if (signo4 == "=") {
-            if (num7 == num8) {
-                nt4 = 1;
-                $('#n4').css("background", "#00e600");
-
-            } else {
-                $('#n4').css("background", "#ff6666");
-
-            }
-        } else if (signo4 == ">") {
-            if (num7 > num8) {
-                nt4 = 1;
-                $('#n4').css("background", "#00e600");
-            } else {
-                $('#n4').css("background", "#ff6666");
-
-            }
-
-
-        } else if (signo4 == "<") {
-            if (num7 < num8) {
-                nt4 = 1;
-                $('#n4').css("background", "#00e600");
-
-            } else {
-                $('#n4').css("background", "#ff6666");
-
-            }
-        }
-
-    }
-
-    ////////////////////5////////////////////////
-    if (signo5 == "") {
-        $('#n5').css("background", "#ff6666");
-    } else {
-        if (signo5 == "=") {
-            if (num9 == num10) {
-                nt5 = 1;
-                $('#n5').css("background", "#00e600");
-
-            } else {
-                $('#n5').css("background", "#ff6666");
-
-            }
-        } else if (signo5 == ">") {
-            if (num9 > num10) {
-                nt5 = 1;
-                $('#n5').css("background", "#00e600");
-            } else {
-                $('#n5').css("background", "#ff6666");
-
-            }
-
-
-        } else if (signo5 == "<") {
-            if (num9 < num10) {
-                nt5 = 1;
-                $('#n5').css("background", "#00e600");
-
-            } else {
-                $('#n5').css("background", "#ff6666");
-
-            }
-        }
-    }
-
-    /////////////////////////////////////////////////
-    if (signo6 == "") {
-        $('#n6').css("background", "#ff6666");
-
-    } else {
-
-    }
-    if (signo6 == "=") {
-        if (num11 == num12) {
-            nt6 = 1;
-            $('#n6').css("background", "#00e600");
-
-        } else {
-            $('#n6').css("background", "#ff6666");
-
-        }
-    } else if (signo6 == ">") {
-        if (num11 > num12) {
-            nt6 = 1;
-            $('#n6').css("background", "#00e600");
-        } else {
-            $('#n6').css("background", "#ff6666");
-
-        }
-
-
-    } else if (signo6 == "<") {
-        if (num11 < num12) {
-            nt6 = 1;
-            $('#n6').css("background", "#00e600");
-
-        } else {
-            $('#n6').css("background", "#ff6666");
-        }
-    }
-    var suma = parseInt(nt) + parseInt(nt2) + parseInt(nt3) + parseInt(nt4) + parseInt(nt5) + parseInt(nt6);
-    var ResPre4 = (suma * 1) / 6;
-    $("#nota1_4").val(parseFloat(ResPre4).toFixed(2));
-
-
-}
 
 var enteros = [];
 var enteros2 = [];
@@ -450,11 +183,11 @@ var enteros4 = [];
 var enteros5 = [];
 var enteros6 = [];
 
-for (var i = 0; i < 9; i++) {
+for (var i = 0; i < 10; i++) {
     enteros[i] = Math.round(Math.random() * i) + 1;
     enteros2[i] = Math.round(Math.random() * i) + 1;
 }
-for (var i = 5; i < 9; i++) {
+for (var i = 5; i < 10; i++) {
     enteros3[i] = Math.round(Math.random() * i) + 1;
     enteros4[i] = Math.round(Math.random() * i) + 1;
 }
@@ -510,10 +243,10 @@ for (i = 0; i < resNumero.length; i++) {
     $('#' + resNumero[i].id).html('<div width="50px">' + enteros6[i] + '</div> ');
 
 }
-///////////////////////////////pregunta 5 /////////////////////////////////////////////////////////
+///////////////////////////////pregunta 3 /////////////////////////////////////////////////////////
 
 
-function pregunta5() {
+function pregunta3() {
     var arr1 = [],
         arr2 = [],
         res = [],
@@ -542,11 +275,15 @@ function pregunta5() {
         $('#rsSuma1').css("background", "#00e600");
         $('#rsSuma2').css("background", "#00e600");
         $('#rsSuma3').css("background", "#00e600");
+        $('#rsSuma4').css("background", "#00e600");
+        $('#rsSuma5').css("background", "#00e600");
         Respre5_1 = 1;
     } else {
         $('#rsSuma1').css("background", "#ff6666");
         $('#rsSuma2').css("background", "#ff6666");
         $('#rsSuma3').css("background", "#ff6666");
+        $('#rsSuma4').css("background", "#ff6666");
+        $('#rsSuma5').css("background", "#ff6666");
         Respre5_1 = 0;
     }
 
@@ -558,16 +295,18 @@ function pregunta5() {
     var Rsuma2 = parseInt(res2.join(''));
     var suma2 = parseInt(Snum3) + parseInt(Snum4);
     if (Rsuma2 == suma2) {
-        $('#rsSuma4').css("background", "#00e600");
-        $('#rsSuma5').css("background", "#00e600");
         $('#rsSuma6').css("background", "#00e600");
         $('#rsSuma7').css("background", "#00e600");
+        $('#rsSuma8').css("background", "#00e600");
+        $('#rsSuma9').css("background", "#00e600");
+        $('#rsSuma10').css("background", "#00e600");
         Respre5_2 = 1;
     } else {
-        $('#rsSuma4').css("background", "#ff6666");
-        $('#rsSuma5').css("background", "#ff6666");
         $('#rsSuma6').css("background", "#ff6666");
         $('#rsSuma7').css("background", "#ff6666");
+        $('#rsSuma8').css("background", "#ff6666");
+        $('#rsSuma9').css("background", "#ff6666");
+        $('#rsSuma10').css("background", "#ff6666");
         Respre5_2 = 0;
     }
 
@@ -582,11 +321,15 @@ function pregunta5() {
         $('#rsResta1').css("background", "#00e600");
         $('#rsResta2').css("background", "#00e600");
         $('#rsResta3').css("background", "#00e600");
+        $('#rsResta4').css("background", "#00e600");
+        $('#rsResta5').css("background", "#00e600");
         Respre5_3 = 1;
     } else {
         $('#rsResta1').css("background", "#ff6666");
         $('#rsResta2').css("background", "#ff6666");
         $('#rsResta3').css("background", "#ff6666");
+        $('#rsResta4').css("background", "#ff6666");
+        $('#rsResta5').css("background", "#ff6666");
         Respre5_3 = 0;
     }
 
@@ -598,175 +341,482 @@ function pregunta5() {
     var Rresta4 = parseInt(res4.join(''));
     var resta4 = parseInt(Rnum7) - parseInt(Rnum8);
     if (Rresta4 == resta4) {
-        $('#rsResta4').css("background", "#00e600");
-        $('#rsResta5').css("background", "#00e600");
+
         $('#rsResta6').css("background", "#00e600");
         $('#rsResta7').css("background", "#00e600");
+        $('#rsResta8').css("background", "#00e600");
+        $('#rsResta9').css("background", "#00e600");
+        $('#rsResta10').css("background", "#00e600");
         Respre5_4 = 1;
     } else {
-        $('#rsResta4').css("background", "#ff6666");
-        $('#rsResta5').css("background", "#ff6666");
+
         $('#rsResta6').css("background", "#ff6666");
         $('#rsResta7').css("background", "#ff6666");
+        $('#rsResta8').css("background", "#ff6666");
+        $('#rsResta9').css("background", "#ff6666");
+        $('#rsResta10').css("background", "#ff6666");
         Respre5_4 = 0;
     }
     var Subtotalr5 = parseInt(Respre5_1) + parseInt(Respre5_2) + parseInt(Respre5_3) + parseInt(Respre5_4);
     var Totalr5 = (Subtotalr5 * 1) / 4;
-    $('#nota1_5').val(parseFloat(Totalr5).toFixed(2));
+    $('#nota1_3').val(parseFloat(Totalr5).toFixed(2));
 
+}
+////////////////////////////////pregunta 4/////////////////////////////////////////////////////
+
+function sinEspacios(inputs) {
+    $(inputs).on('keypress', function(e) {
+        if (e.which == 32)
+            return false;
+    });
+}
+sinEspacios(".sinEspacios");
+
+prg4 = [];
+for (var i = 0; i < 4; i++) {
+    prg4[i] = Math.floor((Math.random() * 900) + 100);
+}
+
+var act4Num = document.getElementsByClassName('prg4');
+prg4.sort(f_randomico);
+for (i = 0; i < act4Num.length; i++) {
+
+    $('#' + act4Num[i].id).html(prg4[i]);
+
+}
+
+
+var conmut1 = [prg4[1], "+", prg4[0], ];
+var conmutativa1 = String(conmut1.join(''));
+var sumaconm = parseInt(prg4[0]) + parseInt(prg4[1]);
+
+var conmut2 = [prg4[3], "+", prg4[2], ];
+var conmutativa2 = String(conmut2.join(''));
+
+var sumaconm2 = parseInt(prg4[2]) + parseInt(prg4[3]);
+
+function pregunta4() {
+    var propiedad1 = document.getElementById('propiedad1').value;
+    var total1 = document.getElementById('total1').value;
+    var propiedad2 = document.getElementById('propiedad2').value;
+    var total2_1 = document.getElementById('total2_1').value;
+    var total2_2 = document.getElementById('total2_2').value;
+    var propiedad3 = document.getElementById('propiedad3').value;
+    var total3_1 = document.getElementById('total3_1').value;
+    var total3_2 = document.getElementById('total3_2').value;
+    var nt1 = 0,
+        nt2 = 0,
+        nt3 = 0,
+        nt4 = 0,
+        nt5 = 0,
+        nt6 = 0,
+        nt7 = 0,
+        nt8 = 0;
+    if (propiedad1 == "145+425") {
+        $('#propiedad1').css("background", "#00e600");
+        nt1 = 1;
+
+    } else {
+        $('#propiedad1').css("background", "#ff6666");
+
+    }
+
+    if (total1 == "570") {
+        $('#total1').css("background", "#00e600");
+        nt2 = 1;
+
+    } else {
+        $('#total1').css("background", "#ff6666");
+
+    }
+
+    if (propiedad2 == conmutativa1) {
+        $('#propiedad2').css("background", "#00e600");
+        nt3 = 1;
+
+    } else {
+        $('#propiedad2').css("background", "#ff6666");
+
+    }
+
+    if (total2_1 == sumaconm) {
+        $('#total2_1').css("background", "#00e600");
+        nt4 = 1;
+
+    } else {
+        $('#total2_1').css("background", "#ff6666");
+
+    }
+
+    if (total2_2 == sumaconm) {
+        $('#total2_2').css("background", "#00e600");
+        nt5 = 1;
+
+    } else {
+        $('#total2_2').css("background", "#ff6666");
+
+    }
+
+    if (propiedad3 == conmutativa2) {
+        $('#propiedad3').css("background", "#00e600");
+        nt6 = 1;
+
+    } else {
+        $('#propiedad3').css("background", "#ff6666");
+
+    }
+
+    if (total3_1 == sumaconm2) {
+        $('#total3_1').css("background", "#00e600");
+        nt7 = 1;
+
+    } else {
+        $('#total3_1').css("background", "#ff6666");
+
+    }
+
+    if (total3_2 == sumaconm2) {
+        $('#total3_2').css("background", "#00e600");
+        nt8 = 1;
+
+    } else {
+        $('#total3_2').css("background", "#ff6666");
+
+    }
+    var subtotal = parseInt(nt1) + parseInt(nt2) + parseInt(nt3) + parseInt(nt4) + parseInt(nt5) + parseInt(nt6) + parseInt(nt7) + parseInt(nt8);
+    var total = (subtotal * 1) / 8;
+    $('#nota1_4').val(parseFloat(total).toFixed(2));
+}
+
+////////////////////////////////pregunta 5/////////////////////////////////////////////////////
+
+
+prg5 = [];
+for (var i = 0; i < 6; i++) {
+    prg5[i] = Math.floor((Math.random() * 900) + 100);
+}
+
+var act5Num = document.getElementsByClassName('prg5');
+prg5.sort(f_randomico);
+for (i = 0; i < act5Num.length; i++) {
+
+    $('#' + act5Num[i].id).html(prg5[i]);
+
+}
+
+
+var conmut1 = ["(", prg5[0], "+", prg5[1], ")", "-", prg5[2], ];
+var conmutativa1 = String(conmut1.join(''));
+var sumac = parseInt(prg5[0]) + parseInt(prg5[1]);
+var suma1 = [sumac, "-", prg5[2], ]
+var sum = String(suma1.join(''));
+var sumaconm = parseInt(prg5[0]) + parseInt(prg5[1]) - parseInt(prg5[2]);
+////////////////////////////////////////////////////////////////
+
+var conmut2 = ["(", prg5[3], "+", prg5[5], ")", "-", prg5[4], ];
+var conmutativa2 = String(conmut2.join(''));
+sumaco = parseInt(prg5[3]) + parseInt(prg5[5]);
+sumaco1 = [sumaco, "-", prg5[4], ];
+sumc = String(sumaco1.join(''));
+var sumaconm2 = parseInt(prg5[3]) + parseInt(prg5[5]) - parseInt(prg5[4]);
+
+function pregunta5() {
+    var act5_1 = document.getElementById('act5_1').value;
+    var act5_2 = document.getElementById('act5_2').value;
+    ////////////////////////////////////////////////////////////////
+    var act5_3 = document.getElementById('act5_3').value;
+    var act5_4 = document.getElementById('act5_4').value;
+    var act5_5 = document.getElementById('act5_5').value;
+    //////////////////////////////////////////////////////////////
+    var act5_6 = document.getElementById('act5_6').value;
+    var act5_7 = document.getElementById('act5_7').value;
+    var act5_8 = document.getElementById('act5_8').value;
+    var nt1 = 0,
+        nt2 = 0,
+        nt3 = 0,
+        nt4 = 0,
+        nt5 = 0,
+        nt6 = 0,
+        nt7 = 0,
+        nt8 = 0;
+    if (act5_1 == "929+40") {
+        $('#act5_1').css("background", "#00e600");
+        nt1 = 0;
+
+    } else {
+        $('#act5_1').css("background", "#ff6666");
+
+    }
+
+    if (act5_2 == "969") {
+        $('#act5_2').css("background", "#00e600");
+        nt2 = 1;
+
+    } else {
+        $('#act5_2').css("background", "#ff6666");
+
+    }
+    //////////////////////////////////////////////////////////////
+
+    if (act5_3 == conmutativa1) {
+        $('#act5_3').css("background", "#00e600");
+        nt3 = 0;
+
+    } else {
+        $('#act5_3').css("background", "#ff6666");
+
+    }
+
+    if (act5_4 == sum) {
+        $('#act5_4').css("background", "#00e600");
+        nt4 = 0;
+
+    } else {
+        $('#act5_4').css("background", "#ff6666");
+
+    }
+
+    if (act5_5 == sumaconm) {
+        $('#act5_5').css("background", "#00e600");
+        nt5 = 1;
+
+    } else {
+        $('#act5_5').css("background", "#ff6666");
+
+    }
+    //////////////////////////////////////////////////////////
+
+    if (act5_6 == conmutativa2) {
+        $('#act5_6').css("background", "#00e600");
+        nt6 = 0;
+
+    } else {
+        $('#act5_6').css("background", "#ff6666");
+
+    }
+
+    if (act5_7 == sumaconm2) {
+        $('#act5_7').css("background", "#00e600");
+        nt7 = 0;
+
+    } else {
+        $('#act5_7').css("background", "#ff6666");
+
+    }
+
+    if (act5_8 == sumaconm2) {
+        $('#act5_8').css("background", "#00e600");
+        nt8 = 1;
+
+    } else {
+        $('#act5_8').css("background", "#ff6666");
+
+    }
+    var subtotal = parseInt(nt1) + parseInt(nt2) + parseInt(nt3) + parseInt(nt4) + parseInt(nt5) + parseInt(nt6) + parseInt(nt7) + parseInt(nt8);
+    var total = (subtotal * 1) / 3;
+    $('#nota1_5').val(parseFloat(total).toFixed(2));
 }
 
 ////////////////////////////////pregunta 6/////////////////////////////////////////////////////
 
+function pregunta6() {
+    var act6 = document.getElementById('act6').value;
+    var nt1 = 0;
+    if ((act6 == "$64") || (act6 == "64")) {
+
+        $('#act6').css("background", "#00e600");
+        nt1 = 1;
 
 
+    } else {
+        $('#act6').css("background", "#ff6666");
+
+    }
+    $('#nota1_6').val(parseFloat(nt1).toFixed(2));
+}
+
+////////////////////////////////pregunta 7/////////////////////////////////////////////////////
+function pregunta7() {
+    var act7_1 = $('#act7_1').prop('checked');
+    var act7_2 = $('#act7_2').prop('checked');
+    var act7_3 = $('#act7_3').prop('checked');
+    var act7_4 = $('#act7_4').prop('checked');
+    var nt1 = 0,
+        nt2 = 0,
+        nt3 = 0,
+        nt4 = 0;
+    if (act7_1 == true) {
+        $('#act7_1_1').css("background", "#00e600");
+        nt1 = 0.25;
+
+    } else {
+        $('#act7_1_1').css("background", "#ff6666");
+
+    }
+
+       if (act7_2 == true) {
+        $('#act7_3_1').css("background", "#00e600");
+        nt2 = 0.25;
+
+    } else {
+        $('#act7_3_1').css("background", "#ff6666");
+
+    }
+
+      if (act7_3 == true) {
+        $('#act7_4_1').css("background", "#00e600");
+        nt3 = 0.25;
+
+    } else {
+        $('#act7_4_1').css("background", "#ff6666");
+
+    }
+
+    if (act7_4 == true) {
+        $('#act7_2_1').css("background", "#00e600");
+        nt4 = 0.25;
+
+    } else {
+        $('#act7_2_1').css("background", "#ff6666");
+
+    }
+    var total = parseFloat(nt1)+parseFloat(nt2)+parseFloat(nt3)+parseFloat(nt4);
+     $('#nota1_7').val(parseFloat(total).toFixed(2));
+}
+////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////
 var interesult = [],
     numeroInt = 0,
     interesult2 = [],
-    numeroInt2 = 0;
+    numeroInt2 = 0,
+    numeroInt3 = 0;
 
-var IntNum = Math.floor(Math.random() * (50 - 1)) + 1;
-var h = 1;
-for (var h = 0; h <= 6; h++) {
-
-    numeroInt = parseInt(numeroInt) + parseInt(IntNum);
-    interesult[h] = numeroInt;
-
+var interesult3 = [];
+var IntNum3 = Math.floor(Math.random() * 50) + 1;
+for (var v = 0; v <= 6; v++) {
+    numeroInt3 = parseInt(numeroInt3) + parseInt(IntNum3);
+    interesult3[v] = numeroInt3;
 }
-document.getElementById('numI1').value = interesult[0];
-document.getElementById('numI2').value = interesult[1];
-document.getElementById('numI3').value = interesult[4];
-document.getElementById('numI4').value = interesult[6];
+interesult3.sort(function(a, b) { return b - a; });
 
-var IntNum2 = Math.round(Math.random() * (99 - 1) + 1);
-
-var h = 1;
-for (var j = 0; j <= 6; j++) {
-    numeroInt2 = parseInt(numeroInt2) + parseInt(IntNum2);
-    interesult2[j] = numeroInt2;
-}
-interesult2.sort(function(a, b) { return b - a; });
-document.getElementById('numR1').value = interesult2[0];
-document.getElementById('numR2').value = interesult2[1];
-document.getElementById('numR3').value = interesult2[5];
+document.getElementById('numer1').value = interesult3[0];
+var suma = Math.floor(Math.random() * 10) + 1;
 
 
 
+document.getElementById('numer2').value = parseInt(interesult3[0]) + parseInt(suma);
+
+var resta = Math.floor(Math.random() * 10) + 1;
+
+var numero2 = document.getElementById('numer2').value;
+
+document.getElementById('numer3').value = parseInt(numero2) - parseInt(resta);
+
+var numero3 = document.getElementById('numer3').value;
+
+document.getElementById('numer4').value = parseInt(numero3) + parseInt(suma);
 
 
-function pregunta6() {
-    var suc = document.getElementById('succ1').value;
-    var suc2 = document.getElementById('succ2').value;
-    var suc3 = document.getElementById('succ3').value;
-    var Res6_1 = 0,
-        Res6_2 = 0,
-        Res6_3 = 0,
-        Res6_4 = 0,
-        Res6_5 = 0;
-    if (interesult[2] == suc) {
-        $('#succ1').addClass('valid')
-        Res6_1 = 1;
-    } else {
-        $('#succ1').addClass('no-valid')
+var numero4 = document.getElementById('numer4').value;
 
-    }
-    if (interesult[3] == suc2) {
-        $('#succ2').addClass('valid')
-        Res6_2 = 1;
-    } else {
-        $('#succ2').addClass('no-valid')
-    }
-    if (interesult[5] == suc3) {
-        $('#succ3').addClass('valid')
-        Res6_3 = 1;
-    } else {
-        $('#succ3').addClass('no-valid')
-    }
-    var ResSuc = parseInt(Res6_1) + parseInt(Res6_2) + parseInt(Res6_3);
+document.getElementById('numer5').value = parseInt(numero4) - parseInt(resta);
 
-    var pt = ['+', interesult[0]]
-    var ptron = pt.join('');
-    var resPtr1 = 0;
-    for (var i = 1; i <= 6; i++) {
-        var p = $('#ptr' + [i] + '').val();
-        if (p == ptron) {
-            resPtr1 = parseInt(resPtr1) + 1;
-            $('#ptr' + [i] + '').addClass('valid');
-            Res6_4 = Res6_4 + 1;
+var numero5 = document.getElementById('numer5').value;
 
-        } else {
-            $('#ptr' + [i] + '').removeClass('valid');
-            $('#ptr' + [i] + '').addClass('no-valid');
+document.getElementById('numer6').value = parseInt(numero5) + parseInt(suma);
+
+var numero6 = document.getElementById('numer6').value;
+
+document.getElementById('numer7').value = parseInt(numero6) - parseInt(resta);
 
 
-
-        }
-
-    }
-
-
-    var succ = document.getElementById('succe1').value;
-    var succ2 = document.getElementById('succe2').value;
-    var succ3 = document.getElementById('succe3').value;
-    var succ4 = document.getElementById('succe4').value;
-    var ResPre6_1 = 0,
-        ResPre6_2 = 0,
-        ResPre6_3 = 0,
-        ResPre6_4 = 0;
-
-    if (interesult2[2] == succ) {
-        $('#succe1').addClass('valid')
-        ResPre6_1 = 1;
-    } else {
-        $('#succe1').addClass('no-valid')
-    }
-    if (interesult2[3] == succ2) {
-        $('#succe2').addClass('valid')
-        ResPre6_2 = 1;
-    } else {
-        $('#succe2').addClass('no-valid')
-    }
-    if (interesult2[4] == succ3) {
-        $('#succe3').addClass('valid')
-        ResPre6_3 = 1;
-    } else {
-        $('#succe3').addClass('no-valid')
-    }
-    if (interesult2[6] == succ4) {
-        $('#succe4').addClass('valid')
-        ResPre6_4 = 1;
-    } else {
-        $('#succe4').addClass('no-valid')
-    }
-    var Pr6 = parseInt(ResPre6_1) + parseInt(ResPre6_2) + parseInt(ResPre6_3) + parseInt(ResPre6_4);
+function pregunta8() {
+    var numer6 = document.getElementById('numer6').value;
+    var numer7 = document.getElementById('numer7').value;
+    var sr1 = document.getElementById('sr1').value;
+    var sr2 = document.getElementById('sr2').value;
+    var ptr1 = document.getElementById('ptr1').value;
+    var ptr3 = document.getElementById('ptr3').value;
+    var ptr5 = document.getElementById('ptr5').value;
+    var ptr2 = document.getElementById('ptr2').value;
+    var ptr4 = document.getElementById('ptr4').value;
+    var ptr6 = document.getElementById('ptr6').value;
+    var nota1 = 0,
+        nota2 = 0,
+        nota3 = 0,
+        nota4 = 0,
+        nota5 = 0;
 
 
-    var ResPre6_5 = 0,
-        ResPre6_6 = 0;
-    var pt2 = ['-', interesult2[6]]
+    var pt1 = ['+', suma]
+    var ptron1 = pt1.join('');
+    var pt2 = ['-', resta]
     var ptron2 = pt2.join('');
-    var resPtr2 = 0;
-    for (var i = 1; i <= 6; i++) {
-        var p = $('#patron' + [i] + '').val();
-        if (p == ptron2) {
-            resPtr2 = parseInt(resPtr2) + 1;
-            $('#patron' + [i] + '').addClass('valid');
-            ResPre6_5 = ResPre6_5 + 1;
 
-        } else {
-            $('#patron' + [i] + '').removeClass('valid');
-            $('#patron' + [i] + '').addClass('no-valid');
-
-        }
+    if (sr1 == numer6) {
+        $('#sr1').css("background", "#00e600");
+        nota1 = 1;
+    } else {
+        $('#sr1').css("background", "#ff6666");
     }
 
-    var RPregun6 = parseInt(ResSuc) + parseInt(Res6_4) + parseInt(Pr6) + parseInt(ResPre6_5);
-    var totalRp6 = (RPregun6 * 1) / 19;
-    $('#nota1_6').val(parseFloat(totalRp6).toFixed(2));
+    if (sr2 == numer7) {
+        $('#sr2').css("background", "#00e600");
+        nota2 = 1;
+    } else {
+        $('#sr2').css("background", "#ff6666");
+
+    }
+    if (ptr1 == ptron1) {
+        $('#ptr1').css("background", "#00e600");
+        nota3 = 1;
+    } else {
+        $('#ptr1').css("background", "#ff6666");
+    }
+    if (ptr3 == ptron1) {
+        $('#ptr3').css("background", "#00e600");
+        nota3 = 1;
+    } else {
+        $('#ptr3').css("background", "#ff6666");
+    }
+    if (ptr5 == ptron1) {
+        $('#ptr5').css("background", "#00e600");
+        nota3 = 1;
+    } else {
+        $('#ptr5').css("background", "#ff6666");
+    }
+
+    if (ptr2 == ptron2) {
+        $('#ptr2').css("background", "#00e600");
+        nota4 = 1;
+    } else {
+        $('#ptr2').css("background", "#ff6666");
+    }
+    if (ptr4 == ptron2) {
+        $('#ptr4').css("background", "#00e600");
+        nota4 = 1;
+    } else {
+        $('#ptr4').css("background", "#ff6666");
+    }
+    if (ptr6 == ptron2) {
+        $('#ptr6').css("background", "#00e600");
+        nota4 = 1;
+    } else {
+        $('#ptr6').css("background", "#ff6666");
+    }
+
+
+    var nota39_2 = parseInt(nota1) + parseInt(nota2) + parseInt(nota3) + parseInt(nota4);
+    $('#nota3').val(nota39_2.toFixed(2));
+
 }
+
+
+
 ///////////////////////////////Pregunta 7 /////////////////////////////////////
 
-function pregunt7() {
+function pregunt() {
     var tx1 = document.getElementById('tx1').value;
     var tx2 = document.getElementById('tx2').value;
     var tx3 = document.getElementById('tx3').value;
@@ -848,7 +898,7 @@ $('.pin').click(function() {
     }
 });
 
-function pregunta8() {
+function pregunta() {
     var respr5 = 0;
     for (var i = 0; i <= 3; i++) {
         var caja = $('span[id=P' + [i] + ']').text();
@@ -887,7 +937,7 @@ for (i = 0; i < nAlt.length; i++) {
 
 }
 
-function pregunta9(argument) {
+function pregunta(argument) {
     var perim = document.getElementById('peri1').value;
     var perim2 = document.getElementById('peri2').value;
     var perim3 = document.getElementById('peri3').value;
@@ -963,7 +1013,7 @@ document.getElementById('nota1_10').addEventListener('keyup', () => {
     validMaxIngreso(document.getElementById('nota1_10'), 0.5)
 });
 //////////////////pregunta 11 /////////////
-function pregunta11() {
+function pregunta1() {
     var txtAng = document.getElementById('ang1').value;
     var txtAng2 = document.getElementById('ang2').value;
     var txtAng3 = document.getElementById('ang3').value;
@@ -1042,7 +1092,7 @@ function calcularTotal() {
 
         $('#txtNota').html(SuperTotal.toFixed(2));
         document.getElementById('bt_comprobar').disabled = true;
-        $('input').attr("readonly");
+        $('input').attr("disabled", true);
         $('#txtAlumno').attr("disabled", false);
 
 

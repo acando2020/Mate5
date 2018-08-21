@@ -26,6 +26,11 @@ table tr th div span {
     color: black;
 }
 
+.markRespoIncor {
+    background-color: red;
+    color: black;
+}
+
 .nota-abierta1 {
     width: 55px;
     border: solid;
@@ -135,7 +140,7 @@ table tr th div span {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="calcularTotal()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="pregunta8()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -192,306 +197,87 @@ table tr th div span {
                             <div class="panel-body">
                                 <!--INICIO COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
                                 <div class="text-question">
-                                    <input type="text" maxlength="2" id="nota1_1" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>1.- Escribe</b> en palabras o en números las siguientes cantidades:</span>
+                                    <input type="text" maxlength="2" id="nota1_1" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>1.- Escribe</b> en palabras los siguientes números.</span>
                                     <br>
-                                    <div class="table-responsive">
-                                        <table class="table tabact1">
-                                            <tr>
-                                                <th class="btn-info">
-                                                    <div>
-                                                        <span>Números</span>
-                                                    </div>
-                                                </th>
-                                                <th class="btn-success">
-                                                    <div>
-                                                        <span>En palabras</span>
-                                                    </div>
-                                                </th>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="preg1"></div>
-                                                </td>
-                                                <td>
-                                                    <div>
-                                                        <input type="text" onKeyUp="this.value=this.value.toLowerCase();" class="form-control text-center" id="inp1" >
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="preg1"></div>
-                                                </td>
-                                                <td>
-                                                    <div>
-                                                        <input type="text" onKeyUp="this.value=this.value.toLowerCase();" class="form-control text-center" id="inp2">
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="preg1"></div>
-                                                </td>
-                                                <td>
-                                                    <div>
-                                                        <input type="text" onKeyUp="this.value=this.value.toLowerCase();" class="form-control text-center" id="inp3">
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div>
-                                                        <input type="text" onKeyUp="this.value=this.value.toLowerCase();" class="form-control text-center" id="inp4">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="preg1"></div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div>
-                                                        <input type="text" onKeyUp="this.value=this.value.toLowerCase();" class="form-control text-center" id="inp5">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="preg1"></div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div>
-                                                        <input type="text" onKeyUp="this.value=this.value.toLowerCase();" class="form-control text-center" id="inp6">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="preg1"></div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                                <br>
-                                <br>
-                                <div class="text-question">
-                                    <input type="text" maxlength="2" id="nota1_2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>2.- Une</b> según corresponda.</span>
-                                    <br>
-                                    <div class="table-responsive">
-                                        <table class="table tabact2">
-                                            <tr>
-                                                <td>
-                                                    <div class="columna1draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                                <td>
-                                                    <div id="drop1" class="columna1droppable"></div>
-                                                </td>
-                                                <td>
-                                                    <div class="columna3draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="columna1draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                                <td>
-                                                    <div id="drop2" class="columna1droppable"></div>
-                                                </td>
-                                                <td>
-                                                    <div class="columna3draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="columna1draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                                <td>
-                                                    <div id="drop3" class="columna1droppable"></div>
-                                                </td>
-                                                <td>
-                                                    <div class="columna3draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="columna1draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                                <td>
-                                                    <div id="drop4" class="columna1droppable"></div>
-                                                </td>
-                                                <td>
-                                                    <div class="columna3draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="columna1draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                                <td>
-                                                    <div id="drop5" class="columna1droppable"></div>
-                                                </td>
-                                                <td>
-                                                    <div class="columna3draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="columna1draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                                <td>
-                                                    <div id="drop6" class="columna1droppable"></div>
-                                                </td>
-                                                <td>
-                                                    <div class="columna3draggable" style="background: #CFE4C1"></div>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div style="float: left;width: 100%;">
+                                                <div style="float: left;width: 1%"><b>a)</b></div>
+                                                <div style="float: left;width: 99%" class="prg1" id="pgr1Num1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div style="float: left;width: 100%;">
+                                                <div style="float: left;width: 1%"><b>b)</b></div>
+                                                <div style="float: left;width: 99%" class="prg1" id="pgr1Num2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div style="float: left;width: 100%;">
+                                                <div style="float: left;width: 1%"><b>c)</b></div>
+                                                <div style="float: left;width: 99%" class="prg1" id="pgr1Num3">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="text-question">
-                                    <input type="text" maxlength="2" id="nota1_3" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>3.- Ordena</b> las siguientes cantidades en forma ascendente:</span>
-                                    <div align="center">
-                                        <div style="float: right;width: 50%;">
-                                            <div align="center">
+                                    <input type="text" maxlength="2" id="nota1_2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>2.- Ordena</b> de menor a mayor las siguientes cantidades.</span>
+                                    <table class="table">
+                                        <tr>
+                                            <td>
                                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" style="background: #A2D9F1 " id="caja_img4"></div>
-                                            </div>
-                                        </div>
-                                        <div align="center">
-                                            <div style="float: left;width: 50%;">
+                                            </td>
+                                            <td>
                                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" style="background: #FAD3D7 " id="caja_img5"></div>
-                                            </div>
-                                        </div>
-                                        <div style="float: right;width: 50%;">
-                                            <div align="center">
+                                            </td>
+                                            <td>
                                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" style="background:#DECBE4 " id="caja_img6"></div>
-                                            </div>
-                                        </div>
-                                        <div style="float: left;width: 50%;">
-                                            <div align="center">
+                                            </td>
+                                            <td>
                                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" style="background:#F8C1AD " id="caja_img1"></div>
-                                            </div>
-                                        </div>
-                                        <div style="float: right;width: 50%;">
-                                            <div align="center">
+                                            </td>
+                                            <td>
                                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" style="background:#FFEAAD " id="caja_img2"></div>
-                                            </div>
-                                        </div>
-                                        <div align="center">
-                                            <div style="float: left;width: 50%;">
+                                            </td>
+                                            <td>
                                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 imagen" style="background:#A2D9F1" id="caja_img3"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </td>
+                                        </tr>
+                                    </table>
                                     <div align="center">
                                         <table style="width:70%;">
                                             <tr>
                                                 <td id="div1" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)">
                                                 </td>
                                                 <td>
-                                                    < </td>
-                                                        <td id="div2" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                                        </td>
-                                                        <td>
-                                                            < </td>
-                                                                <td id="div3" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                                                </td>
-                                                                <td>
-                                                                    < </td>
-                                                                        <td id="div4" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                                                        </td>
-                                                                        <td>
-                                                                            < </td>
-                                                                                <td id="div5" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                                                                                </td>
-                                                                                <td>
-                                                                                    < </td>
-                                                                                        <td id="div6" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                                                    <b><</b></td>
+                                                <td id="div2" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </td>
+                                                <td>
+                                                    <b><</b></td>
+                                                <td id="div3" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </td>
+                                                <td>
+                                                    <b><</b></td>
+                                                <td id="div4" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </td>
+                                                <td>
+                                                    <b><</b></td>
+                                                <td id="div5" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </td>
+                                                <td>
+                                                    <b><</b></td>
+                                                <td id="div6" class="" width=150px style="width:200px;height:20px;border: 1px solid; font-size: 12px" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
                                             </tr>
                                         </table>
                                     </div>
                                 </div>
                                 <div class="text-question">
-                                    <input type="text" maxlength="2" id="nota1_4" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>4.- Compara</b>  los números. <b>Escribe</b> los signos <b style="color:#22a9f7"><</b>, <b style="color:#22a9f7">></b>, o <b style="color:#22a9f7">=</b>, según corresponda.</span>
-                                    <br>
-                                    <div class="col-lg-12 row">
-                                        <div class="col-lg-6" align="center">
-                                            <table>
-                                                <tr style="align-content: center;">
-                                                    <td>
-                                                        <div class=" numeros" id="cajasNum1"></div>
-                                                    </td>
-                                                    <td>
-                                                        <input size="1" id="n1" maxlength="1" style="text-align: center;" type="text" name="" class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        <div class=" numeros" id="cajasNum3"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr style="align-content: center;">
-                                                    <td>
-                                                        <div class=" numeros" id="cajasNum2"></div>
-                                                    </td>
-                                                    <td>
-                                                        <input size="1" maxlength="1" id="n2" style="text-align: center;" type="text" name="" class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        <div class=" numeros" id="cajasNum5"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr style="align-content: center;">
-                                                    <td>
-                                                        <div class=" numeros" id="cajasNum4"></div>
-                                                    </td>
-                                                    <td>
-                                                        <input size="1" maxlength="1" id="n3" style="text-align: center;" type="text" name="" class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        <div class=" numeros" id="cajasNum6"></div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <div class="col-lg-6" align="center">
-                                            <table>
-                                                <tr style="align-content: center;">
-                                                    <td>
-                                                        <div class=" num" id="cajasNume1"></div>
-                                                    </td>
-                                                    <td>
-                                                        <input size="1" maxlength="1" id="n4" style="text-align: center;" type="text" name="" class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        <div class=" num" id="cajasNume2"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr style="align-content: center;">
-                                                    <td>
-                                                        <div class=" num" id="cajasNume4"></div>
-                                                    </td>
-                                                    <td>
-                                                        <input size="1" maxlength="1" id="n5" style="text-align: center;" type="text" name="" class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        <div class=" num" id="cajasNume3"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr style="align-content: center;">
-                                                    <td>
-                                                        <div class=" num" id="cajasNume5"></div>
-                                                    </td>
-                                                    <td>
-                                                        <input size="1" maxlength="1" id="n6" style="text-align: center;" type="text" name="" class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        <div class=" num" id="cajasNume6"></div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-question">
-                                    <input type="text" maxlength="2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" id="nota1_5" readonly>&nbsp;<span><b>5.- Realiza</b>   las siguientes sumas y restas:</span>
+                                    <input type="text" maxlength="2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" id="nota1_3" readonly>&nbsp;<span><b>3.- Realiza</b> las siguientes operaciones.</span>
                                     <br>
                                     <div class="row">
                                         <div class="col-lg-3">
@@ -502,11 +288,14 @@ table tr th div span {
                                                 <table style="text-align: center;">
                                                     <thead>
                                                         <tr style="background-color:#FEEDDD;">
+                                                            <td><b style="color: #E6007E">dm</b></td>
+                                                            <td><b style="color: #009FE3">um</b></td>
                                                             <td><b style="color: #76B82A">c</b></td>
                                                             <td><b style="color: #E6007E">d</b></td>
                                                             <td><b style="color: #009FE3">u</b></td>
                                                         </tr>
                                                         <tr id="fila1">
+                                                            <td></td>
                                                             <td>
                                                                 <div class=" sum" id="sumaNum1"></div>
                                                             </td>
@@ -516,33 +305,47 @@ table tr th div span {
                                                             <td>
                                                                 <div class=" sum" id="sumaNum3"></div>
                                                             </td>
-                                                        </tr>
-                                                        <tr id="fila2">
                                                             <td>
                                                                 <div class=" sum" id="sumaNum4"></div>
                                                             </td>
+                                                        </tr>
+                                                        <tr id="fila2">
+                                                            <td></td>
                                                             <td>
                                                                 <div class=" sum" id="sumaNum5"></div>
                                                             </td>
                                                             <td>
                                                                 <div class=" sum" id="sumaNum6"></div>
                                                             </td>
+                                                            <td>
+                                                                <div class=" sum" id="sumaNum7"></div>
+                                                            </td>
+                                                            <td>
+                                                                <div class=" sum" id="sumaNum8"></div>
+                                                            </td>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr id="resp1">
                                                             <td>
-                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" id="rsSuma1" name="">
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB ; width: 40px;" type="text" placeholder="0" size="5" maxlength="1" id="rsSuma1" name="">
                                                             </td>
                                                             <td>
-                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" id="rsSuma2" name="">
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB ; width: 40px;" type="text" placeholder="0" size="5" maxlength="1" id="rsSuma2" name="">
                                                             </td>
                                                             <td>
-                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" id="rsSuma3" name="">
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB ; width: 40px;" type="text" placeholder="0" size="5" maxlength="1" id="rsSuma3" name="">
+                                                            </td>
+                                                            <td>
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB ; width: 40px;" type="text" placeholder="0" size="5" maxlength="1" id="rsSuma4" name="">
+                                                            </td>
+                                                            <td>
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB ; width: 40px;" type="text" placeholder="0" size="5" maxlength="1" id="rsSuma5" name="">
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
+                                                <br>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
@@ -552,6 +355,7 @@ table tr th div span {
                                             <div style="float: left;width: 90%;">
                                                 <table style="text-align: center;">
                                                     <tr style="background-color:#FEEDDD;">
+                                                        <td><b style="color: #E6007E">dm</b></td>
                                                         <td><b style="color: #009ED4">um</b></td>
                                                         <td><b style="color: #76B82A">c</b></td>
                                                         <td><b style="color: #E6007E">d</b></td>
@@ -570,11 +374,12 @@ table tr th div span {
                                                         <td>
                                                             <div class="sum2" id="sumaNume4"></div>
                                                         </td>
-                                                    </tr>
-                                                    <tr id="fila4">
                                                         <td>
                                                             <div class="sum2" id="sumaNume5"></div>
                                                         </td>
+                                                    </tr>
+                                                    <tr id="fila4">
+                                                        <td></td>
                                                         <td>
                                                             <div class="sum2" id="sumaNume6"></div>
                                                         </td>
@@ -584,22 +389,29 @@ table tr th div span {
                                                         <td>
                                                             <div class="sum2" id="sumaNume8"></div>
                                                         </td>
+                                                        <td>
+                                                            <div class="sum2" id="sumaNume9"></div>
+                                                        </td>
                                                     </tr>
                                                     <tr id="resp2">
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma4">
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma6">
                                                         </td>
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma5">
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma7">
                                                         </td>
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma6">
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma8">
                                                         </td>
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma7">
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma9">
+                                                        </td>
+                                                        <td>
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma10">
                                                         </td>
                                                     </tr>
                                                 </table>
+                                                <br>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
@@ -610,6 +422,8 @@ table tr th div span {
                                                 <table style="text-align: center;">
                                                     <thead>
                                                         <tr style="background-color:#FEEDDD;">
+                                                            <td><b style="color: #E6007E">dm</b></td>
+                                                            <td><b style="color: #009FE3">um</b></td>
                                                             <td><b style="color: #76B82A">c</b></td>
                                                             <td><b style="color: #E6007E">d</b></td>
                                                             <td><b style="color: #009FE3">u</b></td>
@@ -624,6 +438,12 @@ table tr th div span {
                                                             <td>
                                                                 <div class=" sum3" id="sumaNumer7"></div>
                                                             </td>
+                                                            <td>
+                                                                <div class=" sum3" id="sumaNumer8"></div>
+                                                            </td>
+                                                            <td>
+                                                                <div class=" sum3" id="sumaNumer9"></div>
+                                                            </td>
                                                         </tr>
                                                         <tr id="fila6">
                                                             <td>
@@ -635,22 +455,36 @@ table tr th div span {
                                                             <td>
                                                                 <div class=" sum4" id="sumaNumero3"></div>
                                                             </td>
+                                                            <td>
+                                                                <div class=" sum4" id="sumaNumero4"></div>
+                                                            </td>
+                                                            <td>
+                                                                <div class=" sum4" id="sumaNumero5"></div>
+                                                            </td>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr id="resp3">
                                                             <td>
-                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta1">
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta1">
                                                             </td>
                                                             <td>
-                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta2">
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta2">
                                                             </td>
                                                             <td>
-                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta3">
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta3">
+                                                            </td>
+                                                            <td>
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta4">
+                                                            </td>
+                                                            <td>
+                                                                <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" placeholder="0" size="5" maxlength="1" name="" id="rsResta5">
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
+                                                <br>
+                                                <br>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
@@ -660,6 +494,7 @@ table tr th div span {
                                             <div style="float: left;width: 90%;">
                                                 <table style="text-align: center;">
                                                     <tr style="background-color:#FEEDDD;">
+                                                        <td><b style="color: #E6007E">dm</b></td>
                                                         <td><b style="color: #009ED4">um</b></td>
                                                         <td><b style="color: #76B82A">c</b></td>
                                                         <td><b style="color: #E6007E">d</b></td>
@@ -678,11 +513,12 @@ table tr th div span {
                                                         <td>
                                                             <div class="sum5" id="resNume4"></div>
                                                         </td>
-                                                    </tr>
-                                                    <tr id="fila8">
                                                         <td>
                                                             <div class="sum6" id="resNumero5"></div>
                                                         </td>
+                                                    </tr>
+                                                    <tr id="fila8">
+                                                        <td></td>
                                                         <td>
                                                             <div class="sum6" id="resNumero6"></div>
                                                         </td>
@@ -692,29 +528,262 @@ table tr th div span {
                                                         <td>
                                                             <div class="sum6" id="resNumero8"></div>
                                                         </td>
+                                                        <td>
+                                                            <div class="sum6" id="resNumero9"></div>
+                                                        </td>
                                                     </tr>
                                                     <tr id="resp4">
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta4">
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta6">
                                                         </td>
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta5">
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta7">
                                                         </td>
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta6">
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta8">
                                                         </td>
                                                         <td>
-                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta7">
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta9">
+                                                        </td>
+                                                        <td>
+                                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsResta10">
                                                         </td>
                                                     </tr>
                                                 </table>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" id="nota1_4" readonly>&nbsp;<span><b>4.- Aplica</b> la propiedad conmutativa y <b>resuelve</b>.</span>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-4">
+                                                <div style="float: left;width: 100%;">
+                                                    <div style="float: left;width: 10%"><b>a)</b></div>
+                                                    <div style="float: left;width: 90%">
+                                                        <table>
+                                                            <tr>
+                                                                <td>425 + 145</td>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="text" name="" class="form-control sinEspacios" id="propiedad1" placeholder="propiedad">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="right">570</td>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="number" name="" class="form-control" id="total1" placeholder="Total">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div style="float: left;width: 100%;">
+                                                    <div style="float: left;width: 1%"><b>b)</b></div>
+                                                    <div style="float: left;width: 99%">
+                                                        <table>
+                                                            <tr>
+                                                                <td align="right"><span class="prg4" id="act4Num1"></span> + <span class="prg4" id="act4Num2"></span></td>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="text" name="" class="form-control sinEspacios" id="propiedad2" placeholder="propiedad">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <input type="number" name="" class="form-control" id="total2_1" placeholder="Total">
+                                                                </td>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="number" name="" class="form-control" id="total2_2" placeholder="Total">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div style="float: left;width: 100%;">
+                                                    <div style="float: left;width: 1%"><b>c)</b></div>
+                                                    <div style="float: left;width: 99%">
+                                                        <table>
+                                                            <tr>
+                                                                <td align="right"><span class="prg4" id="act4Num3"></span> + <span class="prg4" id="act4Num4"></span></td>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="text" name="" class="form-control sinEspacios" id="propiedad3" placeholder="propiedad">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <input type="number" name="" class="form-control" id="total3_1" placeholder="Total">
+                                                                </td>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="number" name="" class="form-control" id="total3_2" placeholder="Total">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="text-question">
-                                    <input type="text" maxlength="2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" id="nota1_6" readonly>&nbsp;<span><b>6.- Encuentra</b> los patrones y <b>completa</b> las sucesiones.</span>
+                                    <input type="text" maxlength="2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" id="nota1_5" readonly>&nbsp;<span><b>5.- Agrupa</b> los términos como más convenga y <b>resuelve</b>.</span>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-4">
+                                                <div style="float: left;width: 100%;">
+                                                    <div style="float: left;width: 10%"><b>a)</b></div>
+                                                    <div style="float: left;width: 90%">
+                                                        <table>
+                                                            <tr>
+                                                                <td colspan="2">809 + 40 + 120</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>=</td>
+                                                                <td>(809 + 120) + 40</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="text" id="act5_1" class="form-control sinEspacios" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="number" id="act5_2" class="form-control sinEspacios" name="">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div style="float: left;width: 100%;">
+                                                    <div style="float: left;width: 10%"><b>b)</b></div>
+                                                    <div style="float: left;width: 90%">
+                                                        <table>
+                                                            <tr>
+                                                                <td colspan="2"><span class="prg5" id="act5Num1"></span> + <span class="prg5" id="act5Num2"></span> - <span class="prg5" id="act5Num3"></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="text" id="act5_3" class="form-control sinEspacios" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="text" id="act5_4" class="form-control sinEspacios" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="number" id="act5_5" class="form-control sinEspacios" name="">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div style="float: left;width: 100%;">
+                                                    <div style="float: left;width: 10%"><b>c)</b></div>
+                                                    <div style="float: left;width: 90%">
+                                                        <table>
+                                                            <tr>
+                                                                <td colspan="2"><span class="prg5" id="act5Num4"></span> - <span class="prg5" id="act5Num5"></span> + <span class="prg5" id="act5Num6"></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="text" id="act5_6" class="form-control sinEspacios" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="text" id="act5_7" class="form-control sinEspacios" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>=</td>
+                                                                <td>
+                                                                    <input type="number" id="act5_8" class="form-control sinEspacios" name="">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" id="nota1_6" readonly>&nbsp;<span><b>6.- Resuelve</b> el problema.</span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                         Pablo, Mónica y Raquel organizarán una fiesta sorpresa por el cumpleaños de su mamá. Pablo contribuirá con $ 24; Mónica, con $ 35; Raquel, con $ 27; y su papá aportará el resto.
+                                     </span>
+                                    <br>
+                                    <span>
+                                         Si los gastos previstos para el cumpleaños son de $ 150, ¿con cuánto aportará el papá?
+                                     </span>
+                                    <br>
+                                    <span><b>R.</b> El papá aportará con <input type="text" id="act6" name="" style="border-radius: 15px;text-align: center;">.</span>
+                                    <br>
+                                </div>
+                                <br>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" id="nota1_7" readonly>&nbsp;<span><b>7.- Resuelve</b>Ubica los pares ordenados en el sistema de coordenadas rectangulares.</span>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6" align="center">
+                                                <h3><span id="act7_1_1">A (2, 2)</span></h3><br>
+                                                <h3><span id="act7_2_1">B (5, 0)</span></h3><br>
+                                                <h3><span id="act7_3_1">C (3, 1)</span></h3><br>
+                                                <h3><span id="act7_4_1">D (4, 2)</span></h3><br>
+                                            </div>
+                                            <div class="col-lg-6" style="background: url('img/i1_p54_act75.jpg');width: 500px;height: 403px; ">
+                                                <input type="checkbox" id="act7_1" style="position: absolute;left: 166px;top: 206px;">
+                                                <input type="checkbox" id="act7_2" style="position: absolute;left: 232px;top: 273px;">
+                                                <input type="checkbox" id="act7_3" style="position: absolute;left: 295px;top: 206px;">
+                                                <input type="checkbox" id="act7_4" style="position: absolute;left: 358px;top: 335px;">
+                                                <input type="checkbox" id="act7_5" style="position: absolute;left: 105px;top: 147px;">
+                                                <input type="checkbox" id="act7_6" style="position: absolute;left: 356px;top: 150px;">
+                                                <input type="checkbox" id="act7_7" style="position: absolute;left: 165px;top: 80px;">
+                                                <input type="checkbox" id="act7_8" style="position: absolute;left: 168px;top: 148px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-question">
+                                    <br>
+                                    <input type="text" maxlength="2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" id="nota1_8" readonly>&nbsp;<span><b>8.- Encuentra</b> los patrones y <b>completa</b> las sucesiones.</span>
+
                                     <div class="table-responsive" style="text-align:center;">
                                         <table style="text-align:center;">
                                             <tr style="text-align:center;">
@@ -727,7 +796,7 @@ table tr th div span {
                                                 <td><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="ptr2" class="saltos" type="text" placeholder="+0"></input>
+                                                    <input style="text-align:center;" id="ptr2" class="saltos" type="text" placeholder="-0"></input>
                                                 </td>
                                                 <td><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
@@ -737,7 +806,7 @@ table tr th div span {
                                                 <td><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="ptr4" class="saltos" type="text" placeholder="+0"></input>
+                                                    <input style="text-align:center;" id="ptr4" class="saltos" type="text" placeholder="-0"></input>
                                                 </td>
                                                 <td><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
@@ -747,111 +816,47 @@ table tr th div span {
                                                 <td><img class="img-responsive" src="img/flecha2.png"></img>
                                                 </td>
                                                 <td>
-                                                    <input style="text-align:center;" id="ptr6" class="saltos" type="text" placeholder="+0"></input>
+                                                    <input style="text-align:center;" id="ptr6" class="saltos" type="text" placeholder="-0"></input>
                                                 </td>
                                                 <td align="left"><img class="img-responsive" src="img/flecha3.png"></img>
                                                 </td>
                                             </tr>
                                             <tr style="text-align:center;">
                                                 <td><span>Sucesión:</span></td>
-                                                <td>
-                                                    <input style="text-align:center;" id="numI1" disabled type="text" class="saltos" name="">
+                                                 <td>
+                                                    <input type="number" class="saltos" id="numer1" disabled name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" id="numI2" disabled type="text" class="saltos" name="">
+                                                    <input type="number" class="saltos" id="numer2" disabled name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succ1" class="saltos" name="">
+                                                    <input type="number" class="saltos" id="numer3" name="" disabled>
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succ2" class="saltos" name="">
+                                                    <input type="number" class="saltos" id="numer4" name="" disabled>
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" id="numI3" disabled type="text" class="saltos" name="">
+                                                    <input type="number" class="saltos" id="numer5" name="" disabled>
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succ3" class="saltos" name="">
+                                                    <input type="number" class="saltos" id="numer6" name="" style="display: none;">
+                                                    <input id="sr1" type="number" class="saltos" name="">
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="text-align:center;" id="numI4" disabled type="text" class="saltos" name="">
+                                                    <input type="number" class="saltos" id="numer7" name="" style="display: none;">
+                                                    <input id="sr2" type="number" class="saltos" name="">
                                                 </td>
                                             </tr>
                                         </table>
                                         <br>
                                         <br>
-                                        <table style="text-align:center;">
-                                            <tr style="text-align:center;">
-                                                <td><span>Patrón: </span></td>
-                                                <td align="right"><img class="img-responsive" src="img/flecha1.png"></img>
-                                                </td>
-                                                <td>
-                                                    <input style="text-align:center;" id="patron1" class="saltos" type="text" placeholder="-0"></input>
-                                                </td>
-                                                <td align="right"><img class="img-responsive" src="img/flecha2.png"></img>
-                                                </td>
-                                                <td>
-                                                    <input style="text-align:center;" id="patron2" class="saltos" type="text" placeholder="-0"></input>
-                                                </td>
-                                                <td align="right"><img class="img-responsive" src="img/flecha2.png"></img>
-                                                </td>
-                                                <td>
-                                                    <input style="text-align:center;" id="patron3" class="saltos" type="text" placeholder="-0"></input>
-                                                </td>
-                                                <td align="right"><img class="img-responsive" src="img/flecha2.png"></img>
-                                                </td>
-                                                <td>
-                                                    <input style="text-align:center;" id="patron4" class="saltos" type="text" placeholder="-0"></input>
-                                                </td>
-                                                <td align="right"><img class="img-responsive" src="img/flecha2.png"></img>
-                                                </td>
-                                                <td>
-                                                    <input style="text-align:center;" id="patron5" class="saltos" type="text" placeholder="-0"></input>
-                                                </td>
-                                                <td align="right"><img class="img-responsive" src="img/flecha2.png"></img>
-                                                </td>
-                                                <td>
-                                                    <input style="text-align:center;" id="patron6" class="saltos" type="text" placeholder="-0"></input>
-                                                </td>
-                                                <td align="left"><img class="img-responsive" src="img/flecha3.png"></img>
-                                                </td>
-                                            </tr>
-                                            <tr style="text-align:center;">
-                                                <td><span>Sucesión:</span></td>
-                                                <td>
-                                                    <input style="text-align:center;" type="text" id="numR1" disabled class="saltos" name="">
-                                                </td>
-                                                <td></td>
-                                                <td>
-                                                    <input style="text-align:center;" type="text" id="numR2" disabled class="saltos" name="">
-                                                </td>
-                                                <td></td>
-                                                <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe1" class="saltos" name="">
-                                                </td>
-                                                <td></td>
-                                                <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe2" class="saltos" name="">
-                                                </td>
-                                                <td></td>
-                                                <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe3" class="saltos" name="">
-                                                </td>
-                                                <td></td>
-                                                <td>
-                                                    <input style="text-align:center;" type="text" id="numR3" disabled class="saltos" name="">
-                                                </td>
-                                                <td></td>
-                                                <td>
-                                                    <input style="text-align:center;" type="text" placeholder="0" id="succe4" class="saltos" name="">
-                                                </td>
-                                            </tr>
-                                        </table>
+
                                     </div>
                                 </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
@@ -1106,7 +1111,7 @@ table tr th div span {
                                                     </td>
                                                 </tr>
                                             </table>
-                                           <span> P=
+                                            <span> P=
                                                 <input type="number" style="width:50px; border-radius: 10px;" id="peri3" min="0">cm <br></span>
                                             <br>
                                         </div>
@@ -1133,16 +1138,20 @@ table tr th div span {
                                     <div class="row">
                                         <div class="col-lg-3" align="left">Un ángulo
                                             <input id="ang1" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name="">mide 90°
-                                            <br><br><img src="img/i4_p13_act1.jpg" alt="" class="img-responsive"></div>
+                                            <br>
+                                            <br><img src="img/i4_p13_act1.jpg" alt="" class="img-responsive"></div>
                                         <div class="col-lg-3" align="left">Un ángulo
                                             <input id="ang2" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide menos de 90°
-                                            <br><br><img src="img/i5_p13_act1.jpg" alt="" class="img-responsive"></div>
+                                            <br>
+                                            <br><img src="img/i5_p13_act1.jpg" alt="" class="img-responsive"></div>
                                         <div class="col-lg-3" align="left">Un ángulo
                                             <input id="ang3" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide 180°
-                                            <br><br><img src="img/i6_p13_act1.jpg" alt="" class="img-responsive"></div>
+                                            <br>
+                                            <br><img src="img/i6_p13_act1.jpg" alt="" class="img-responsive"></div>
                                         <div class="col-lg-3" align="left">Un ángulo
                                             <input id="ang4" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide más de 90° pero menos de 180°
-                                            <br><br><img src="img/i7_p13_act1.jpg" alt="" class="img-responsive"></div>
+                                            <br>
+                                            <br><img src="img/i7_p13_act1.jpg" alt="" class="img-responsive"></div>
                                     </div>
                                 </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
@@ -1203,7 +1212,7 @@ table tr th div span {
     <script src="js/initElementos.js"></script>
     <script src="js/dragNdrop.js"></script>
     <script src="js/calcularNotas.js"></script>
-    <script src="js/actividad1.js"></script>
+    <script src="js/actividad75.js"></script>
     <script type="text/javascript">
     var titulos = 'evaluacion';
     numero_pagina(10);
