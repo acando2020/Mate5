@@ -386,7 +386,7 @@ function calcularNotaGeneral(total_nota, r_correctas, op_seleccionadas, total_pr
         alert('Debe escoger ' + total_nota + ' respuestas de la pregunta');
 
     } else {
-        var calculo = (result_sobre * r_correctas) / total_nota;
+       var calculo = (result_sobre * r_correctas) / total_nota;
         actividad70_1();
         actividad70_2();
         $('#nota3').val(calculo.toFixed(2) + ' ');

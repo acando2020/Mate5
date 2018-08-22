@@ -49,7 +49,30 @@ table tr th div span {
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
+    width: auto;
 }
+
+.cajas1 {
+    max-width: 95%;
+    max-height: 200px;
+    border: 1px #98007f solid;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px;
+    width: auto;
+}
+
+.cajas2 {
+    max-width: 95%;
+    max-height: 200px;
+    border: 1px #98007f solid;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px;
+}
+
+
+
 
 .actividad1 {
     background: #fff;
@@ -99,7 +122,16 @@ table tr th div span {
 <body>
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
-        Lee cuidadosamente las preguntas, contesta cada una de ellas. En la pregunta número 2 se debe arrastrar la respuesta correcta a la columna que se encuentra en la mitad. En la pregunta número 3 se debe arrastrar los números a los cuadros en blanco de forma ascendente.
+        Lee cuidadosamente las preguntas, contesta cada una de ellas.
+        <br>
+        <b>2.-</b> Arrastra los números a los cuadros en blanco ordenando de menor a mayor las siguientes cantidades.
+        <br>
+        <b>7.-</b> haz click en los cuadros pequeños
+        <input type="checkbox" name=""> y ubica los pares ordenados en el sistema de coordenadas rectangulares.
+        <br>
+        <b>9.-</b> Observa las imágenes y arrastralas al cuadro que corresponda.
+        <br>
+        <b>11.-</b> Arrastra la característica al cuadro de la figura que corresponda.
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
         <br>
         <span id="ayudas"></span>
@@ -140,7 +172,7 @@ table tr th div span {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="pregunta8()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="calcularTotal()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -762,20 +794,24 @@ table tr th div span {
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="col-lg-6" align="center">
-                                                <h3><span id="act7_1_1">A (2, 2)</span></h3><br>
-                                                <h3><span id="act7_2_1">B (5, 0)</span></h3><br>
-                                                <h3><span id="act7_3_1">C (3, 1)</span></h3><br>
-                                                <h3><span id="act7_4_1">D (4, 2)</span></h3><br>
+                                                <h3><span id="act7_1_1">A (2, 2)</span></h3>
+                                                <br>
+                                                <h3><span id="act7_2_1">B (5, 0)</span></h3>
+                                                <br>
+                                                <h3><span id="act7_3_1">C (3, 1)</span></h3>
+                                                <br>
+                                                <h3><span id="act7_4_1">D (4, 2)</span></h3>
+                                                <br>
                                             </div>
                                             <div class="col-lg-6" style="background: url('img/i1_p54_act75.jpg');width: 500px;height: 403px; ">
-                                                <input type="checkbox" id="act7_1" style="position: absolute;left: 166px;top: 206px;">
-                                                <input type="checkbox" id="act7_2" style="position: absolute;left: 232px;top: 273px;">
-                                                <input type="checkbox" id="act7_3" style="position: absolute;left: 295px;top: 206px;">
-                                                <input type="checkbox" id="act7_4" style="position: absolute;left: 358px;top: 335px;">
-                                                <input type="checkbox" id="act7_5" style="position: absolute;left: 105px;top: 147px;">
-                                                <input type="checkbox" id="act7_6" style="position: absolute;left: 356px;top: 150px;">
-                                                <input type="checkbox" id="act7_7" style="position: absolute;left: 165px;top: 80px;">
-                                                <input type="checkbox" id="act7_8" style="position: absolute;left: 168px;top: 148px;">
+                                                <input type="checkbox" id="act7_1" style="position: absolute;left: 166px;top: 206px; border: blue;">
+                                                <input type="checkbox" id="act7_2" style="position: absolute;left: 232px;top: 273px; border: blue;">
+                                                <input type="checkbox" id="act7_3" style="position: absolute;left: 295px;top: 206px; border: blue;">
+                                                <input type="checkbox" id="act7_4" style="position: absolute;left: 358px;top: 335px; border: blue;">
+                                                <input type="checkbox" id="act7_5" style="position: absolute;left: 105px;top: 147px; border: blue;">
+                                                <input type="checkbox" id="act7_6" style="position: absolute;left: 356px;top: 150px; border: blue;">
+                                                <input type="checkbox" id="act7_7" style="position: absolute;left: 165px;top: 80px; border: blue;">
+                                                <input type="checkbox" id="act7_8" style="position: absolute;left: 168px;top: 148px; border: blue;">
                                             </div>
                                         </div>
                                     </div>
@@ -783,7 +819,40 @@ table tr th div span {
                                 <div class="text-question">
                                     <br>
                                     <input type="text" maxlength="2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" id="nota1_8" readonly>&nbsp;<span><b>8.- Encuentra</b> los patrones y <b>completa</b> las sucesiones.</span>
-
+                                    <table>
+                                        <tr>
+                                            <td>Cálculo del patrón:</td>
+                                            <td>
+                                                <input type="number" id="ptr8_1" class="saltos" name="" readonly>
+                                            </td>
+                                            <td>-</td>
+                                            <td>
+                                                <input type="number" id="ptr8_2" class="saltos" name="" readonly>
+                                            </td>
+                                            <td>=</td>
+                                            <td>
+                                                <input type="number" id="rsp8_1" class="saltos" name="">
+                                                <br>
+                                            </td>
+                                            <td>
+                                                <input type="" name="" style="border: 0;" readonly>
+                                            </td>
+                                            <td>
+                                                <input type="number" id="ptr8_3" class="saltos" name="" readonly>
+                                            </td>
+                                            <td>-</td>
+                                            <td>
+                                                <input type="number" id="ptr8_4" class="saltos" name="" readonly>
+                                            </td>
+                                            <td>=</td>
+                                            <td>
+                                                <input type="number" id="rsp8_1" class="saltos" name="">
+                                                <br>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <br>
                                     <div class="table-responsive" style="text-align:center;">
                                         <table style="text-align:center;">
                                             <tr style="text-align:center;">
@@ -823,7 +892,7 @@ table tr th div span {
                                             </tr>
                                             <tr style="text-align:center;">
                                                 <td><span>Sucesión:</span></td>
-                                                 <td>
+                                                <td>
                                                     <input type="number" class="saltos" id="numer1" disabled name="">
                                                 </td>
                                                 <td></td>
@@ -856,7 +925,6 @@ table tr th div span {
                                         </table>
                                         <br>
                                         <br>
-
                                     </div>
                                 </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
@@ -881,277 +949,111 @@ table tr th div span {
                             <div class="panel-body">
                                 <!--INICIO COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
                                 <div class="text-question">
-                                    <input type="text" name="" id="nota1_7" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>7.- Relaciona</b> cada figura geométrica con sus características. <b>Observa</b> el ejemplo.</span>
+                                    <input type="text" name="" id="nota1_9" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>9.- Observa</b> las imágenes y luego <b>relaciónalas</b> con una línea.</span>
+                                    <table class="">
+                                        <tr>
+                                            <td>
+                                                <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas1 dndAligned imagenes" id="caja_imgn1"></div>
+                                            </td>
+                                            <td>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas1 dndAligned textos" id="caja_txts1"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas1 dndAligned imagenes" id="caja_imgn2"></div>
+                                            </td>
+                                            <td>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas1 dndAligned textos" id="caja_txts2"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas1 dndAligned imagenes" id="caja_imgn3"></div>
+                                            </td>
+                                            <td>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas1 dndAligned textos" id="caja_txts3"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas1 dndAligned imagenes" id="caja_imgn4"></div>
+                                            </td>
+                                            <td>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas1 dndAligned textos" id="caja_txts4"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas1 dndAligned imagenes" id="caja_imgn5"></div>
+                                            </td>
+                                            <td>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas1 dndAligned textos" id="caja_txts5"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas1 dndAligned imagenes" id="caja_imgn6"></div>
+                                            </td>
+                                            <td>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas1 dndAligned textos" id="caja_txts6"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <br>
+                                <div class="text-question">
+                                    <input type="text" name="" id="nota1_10" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>10.- Determina</b> Determina el número de lados de cada figura geométrica.</span>
+                                    <br>
                                     <div class="row">
-                                        <div class="col-lg-4"><img class="img-responsive" src="img/i1_p13_act1.jpg"></img>
-                                        </div>
-                                        <div class="col-lg-4"><b style="color: #337ab7">a)</b> Tengo 3 lados y 3 vértices.
-                                            <br>
-                                            <b style="color: #337ab7">b)</b> Tengo 4 lados y 4 vértices.
-                                            <br>
-                                            <b style="color: #337ab7">c)</b> No tengo lados ni vértices.
-                                            <br>
-                                            <b style="color: #337ab7">d)</b> Tengo 5 lados y 5 vértices.</div>
-                                        <div class="col-lg-4">
-                                            <div>(1,c)</div>
-                                            <div>(2,
-                                                <input size="1" maxlength="1" type="text" class="form" id="tx1" onKeyUp="this.value=this.value.toLowerCase();" name="">)</div>
-                                            <div>(3,
-                                                <input size="1" maxlength="1" type="text" class="form" id="tx2" onKeyUp="this.value=this.value.toLowerCase();" name="">)</div>
-                                            <div>(4,
-                                                <input size="1" maxlength="1" type="text" class="form" id="tx3" onKeyUp="this.value=this.value.toLowerCase();" name="">)</div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-2 prg10" id="pgr10Num1" align="center">
+                                            </div>
+                                            <div class="col-lg-2 prg10" id="pgr10Num2" align="center">
+                                            </div>
+                                            <div class="col-lg-2 prg10" id="pgr10Num3" align="center">
+                                            </div>
+                                            <div class="col-lg-2 prg10" id="pgr10Num4" align="center">
+                                            </div>
+                                            <div class="col-lg-2 prg10" id="pgr10Num5" align="center">
+                                            </div>
+                                            <div class="col-lg-2"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="text-question">
-                                    <input type="text" name="" id="nota1_8" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>8.-</b> José tiene el segmento <b style="color: #19AF93">|-----------|</b> y necesita construir una figura como la siguiente. ¿Cuántas líneas estimas que necesita para poder dibujarla? <b>Colorea</b> la respuesta correcta.</span>
-                                    <div align="center">
-                                        <table class="table" style="width: 50%;">
-                                            <tr>
-                                                <td><img class="img-responsive" src="img/i3_p13_act1.jpg"></img>
-                                                </td>
-                                                <td>
-                                                    <table style="width:auto;">
-                                                        <tr>
-                                                            <td>
-                                                                <h4><b style="color: #337ab7">a)</b></h4></td>
-                                                            <td>
-                                                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 numerosAl" id="numAle1"></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h4><b style="color: #337ab7">b)</b></h4></td>
-                                                            <td>
-                                                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 numerosAl" id="numAle2"></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h4><b style="color: #337ab7">c)</b></h4></td>
-                                                            <td>
-                                                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 numerosAl" id="numAle3"></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h4><b style="color: #337ab7">d)</b></h4></td>
-                                                            <td>
-                                                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 numerosAl" id="numAle4"></div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="text-question">
-                                    <input type="text" name="" id="nota1_9" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>9.- Calcula</b> Calcula el perímetro de las siguientes figuras:</span>
+                                    <input type="text" name="" id="nota1_11" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>11.- Relaciona</b> cada figura con su característica.</span>
+                                    <br>
+                                    <br>
                                     <div class="row">
-                                        <div class="col-lg-4" class="center">
-                                            <table>
-                                                <tr>
-                                                    <td style="color: transparent;">cm</td>
-                                                    <td style="color: transparent;">cm</td>
-                                                    <td style="color: transparent;">cm</td>
-                                                    <td style="color: transparent;">cm</td>
-                                                    <td style="color: transparent;">cm</td>
-                                                    <td style="color: transparent;">cm</td>
-                                                    <td style="color: transparent;">cm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>
-                                                        <div class="numerosAletorio" id="nAlt1"></div>
-                                                    </td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="numerosAletorio" id="nAlt2"></div>
-                                                    </td>
-                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                    <td style="background-color: #FFDD70;color: transparent;">metro</td>
-                                                    <td>
-                                                        <div class="numerosAletorio" id="nAlt3"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="7" style="text-align:center;">
-                                                        <div class="numerosAletorio" id="nAlt4"></div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <div>P=
-                                                <input type="number" name="" style="width:50px; border-radius: 10px;" id="peri1" min="0">cm</div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 cajas1 act11txt" id="act11Txt1" style="background: #CFE4C1;" align="center"></div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 act11_1txt" id="act11_1Txt1" align="center"></div>
                                         </div>
-                                        <div class="col-lg-4" class="center">
-                                            <table>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <div class="numerosAletorio" id="nAlt5"></div>
-                                                    </td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td rowspan="2">
-                                                        <div class="numerosAletorio" id="nAlt6"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <div class="numerosAletorio" id="nAlt7"></div>
-                                                    </td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="numerosAletorio" id="nAlt8"></div>
-                                                    </td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td style="background-color: #F3A1AC;color:transparent;">metro</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="8" style="text-align:center;">
-                                                        <div class="numerosAletorio" id="nAlt9"></div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <span align="center">P=
-                                                <input type="number" style="width:50px; border-radius: 10px;" id="peri2" min="0">cm</span>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 cajas1 act11txt" id="act11Txt2" style="background: #CFE4C1; " align="center"></div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6  act11_1txt" id="act11_1Txt2" align="center"></div>
                                         </div>
-                                        <div class="col-lg-4" class="center">
-                                            <table>
-                                                <tr>
-                                                    <td colspan="8" style="text-align:center;">
-                                                        <div class="numerosAletorio" id="nAlt10"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                    <td>
-                                                        <div class="numerosAletorio" id="nAlt11"></div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <div class="numerosAletorio" id="nAlt12"></div>
-                                                    </td>
-                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                    <td>
-                                                        <div class="numerosAletorio" id="nAlt13"></div>
-                                                    </td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td style="background-color: #84CFED;color:transparent;">metro</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="8" style="text-align:center;">
-                                                        <div class="numerosAletorio" id="nAlt14"></div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <span> P=
-                                                <input type="number" style="width:50px; border-radius: 10px;" id="peri3" min="0">cm <br></span>
-                                            <br>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 cajas1 act11txt" id="act11Txt3" style="background: #CFE4C1;" align="center"></div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 act11_1txt" id="act11_1Txt3" align="center"></div>
                                         </div>
-                                        <br>
                                     </div>
                                 </div>
                                 <div class="text-question">
-                                    <input name="" id="nota1_10" class="nota-abierta1" type="text">&nbsp;&nbsp;<span><b>10.- Dibuja</b> tres triángulos distintos que compartan la misma base y altura.</span>
-                                    <div>
-                                        <table class="table">
-                                            <tr>
-                                                <td><b>Responde:</b> ¿Son iguales los perímetros de los triángulos? Argumenta tu respuesta.
-                                                    <textarea class="form-control" cols="10" rows="5"></textarea>
-                                                </td>
-                                                <td><b>Responde:</b> ¿Son iguales los perímetros de los triángulos? Argumenta tu respuesta.
-                                                    <textarea class="form-control" style="resize: none;" cols="5" rows="5"></textarea>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="text-question">
-                                    <input type="text" name="" id="nota1_11" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>11.- Completa</b> las afirmaciones y relaciona con líneas el texto y el gráfico correspondiente.</span>
+                                    <input type="text" name="" id="nota1_12" class="nota-abierta notasCalc notaCalcCerrada" readonly>&nbsp;&nbsp;<span><b>12.- Escribe</b>, abajo de cada objeto, si se trata de un círculo o una circunferencia.</span>
                                     <div class="row">
-                                        <div class="col-lg-3" align="left">Un ángulo
-                                            <input id="ang1" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name="">mide 90°
-                                            <br>
-                                            <br><img src="img/i4_p13_act1.jpg" alt="" class="img-responsive"></div>
-                                        <div class="col-lg-3" align="left">Un ángulo
-                                            <input id="ang2" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide menos de 90°
-                                            <br>
-                                            <br><img src="img/i5_p13_act1.jpg" alt="" class="img-responsive"></div>
-                                        <div class="col-lg-3" align="left">Un ángulo
-                                            <input id="ang3" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide 180°
-                                            <br>
-                                            <br><img src="img/i6_p13_act1.jpg" alt="" class="img-responsive"></div>
-                                        <div class="col-lg-3" align="left">Un ángulo
-                                            <input id="ang4" type="text" style="border:none;border-bottom:2px #858585 solid; width:70px;text-align:center;" onKeyUp="this.value=this.value.toLowerCase();" name=""> mide más de 90° pero menos de 180°
-                                            <br>
-                                            <br><img src="img/i7_p13_act1.jpg" alt="" class="img-responsive"></div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 act12txt" id="act12Txt1" align="center">
+                                            </div>
+                                            <div class="col-lg-3 act12txt" id="act12Txt2" align="center">
+                                            </div>
+                                            <div class="col-lg-3 act12txt" id="act12Txt3" align="center">
+                                            </div>
+                                            <div class="col-lg-3 act12txt" id="act12Txt4" align="center">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
@@ -1214,7 +1116,7 @@ table tr th div span {
     <script src="js/calcularNotas.js"></script>
     <script src="js/actividad75.js"></script>
     <script type="text/javascript">
-    var titulos = 'evaluacion';
+    var titulos = 'diagnostico';
     numero_pagina(10);
     </script>
 </body>

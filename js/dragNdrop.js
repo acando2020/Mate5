@@ -35,7 +35,7 @@ function obtenerNodoyParent(nodo,parent){
         nodosImg.img6[0] = nodo;
         nodosImg.img6[1] = parent;
     }
-    
+
 }
 
 var testIdAleatorio= []; //variable de prueba para revisar el UID aleatrio
@@ -59,7 +59,7 @@ function eventosDnDDrag_ReturnContent(contenedorPadre)
         document.getElementById(array.id).addEventListener('drop',function(){
             onDropReturnDnD(array.id);
         });
-        
+
     });
 }
 function eventosDnDDropContent(contenedorPadre)
@@ -84,7 +84,7 @@ function calcularNotaGeneralDnD(contenedorDragged,respuestasCorrectas,totalNota)
                 if(validarDraggedCompleto(currentValue)){
                     draggedVacios = draggedVacios+1;
                 }
-                
+
             });
         });
         if(draggedVacios==0){
@@ -94,7 +94,7 @@ function calcularNotaGeneralDnD(contenedorDragged,respuestasCorrectas,totalNota)
         }else{
             alert('POR FAVOR COMPLETAR TODAS LAS PREGUNTAS ANTES DE CONTINUAR');
         }
-        
+
     });
 }
 function validarRespuestasDnD (contenedorDragged,respuestasCorrectas){
@@ -109,12 +109,12 @@ function validarRespuestasDnD (contenedorDragged,respuestasCorrectas){
                 numRespCorr=numRespCorr+1;
             }
         });
-    return numRespCorr;        
+    return numRespCorr;
 }
 function insertDraggableDroppableDnD(contenedorPadre){
     elementosHijos(contenedorPadre).forEach(function(array){
-        document.getElementById(array.id).setAttribute("ondrop", "drop(event)"); 
-        document.getElementById(array.id).setAttribute("ondragover", "allowDrop(event)"); 
+        document.getElementById(array.id).setAttribute("ondrop", "drop(event)");
+        document.getElementById(array.id).setAttribute("ondragover", "allowDrop(event)");
         if(document.getElementById(array.id).childNodes.length!=0){
             document.getElementById(array.id).childNodes[0].setAttribute("draggable", "true");
             document.getElementById(array.id).childNodes[0].setAttribute("ondragstart", "drag(event)");
@@ -146,7 +146,7 @@ function validarDraggedCompleto(contenedorDragged){
         return true;
     }
 }
- 
+
 //OPTIMIZACION 2 PROBAR Y BORRAR EL RESTO SI NO ES NECESARIO
 function insertAttributeDraggableElements(querySelector){
     var draggableElements = document.querySelectorAll(querySelector);
@@ -155,7 +155,7 @@ function insertAttributeDraggableElements(querySelector){
         elements.setAttribute("ondragover", "allowDrop(event)");
         elements.childNodes.forEach(elementsCN =>{
             elementsCN.setAttribute("draggable", "true");
-            elementsCN.setAttribute("ondragstart", "drag(event)");   
+            elementsCN.setAttribute("ondragstart", "drag(event)");
         });
     });
 }
@@ -180,4 +180,18 @@ function drop(event) {
     var data = event.dataTransfer.getData("text");
     event.currentTarget.appendChild(document.getElementById(data));
     return document.getElementById(data);
+}
+
+function allowDrop2(ev) {
+    ev.preventDefault();
+}
+
+function drag2(ev) {
+    ev.dataTransfer.setData("Text", ev.target.id);
+}
+
+function drop2(ev) {
+    var data = ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+    ev.preventDefault();
 }

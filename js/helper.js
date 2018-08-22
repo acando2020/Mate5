@@ -58,8 +58,11 @@ $(document).ready(function () {
         case "evaluacion":
             $(".titulo").html("").append("<img src='img/icoTST.png' alt='Evaluación sumativa'> Evaluación sumativa");
             break;
+        case "diagnostico":
+            $(".titulo").html("").append("<img src='img/icoTST.png' alt='Evaluación sumativa'> Prueba Diagnóstico");
+            break;
         case "prueba":
-            $(".titulo").html("").append("<img src='img/icoTST.png' alt='Prueba Diagnóstica'> Prueba Diagnóstica");
+            $(".titulo").html("").append("<img src='img/icoTST.png' alt='Prueba Diagnóstica'> Prueba Diagnóstico");
             break;
         case "organizo":
             $(".titulo").html("").append("<img src='img/icoO.png' alt='Organizo mis ideas'> Organizo mis ideas");

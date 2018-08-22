@@ -654,7 +654,7 @@ function pregunta7() {
 
     }
 
-       if (act7_2 == true) {
+    if (act7_2 == true) {
         $('#act7_3_1').css("background", "#00e600");
         nt2 = 0.25;
 
@@ -663,7 +663,7 @@ function pregunta7() {
 
     }
 
-      if (act7_3 == true) {
+    if (act7_3 == true) {
         $('#act7_4_1').css("background", "#00e600");
         nt3 = 0.25;
 
@@ -680,8 +680,8 @@ function pregunta7() {
         $('#act7_2_1').css("background", "#ff6666");
 
     }
-    var total = parseFloat(nt1)+parseFloat(nt2)+parseFloat(nt3)+parseFloat(nt4);
-     $('#nota1_7').val(parseFloat(total).toFixed(2));
+    var total = parseFloat(nt1) + parseFloat(nt2) + parseFloat(nt3) + parseFloat(nt4);
+    $('#nota1_7').val(parseFloat(total).toFixed(2));
 }
 ////////////////////////////////////////////////////////////////////////
 
@@ -701,17 +701,27 @@ for (var v = 0; v <= 6; v++) {
 interesult3.sort(function(a, b) { return b - a; });
 
 document.getElementById('numer1').value = interesult3[0];
+
+document.getElementById('ptr8_2').value = interesult3[0];
+
 var suma = Math.floor(Math.random() * 10) + 1;
 
 
 
 document.getElementById('numer2').value = parseInt(interesult3[0]) + parseInt(suma);
+document.getElementById('ptr8_1').value = parseInt(interesult3[0]) + parseInt(suma);
+
+document.getElementById('ptr8_3').value = parseInt(interesult3[0]) + parseInt(suma);
 
 var resta = Math.floor(Math.random() * 10) + 1;
 
 var numero2 = document.getElementById('numer2').value;
 
 document.getElementById('numer3').value = parseInt(numero2) - parseInt(resta);
+
+
+
+document.getElementById('ptr8_4').value = parseInt(numero2) - parseInt(resta);
 
 var numero3 = document.getElementById('numer3').value;
 
@@ -746,7 +756,12 @@ function pregunta8() {
         nota2 = 0,
         nota3 = 0,
         nota4 = 0,
-        nota5 = 0;
+        nota5 = 0,
+        nota6 = 0,
+        nota7 = 0,
+        nota8 = 0,
+        nota9 = 0,
+        nota10 = 0;
 
 
     var pt1 = ['+', suma]
@@ -776,327 +791,520 @@ function pregunta8() {
     }
     if (ptr3 == ptron1) {
         $('#ptr3').css("background", "#00e600");
-        nota3 = 1;
+        nota4 = 1;
     } else {
         $('#ptr3').css("background", "#ff6666");
     }
     if (ptr5 == ptron1) {
         $('#ptr5').css("background", "#00e600");
-        nota3 = 1;
+        nota5 = 1;
     } else {
         $('#ptr5').css("background", "#ff6666");
     }
 
     if (ptr2 == ptron2) {
         $('#ptr2').css("background", "#00e600");
-        nota4 = 1;
+        nota6 = 1;
     } else {
         $('#ptr2').css("background", "#ff6666");
     }
     if (ptr4 == ptron2) {
         $('#ptr4').css("background", "#00e600");
-        nota4 = 1;
+        nota7 = 1;
     } else {
         $('#ptr4').css("background", "#ff6666");
     }
     if (ptr6 == ptron2) {
         $('#ptr6').css("background", "#00e600");
-        nota4 = 1;
+        nota8 = 1;
     } else {
         $('#ptr6').css("background", "#ff6666");
     }
 
 
-    var nota39_2 = parseInt(nota1) + parseInt(nota2) + parseInt(nota3) + parseInt(nota4);
-    $('#nota3').val(nota39_2.toFixed(2));
+    var subtotal = parseInt(nota1) + parseInt(nota2) + parseInt(nota3) + parseInt(nota4) + parseInt(nota5) + parseInt(nota6) + parseInt(nota7) + parseInt(nota8);
+    var total = (subtotal * 1) / 8;
+    $('#nota1_8').val(total.toFixed(2));
 
 }
 
 
 
-///////////////////////////////Pregunta 7 /////////////////////////////////////
-
-function pregunt() {
-    var tx1 = document.getElementById('tx1').value;
-    var tx2 = document.getElementById('tx2').value;
-    var tx3 = document.getElementById('tx3').value;
-    var respuesta = 0,
-        respuesta1 = 0,
-        respuesta2 = 0;
-
-    if (tx1 == "a") {
-        $('#tx1').css("background", "#00e600");
-        respuesta = 1;
-    } else {
-        $('#tx1').css("background", "#ff6666");
-        respuesta = 0;
-    }
-    if (tx2 == "d") {
-        $('#tx2').css("background", "#00e600");
-        respuesta1 = 1;
-
-    } else {
-        $('#tx2').css("background", "#ff6666");
-        respuesta1 = 0;
-
-    }
-    if (tx3 == "b") {
-        $('#tx3').css("background", "#00e600");
-        respuesta2 = 1;
-
-    } else {
-        $('#tx3').css("background", "#ff6666");
-        respuesta2 = 0;
+///////////////////////////////Pregunta 9 /////////////////////////////////////
 
 
-    }
-    var subtotalR7 = parseInt(respuesta) + parseInt(respuesta1) + parseInt(respuesta2);
-    var totalR7 = (subtotalR7 * 1) / 3;
-    $('#nota1_7').val(parseFloat(totalR7).toFixed(2));
+var resp_cor_len3_act13_p14 = [
+    ["líneas secantes oblicuas", "img/i2_p54_act75.jpg"],
+    ["ángulo agudo", "img/i3_p54_act75.jpg"],
+    ["líneas secantes perpendiculares", "img/i4_p54_act75.jpg"],
+    ["cuadrilátero", "img/i5_p54_act75.jpg"],
+    ["ángulo recto", "img/i6_p54_act75.jpg"],
+    ["líneas paralelas", "img/i7_p54_act75.jpg"],
+
+]
+var cajas = document.getElementsByClassName('cajas1');
+var loadImg = ['img/i2_p54_act75.jpg', 'img/i3_p54_act75.jpg', 'img/i4_p54_act75.jpg', 'img/i5_p54_act75.jpg', 'img/i6_p54_act75.jpg', 'img/i7_p54_act75.jpg'];
+var loadTxt = ['líneas secantes oblicuas', 'ángulo agudo', 'líneas secantes perpendiculares', 'cuadrilátero', 'ángulo recto', 'líneas paralelas'];
+var divs = $(".imagenes, .textos");
+var cont_resp_cor = {};
+var divsImg, divsTxt;
+var indice;
+var contador_nota = 0;
+
+
+
+initElementos2("imagenes", loadImg);
+initElementos2("textos", loadTxt);
+insertDraggable();
+enviarEventosListener("caja_imgn1", "caja_txts1"); //caja1 img y texto
+enviarEventosListener("caja_imgn2", "caja_txts2"); //caja1 img y texto
+enviarEventosListener("caja_imgn3", "caja_txts3"); //caja1 img y texto
+enviarEventosListener("caja_imgn4", "caja_txts4"); //caja1 img y texto
+enviarEventosListener("caja_imgn5", "caja_txts5"); //caja1 img y texto
+enviarEventosListener("caja_imgn6", "caja_txts6"); //caja1 img y texto
+
+
+function genIdRandom() {
+    //genera un Id Aleatorio en base a milisegundos para que no se repita
+    var d = new Date();
+    var a = d.getSeconds();
+    var b = d.getMilliseconds();
+
+    return a * b;
+}
+
+function enviarEventosListener(id, id2) {
+    document.getElementById(id).addEventListener('dragstart', function() {
+        dragStart(id);
+    });
+    document.getElementById(id2).addEventListener('drop', function() {
+        onDrop(id2, divsImg);
+    });
+    document.getElementById(id).addEventListener('drop', function() {
+        onDropReturn(id);
+    });
 
 
 }
-/////////////////////Pregunta 8///////////////////////////
-var numAl = ['12', '8', '13', '14'];
-var numAle = document.getElementsByClassName('numerosAl');
 
-numAl.sort(f_randomico);
-for (i = 0; i < numAle.length; i++) {
+function onDropReturn(id) {
+    divsImg = $('#' + id).find("img")[0].alt;
+    var objetoLength = Object.keys(cont_resp_cor).length;
+    var objComparar = Object.assign({}, cont_resp_cor);
 
-    $('#' + numAle[i].id).html('<span class="pin" id=P' + [i] + '>' + numAl[i] + '</span>');
+    for (i = 0; i < objetoLength; i++) {
 
+        if (Object.values(objComparar)[i].indexOf(divsImg) != -1) {
 
-}
-
-$('.pin').click(function() {
-    if ($(this).hasClass('pintar')) {
-        $(this).removeClass('pintar')
-
-    } else {
-        $(this).addClass('pintar')
-    }
-    if ($('#P0').hasClass('pintar')) {
-        $('#P1').removeClass('pintar')
-        $('#P2').removeClass('pintar')
-        $('#P3').removeClass('pintar')
-
-    } else if ($('#P1').hasClass('pintar')) {
-        $('#P0').removeClass('pintar')
-        $('#P2').removeClass('pintar')
-        $('#P3').removeClass('pintar')
-
-    } else if ($('#P2').hasClass('pintar')) {
-        $('#P0').removeClass('pintar')
-        $('#P1').removeClass('pintar')
-        $('#P3').removeClass('pintar')
-
-    } else if ($('#P3').hasClass('pintar')) {
-        $('#P0').removeClass('pintar')
-        $('#P1').removeClass('pintar')
-        $('#P2').removeClass('pintar')
-
-    }
-});
-
-function pregunta() {
-    var respr5 = 0;
-    for (var i = 0; i <= 3; i++) {
-        var caja = $('span[id=P' + [i] + ']').text();
-        if ($('#P' + [i] + '').hasClass("pintar")) {
-
-            if ((caja == "12")) {
-                respr5 = 1;
-                $('#P' + [i] + '').addClass('valid')
-            } else {
-                $('#P' + [i] + '').removeClass('valid')
-                $('#P' + [i] + '').addClass('no-valid')
-            }
-        } else {
+            indice = Object.keys(objComparar)[i];
+            delete cont_resp_cor[indice];
 
         }
+
     }
-    $('#nota1_8').val(respr5);
-}
-
-////////////////pregunta 9////////////////////////////////////////
-
-
-
-var numAl = [];
-for (var i = 0; i <= 20; i++) {
-    numAl.push(Math.floor(Math.random() * 6) + 1)
-}
-var nAlt = document.getElementsByClassName('numerosAletorio');
-
-numAl.sort(f_randomico);
-
-for (i = 0; i < nAlt.length; i++) {
-
-    $('#' + nAlt[i].id).html('<div><span id=s' + [i] + '>' + numAl[i] + '</span> cm</div>');
-
 
 }
 
-function pregunta(argument) {
-    var perim = document.getElementById('peri1').value;
-    var perim2 = document.getElementById('peri2').value;
-    var perim3 = document.getElementById('peri3').value;
-    var reperi = 0,
-        reperi2 = 0,
-        reperi3 = 0,
-        reperi4 = 0,
-        reperi5 = 0,
-        reperi6 = 0;
-    var per1 = parseInt($('span[id=s0]').text());
-    var per2 = parseInt($('span[id=s1]').text());
-    var per3 = parseInt($('span[id=s2]').text());
-    var per4 = parseInt($('span[id=s3]').text());
+function dragStart(id) {
+    divsImg = $('#' + id).find("img")[0].alt;
 
-    var per5 = parseInt($('span[id=s4]').text());
-    var per6 = parseInt($('span[id=s5]').text());
-    var per7 = parseInt($('span[id=s6]').text());
-    var per8 = parseInt($('span[id=s7]').text());
-    var per9 = parseInt($('span[id=s8]').text());
+}
 
-    var per10 = parseInt($('span[id=s9]').text());
-    var per11 = parseInt($('span[id=s10]').text());
-    var per12 = parseInt($('span[id=s11]').text());
-    var per13 = parseInt($('span[id=s12]').text());
-    var per14 = parseInt($('span[id=s13]').text());
+function insertaParOnDrop(id) {
+    divsTxt = $('#' + id).find("span").text();
 
-    var reperi = per1 + per2 + per3 + per4;
-    var reperi2 = per5 + per6 + per7 + per8 + per9;
-    var reperi3 = per10 + per11 + per12 + per13 + per14;
-    var resP9_1 = 0,
-        resP9_2 = 0,
-        resP9_3 = 0;
+    var prop = Object.keys(cont_resp_cor);
 
+    cont_resp_cor[genIdRandom()] = [divsTxt, divsImg];
 
-    if (reperi == perim) {
-        $('#peri1').css("background", "#00e600");
-        resP9_1 = 1;
+}
 
+function onDrop(id, divsImg) {
+    var objetoLength = Object.keys(cont_resp_cor).length;
+    var contador = 0;
+    if (objetoLength == 0) {
+        insertaParOnDrop(id);
     } else {
-        $('#peri1').css("background", "#ff6666");
+        for (i = 0; i < objetoLength; i++) {
+            if (Object.values(cont_resp_cor)[i].indexOf(divsImg) != -1) {
+                contador = contador + 1;
+
+            }
+
+        }
+        if (contador == 0) {
+            insertaParOnDrop(id);
+        }
+    }
+}
+
+function initElementos2(classDiv, arrayElement) { //Funcion para iniciar elementos como imagenes o texto en divs de acuerdo a un array
+    var cajas = document.getElementsByClassName(classDiv);
+    arrayElement.sort(f_randomico);
+    for (i = 0; i < cajas.length; i++) {
+        if (classDiv == "imagenes") {
+            $('#' + cajas[i].id).html('<img class="center"  src="' + arrayElement[i] + '" alt="' + arrayElement[i] + '"   id="img' + [i] + '">');
+        } else if (classDiv == "textos") {
+            $('#' + cajas[i].id).html('<span class= "cajas-cuentos"  id="' + arrayElement[i] + '">' + arrayElement[i] + '</span>');
+        }
 
     }
+}
 
-    if (reperi2 == perim2) {
-        $('#peri2').css("background", "#00e600");
-        resP9_2 = 1;
+function insertDraggable() {
 
-    } else {
-        $('#peri2').css("background", "#ff6666");
+
+    for (i = 0; i < divs.length; i++) {
+        $('#' + divs[i].id).attr({
+            "ondrop": "drop(event)",
+            "ondragover": "allowDrop(event)"
+        });
+    }
+    for (i = 0; i < divs.find("img").length; i++) {
+        $('#img' + i).attr({
+            "draggable": "true",
+            "ondragstart": "drag(event)"
+        });
 
     }
-    if (reperi3 == perim3) {
-        $('#peri3').css("background", "#00e600");
-        resP9_3 = 1;
+    /*     for(i=0; i< divs.find("span").length; i++){
+            $('#'+divs.find("span")[i].id).attr({
+                "draggable" : "true",
+                "ondragstart" : "drag(event)"
+            });
+
+        } */
 
 
-    } else {
-        $('#peri3').css("background", "#ff6666");
 
-    }
-
-    var subRP9 = parseInt(resP9_1) + parseInt(resP9_2) + parseInt(resP9_3);
-    var tltrp9 = (subRP9 * 1) / 3;
-    $('#nota1_9').val(parseFloat(tltrp9).toFixed(2));
 
 
 }
-/////////////////////////pregunta 10////////////////////////////
-document.getElementById('nota1_10').addEventListener('keypress', () => {
-    validNumero(0, 0.5, 1);
-});
-document.getElementById('nota1_10').addEventListener('keyup', () => {
-    validMaxIngreso(document.getElementById('nota1_10'), 0.5)
-});
-//////////////////pregunta 11 /////////////
-function pregunta1() {
-    var txtAng = document.getElementById('ang1').value;
-    var txtAng2 = document.getElementById('ang2').value;
-    var txtAng3 = document.getElementById('ang3').value;
-    var txtAng4 = document.getElementById('ang4').value;
-    var Rp11_1 = 0,
-        Rp11_2 = 0,
-        Rp11_3 = 0,
-        Rp11_4 = 0;
-    if (txtAng == "recto") {
-        $('#ang1').css("background", "#00e600");
-        Rp11_1 = 1;
 
-    } else {
-        $('#ang1').css("background", "#ff6666");
+function contarRespCorrectaDnD() {
+    var arrayCorrestarColorear = [];
+
+    //i=respcorrectas j= a comprobar
+    for (var i = 0; i < Object.values(resp_cor_len3_act13_p14).length; i++) {
+        for (j = 0; j < Object.values(cont_resp_cor).length; j++) {
+            if (JSON.stringify(Object.values(resp_cor_len3_act13_p14)[i]) === JSON.stringify(Object.values(cont_resp_cor)[j])) {
+                contador_nota = contador_nota + 1;
+                arrayCorrestarColorear.push(Object.values(cont_resp_cor)[j][0]);
+            } else {
+                $('.textos').addClass('incorrecto')
+            }
+        }
+    }
+    for (i = 0; i < arrayCorrestarColorear.length; i++) {
+        var id = document.getElementById(arrayCorrestarColorear[i]).parentNode.id;
+        document.getElementById(id).style.background = '#65CE6D';
+
 
     }
-    if (txtAng2 == "agudo") {
-        $('#ang2').css("background", "#00e600");
-        Rp11_2 = 1;
+    calcularNotaGeneral(
+        5,
+        contador_nota,
+        Object.keys(cont_resp_cor).length,
+        1);
+
+}
+
+function calcularNotaGeneral(total_nota, r_correctas, op_seleccionadas, total_preguntas) {
+    var result_sobre = 1;
+    var calculo = 0;
+    //var tiempoReload=4000; //en milisegundos
+
+    if (op_seleccionadas < total_nota) {
+        alert('Debe escoger ' + total_nota + ' respuestas de la pregunta');
 
     } else {
-        $('#ang2').css("background", "#ff6666");
+        var calculo = (result_sobre * r_correctas) / total_nota;
+
 
     }
-    if (txtAng3 == "llano") {
-        $('#ang3').css("background", "#00e600");
-        Rp11_3 = 1;
+
+    $('#nota1_9').val(calculo.toFixed(2));
+    //setTimeout('document.location.reload()',tiempoReload)
+
+}
+
+
+
+//////////////////////////pregunta 10////////////////////////////
+act10 = [
+    ['<img src="img/i8_p54_act75.jpg" class="img-responsive">' +
+        '<input style="text-align: center;" type="text" id="act10_1" class="sinEspacios form-control text-lowercase" name="">' +
+        '<br>'
+    ],
+    ['<img src="img/i9_p54_act75.jpg" class="img-responsive">' +
+        '<input style="text-align: center;" type="text" id="act10_2" class="sinEspacios form-control text-lowercase" name="">' +
+        '<br>'
+    ],
+    [' <img src="img/i10_p54_act75.jpg" class="img-responsive">' +
+        '<input style="text-align: center;" type="text" id="act10_3" class="sinEspacios form-control text-lowercase" name="">' +
+        '<br>'
+    ],
+    ['<img src="img/i11_p54_act75.jpg" class="img-responsive">' +
+        '<input style="text-align: center;" type="text" id="act10_4" class="sinEspacios form-control text-lowercase" name="">' +
+        '<br>'
+    ],
+    ['<img src="img/i12_p54_act75.jpg" class="img-responsive">' +
+        '<input style="text-align: center;" type="text" id="act10_5" class="sinEspacios form-control text-lowercase" name="">' +
+        '<br>'
+    ],
+]
+
+var pgr10Num = document.getElementsByClassName('prg10');
+
+act10.sort(f_randomico);
+for (i = 0; i < pgr10Num.length; i++) {
+
+    $('#' + pgr10Num[i].id).html('<div width="50px">' + act10[i] + '</div> ');
+
+
+}
+
+function pregunta10() {
+    var act10_1 = document.getElementById('act10_1').value.toLowerCase();
+    var act10_2 = document.getElementById('act10_2').value.toLowerCase();
+    var act10_3 = document.getElementById('act10_3').value.toLowerCase();
+    var act10_4 = document.getElementById('act10_4').value.toLowerCase();
+    var act10_5 = document.getElementById('act10_5').value.toLowerCase();
+    var nt1 = 0,
+        nt2 = 0,
+        nt3 = 0,
+        nt4 = 0,
+        nt5 = 0;
+
+    if ((act10_1 == "4lados") || (act10_1 == "4")) {
+        nt1 = 0.20;
+        $('#act10_1').css("background", "#00e600");
 
     } else {
-        $('#ang3').css("background", "#ff6666");
+        $('#act10_1').css("background", "#ff6666");
 
     }
-    if (txtAng4 == "obtuso") {
-        $('#ang4').css("background", "#00e600");
-        Rp11_4 = 1;
+
+
+    if ((act10_2 == "5lados") || (act10_2 == "5")) {
+        nt2 = 0.20;
+        $('#act10_2').css("background", "#00e600");
 
     } else {
-        $('#ang4').css("background", "#ff6666");
+        $('#act10_2').css("background", "#ff6666");
 
     }
-    var subRp11 = parseInt(Rp11_1) + parseInt(Rp11_2) + parseInt(Rp11_3) + parseInt(Rp11_4);
-    var subRp11_1 = (subRp11 * 0.5) / 4;
-    $('#nota1_11').val(parseFloat(subRp11_1).toFixed(2));
-    //var TtlRp11 = subRp11_1/2;
 
+
+    if ((act10_3 == "3lados") || (act10_3 == "3")) {
+        nt3 = 0.20;
+        $('#act10_3').css("background", "#00e600");
+
+    } else {
+        $('#act10_3').css("background", "#ff6666");
+
+    }
+    if ((act10_4 == "6lados") || (act10_4 == "6")) {
+        nt4 = 0.20;
+        $('#act10_4').css("background", "#00e600");
+
+    } else {
+        $('#act10_4').css("background", "#ff6666");
+
+    }
+    if ((act10_5 == "7lados") || (act10_5 == "7")) {
+        nt5 = 0.20;
+        $('#act10_5').css("background", "#00e600");
+
+    } else {
+        $('#act10_5').css("background", "#ff6666");
+
+    }
+
+    var total = parseFloat(nt1) + parseFloat(nt2) + parseFloat(nt3) + parseFloat(nt4) + parseFloat(nt5);
+    $('#nota1_10').val(parseFloat(total).toFixed(2));
+
+}
+//////////////////////////////pregunta 11////////////////////////////////////////
+var act11 = [
+    ['Estoy formada por una línea curva cerrada.'],
+    ['Estoy formado por tres líneas que se cortan.'],
+    ['Estoy formado por cuatro líneas que se cortan.'],
+]
+
+
+var act11Txt = document.getElementsByClassName('act11txt');
+
+act11.sort(f_randomico);
+for (i = 0; i < act11Txt.length; i++) {
+
+    $('#' + act11Txt[i].id).html('<h4><div id="dra' + [i] + '" draggable="true" ondragstart="drag2(event)">' + act11[i] + '</div></h4> ');
+
+
+}
+
+
+var act11_1 = [
+    ['<img class="img-responsive" src="img/i13_p54_act75.jpg"></img><div id="act11_1" class="cajas1" ondrop="drop2(event)" ondragover="allowDrop2(event)"></div>'],
+    ['<img class="img-responsive" src="img/i14_p54_act75.jpg"></img><div id="act11_2" class="cajas1" ondrop="drop2(event)" ondragover="allowDrop2(event)"></div>'],
+    ['<img class="img-responsive" src="img/i15_p54_act75.jpg"></img><div id="act11_3" class="cajas1" ondrop="drop2(event)" ondragover="allowDrop2(event)"></div>'],
+]
+
+
+var act11_1Txt = document.getElementsByClassName('act11_1txt');
+
+act11_1.sort(f_randomico);
+for (i = 0; i < act11_1Txt.length; i++) {
+
+    $('#' + act11_1Txt[i].id).html('<h4><div id="dra' + [i] + '" draggable="true" ondragstart="drag2(event)">' + act11_1[i] + '</div></h4> ');
+
+
+}
+
+function pregunta11() {
+    var nt1 = 0,
+        nt2 = 0,
+        nt3 = 0;
+
+    if ($('#act11_1').children("div").html() == "Estoy formado por tres líneas que se cortan.") {
+        nt1 = 1;
+        $('#act11_1').css("background", "#00e600");
+
+    } else {
+        $('#act11_1').css("background", "#ff6666");
+
+    }
+
+    if ($('#act11_2').children("div").html() == "Estoy formada por una línea curva cerrada.") {
+        nt2 = 1;
+        $('#act11_2').css("background", "#00e600");
+
+    } else {
+        $('#act11_2').css("background", "#ff6666");
+
+    }
+    if ($('#act11_3').children("div").html() == "Estoy formado por cuatro líneas que se cortan.") {
+        nt3 = 1;
+        $('#act11_3').css("background", "#00e600");
+
+    } else {
+        $('#act11_3').css("background", "#ff6666");
+
+    }
+    var subtotal = parseInt(nt1) + parseInt(nt2) + parseInt(nt3);
+    var total = (subtotal * 1) / 3;
+    $('#nota1_11').val(parseFloat(total).toFixed(2));
+}
+
+
+//////////////////////////////////prergunta 12/////////////////////////////////////////////////////////
+
+var act12 = [
+    ['<img class="img-responsive" src="img/i16_p54_act75.jpg"></img> <input type="text" class="form-control sinEspacios text-lowercase" style="text-align: center;" id="act12_1" name="">'],
+    ['<img class="img-responsive" src="img/i17_p54_act75.jpg"></img> <input type="text" class="form-control sinEspacios text-lowercase" style="text-align: center;" id="act12_2" name="">'],
+    ['<img class="img-responsive" src="img/i18_p54_act75.jpg"></img> <input type="text" class="form-control sinEspacios text-lowercase" style="text-align: center;" id="act12_3" name="">'],
+    ['<img class="img-responsive" src="img/i19_p54_act75.jpg"></img> <input type="text" class="form-control sinEspacios text-lowercase" style="text-align: center;" id="act12_4" name="">'],
+]
+
+
+var act12Txt = document.getElementsByClassName('act12txt');
+
+act12.sort(f_randomico);
+for (i = 0; i < act12Txt.length; i++) {
+
+    $('#' + act12Txt[i].id).html('<h4><div id="dra' + [i] + '" draggable="true" ondragstart="drag2(event)">' + act12[i] + '</div></h4> ');
+
+
+}
+
+function pregunta12() {
+    var act12_1 = document.getElementById('act12_1').value.toLowerCase();
+    var act12_2 = document.getElementById('act12_2').value.toLowerCase();
+    var act12_3 = document.getElementById('act12_3').value.toLowerCase();
+    var act12_4 = document.getElementById('act12_4').value.toLowerCase();
+    var nt1 = 0,
+        nt2 = 0,
+        nt3 = 0,
+        nt4 = 0;
+    if (act12_1 == "circunferencia") {
+        $('#act12_1').css("background", "#00e600");
+        nt1 = 0.25;
+
+    } else {
+        $('#act12_1').css("background", "#ff6666");
+
+
+    }
+
+    if ((act12_2 == "círculo") || (act12_2 == "circulo")) {
+        $('#act12_2').css("background", "#00e600");
+        nt2 = 0.25;
+
+    } else {
+        $('#act12_2').css("background", "#ff6666");
+
+
+    }
+    if (act12_3 == "circunferencia") {
+        $('#act12_3').css("background", "#00e600");
+        nt3 = 0.25;
+
+    } else {
+        $('#act12_3').css("background", "#ff6666");
+
+
+    }
+    if ((act12_4 == "círculo") || (act12_4 == "circulo")) {
+        $('#act12_4').css("background", "#00e600");
+        nt4 = 0.25;
+
+    } else {
+        $('#act12_4').css("background", "#ff6666");
+
+
+    }
+    var total = parseFloat(nt1) + parseFloat(nt2) + parseFloat(nt3) + parseFloat(nt4);
+    $('#nota1_12').val(parseFloat(total).toFixed(2));
 }
 
 
 function calcularTotal() {
+
+    pregunta1();
+    pregunta2();
+    pregunta3();
+    pregunta4();
+    pregunta5();
+    pregunta6();
+    pregunta7();
+    pregunta8();
+    contarRespCorrectaDnD();
+    pregunta10();
+    pregunta11();
+    pregunta12();
+    var nota11_1 = document.getElementById('nota1_1').value;
+    var nota11_2 = document.getElementById('nota1_2').value;
+    var nota11_3 = document.getElementById('nota1_3').value;
+    var nota11_4 = document.getElementById('nota1_4').value;
+    var nota11_5 = document.getElementById('nota1_5').value;
+    var nota11_6 = document.getElementById('nota1_6').value;
+    var nota11_7 = document.getElementById('nota1_7').value;
+    var nota11_8 = document.getElementById('nota1_8').value;
+    var nota11_9 = document.getElementById('nota1_9').value;
     var nota11_10 = document.getElementById('nota1_10').value;
-    if (nota11_10 == "") {
-        alert("Ingrese la nota de la pregunta 10");
-    } else {
-        pregunta1();
-        pregunta2();
-        pregunta3();
-        pregunta4();
-        pregunta5();
-        pregunta6();
-        pregunt7();
-        pregunta8();
-        pregunta9();
-        pregunta11();
-        var nota11_1 = document.getElementById('nota1_1').value;
-        var nota11_2 = document.getElementById('nota1_2').value;
-        var nota11_3 = document.getElementById('nota1_3').value;
-        var nota11_4 = document.getElementById('nota1_4').value;
-        var nota11_5 = document.getElementById('nota1_5').value;
-        var nota11_6 = document.getElementById('nota1_6').value;
-        var nota11_7 = document.getElementById('nota1_7').value;
-        var nota11_8 = document.getElementById('nota1_8').value;
-        var nota11_9 = document.getElementById('nota1_9').value;
-        var nota11_11 = document.getElementById('nota1_11').value;
+    var nota11_11 = document.getElementById('nota1_11').value;
+    var nota11_12 = document.getElementById('nota1_12').value;
 
-        var SuperTotal = parseFloat(nota11_1) + parseFloat(nota11_2) + parseFloat(nota11_3) + parseFloat(nota11_4) + parseFloat(nota11_5) + parseFloat(nota11_6) + parseFloat(nota11_7) + parseFloat(nota11_8) + parseFloat(nota11_9) + parseFloat(nota11_10) + parseFloat(nota11_11);
 
-        $('#txtNota').html(SuperTotal.toFixed(2));
-        document.getElementById('bt_comprobar').disabled = true;
-        $('input').attr("disabled", true);
-        $('#txtAlumno').attr("disabled", false);
+    var SuperTotal = parseFloat(nota11_1) + parseFloat(nota11_2) + parseFloat(nota11_3) + parseFloat(nota11_4) + parseFloat(nota11_5) + parseFloat(nota11_6) + parseFloat(nota11_7) + parseFloat(nota11_8) + parseFloat(nota11_9) + parseFloat(nota11_10) + parseFloat(nota11_11) + parseFloat(nota11_12);
+    var total = (SuperTotal * 10) / 12;
+    $('#txtNota').html(total.toFixed(2));
+    document.getElementById('bt_comprobar').disabled = true;
+    $('input').attr("disabled", true);
+    $('#txtAlumno').attr("disabled", false);
 
 
 
 
-    }
+
 }

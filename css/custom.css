@@ -360,7 +360,7 @@ b{
 .text-aplico{
     color: #005ca4;
 }
-.text-evaluacion{
+.text-evaluacion ,.text-diagnostico{
     color: #B499C2;
 }
 .text-refuerzo{
@@ -384,7 +384,7 @@ b{
 .bg-aplico, .bg-preparo{
     background-color: #005ca4;
 }
-.bg-evaluacion{
+.bg-evaluacion,.bg-diagnostico{
     background-color: #B499C2;
 }
 .bg-refuerzo{
@@ -415,7 +415,7 @@ b{
     border-style: solid;
     border-width: 1px;
 }
-.border-evaluacion{
+.border-evaluacion, .border-diagnostico{
     border-color: #B499C2 !important;
     border-style: solid;
     border-width: 1px;
