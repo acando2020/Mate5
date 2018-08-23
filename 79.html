@@ -50,9 +50,15 @@
     text-align: center;
     border: 1;
     border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    width: 50px;
 }
 
+.saltos2 {
+    text-align: center;
+    border: 1;
+    border-bottom: 1px solid #85BCEB;
+    width: 70px;
+}
 
 .desactivar {
     background-color: #444;
@@ -96,7 +102,6 @@ input {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     border: 1px #FA97E9 solid;
-
 }
 </style>
 
@@ -144,7 +149,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad76()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad79()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -179,66 +184,47 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <span><b>Descubre</b> el patrón y <b>completa</b> la sucesión.</span>
-                    <div class="row" style="text-align: center;">
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" class="saltos oval" value="6" name="" readonly="readonly">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" class="saltos oval" value="18" name="" readonly="readonly">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" class="saltos oval" value="54" name="" readonly="readonly">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" class="saltos oval" value="162" name="" readonly="readonly">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" id="act77_1" class="saltos oval" name="" placeholder="0">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1 ">
-                            <input type="number" id="act77_2" class="saltos oval" name="" placeholder="0">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" id="act77_3" class="saltos oval" name="" placeholder="0">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1"></div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1"></div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1"></div>
-                    </div>
-                    <br>
+                    <img src="img/problema.png" class="img-responsive">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="col-lg-6"><span class="pasos">Pasos 1</span>
-                                <br><span><b>Dividimos</b> un término por el anterior y comprobamos repitiendo el proceso con otros términos.</span></div>
-                            <div class="col-lg-6"><span class="pasos">Pasos 2</span>
-                                <br><span>
-                                Resolvemos las operaciones. <br> 18 ÷ 6 = 3; 54 ÷ 18 = 3; 162 ÷ 54 = 3
+                            <div class="col-lg-6">
+                                <input type="number" class="nota-abierta" id="nota1" name="" readonly="readonly"><span><b style="color:#005ca4;">1.</b> Cecilia escribió en el pizarrón una sucesión numérica con un patrón combinado, pero le faltó completar el último término. ¿Cuál es el patrón y cuál el último término?</span>
                                 <br>
+                                <span><h style="background: #FFE4B5;">Sucesión:</h>3, 3, 6, 18, 72,<input type="number" id="act1_1" class="saltos sinEspacios text-lowercase" maxlength="2" name=""></span>
+                                <br><br>
+                                <span><b style="color:#005ca4;">R.</b>&nbsp;Patron:
+                                <input type="text" id="act1_2" class="saltos sinEspacios text-lowercase" maxlength="2">,
+                                <input type="text" id="act1_3" class="saltos sinEspacios text-lowercase" maxlength="2">,
+                                <input type="text" id="act1_4" class="saltos sinEspacios text-lowercase" maxlength="2">,
+                                <input type="text" id="act1_5" class="saltos sinEspacios text-lowercase" maxlength="2">,
+                                <input type="text" id="act1_6" class="saltos sinEspacios text-lowercase" maxlength="2"> </span>
+                                <br>
+                                <br>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="number" class="nota-abierta" id="nota2" name="" readonly="readonly"><span><b style="color:#005ca4;">2.</b> Una fábrica produce 40 blusas en el mes de enero. Si la producción se triplica mes a mes durante los siguientes 4 meses, ¿cuántas blusas producen en el quinto?</span>
+                                <br><br>
                                 <span>
-                                    Patrón: × 3
-                                </span>
+                                    <b style="color:#005ca4;">R.</b>En el quinto mes producen <input type="text" id="act2_1" class="text-lowercase" name="">
                                 </span>
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            <div class="col-lg-6"><span class="pasos">Pasos 3</span>
-                                <br><span><b>Multiplicamos</b> el patrón por el último término conocido para calcular el siguiente, y repetimos el proceso hasta completar la sucesión.</span><br>
-                                <span>162 × 3 =<input type="number" id="act77_4" style="width: 80px;" name=""></span><br><br>
-                                <span>486 × 3 =<input type="number" id="act77_5" style="width: 80px;" name=""></span><br><br>
-                                <span>458 × 3 =<input type="number" id="act77_6" style="width: 80px;" name=""></span>
-                            </div>
-                            <div class="col-lg-6"><span class="pasos">Pasos 4</span><br>
-                                <span><b>Completamos</b> la sucesión.</span><br><br>
-                                <span>Patrón: × 3</span><br><br>
-                                <span>Sucesión: 6, 18, 54, 162,<input type="number" id="act77_7" style="width: 80px;" name="">, <input type="number" id="act77_8" style="width: 80px;" name="">, <input type="number" id="act77_9" style="width: 80px;" name=""></span>
+                            <input type="number" class="nota-abierta" id="nota3" name="" readonly="readonly"><span><b style="color:#005ca4;">3.</b>Para la presentación de una coreografía, en las fiestas de la escuela se ubica a los niños según muestra el gráfico. <b>Descubre</b> el patrón y <b>calcula</b> el número de niños que se necesitan para formar la quinta fila.</span>
+                            <div align="center"><img class="img-responsive" src="img/i1_p57_act79.jpg"></img></div>
+                            <span><h style="background: #FAD2D5;">Patrón:</h> <input type="text" id="act3_1" class="saltos sinEspacios" name=""></span>&nbsp;&nbsp;<span><h style="background: #FFF6A7;">Cálculo de los términos:</h>&nbsp;&nbsp;3x <input type="text" id="act3_2" class="saltos2 sinEspacios" name="">;
+                                <input type="text" id="act3_3" class="saltos2 sinEspacios" name="">;
+                                <input type="text" id="act3_4" class="saltos2 sinEspacios" name="">;
+                                <input type="text" id="act3_5" class="saltos2 sinEspacios" name="">
+                            </span><br><br>
+                            <span><b style="color:#005ca4;">R.</b>Para formar la quinta fila se necesitan <input type="text" id="act3_6" class="" name=""></span>
 
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Modal Guardar PDF-->
     <div class="modal fade animated pulse" id="myModal" role="dialog">
@@ -283,7 +269,8 @@ input {
     <script src="js/helper.js"></script>
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
-    <script src="js/actividad77.js"></script>
+    <script src="js/validacionesExtras.js"></script>
+    <script src="js/actividad79.js"></script>
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");

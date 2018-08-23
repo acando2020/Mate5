@@ -50,9 +50,15 @@
     text-align: center;
     border: 1;
     border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    width: 50px;
 }
 
+.saltos2 {
+    text-align: center;
+    border: 1;
+    border-bottom: 1px solid #85BCEB;
+    width: 70px;
+}
 
 .desactivar {
     background-color: #444;
@@ -74,8 +80,27 @@ input {
 .pasos {
     background-color: #F9B000;
     color: #ffffff;
-    border-radius: 20px;
+    text-align: center;
+    background: #F9B000;
+    margin: 0 0 15px;
+    overflow: hidden;
     padding: 5px;
+    border-radius: 15px 0px 15px 0px;
+    -moz-border-radius: 15px 0px 15px 0px;
+    -webkit-border-radius: 15px 0px 15px 0px;
+    border: 2px solid #F9B000;
+}
+
+.inputEstilo {
+
+    text-align: center;
+    margin: 0 0 15px;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 15px 0px 15px 0px;
+    -moz-border-radius: 15px 0px 15px 0px;
+    -webkit-border-radius: 15px 0px 15px 0px;
+    border: 2px solid #F9B000;
 }
 
 .borderTable {
@@ -96,7 +121,6 @@ input {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     border: 1px #FA97E9 solid;
-
 }
 </style>
 
@@ -144,7 +168,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad76()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad81()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -179,66 +203,92 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <span><b>Descubre</b> el patrón y <b>completa</b> la sucesión.</span>
-                    <div class="row" style="text-align: center;">
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" class="saltos oval" value="6" name="" readonly="readonly">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" class="saltos oval" value="18" name="" readonly="readonly">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" class="saltos oval" value="54" name="" readonly="readonly">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" class="saltos oval" value="162" name="" readonly="readonly">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" id="act77_1" class="saltos oval" name="" placeholder="0">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1 ">
-                            <input type="number" id="act77_2" class="saltos oval" name="" placeholder="0">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1">
-                            <input type="number" id="act77_3" class="saltos oval" name="" placeholder="0">
-                        </div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1"></div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1"></div>
-                        <div class="col-lg-1 col-md-1 col-sm-1 col-sx-1"></div>
-                    </div>
-                    <br>
+                    <img class="img-responsive" src="img/practica_guiada.png"></img>
+                    <span><b>Escribe</b> la multiplicación en forma vertical, <b>resuelve</b> aplicando el algoritmo aprendido y <b>verifica</b> con la calculadora: 4 587 × 63.</span>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="col-lg-6"><span class="pasos">Pasos 1</span>
-                                <br><span><b>Dividimos</b> un término por el anterior y comprobamos repitiendo el proceso con otros términos.</span></div>
-                            <div class="col-lg-6"><span class="pasos">Pasos 2</span>
-                                <br><span>
-                                Resolvemos las operaciones. <br> 18 ÷ 6 = 3; 54 ÷ 18 = 3; 162 ÷ 54 = 3
+                            <div class="col-lg-6"><span class="pasos">Paso 1</span>
+                                <br> Planteamos la multiplicación en forma vertical e identificamos los términos.</div>
+                            <div class="col-lg-6"><span class="pasos">Paso 2</span>
                                 <br>
-                                <span>
-                                    Patrón: × 3
-                                </span>
-                                </span>
+                                <b>Multiplicamos</b> las unidades (3) y las decenas (6) de 63 por cada dígito de 587.
+                                <br> <b>Escribimos</b> los productos parciales en la fila de abajo, alineados con las unidades y decenas, respectivamente.
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            <div class="col-lg-6"><span class="pasos">Pasos 3</span>
-                                <br><span><b>Multiplicamos</b> el patrón por el último término conocido para calcular el siguiente, y repetimos el proceso hasta completar la sucesión.</span><br>
-                                <span>162 × 3 =<input type="number" id="act77_4" style="width: 80px;" name=""></span><br><br>
-                                <span>486 × 3 =<input type="number" id="act77_5" style="width: 80px;" name=""></span><br><br>
-                                <span>458 × 3 =<input type="number" id="act77_6" style="width: 80px;" name=""></span>
-                            </div>
-                            <div class="col-lg-6"><span class="pasos">Pasos 4</span><br>
-                                <span><b>Completamos</b> la sucesión.</span><br><br>
-                                <span>Patrón: × 3</span><br><br>
-                                <span>Sucesión: 6, 18, 54, 162,<input type="number" id="act77_7" style="width: 80px;" name="">, <input type="number" id="act77_8" style="width: 80px;" name="">, <input type="number" id="act77_9" style="width: 80px;" name=""></span>
+                            <div class="col-lg-6"><span class="pasos">Paso 3</span>
+                                <br><b>Resolvemos</b> la multiplicación.
+                                <table>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="text-align: center;">5</td>
+                                        <td style="text-align: center;">8</td>
+                                        <td style="text-align: center;">7</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="color: #E6007E;text-align: center;">6</td>
+                                        <td style="color: #009FE3;text-align: center;">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;border:0;border-top: 2px solid #393939; width: 40px;"></td>
+                                        <td style="text-align: center;border:0;border-top: 2px solid #393939; width: 40px;"></td>
+                                        <td style="text-align: center;border:0;border-top: 2px solid #393939; width: 40px;color: #009FE3;">1</td>
+                                        <td style="text-align: center;border:0;border-top: 2px solid #393939; width: 40px;color: #009FE3;">7</td>
+                                        <td style="text-align: center;border:0;border-top: 2px solid #393939; width: 40px;color: #009FE3;">6</td>
+                                        <td style="text-align: center;border:0;border-top: 2px solid #393939; width: 40px;color: #009FE3;">1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>+</td>
+                                        <td style="color: #E6007E;text-align: center;">3</td>
+                                        <td style="color: #E6007E;text-align: center;">5</td>
+                                        <td style="color: #E6007E;text-align: center;">2</td>
+                                        <td style="color: #E6007E;text-align: center;">2</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                         <td>
+                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" readonly="readonly">
+                                        </td>
+                                        <td>
+                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma1">
+                                        </td>
+                                        <td>
+                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma2">
+                                        </td>
+                                        <td>
+                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma3">
+                                        </td>
+                                        <td>
+                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma4">
+                                        </td>
+                                        <td>
+                                            <input style="text-align: center;border:0;border-top: 2px solid #393939; border-bottom: 1px solid #85BCEB;width: 40px;" type="text" size="5" maxlength="1" placeholder="0" name="" id="rsSuma5">
+                                        </td>
 
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-lg-6"><span class="pasos">Paso 4</span>
+                                <br>
+                                <br>
+                                <span><b>Comprobamos</b> con la calculadora.</span>
+                                <br>
+                                <br>
+                                <span>587 × 63 = <input type="number" class="inputEstilo" id="rsSuma6" name="" style="width: 100px;"></span>
+                                <br>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Modal Guardar PDF-->
     <div class="modal fade animated pulse" id="myModal" role="dialog">
@@ -283,11 +333,12 @@ input {
     <script src="js/helper.js"></script>
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
-    <script src="js/actividad77.js"></script>
+    <script src="js/validacionesExtras.js"></script>
+    <script src="js/actividad81.js"></script>
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
-    $("#n_pagina").html("57");
+    $("#n_pagina").html("58");
     </script>
 </body>
 

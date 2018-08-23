@@ -1,7 +1,7 @@
 
 //Genera un pdf, del elemento html que le indiques
 function mostrar_alerta(text){
-    
+
 }
 function save_to_pdf(htmlElementId) {
     var element = document.getElementById(htmlElementId);
@@ -212,7 +212,7 @@ function calc_valor_pregunta(respuestas, total) {
     return valor;
 }
 function calificar_abierta() {
-    console.log('calificar abiertas')
+     console.log('calificar abiertas')
     var elList = document.getElementsByClassName('nota-abierta');
     var nt = 0.0;
     var vacio = 0;
@@ -231,18 +231,22 @@ function calificar_abierta() {
     if (parseInt(nt) > 10) {
         $('.nota-abierta').removeClass('valid')
         $('.nota-abierta').addClass('no-valid')
-        mostrar_alerta('la nota no debe exceder los 10 puntos')
+        alert('La nota no debe exceder los 10 puntos');
         //alert('La nota total no debe exeder de 10 puntos.')
+
+    }else if (vacio > 0) {
+        alert('todas las preguntas se deben evaluar');
+        $(elList[i]).removeClass('no-valid')
+
+
     } else {
-        $('#txtNota').html(nt.toFixed(2)+' ');
+        $('#txtNota').html(nt.toFixed(2) + ' ');
         // desabilitar_by_class('nota-abierta');
+        $(".respuesta").attr('disabled', true)
+        $(".nota-abierta").attr('disabled', true)
+        document.getElementById('bt_comprobar').disabled = true;
+        $(".btnGuardar").removeClass('disabled')
     }
-    if (vacio > 0) {
-        mostrar_alerta('todas las preguntas se deben evaluar')
-    }
-    $(".respuesta").attr('disabled', true)
-    $(".nota-abierta").attr('disabled', true)
-    $(".btnCalificar").addClass('disabled')
-    $(".btnGuardar").removeClass('disabled')
+
 
 }
