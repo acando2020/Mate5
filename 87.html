@@ -73,7 +73,8 @@
 input {
     text-align: center;
     border: 1;
-    border-bottom: 1px solid #85BCEB;
+    border-radius: 15px;
+
     width: 200px;
 }
 
@@ -174,7 +175,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad82()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad86()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -209,94 +210,13 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <input type="text" id="nota1" readonly="readonly" class="nota-abierta" name=""><span><b style="color: #005ca4">1.</b> En tu cuaderno, <b>resuelve</b> las multiplicaciones en forma vertical y <b>comprueba</b> con la calculadora.</span>
+                    <img class="img-responsive" src="img/problema.png"></img>
+                    <br>
+                    <span>Uno de los parqueaderos de un centro comercial tiene 13 filas de 8 puestos cada una, y un segundo parqueadero tiene 13 filas con 20 puestos cada una. ¿Cuántos puestos hay en total? <b>Aplica</b> las propiedades de la multiplicación para resolver.</span>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 10%;"><b style="color: #005ca4">a)</b></div>
-                                    <div style="float: left;width: 90%;"><span><span id="mul1"></span>
-                                        <input type="number" class="saltos2" id="act82_1" name="">
-                                        <br>
-                                        </span>
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 10%;"><b style="color: #005ca4">b)</b></div>
-                                    <div style="float: left;width: 90%;"><span><span id="mul2"></span>
-                                        <input type="number" class="saltos2" id="act82_2" name="">
-                                        <br>
-                                        </span>
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 10%;"><b style="color: #005ca4">c)</b></div>
-                                    <div style="float: left;width: 90%;"><span><span id="mul3"></span>
-                                        <input type="number" class="saltos2" id="act82_3" name="">
-                                        <br>
-                                        </span>
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-question">
-                    <br>
-                    <input type="text" id="nota2" readonly="readonly" class="nota-abierta"><span><b style="color: #005ca4">2.</b> <b>Encuentra</b> los números que faltan en las siguientes multiplicaciones.</span>
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 5%;"><b style="color: #005ca4">a)</b>
-                                        <br>×</div>
-                                    <div style="float: left;width: 95%;" class="act82" id="tbl1">
-
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 5%;"><b style="color: #005ca4">b)</b>
-                                        <br>×</div>
-                                    <div style="float: left;width: 95%;" class="act82" id="tbl2">
-
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 5%;"><b style="color: #005ca4">c)</b>
-                                        <br>×</div>
-                                    <div style="float: left;width: 95%;" class="act82" id="tbl3">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-question">
-                    <br>
-                    <input type="text" id="nota3" readonly="readonly" class="nota-abierta"><span><b style="color: #005ca4">3.</b> <b>Completa</b> las siguientes expresiones.</span>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="col-lg-6"><span><b style="color: #005ca4">a)</b>El tablero de ajedrez tiene 8 casillas a cada lado; en total hay <input type="number" id="act3_1" class="saltos2" name=""> casillas. </span>
-                                <br><br><span><b style="color: #005ca4">b)</b>El doble de 684 es <input type="number" id="act3_2"  class="saltos2" name="">, mientras que el triple de 416 es <input type="number" id="act3_3"  class="saltos2"  name="">.</span></div>
-
-                            <div class="col-lg-6"><span><b style="color: #005ca4">c)</b>Un perro mediano consume 375 gramos comida; en una semana come <input type="number" id="act3_4"  class="saltos2"  name=""> gramos.</span>
-                                <br><br><span><b style="color: #005ca4">d)</b>El avestruz es 6 veces más alto que la gallina, que mide 50 centímetros. El avestruz mide <input type="number" id="act3_5"  class="saltos2"  name="">centímetros.</span><br></div>
+                            <div class="col-lg-6"><textarea class="form-control" style="resize: none;" cols="30" rows="3"></textarea></div>
+                            <div class="col-lg-6"><span><b>R.</b> En total hay <input type="number" id="act87" class="saltos2" name=""> puestos.</span></div>
                         </div>
                     </div>
                 </div>
@@ -348,11 +268,11 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad82.js"></script>
+    <script src="js/actividad86.js"></script>
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
-    $("#n_pagina").html("58");
+    $("#n_pagina").html("59");
     </script>
 </body>
 

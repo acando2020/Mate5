@@ -174,7 +174,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad82()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad85()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -209,95 +209,48 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <input type="text" id="nota1" readonly="readonly" class="nota-abierta" name=""><span><b style="color: #005ca4">1.</b> En tu cuaderno, <b>resuelve</b> las multiplicaciones en forma vertical y <b>comprueba</b> con la calculadora.</span>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 10%;"><b style="color: #005ca4">a)</b></div>
-                                    <div style="float: left;width: 90%;"><span><span id="mul1"></span>
-                                        <input type="number" class="saltos2" id="act82_1" name="">
-                                        <br>
-                                        </span>
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 10%;"><b style="color: #005ca4">b)</b></div>
-                                    <div style="float: left;width: 90%;"><span><span id="mul2"></span>
-                                        <input type="number" class="saltos2" id="act82_2" name="">
-                                        <br>
-                                        </span>
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 10%;"><b style="color: #005ca4">c)</b></div>
-                                    <div style="float: left;width: 90%;"><span><span id="mul3"></span>
-                                        <input type="number" class="saltos2" id="act82_3" name="">
-                                        <br>
-                                        </span>
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
+                    <img class="img-responsive" src="img/practica_guiada.png"></img>
+                    <span>Hay 120 cajas con 60 instrumentos musicales de viento; de ellas, 80 cajas son de melódicas y el resto, de flautas. <b>Aplica</b> las propiedades de la multiplicación para calcular el número</span>
+                    <div class="col-lg-12">
+                        <div class="col-lg-6" align="justify"><span class="pasos">Pasos 1</span>
+                            <br><span><b>Analizamos</b> el ejercicio y <b>escogemos</b> la propiedad de la multiplicación que nos permita calcular el número de flautas. La propiedad que se puede aplicar es la distributiva con respecto a la resta.</span></div>
+                        <div class="col-lg-6"><span class="pasos">Pasos 2</span>
+                            <br><span><b>Planteamos</b> la propiedad distributiva y <b>realizamos</b> la operación.</span>
+                            <img class="img-responsive" src="img/i1_p61_act85.jpg"></img>
+                            <table>
+                                <tr>
+                                    <td colspan="2">60 × (120 – 80)</td>
+                                    <td>=</td>
+                                    <td colspan="2">(60 × 120) – (60 × 80)</td>
+                                </tr>
+                                <tr>
+                                    <td>60 ×</td>
+                                    <td>
+                                        <input type="number" id="act85_1" class="saltos2" name="">
+                                    </td>
+                                    <td>=</td>
+                                    <td>7 200 –</td>
+                                    <td>
+                                        <input type="number" id="act85_2" class="saltos2" name="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">2400</td>
+                                    <td>=</td>
+                                    <td colspan="2">
+                                        <input type="number" id="act85_3" class="saltos2" name="">
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-                </div>
-                <div class="text-question">
-                    <br>
-                    <input type="text" id="nota2" readonly="readonly" class="nota-abierta"><span><b style="color: #005ca4">2.</b> <b>Encuentra</b> los números que faltan en las siguientes multiplicaciones.</span>
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 5%;"><b style="color: #005ca4">a)</b>
-                                        <br>×</div>
-                                    <div style="float: left;width: 95%;" class="act82" id="tbl1">
-
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 5%;"><b style="color: #005ca4">b)</b>
-                                        <br>×</div>
-                                    <div style="float: left;width: 95%;" class="act82" id="tbl2">
-
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div style="float: left;width: 100%;">
-                                    <div style="float: left;width: 5%;"><b style="color: #005ca4">c)</b>
-                                        <br>×</div>
-                                    <div style="float: left;width: 95%;" class="act82" id="tbl3">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-question">
-                    <br>
-                    <input type="text" id="nota3" readonly="readonly" class="nota-abierta"><span><b style="color: #005ca4">3.</b> <b>Completa</b> las siguientes expresiones.</span>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="col-lg-6"><span><b style="color: #005ca4">a)</b>El tablero de ajedrez tiene 8 casillas a cada lado; en total hay <input type="number" id="act3_1" class="saltos2" name=""> casillas. </span>
-                                <br><br><span><b style="color: #005ca4">b)</b>El doble de 684 es <input type="number" id="act3_2"  class="saltos2" name="">, mientras que el triple de 416 es <input type="number" id="act3_3"  class="saltos2"  name="">.</span></div>
-
-                            <div class="col-lg-6"><span><b style="color: #005ca4">c)</b>Un perro mediano consume 375 gramos comida; en una semana come <input type="number" id="act3_4"  class="saltos2"  name=""> gramos.</span>
-                                <br><br><span><b style="color: #005ca4">d)</b>El avestruz es 6 veces más alto que la gallina, que mide 50 centímetros. El avestruz mide <input type="number" id="act3_5"  class="saltos2"  name="">centímetros.</span><br></div>
-                        </div>
+                    <div class="col-lg-12"><span class="pasos">Pasos 3</span>
+                        <br>
+                        <span>
+                                            <b>Escribimos</b> la respuesta.
+                                        </span>
+                        <br>
+                        <span><b style="color: #005ca4">R.</b>Hay <input type="number" id="act85_4" class="saltos2" name=""> flautas.</span>
                     </div>
                 </div>
             </div>
@@ -348,11 +301,63 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad82.js"></script>
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
-    $("#n_pagina").html("58");
+    $("#n_pagina").html("59");
+
+    function actividad85() {
+        var act85_1 = document.getElementById('act85_1').value;
+        var act85_2 = document.getElementById('act85_2').value;
+        var act85_3 = document.getElementById('act85_3').value;
+        var act85_4 = document.getElementById('act85_4').value;
+        var nt1 = 0,
+            nt2 = 0,
+            nt3 = 0,
+            nt4 = 0;
+        if (act85_1 == "40") {
+            $('#act85_1').css("background", "#00e600");
+            nt1 = 2.5;
+
+        } else {
+            $('#act85_1').css("background", "#ff6666");
+
+
+        }
+        if (act85_2 == "4800") {
+            $('#act85_2').css("background", "#00e600");
+            nt2 = 2.5;
+
+        } else {
+            $('#act85_2').css("background", "#ff6666");
+
+
+        }
+        if (act85_3 == "2400") {
+            $('#act85_3').css("background", "#00e600");
+            nt3 = 2.5;
+
+        } else {
+            $('#act85_3').css("background", "#ff6666");
+
+
+        }
+        if (act85_4 == "2400") {
+            $('#act85_4').css("background", "#00e600");
+            nt4 = 2.5;
+
+        } else {
+            $('#act85_4').css("background", "#ff6666");
+
+
+        }
+        var total = parseFloat(nt1) + parseFloat(nt2) + parseFloat(nt3) + parseFloat(nt4);
+        $('#txtNota').html(total.toFixed(2));
+        document.getElementById('bt_comprobar').disabled = true;
+        $('input').attr("disabled", true);
+        $('#txtAlumno').attr("disabled", false);
+
+    }
     </script>
 </body>
 
