@@ -1015,7 +1015,7 @@ function calcularNotaGeneral(total_nota, r_correctas, op_seleccionadas, total_pr
     //var tiempoReload=4000; //en milisegundos
 
     if (op_seleccionadas < total_nota) {
-        alert('Debe escoger ' + total_nota + ' respuestas de la pregunta');
+        alert('Debe escoger ' + total_nota + ' respuestas de la pregunta 9');
 
     } else {
         var calculo = (result_sobre * r_correctas) / total_nota;

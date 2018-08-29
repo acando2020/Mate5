@@ -36,14 +36,12 @@
 
 .correcto {
     color: #ffffff;
-    background-color: #8FB435;
-    font-weight: 700;
+    background-color: #00e600;
 }
 
 .incorrecto {
     color: #ffffff;
-    background-color: #E76E80;
-    font-weight: 700;
+    background-color: #ff6666;
 }
 
 .saltos {
@@ -57,7 +55,9 @@
     text-align: center;
     border: 1;
     border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    border-radius: 15px;
+
+    width: 100px;
 }
 
 .desactivar {
@@ -70,13 +70,37 @@
     background-color: #232956;
 }
 
-input {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*input {
     text-align: center;
     border: 1;
     border-radius: 15px;
 
     width: 200px;
 }
+*/
 
 .pasos {
     background-color: #F9B000;
@@ -175,7 +199,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad87()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad95()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -210,15 +234,58 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/problema.png"></img>
-                    <br>
-                    <span>Uno de los parqueaderos de un centro comercial tiene 13 filas de 8 puestos cada una, y un segundo parqueadero tiene 13 filas con 20 puestos cada una. ¿Cuántos puestos hay en total? <b>Aplica</b> las propiedades de la multiplicación para resolver.</span>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="col-lg-6">
-                                <textarea class="form-control" style="resize: none;" cols="30" rows="3"></textarea>
+                            <div class="col-lg-2"><img class="img-responsive" src="img/problema.png"></img>
                             </div>
-                            <div class="col-lg-6"><span><b>R.</b> En total hay <input type="number" id="act87" class="saltos2" name=""> puestos.</span></div>
+                            <div class="col-lg-10"><img class="img-responsive" src="img/conectoCCNN.png"></img>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-6" align="justify">
+                                <div style="border: 1px dashed #F39200;"><b style="color: #005ca4;">1.</b>El corazón de un colibrí late 250 veces por minuto. ¿Cuántas veces latirá el corazón de un colibrí en un día?<img src="img/i1_p67_act95.jpg" class="img-responsive">
+                                    <textarea cols="30" rows="3" class="form-control" style="resize: none; border: 2px dotted #009870 ;"></textarea>
+                                    <br><span><b style="color: #005ca4;">R.</b> En un día, el corazón de un colibrí late <input class="saltos2" id="num0" type="number"></input>veces.</span>
+                                </div>
+                                <div style="border: 1px dashed #F39200; border-top: none;">
+                                    <br> <b style="color: #005ca4;">2.</b>En el mes de diciembre, un almacén registró la venta de 156 celulares a un costo de $ 218 cada uno. ¿Cuánto se recaudó en total?
+                                    <input type="text" class="form-control" name="" style="resize: none; border: 2px dotted #009870 ;">
+                                    <br><span> <b style="color: #005ca4;">R.</b>En diciembre se recaudaron $<input class="saltos2" id="num1" type="number"></input>.</span>
+                                </div>
+                                <div style="border: 1px dashed #F39200; border-top: none;">
+                                    <br> <b style="color: #005ca4;">3.</b>Una editorial utilizó dos camiones para distribuir textos escolares a las librerías de la localidad. En cada camión se enviaron 180 cajas con 60 textos cada una. ¿Cuántos textos llegaron a las librerías? <b>Aplica</b> la propiedad asociativa de la multiplicación.
+                                    <textarea cols="30" rows="3" class="form-control" style="resize: none; border: 2px dotted #009870 ;"></textarea>
+                                    <br><span><b style="color: #005ca4;">R.</b> A las librerías llegaron <input class="saltos2" id="num2" type="number"></input>textos.</span>
+                                </div>
+                                <div style="border: 1px dashed #F39200; border-top: none;">
+                                    <br> <b style="color: #005ca4;">4.</b>Un artesano tarda aproximadamente 27 días en terminar un sombrero, trabajando 8 horas diarias. ¿En cuántas horas termina el artesano un sombrero? <b>Aplica</b> la propiedad conmutativa para comprobar tu respuesta.
+                                    <textarea cols="30" rows="3" class="form-control" style="resize: none; border: 2px dotted #009870 ;"></textarea>
+                                    <br><span><b style="color: #005ca4;">R.</b> Al artesano le toma<input class="saltos2" id="num3" type="number"></input>horas elaborar un sombrero.</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6" align="justify">
+                                <div style="border: 1px dashed #F39200; border-top: none;"><b style="color: #005ca4;">5.</b>Una fundación destinó $ 245 para cada uno de los 13 proyectos escolares de reciclaje, y $ 330 para cada uno de los 13 proyectos ornamentales. ¿Cuánto dinero destinó en total la fundación? <b>Aplica</b> la propiedad distributiva de la multiplicación.
+                                    <textarea cols="30" rows="3" class="form-control" style="resize: none; border: 2px dotted #AF1280 ;"></textarea>
+                                    <br><span><b style="color: #005ca4;">R.</b> La fundación destinó en total $<input class="saltos2" id="num4" type="number"></input>.</span>
+                                </div>
+                                <div style="border: 1px dashed #F39200; border-top: none;">
+                                    <br> <b style="color: #005ca4;">6.</b>Una fábrica textil cuenta con bodegas en 4 ciudades y en cada ciudad hay 215 distribuidores. ¿Cuántos distribuidores tiene la fábrica? Aplica la propiedad distributiva de la multiplicación.
+
+                                    <br><span> <b style="color: #005ca4;">R.</b>La fábrica tiene <input class="saltos2" id="num5" type="number"></input>distribuidores.</span>
+                                </div>
+                                <div style="border: 1px dashed #F39200; border-top: none;">
+                                    <br> <b style="color: #005ca4;">7.</b>En el laboratorio de ciencias de la escuela hay 12 mesas. En cada mesa se sientan 8 estudiantes. Si cada estudiante recibe 17 hojas, ¿cuántas hojas se utilizan en total? <b>Aplica</b> la propiedad asociativa de la multiplicación.
+                                    <textarea cols="30" rows="3" class="form-control" style="resize: none; border: 2px dotted #AF1280 ;"></textarea>
+                                    <br><span><b style="color: #005ca4;">R.</b> En total se utilizan <input class="saltos2" id="num6" type="number"></input>hojas.</span>
+                                </div>
+                                <div style="border: 1px dashed #F39200; border-top: none;">
+                                    <br> <b style="color: #005ca4;">8.</b>La exhibición de pinturas sobre las costumbres de la localidad se realizó en el salón de eventos de una escuela. La visita de los estudiantes se realizó en cinco grupos de 32 cada uno. ¿Cuántos estudiantes asistieron a la exhibición de pinturas? <b>Aplica</b> la propiedad distributiva de la multiplicación.
+                                    <textarea cols="30" rows="3" class="form-control" style="resize: none; border: 2px dotted #AF1280 ;"></textarea>
+                                    <br><span><b style="color: #005ca4;">R.</b> Asistieron <input class="saltos2" id="num7" type="number"></input>estudiantes.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -270,31 +337,40 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad86.js"></script>
+
+    <script src="js/actividad95.js"></script>
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
-    $("#n_pagina").html("59");
+    $("#n_pagina").html("66");
 
-    function actividad87() {
-        var act87 = document.getElementById('act87').value;
-        var nt1 = 0;
-        if (act87 == "364") {
-            nt1 = 10;
+    /* function actividad93() {
+         var act93_1 = document.getElementById('act93_1').value;
+         var act93_2 = document.getElementById('act93_2').value;
 
-            $('#act87').css("background", "#00e600");
+         nt1 = 0, nt2 = 0;
+         if (act93_1 == "2548") {
+             nt1 = 5;
+             $('#act93_1').css("background", "#00e600");
 
-        } else {
-            $('#act87').css("background", "#ff6666");
+         } else {
+             $('#act93_1').css("background", "#ff6666");
 
-        }
+         }
+         if (act93_2 == "2548") {
+             nt2 = 5;
+             $('#act93_2').css("background", "#00e600");
 
-        $('#txtNota').html(nt1.toFixed(2));
-        document.getElementById('bt_comprobar').disabled = true;
-        $('input').attr("disabled", true);
-        $('#txtAlumno').attr("disabled", false);
+         } else {
+             $('#act93_2').css("background", "#ff6666");
 
-    }
+         }
+         var total = parseInt(nt1) + parseInt(nt2);
+         $('#txtNota').html(total.toFixed(2));
+         document.getElementById('bt_comprobar').disabled = true;
+         $('input').attr("disabled", true);
+         $('#txtAlumno').attr("disabled", false);
+     }*/
     </script>
 </body>
 

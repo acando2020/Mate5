@@ -57,7 +57,7 @@
     text-align: center;
     border: 1;
     border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    width: 100px;
 }
 
 .desactivar {
@@ -175,7 +175,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad87()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad91()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -211,14 +211,16 @@ input {
                 <!--pregunats de la actividad-->
                 <div class="text-question">
                     <img class="img-responsive" src="img/problema.png"></img>
-                    <br>
-                    <span>Uno de los parqueaderos de un centro comercial tiene 13 filas de 8 puestos cada una, y un segundo parqueadero tiene 13 filas con 20 puestos cada una. ¿Cuántos puestos hay en total? <b>Aplica</b> las propiedades de la multiplicación para resolver.</span>
+                    <img class="img-responsive" src="img/ConectoEF.jpg"></img>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="col-lg-6">
-                                <textarea class="form-control" style="resize: none;" cols="30" rows="3"></textarea>
+                            <div class="col-lg-6" align="justify">Joaquín ahorró $ 500 durante 10 meses para pagar la entrada de su casa, y pagó la diferencia a través de un préstamo bancario, por el que debe pagar 100 cuotas mensuales de $ 980. ¿Cuánto costó la casa?
+                                <textarea cols="30" rows="3" class="form-control" style="resize: none;border: 2px dotted #B80E80;"></textarea>
+                                <br>
+                                <span><b>R.</b> El precio de la casa fue de $<input type="number" id="act91" class="saltos2" name=""></span>
                             </div>
-                            <div class="col-lg-6"><span><b>R.</b> En total hay <input type="number" id="act87" class="saltos2" name=""> puestos.</span></div>
+                            <div class="col-lg-6"><img class="img-responsive" src="img/i1_p63_act91.jpg"></img>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -270,30 +272,26 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad86.js"></script>
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
     $("#n_pagina").html("59");
 
-    function actividad87() {
-        var act87 = document.getElementById('act87').value;
-        var nt1 = 0;
-        if (act87 == "364") {
+    function actividad91() {
+        var act91 = document.getElementById('act91').value;
+        nt1 = 0;
+        if (act91 == "103000") {
             nt1 = 10;
-
-            $('#act87').css("background", "#00e600");
+            $('#act91').css("background", "#00e600");
 
         } else {
-            $('#act87').css("background", "#ff6666");
+            $('#act91').css("background", "#ff6666");
 
         }
-
         $('#txtNota').html(nt1.toFixed(2));
         document.getElementById('bt_comprobar').disabled = true;
         $('input').attr("disabled", true);
         $('#txtAlumno').attr("disabled", false);
-
     }
     </script>
 </body>

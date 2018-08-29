@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mate 5</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+</head>
+<style type="text/css">
+.cajas {
+    max-width: 95%;
+    max-height: 200px;
+    border: 1px #98007f solid;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px;
+}
+
+.cajas1 {
+
+    border: 1px #98007f solid;
+}
+
+.actividad1 {
+    background: #fff;
+}
+
+.correcto {
+    color: #ffffff;
+    background-color: #00e600;
+}
+
+.incorrecto {
+    color: #ffffff;
+    background-color: #ff6666;
+}
+
+.saltos {
+    text-align: center;
+    border: 1;
+    border-bottom: 1px solid #85BCEB;
+    width: 50px;
+}
+
+.saltos2 {
+    text-align: center;
+    border: 1;
+    border-bottom: 1px solid #85BCEB;
+    border-radius: 15px;
+
+    width: 100px;
+}
+
+.desactivar {
+    background-color: #444;
+    color: #888;
+    padding: 8px;
+}
+
+#cabecera .badge {
+    background-color: #232956;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*input {
+    text-align: center;
+    border: 1;
+    border-radius: 15px;
+
+    width: 200px;
+}
+*/
+
+.pasos {
+    background-color: #F9B000;
+    color: #ffffff;
+    text-align: center;
+    background: #F9B000;
+    margin: 0 0 15px;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 15px 0px 15px 0px;
+    -moz-border-radius: 15px 0px 15px 0px;
+    -webkit-border-radius: 15px 0px 15px 0px;
+    border: 2px solid #F9B000;
+}
+
+.inputEstilo {
+
+    text-align: center;
+    margin: 0 0 15px;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 15px 0px 15px 0px;
+    -moz-border-radius: 15px 0px 15px 0px;
+    -webkit-border-radius: 15px 0px 15px 0px;
+    border: 2px solid #F9B000;
+}
+
+.borderTable {
+    border: 1px #76B82A solid;
+}
+
+.borderTable2 {
+    border: 1px #85BCEB solid;
+}
+
+.sobrelinea {
+    text-decoration: overline;
+}
+
+.oval {
+
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px #FA97E9 solid;
+}
+
+.inputMult {
+    text-align: center;
+    border: 0;
+    width: 30px;
+}
+</style>
+
+<body>
+    <div id="nota-informativa" class="nota-ayuda">
+        <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+        <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
+        Escribe las respuesta correcta en los espacios en blanco.
+        <br>
+        <span id="ayudas"></span>
+    </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <button class="btn button btnHelp mytooltip" data-info="Mostrar ayuda de la actividad" onclick="mostrar_ayuda()">
+                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_1 btnGuardar mytooltip" data-info="Guardar en local" onclick="$('#myModal').modal('show')">
+                        <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_1 btnEvniar mytooltip" style="display: none !important;" data-info="Enviar a Correo">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_2 btnIniciar mytooltip" style="display: none !important;" disabled data-info="Iniciar">
+                        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_2 btnRepetir mytooltip" data-info="Repetir" onclick="location.reload()">
+                        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad94()">
+                        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_5 mytooltip display-none" style="display: none !important;" data-info="Pantalla completa" onclick="full_screen_change()">
+                        <span id="full_ico" class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                    </button>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0px;margin-left: 0px; ">
+                <li><span class="notificacion actividad">
+                            <span class="glyphicon glyphicon-list-alt"></span> Actividad <span id='n_cont'>1</span> / <span id='n_ejer'>1</span>
+                    </span>
+                    <span class="notificacion nota">
+                            <span class="glyphicon glyphicon-pencil"></span> Nota <span id="txtNota"></span> / 10
+                    </span>
+                    <span class="notificacion pagina">
+                            <span class="glyphicon glyphicon-bookmark"></span> Pág <i id="n_pagina"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <div class="container espacio">
+        <div class="panel border-exploro" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-exploro">
+                <span class="titulo"><img src="img/icoE.png" alt="">Exploro para recordar</span>
+                <span class="titulo_2 txtAlumno display-none" id="nombre_alumno">Alumno: </span>
+            </div>
+            <div class="panel-body">
+                <!--pregunats de la actividad-->
+                <div class="text-question">
+                    <img class="img-responsive" src="img/practica_individual.png"></img>
+                    <input type="text" id="nota1" class="nota-abierta" readonly="readonly" name=""><span><b style="color: #005ca4;">1.</b> <b>Realiza</b> las siguientes multiplicaciones y <b>comprueba</b> los productos con la calculadora o con algún otro medio tecnológico.</span>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-3 col-xs-12">
+                                <div style="float: left;width: 100%">
+                                    <div style="float: left;width: 10%"><b style="color: #005ca4;">a)</b>
+                                        <br>×
+                                        <br>
+                                        <br>+</div>
+                                    <div style="float: left;width: 90%">
+                                        <table class="table-bordered">
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num1" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num2" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num3" name="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num4" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num5" name="">
+                                                </td>
+                                            </tr>
+                                            <tr style="border-top: 2px solid #393939;" id="producto1">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                            </tr>
+                                            <tr id="producto2">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="" readonly="readonly">
+                                                </td>
+                                            </tr>
+                                            <tr style="border-top: 2px solid #393939;" id="resultado1" class="prod">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <div style="float: left;width: 100%">
+                                    <div style="float: left;width: 10%"><b style="color: #005ca4;">b)</b>
+                                        <br>×
+                                        <br>
+                                        <br>+</div>
+                                    <div style="float: left;width: 90%">
+                                        <table class="table-bordered">
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="text" readonly="readonly" class="inputMult" id="num6" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" readonly="readonly" class="inputMult" id="num7" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" readonly="readonly" class="inputMult" id="num8" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" readonly="readonly" class="inputMult" id="num9" name="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="text" readonly="readonly" maxlength="1" class="inputMult" id="num10" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" readonly="readonly" maxlength="1" class="inputMult" id="num11" name="">
+                                                </td>
+                                            </tr>
+                                            <tr style="border-top: 2px solid #393939;" id="producto2_1">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                            </tr>
+                                            <tr id="producto2_2">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="" readonly="readonly">
+                                                </td>
+                                            </tr>
+                                            <tr style="border-top: 2px solid #393939;" id="resultado2">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <div style="float: left;width: 100%">
+                                    <div style="float: left;width: 10%"><b style="color: #005ca4;">c)</b>
+                                        <br>×
+                                        <br>
+                                        <br>+</div>
+                                    <div style="float: left;width: 90%">
+                                        <table class="table-bordered">
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num12" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num13" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num14" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num15" name="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num16" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num17" name="">
+                                                </td>
+                                            </tr>
+                                            <tr style="border-top: 2px solid #393939;" id="producto3_1">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                            </tr>
+                                            <tr id="producto3_2">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="" readonly="readonly">
+                                                </td>
+                                            </tr>
+                                            <tr style="border-top: 2px solid #393939;" id="resultado3">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <div style="float: left;width: 100%">
+                                    <div style="float: left;width: 10%"><b style="color: #005ca4;">d)</b>
+                                        <br>×
+                                        <br>
+                                        <br>+</div>
+                                    <div style="float: left;width: 90%">
+                                        <table class="table-bordered">
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num18" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num19" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num20" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num21" name="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num22" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="number" readonly="readonly" class="inputMult" id="num23" name="">
+                                                </td>
+                                            </tr>
+                                            <tr style="border-top: 2px solid #393939;" id="producto4_1">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                            </tr>
+                                            <tr id="producto4_2">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="" readonly="readonly">
+                                                </td>
+                                            </tr>
+                                            <tr style="border-top: 2px solid #393939;" id="resultado4">
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-question">
+                    <input type="text" id="nota2" class="nota-abierta" readonly="readonly" name=""><span><b style="color: #005ca4;">2.</b> <b>Completa</b> la tabla.</span>
+                    <table class="table table-bordered" style="text-align: center;">
+                        <tr>
+                            <td style="background:#19BAE4 ; color: #ffffff; text-align: center;">Factores</td>
+                            <td style="background: #3FB498; color: #ffffff; text-align: center;">Multiplicación</td>
+                            <td style="background: #C49BC8; color: #ffffff; text-align: center;">Producto</td>
+                        </tr>
+                        <tr>
+                            <td id="num1_1"></td>
+                            <td id="num1_2"></td>
+                            <td id="">
+                                <input type="number" class="saltos2" id="num1_3" name="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="">
+                                <input type="text" class="sinEspacios text-lowercase saltos2" id="num2_1" name="">
+                            </td>
+                            <td id="num2_2"></td>
+                            <td id="num2_3"></td>
+                        </tr>
+                        <tr>
+                            <td id="num3_1"></td>
+                            <td id="">
+                                <input type="text" class="sinEspacios text-lowercase saltos2" id="num3_2" name="">
+                            </td>
+                            <td id="">
+                                <input type="number" class="saltos2" id="num3_3" name="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="">
+                                <input type="text" class="sinEspacios text-lowercase saltos2" id="num4_1" name="">
+                            </td>
+                            <td id="num4_2"></td>
+                            <td id="">
+                                <input type="number" class="saltos2" id="num4_3" name="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="">
+                                <input type="text" class="sinEspacios text-lowercase saltos2" id="num5_1" name="">
+                            </td>
+                            <td id="num5_2"></td>
+                            <td id="num5_3"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text-question">
+                    <input type="text" id="nota3" class="nota-abierta" readonly="readonly" name=""><span><b style="color: #005ca4;">3.</b> Con la ayuda de la calculadora, <b>realiza</b> las operaciones y <b>completa</b> la tabla.</span>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" style="text-align: center;">
+                            <tr>
+                                <td style="background: #005CA9;color: white;">→×</td>
+                                <td style="background: #F5A04C;color: white;">12</td>
+                                <td style="background: #F5A04C;color: white;">20</td>
+                                <td style="background: #F5A04C;color: white;">41</td>
+                                <td style="background: #F5A04C;color: white;">67</td>
+                                <td style="background: #F5A04C;color: white;">125</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #E9EDF8;" id="valor1"></td>
+                                <td>
+                                    <input type="number" id="valores0" class="saltos2" readonly="readonly"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores1" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores2" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores3" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores4" class="saltos2"></input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background: #E9EDF8;" id="valor2"></td>
+                                <td>
+                                    <input type="number" id="valores5" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores6" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores7" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores8" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores9" class="saltos2"></input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background: #E9EDF8;" id="valor3"></td>
+                                <td>
+                                    <input type="number" id="valores10" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores11" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores12" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores13" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores14" class="saltos2"></input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background: #E9EDF8;" id="valor4"></td>
+                                <td>
+                                    <input type="number" id="valores15" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores16" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores17" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores18" class="saltos2"></input>
+                                </td>
+                                <td>
+                                    <input type="number" id="valores19" class="saltos2"></input>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="text-question">
+                    <input type="text" id="nota4" class="nota-abierta" name=""><span><b style="color: #005ca4;">4.</b> <b>Identifica</b> la multiplicación cuyo resultado dé el número mayor. <b>Explica</b> tu respuesta</span>.
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <br>
+                            <div class="col-lg-3"><b style="color: #005ca4;">a)</b><span style="background: #FFEDB8;border-radius: 15px;padding: 5px;">523 × 18</span><br></div>
+                            <div class="col-lg-3"><b style="color: #005ca4;">b)</b><span style="background: #DBD0E8;border-radius: 15px;padding: 5px;">523 × 200</span><br></div>
+                            <div class="col-lg-3"><b style="color: #005ca4;">c)</b><span style="background: #CADFB9;border-radius: 15px;padding: 5px;">523 × 178</span><br></div>
+                            <div class="col-lg-3"><b style="color: #005ca4;">d)</b><span style="background: #D7EEF6;border-radius: 15px;padding: 5px;">523 × 136</span></div>
+                        </div>
+                    </div>
+                    <br> <span><b style="color: #005ca4;">R.</b>La multiplicación que da un número mayor es <input type="text" class="saltos2" name="">, porque el <input type="text" style="border-radius: 15px;width: 300px;" name=""></span>
+                    <br>
+                </div>
+                <div class="text-question">
+                    <br>
+                    <input type="text" id="nota5" class="nota-abierta" name="" readonly="readonly"><span><b style="color: #005ca4;">5.</b> <b>Resuelve</b> las multiplicaciones y <b>ordena</b> los resultados de menor a mayor.</span>.
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <br>
+                            <div class="col-lg-3"><b style="color: #005ca4;">a)</b><span style="background: #DBD0E8;border-radius: 15px;padding: 5px;">18 × 65 = 1170</span><br></div>
+                            <div class="col-lg-3"><b style="color: #005ca4;">b)</b><span style="background: #D7EEF6;border-radius: 15px;padding: 5px;">2 × 1000 = 2000</span><br></div>
+                            <div class="col-lg-3"><b style="color: #005ca4;">c)</b><span style="background: #FFEDB8;border-radius: 15px;padding: 5px;">26 × 32 = 832</span><br></div>
+                            <div class="col-lg-3"><b style="color: #005ca4;">d)</b><span style="background: #CADFB9;border-radius: 15px;padding: 5px;">41 × 100 = 4100</span></div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div align="center">
+                        <table>
+                            <tr>
+                                <td>
+                                    <input class="saltos2" type="number" id="act5_1"></input>
+                                </td>
+                                <td><b><</b></td>
+                                <td>
+                                    <input class="saltos2" type="number" id="act5_2"></input>
+                                </td>
+                                <td><b><</b></td>
+                                <td>
+                                    <input class="saltos2" type="number" id="act5_3"></input>
+                                </td>
+                                <td><b><</b></td>
+                                <td>
+                                    <input class="saltos2" type="number" id="act5_4"></input>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+    <div class="modal fade animated pulse" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
+                    <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="modal_form" class="form-horizontal">
+                        <div class="form-group ">
+                            <div class="col-sm-2">
+                                <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
+                            </div>
+                            <div class="col-sm-10">
+                                <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
+                                <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
+                                <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
+                                    <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <span class="glyphicon glyphicon-info-sign error-color" aria-hidden="true"></span> Debes ingresar tu nombre</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/activities.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/validacionesExtras.js"></script>
+    <script src="js/actividad94.js"></script>
+    <script type="text/javascript">
+    var titulos = "aplico";
+    $("#txtNota").html("0");
+    $("#n_pagina").html("66");
+
+    /* function actividad93() {
+         var act93_1 = document.getElementById('act93_1').value;
+         var act93_2 = document.getElementById('act93_2').value;
+
+         nt1 = 0, nt2 = 0;
+         if (act93_1 == "2548") {
+             nt1 = 5;
+             $('#act93_1').css("background", "#00e600");
+
+         } else {
+             $('#act93_1').css("background", "#ff6666");
+
+         }
+         if (act93_2 == "2548") {
+             nt2 = 5;
+             $('#act93_2').css("background", "#00e600");
+
+         } else {
+             $('#act93_2').css("background", "#ff6666");
+
+         }
+         var total = parseInt(nt1) + parseInt(nt2);
+         $('#txtNota').html(total.toFixed(2));
+         document.getElementById('bt_comprobar').disabled = true;
+         $('input').attr("disabled", true);
+         $('#txtAlumno').attr("disabled", false);
+     }*/
+    </script>
+</body>
+
+</html>

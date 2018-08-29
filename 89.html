@@ -57,7 +57,7 @@
     text-align: center;
     border: 1;
     border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    width: 100px;
 }
 
 .desactivar {
@@ -175,7 +175,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad87()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad89()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -210,15 +210,55 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/problema.png"></img>
+                    <img class="img-responsive" src="img/practica_guiada.png"></img>
+                    <span>En el Museo Arqueológico de Esmeraldas hay 5 vitrinas con 10 estatuillas de cerámica cada una, 2 vitrinas con 100 utensilios de caza y pesca cada una, y 7 vitrinas con una vasija cada una.</span>
                     <br>
-                    <span>Uno de los parqueaderos de un centro comercial tiene 13 filas de 8 puestos cada una, y un segundo parqueadero tiene 13 filas con 20 puestos cada una. ¿Cuántos puestos hay en total? <b>Aplica</b> las propiedades de la multiplicación para resolver.</span>
+                    <br>
+                    <span><b>Calcula</b> el número de piezas arqueológicas que forman parte del museo.</span>
                     <div class="row">
+                        <div class="col-lg-12"><span class="pasos">Paso 1</span>
+                            <br>
+                            <div><span>Planteamos la multiplicación: el número de vitrinas por su respectivo número de piezas arqueológicas.</span></div>
+                            <div class="col-lg-4 col-xs-4"><span style="background: #DFD6EC; border-radius: 15px;padding: 5px;">7 × 1 =</span></div>
+                            <div class="col-lg-4 col-xs-4"><span style="background: #FFE4B5; border-radius: 15px;padding: 5px;">5 × 10 =</span></div>
+                            <div class="col-lg-4 col-xs-4"><span style="background: #B8D2F5; border-radius: 15px;padding: 5px;">2 × 100 =</span></div>
+                        </div>
+                        <br>
                         <div class="col-lg-12">
-                            <div class="col-lg-6">
-                                <textarea class="form-control" style="resize: none;" cols="30" rows="3"></textarea>
+                            <br>
+                            <div class="col-lg-6"><span class="pasos">Paso 2</span>
+                                <br>
+                                <span><b>Obtenemos</b> el producto multiplicando las cifras significativas. Luego añadimos uno o dos ceros, según corresponda en cada caso.</span>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-3"><span style="background: #DFD6EC; border-radius: 15px;padding: 5px;">7 × 1 = 7</span>
+                                            <br>
+                                        </div>
+                                        <div class="col-lg-3"><span style="background: #FFE4B5; border-radius: 15px;padding: 5px;">5 × 10 = 50</span>
+                                            <br>
+                                        </div>
+                                        <div class="col-lg-6"><span><span style="background: #B8D2F5; border-radius: 15px;padding: 5px;">2 × 100 =</span>
+                                            <input type="number" id="act89_1" class="saltos2" name="">
+                                            </span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-6"><span><b>R.</b> En total hay <input type="number" id="act87" class="saltos2" name=""> puestos.</span></div>
+                            <br>
+                            <div class="col-lg-6"><span class="pasos">Paso 3</span>
+                                <br>
+                                <span><b>Sumamos</b> los productos parciales para obtener el producto o total y <b>escribimos</b> el resultado.</span>
+                                <br>
+                                <br>
+                                <span><span>7 + 50 +</span>
+                                <input type="number" id="act89_2" class="saltos2" name=""> =
+                                <input type="number" id="act89_3" class="saltos2" name="">
+                                </span>
+                                <br>
+                                <br>
+                                <span>Forman parte del museo piezas <input type="number" id="act89_4" class="saltos2" name="">arqueológicas.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -270,30 +310,54 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad86.js"></script>
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
     $("#n_pagina").html("59");
 
-    function actividad87() {
-        var act87 = document.getElementById('act87').value;
-        var nt1 = 0;
-        if (act87 == "364") {
-            nt1 = 10;
-
-            $('#act87').css("background", "#00e600");
-
+    function actividad89() {
+        var act89_1 = document.getElementById('act89_1').value;
+        var act89_2 = document.getElementById('act89_2').value;
+        var act89_3 = document.getElementById('act89_3').value;
+        var act89_4 = document.getElementById('act89_4').value;
+        var nt1 = 0,
+            nt2 = 0,
+            nt3 = 0,
+            nt4 = 0;
+        if (act89_1 == "200") {
+            nt1 = 2.5;
+            $('#act89_1').css("background", "#00e600");
         } else {
-            $('#act87').css("background", "#ff6666");
+            $('#act89_1').css("background", "#ff6666");
 
         }
 
-        $('#txtNota').html(nt1.toFixed(2));
+        if (act89_2 == "200") {
+            nt2 = 2.5;
+            $('#act89_2').css("background", "#00e600");
+        } else {
+            $('#act89_2').css("background", "#ff6666");
+
+        }
+        if (act89_3 == "257") {
+            nt3 = 2.5;
+            $('#act89_3').css("background", "#00e600");
+        } else {
+            $('#act89_3').css("background", "#ff6666");
+
+        }
+        if (act89_4 == "257") {
+            nt4 = 2.5;
+            $('#act89_4').css("background", "#00e600");
+        } else {
+            $('#act89_4').css("background", "#ff6666");
+
+        }
+        var total = parseFloat(nt1) + parseFloat(nt2) + parseFloat(nt3) + parseFloat(nt4);
+        $('#txtNota').html(total.toFixed(2));
         document.getElementById('bt_comprobar').disabled = true;
         $('input').attr("disabled", true);
         $('#txtAlumno').attr("disabled", false);
-
     }
     </script>
 </body>

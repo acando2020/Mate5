@@ -47,7 +47,7 @@ function pregunta1() {
         Rresta3 = 0,
         Rresta4 = 0;
     if (resta == restaTotal) {
-        Rresta1 = 2.5;
+        Rresta1 = 0.25;
         $('#R1').css("background", "#00e600");
         $('#R2').css("background", "#00e600");
         $('#R3').css("background", "#00e600");
@@ -83,7 +83,7 @@ function pregunta1() {
 
 
     if (resta2 == restaTotal2) {
-        Rresta2 = 2.5;
+        Rresta2 = 0.25;
         $('#T1').css("background", "#00e600");
         $('#T2').css("background", "#00e600");
         $('#T3').css("background", "#00e600");
@@ -120,7 +120,7 @@ function pregunta1() {
 
     var restaTotal3 = parseInt(num5) - parseInt(num6);
     if (resta3 == restaTotal3) {
-        Rresta3 = 2.5;
+        Rresta3 = 0.25;
         $('#V1').css("background", "#00e600");
         $('#V2').css("background", "#00e600");
         $('#V3').css("background", "#00e600");
@@ -153,7 +153,7 @@ function pregunta1() {
 
     var restaTotal4 = parseInt(num7) + parseInt(num8);
     if (resta4 == restaTotal4) {
-        Rresta4 = 2.5;
+        Rresta4 = 0.25;
         $('#W1').css("background", "#00e600");
         $('#W2').css("background", "#00e600");
         $('#W3').css("background", "#00e600");

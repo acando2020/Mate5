@@ -36,14 +36,12 @@
 
 .correcto {
     color: #ffffff;
-    background-color: #8FB435;
-    font-weight: 700;
+    background-color: #00e600;
 }
 
 .incorrecto {
     color: #ffffff;
-    background-color: #E76E80;
-    font-weight: 700;
+    background-color: #ff6666;
 }
 
 .saltos {
@@ -57,7 +55,9 @@
     text-align: center;
     border: 1;
     border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    border-radius: 15px;
+
+    width: 100px;
 }
 
 .desactivar {
@@ -70,13 +70,37 @@
     background-color: #232956;
 }
 
-input {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*input {
     text-align: center;
     border: 1;
     border-radius: 15px;
 
     width: 200px;
 }
+*/
 
 .pasos {
     background-color: #F9B000;
@@ -175,7 +199,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad87()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad95()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -210,17 +234,16 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/problema.png"></img>
-                    <br>
-                    <span>Uno de los parqueaderos de un centro comercial tiene 13 filas de 8 puestos cada una, y un segundo parqueadero tiene 13 filas con 20 puestos cada una. ¿Cuántos puestos hay en total? <b>Aplica</b> las propiedades de la multiplicación para resolver.</span>
+                    <span><b style="color: #005ca4;">1.</b> <b>Calcula</b> el patrón numérico en la siguiente sucesión.</span><br>
+                    <span>Sucesión:&nbsp;&nbsp;<span id="sucesion"></span></span>&nbsp;&nbsp;&nbsp;&nbsp;      <span>Patrón:    <b>×</b><input type="number" id="act1num0" class="saltos2" style="width: 50px;" maxlength="2"></input></span>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="col-lg-6">
-                                <textarea class="form-control" style="resize: none;" cols="30" rows="3"></textarea>
-                            </div>
-                            <div class="col-lg-6"><span><b>R.</b> En total hay <input type="number" id="act87" class="saltos2" name=""> puestos.</span></div>
+                            <br><div class="col-lg-4"><span><span id="num1_1"></span>÷<input type="number" id="act1num1" class="saltos2" name="">=<input type="number" id="act1num2" class="saltos2" name=""></span></div>
+                            <div class="col-lg-4"><span><input type="number" id="act1num3" class="saltos2" name="">÷<span id="num1_2"></span>=<input type="number" id="act1num4" class="saltos2" name=""></span></div>
+                            <div class="col-lg-4"><span><input type="number" id="act1num5" class="saltos2" name="">÷<input type="number" id="act1num6" class="saltos2" name="">=<input type="number" id="act1num7" class="saltos2" name=""></span></div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -270,31 +293,40 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad86.js"></script>
+
+    <script src="js/actividad96.js"></script>
     <script type="text/javascript">
-    var titulos = "aplico";
+    var titulos = "refuerzo";
     $("#txtNota").html("0");
-    $("#n_pagina").html("59");
+    $("#n_pagina").html("66");
 
-    function actividad87() {
-        var act87 = document.getElementById('act87').value;
-        var nt1 = 0;
-        if (act87 == "364") {
-            nt1 = 10;
+    /* function actividad93() {
+         var act93_1 = document.getElementById('act93_1').value;
+         var act93_2 = document.getElementById('act93_2').value;
 
-            $('#act87').css("background", "#00e600");
+         nt1 = 0, nt2 = 0;
+         if (act93_1 == "2548") {
+             nt1 = 5;
+             $('#act93_1').css("background", "#00e600");
 
-        } else {
-            $('#act87').css("background", "#ff6666");
+         } else {
+             $('#act93_1').css("background", "#ff6666");
 
-        }
+         }
+         if (act93_2 == "2548") {
+             nt2 = 5;
+             $('#act93_2').css("background", "#00e600");
 
-        $('#txtNota').html(nt1.toFixed(2));
-        document.getElementById('bt_comprobar').disabled = true;
-        $('input').attr("disabled", true);
-        $('#txtAlumno').attr("disabled", false);
+         } else {
+             $('#act93_2').css("background", "#ff6666");
 
-    }
+         }
+         var total = parseInt(nt1) + parseInt(nt2);
+         $('#txtNota').html(total.toFixed(2));
+         document.getElementById('bt_comprobar').disabled = true;
+         $('input').attr("disabled", true);
+         $('#txtAlumno').attr("disabled", false);
+     }*/
     </script>
 </body>
 

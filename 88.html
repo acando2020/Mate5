@@ -57,7 +57,7 @@
     text-align: center;
     border: 1;
     border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    width: 100px;
 }
 
 .desactivar {
@@ -175,7 +175,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad87()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad88()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -210,15 +210,48 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/problema.png"></img>
-                    <br>
-                    <span>Uno de los parqueaderos de un centro comercial tiene 13 filas de 8 puestos cada una, y un segundo parqueadero tiene 13 filas con 20 puestos cada una. ¿Cuántos puestos hay en total? <b>Aplica</b> las propiedades de la multiplicación para resolver.</span>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="col-lg-6">
-                                <textarea class="form-control" style="resize: none;" cols="30" rows="3"></textarea>
+                            <div class="col-lg-3"><img src="img/i1_p62_act88.jpg" class="img-responsive"></img>
                             </div>
-                            <div class="col-lg-6"><span><b>R.</b> En total hay <input type="number" id="act87" class="saltos2" name=""> puestos.</span></div>
+                            <div class="col-lg-9">
+                                <span><b>Analiza</b> la situación planteada e <b>indica</b> la operación que aplicarías.</span>
+                                <br>
+                                <span>Para saber el total de dinero recaudado, se debe multiplicar el número de billetes y cheques por el valor correspondiente (1, 10, 100 y 1 000).</span>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-6"><span><span style="background: #C8EBFF; border-radius: 15px;padding: 5px;" id="num1"></span>
+                                            <input type="number" class="saltos2" id="act88_1" name="">
+                                            </span>
+                                        </div>
+                                        <div class="col-lg-6"><span><span style="background: #FFE4B5; border-radius: 15px;padding: 5px;" id="num2"></span>
+                                            <input type="number" class="saltos2" id="act88_2" name="">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-6">
+                                            <br><span><span style="background: #DFD6EC; border-radius: 15px;padding: 5px;" id="num3"></span>
+                                            <input type="number" class="saltos2" id="act88_3" name="">
+                                            </span>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <br><span><span style="background: #D6E6BB; border-radius: 15px;padding: 5px;" id="num4"></span>
+                                            <input type="number" class="saltos2" id="act88_4" name="">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <span>Al realizar las operaciones, se ve que se cumple un patrón de multiplicación: por 1 se obtiene el mismo número, por 10 se aumenta un cero a la derecha, por 100 se aumentan dos ceros y por 1 000 se aumentan tres.</span>
+                                <br>
+                                <br>
+                                <span>A continuación se suman los productos parciales para obtener el resultado.</span>
+                                <br><br>
+                                <span><span style="background: #FFE4B5; border-radius: 15px;padding: 5px;">$ 35 + $ 3 370 + $ 1 500 + $ 3 000 =</span><input type="number" class="saltos2" id="act88_5" name=""></span><br><br>
+                                <span><span style="background: #6AC8FF; border-radius: 15px;padding: 5px;">Por lo tanto, en la gala del Festival del Pasillo recaudaron</span><input type="number" class="saltos2" id="act88_6"></input></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -270,31 +303,11 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad86.js"></script>
+    <script src="js/actividad88.js"></script>
     <script type="text/javascript">
-    var titulos = "aplico";
+    var titulos = "reflexiono";
     $("#txtNota").html("0");
     $("#n_pagina").html("59");
-
-    function actividad87() {
-        var act87 = document.getElementById('act87').value;
-        var nt1 = 0;
-        if (act87 == "364") {
-            nt1 = 10;
-
-            $('#act87').css("background", "#00e600");
-
-        } else {
-            $('#act87').css("background", "#ff6666");
-
-        }
-
-        $('#txtNota').html(nt1.toFixed(2));
-        document.getElementById('bt_comprobar').disabled = true;
-        $('input').attr("disabled", true);
-        $('#txtAlumno').attr("disabled", false);
-
-    }
     </script>
 </body>
 

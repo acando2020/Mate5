@@ -57,7 +57,7 @@
     text-align: center;
     border: 1;
     border-bottom: 1px solid #85BCEB;
-    width: 70px;
+    width: 100px;
 }
 
 .desactivar {
@@ -175,7 +175,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad87()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad92()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -210,15 +210,51 @@ input {
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/problema.png"></img>
-                    <br>
-                    <span>Uno de los parqueaderos de un centro comercial tiene 13 filas de 8 puestos cada una, y un segundo parqueadero tiene 13 filas con 20 puestos cada una. ¿Cuántos puestos hay en total? <b>Aplica</b> las propiedades de la multiplicación para resolver.</span>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="col-lg-6">
-                                <textarea class="form-control" style="resize: none;" cols="30" rows="3"></textarea>
+                            <div class="col-lg-3" align="justify">
+                                <img class="img-responsive" src="img/i1_p64_act92.jpg"></img>
                             </div>
-                            <div class="col-lg-6"><span><b>R.</b> En total hay <input type="number" id="act87" class="saltos2" name=""> puestos.</span></div>
+                            <div class="col-lg-9">
+                                <span>A partir de la información, <b>analiza</b> la forma de resolver el problema.</span>
+                                <br>
+                                <span>Para calcular el número de personas que dispondrán de un asiento, se multiplica el número de filas por el número de sillas del arreglo realizado al lado derecho:<span style="background: #DECAE4; border-radius: 15px;padding: 5px;">40 × 15</span></span>
+                                <br>
+                                <br>
+                                <span>Se realiza un procedimiento similar con el arreglo de sillas al lado izquierdo:<span  style="background: #FFE4B5; border-radius: 15px;padding: 5px;"> 38 × 15</span></span>
+                                <br>
+                                <br>
+                                <span>Se suman los productos parciales y se obtiene el producto final.</span>
+                                <table class="table">
+                                    <tr>
+                                        <td><span style="background: #DECAE4; border-radius: 15px;padding: 5px;">40 × 15 = 600</span></td>
+                                        <td><span style="background: #B0DEF3; border-radius: 15px;padding: 5px;">38 × 15 = 570</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><span style="background: #C2FFEF; border-radius: 15px;padding: 5px;"> 600 + 570 = <input type="number" id="act92_1" class="saltos2" name=""></span></td>
+                                    </tr>
+                                </table>
+                                <span>Se pueden plantear estas operaciones en una sola, como el producto de un número por una suma (propiedad asociativa de la multiplicación).</span>
+                                <table>
+                                    <tr>
+                                        <td>(15 × 40) + (15 × 38)</td>
+                                        <td>=</td>
+                                        <td>15 × (40 + 38)</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>=</td>
+                                        <td>15 × 78</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>=</td>
+                                        <td>
+                                            <input type="number" id="act92_2" class="saltos2"></input>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -270,30 +306,37 @@ input {
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
-    <script src="js/actividad86.js"></script>
     <script type="text/javascript">
-    var titulos = "aplico";
+    var titulos = "reflexiono";
     $("#txtNota").html("0");
     $("#n_pagina").html("59");
 
-    function actividad87() {
-        var act87 = document.getElementById('act87').value;
-        var nt1 = 0;
-        if (act87 == "364") {
-            nt1 = 10;
+    function actividad92() {
+        var act92_1 = document.getElementById('act92_1').value;
+        var act92_2 = document.getElementById('act92_2').value;
 
-            $('#act87').css("background", "#00e600");
+        nt1 = 0, nt2 = 0;
+        if (act92_1 == "1170") {
+            nt1 = 5;
+            $('#act92_1').css("background", "#00e600");
 
         } else {
-            $('#act87').css("background", "#ff6666");
+            $('#act92_1').css("background", "#ff6666");
 
         }
+        if (act92_2 == "1170") {
+            nt2 = 5;
+            $('#act92_2').css("background", "#00e600");
 
-        $('#txtNota').html(nt1.toFixed(2));
+        } else {
+            $('#act92_2').css("background", "#ff6666");
+
+        }
+        var total = parseInt(nt1) + parseInt(nt2);
+        $('#txtNota').html(total.toFixed(2));
         document.getElementById('bt_comprobar').disabled = true;
         $('input').attr("disabled", true);
         $('#txtAlumno').attr("disabled", false);
-
     }
     </script>
 </body>
