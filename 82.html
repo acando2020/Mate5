@@ -134,7 +134,8 @@ input {
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Escribe las respuesta correcta en los espacios en blanco.
+        Escribe las respuesta correcta en los espacios en blanco. <br>
+        Resuelve las multiplicaciones.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -260,7 +261,6 @@ input {
                                     <div style="float: left;width: 5%;"><b style="color: #005ca4">a)</b>
                                         <br>×</div>
                                     <div style="float: left;width: 95%;" class="act82" id="tbl1">
-
                                         <br>
                                     </div>
                                 </div>
@@ -270,7 +270,6 @@ input {
                                     <div style="float: left;width: 5%;"><b style="color: #005ca4">b)</b>
                                         <br>×</div>
                                     <div style="float: left;width: 95%;" class="act82" id="tbl2">
-
                                         <br>
                                     </div>
                                 </div>
@@ -280,7 +279,6 @@ input {
                                     <div style="float: left;width: 5%;"><b style="color: #005ca4">c)</b>
                                         <br>×</div>
                                     <div style="float: left;width: 95%;" class="act82" id="tbl3">
-
                                     </div>
                                 </div>
                             </div>
@@ -293,10 +291,13 @@ input {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="col-lg-6"><span><b style="color: #005ca4">a)</b>El tablero de ajedrez tiene 8 casillas a cada lado; en total hay <input type="number" id="act3_1" class="saltos2" name=""> casillas. </span>
-                                <br><br><span><b style="color: #005ca4">b)</b>El doble de 684 es <input type="number" id="act3_2"  class="saltos2" name="">, mientras que el triple de 416 es <input type="number" id="act3_3"  class="saltos2"  name="">.</span></div>
-
+                                <br>
+                                <br><span><b style="color: #005ca4">b)</b>El doble de 684 es <input type="number" id="act3_2"  class="saltos2" name="">, mientras que el triple de 416 es <input type="number" id="act3_3"  class="saltos2"  name="">.</span></div>
                             <div class="col-lg-6"><span><b style="color: #005ca4">c)</b>Un perro mediano consume 375 gramos comida; en una semana come <input type="number" id="act3_4"  class="saltos2"  name=""> gramos.</span>
-                                <br><br><span><b style="color: #005ca4">d)</b>El avestruz es 6 veces más alto que la gallina, que mide 50 centímetros. El avestruz mide <input type="number" id="act3_5"  class="saltos2"  name="">centímetros.</span><br></div>
+                                <br>
+                                <br><span><b style="color: #005ca4">d)</b>El avestruz es 6 veces más alto que la gallina, que mide 50 centímetros. El avestruz mide <input type="number" id="act3_5"  class="saltos2"  name="">centímetros.</span>
+                                <br>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -352,7 +353,24 @@ input {
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
-    $("#n_pagina").html("58");
+    $("#n_pagina").html("59");
+
+    function validarN(inputs) {
+
+        $(inputs).on('keypress', function(e) {
+            tecla = document.all ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /[,qwertyuiopñlkvjhfgdsazcxbnmQWERTYFVUIOPÑLKJHGDSAZCBNM<>.;-_""]/;
+            te = String.fromCharCode(tecla);
+            if (patron.test(te)) {
+                //alert("INGRESE V(VERDADERO) O F(FALSO) ");
+                return false;
+            }
+
+        });
+    }
+
+    validarN(".inputMult");
     </script>
 </body>
 
