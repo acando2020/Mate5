@@ -17,7 +17,7 @@
 </head>
 <style type="text/css">
 .cajas {
-    max-width: 95%;
+    max-width: 100%;
     max-height: 200px;
     border: 1px #98007f solid;
     border-radius: 5px;
@@ -49,6 +49,13 @@
     border: 1;
     border-bottom: 1px solid #85BCEB;
     width: 50px;
+}
+
+.posicion {
+    text-align: center;
+    border: 0;
+    border-bottom: 1px solid #85BCEB;
+    width: 30px;
 }
 
 .saltos2 {
@@ -167,7 +174,7 @@
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad97()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad101()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -202,60 +209,49 @@
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <span><b>Resuelve</b> los problemas.</span>
+                    <img class="img-responsive" src="img/practica_individual.png"></img>
+                    <input type="text" id="nota2" name="" readonly="readonly" class="nota-abierta"><span><b style="color: #005ca4;">2. </b> <b>Escribe</b> el tipo de triángulo según sus características.</span>
+                    <br>
+                    <div class="row">
+                        <br>
+                        <div class="col-lg-12">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style=""><b style="color: #005ca4;">a) </b></div>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11"><span class="act2txt" id="act2Txt1"></span></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style=""><b style="color: #005ca4;">b) </b></div>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11"><span class="act2txt" id="act2Txt2"></span></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style=""><b style="color: #005ca4;">c) </b></div>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11"><span class="act2txt" id="act2Txt3"></span></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style=""><b style="color: #005ca4;">d) </b></div>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11"><span class="act2txt" id="act2Txt4"></span></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style=""><b style="color: #005ca4;">e) </b></div>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11"><span class="act2txt" id="act2Txt5"></span></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style=""><b style="color: #005ca4;">f) </b></div>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11"><span class="act2txt" id="act2Txt6"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-question">
+                    <input type="text" id="nota3" name="" readonly="readonly" class="nota-abierta"><span><b style="color: #005ca4;">3. </b> <b>Identifica</b> cada triángulo, de acuerdo a sus lados y sus ángulos.</span>
+
                     <br>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="col-lg-6" align="justify">
-                                <input type="text" id="nota1" class="nota-abierta" name=""><span><b style="color: #005ca4;">1.</b> Gabriela desea viajar en el Tren Crucero Ecuador, que tiene un valor de $ 1 350, por lo que decide ahorrar $ 230 cada mes. ¿Cuánto ahorrará en 6 meses? ¿Ahorrará lo suficiente para realizar el viaje?</span>
-                                <div class="col-lg-12">
-                                    <div class="col-lg-6">
-                                        <img class="img-responsive" src="img/i1_p69_act97.jpg"></img>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <br>
-                                        <br>
-                                        <input type="" class="form-control" name="" style="border: 3px dotted #19BAE4;">
-                                    </div>
-                                </div>
-                                <br>
-                                <span><b style="color: #005ca4;">R.</b> Gabriela ahorrará, en 6 meses,<br><textarea class="form-control" cols="30" rows="3" style="resize: none;"></textarea>
-                                </span>
-                            </div>
-                            <div class="col-lg-6" align="justify">
-                                <br>
-                                <input type="text" id="nota2" class="nota-abierta" readonly="readonly" name=""><span><b style="color: #005ca4;">2.</b> En el año 2017, el Palacio y Museo de Carondelet recibió la visita de aproximadamente 78 450 personas, y el Museo Etnográfico Mitad del Mundo recibió a cuatro veces más. ¿Cuántas personas visitaron el Museo Etnográfico de la Mitad del Mundo en el año 2017?</span>
-                                <input type="" class="form-control" name="" style="border: 3px dotted #19BAE4;">
-                                <br> <span><b style="color: #005ca4;">R.</b> En el año 2017 llegaron al Museo Etnográfico de la Mitad del Mundo,<br><input type="number" id="act97_1" class="saltos2" name="">visitantes.
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <br>
-                            <div class="col-lg-8" align="justify">
-                                <input type="text" id="nota3" class="nota-abierta" readonly="readonly" name=""><span><b style="color: #005ca4;">3.</b>Los niños de una escuela realizaron una visita al Museo de la Ciudad. Los guías formaron grupos de 16 estudiantes cada uno e hicieron dos recorridos diferentes. En el primer recorrido fueron cinco grupos y en el segundo, seis. ¿Cuántos estudiantes visitaron el museo?</span>
-                                <input type="" class="form-control" name="" style="border: 3px dotted #19BAE4;">
-                                <br>
-                                <br>
-                                <span><b style="color: #005ca4;">R.</b> Visitaron el Museo de la Ciudad<input type="number" id="act97_2" class="saltos2" name="">estudiantes.</span>
-                            </div>
-                            <div class="col-lg-4"><img class="img-responsive" src="img/i2_p69_act97.jpg"></img>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <br>
-                            <div class="col-lg-8" align="justify">
-                                <input type="text" id="nota4" class="nota-abierta" readonly="readonly" name=""><span><b style="color: #005ca4;">4.</b>María prepara el cumpleaños de su hija de 8 años. Para la fiesta compra fundas que contienen 5 paquetes de galletas, 3 paquetes de chocolates y 4 paquetes de caramelos. Si lleva 10 fundas, ¿cuántos paquetes de golosinas compró?</span>
-                                <textarea class="form-control" style="border: 3px dotted #19BAE4; resize: none;"></textarea>
-                                <br>
-                                <br>
-                                <span><b style="color: #005ca4;">R.</b> María compró<input type="number" id="act97_3" class="saltos2" name="">paquetes de golosinas para la fiesta de cumpleaños de su hija.</span>
-                            </div>
-                            <div class="col-lg-4"><img class="img-responsive" src="img/i3_p69_act97.jpg"></img>
-                            </div>
+                            <div class="col-lg-4" align="center"><img src="img/i1_p73_act101.jpg" alt="" class="img-responsive"> <input type="text" class="form-control text-lowercase" name="" id="act101txto0"></div>
+                            <div class="col-lg-4" align="center"><img src="img/i2_p73_act101.jpg" alt="" class="img-responsive"> <input type="text" class="form-control text-lowercase" name="" id="act101txto1"></div>
+                            <div class="col-lg-4" align="center"><img src="img/i3_p73_act101.jpg" alt="" class="img-responsive"> <input type="text" class="form-control text-lowercase" name="" id="act101txto2"></div>
                         </div>
                     </div>
-                    <br>
+
                 </div>
             </div>
         </div>
@@ -305,82 +301,79 @@
     <script src="js/activities.js"></script>
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
+    <script src="js/dragNdrop.js"></script>
+    <script src="js/actividad101.js"></script>
     <script type="text/javascript">
-    var titulos = "refuerzo";
+    var titulos = "aplico";
     $("#txtNota").html("0");
     $("#n_pagina").html("69");
 
-    document.getElementById('nota1').addEventListener('keypress', () => {
-        validNumero(0, 2.5, 1);
-    });
-    document.getElementById('nota1').addEventListener('keyup', () => {
-        validMaxIngreso(document.getElementById('nota1'), 2.5)
-    });
+    function validarN(inputs) {
 
-    function actividad97() {
-        var nota1 = document.getElementById('nota1').value;
-        if (nota1 == "") {
-            alert("Debe ingresar la nota de la pregunta 1");
-        } else {
+        $(inputs).on('keypress', function(e) {
+            tecla = document.all ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /[,qwertyuiopñlkvjhfgdsazcxbnmQWERTYFVUIOPÑLKJHGDSAZCBNM<>.;-_""]/;
+            te = String.fromCharCode(tecla);
+            if (patron.test(te)) {
+                //alert("INGRESE V(VERDADERO) O F(FALSO) ");
+                return false;
+            }
 
+        });
+    }
+
+    validarN(".posicion");
+    /*
+        function actividad99() {
+            var act99_1 = document.getElementById('act99_1').value.toLowerCase();
+            var act99_2 = document.getElementById('act99_2').value.toLowerCase();
+            var act99_3 = document.getElementById('act99_3').value.toLowerCase();
             var nt1 = 0,
                 nt2 = 0,
-                nt3 = 0,
-                nt4 = 0;
+                nt3 = 0;
 
-            var act97_1 = document.getElementById('act97_1').value;
-            var act97_2 = document.getElementById('act97_2').value;
-            var act97_3 = document.getElementById('act97_3').value;
+            if (act99_1 == "escaleno") {
+                nt1 = 1;
 
-            if (act97_1 == "313800") {
-                nt1 = 2.5;
-                $('#nota2').val(parseFloat(nt1).toFixed(2));
-                $('#act97_1').css("background", "#00e600");
+                $('#act99_1').css("background", "#00e600");
 
             } else {
-                $('#act97_1').css("background", "#ff6666");
-                $('#nota2').val(parseFloat(nt1).toFixed(2));
+                $('#act99_1').css("background", "#ff6666");
+
 
             }
-            if (act97_2 == "176") {
-                nt2 = 2.5;
-                $('#nota3').val(parseFloat(nt2).toFixed(2));
-                $('#act97_2').css("background", "#00e600");
+            if ((act99_2 == "isósceles")||(act99_2 == "isosceles")) {
+                nt2 = 1;
+
+                $('#act99_2').css("background", "#00e600");
 
             } else {
-                $('#act97_2').css("background", "#ff6666");
-                $('#nota3').val(parseFloat(nt2).toFixed(2));
+                $('#act99_2').css("background", "#ff6666");
+
 
             }
-            if (act97_3 == "120") {
-                nt3 = 2.5;
-                $('#nota4').val(parseFloat(nt3).toFixed(2));
-                $('#act97_3').css("background", "#00e600");
+            if ((act99_3 == "equilátero")||(act99_3 == "equilatero")) {
+                nt3 = 1;
+
+                $('#act99_3').css("background", "#00e600");
 
             } else {
-                $('#act97_3').css("background", "#ff6666");
-                $('#nota4').val(parseFloat(nt3).toFixed(2));
+                $('#act99_3').css("background", "#ff6666");
+
 
             }
-
-
-            var nota1 = document.getElementById('nota1').value;
-            var nota2 = document.getElementById('nota2').value;
-            var nota3 = document.getElementById('nota3').value;
-            var nota4 = document.getElementById('nota4').value;
-
-
-            var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4);
-            $('#txtNota').html(parseFloat(total).toFixed(2));
+            var subtotal = parseInt(nt1) + parseInt(nt2) + parseInt(nt3);
+            var total = (subtotal * 10) / 3;
+            $('#txtNota').html(total.toFixed(2));
             document.getElementById('bt_comprobar').disabled = true;
             $('input').attr("disabled", true);
             $('#txtAlumno').attr("disabled", false);
 
-        }
 
 
 
-    }
+        }*/
     </script>
 </body>
 

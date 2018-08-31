@@ -250,3 +250,10 @@ function calificar_abierta() {
 
 
 }
+function sinEspacios(inputs) {
+    $(inputs).on('keypress', function(e) {
+        if (e.which == 32)
+            return false;
+    });
+}
+sinEspacios(".sinEspacios");
