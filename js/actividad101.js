@@ -80,6 +80,23 @@ function pregunta2() {
 
 
 }
+////////////////////////pregunta 3//////////////////////////////////////
+
+act1_3 = [
+    ['<img src="img/i1_p73_act101.jpg" alt="" class="img-responsive"> <input type="text" class="form-control text-lowercase" name="" id="act101txto0">'],
+    ['<img src="img/i2_p73_act101.jpg" alt="" class="img-responsive"> <input type="text" class="form-control text-lowercase" name="" id="act101txto1">'],
+    ['<img src="img/i3_p73_act101.jpg" alt="" class="img-responsive"> <input type="text" class="form-control text-lowercase" name="" id="act101txto2">'],
+];
+
+var act3Txt = document.getElementsByClassName('act3txt');
+
+act1_3.sort(f_randomico);
+for (i = 0; i < act3Txt.length; i++) {
+
+    $('#' + act3Txt[i].id).html('<h4><div id="drag' + [i] + '" draggable="true" ondragstart="drag2(event)">' + act1_3[i] + '</div></h4> ');
+
+
+}
 
 function pregunta3() {
     var act101txto0 = document.getElementById('act101txto0').value.toLowerCase();

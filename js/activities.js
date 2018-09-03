@@ -257,3 +257,20 @@ function sinEspacios(inputs) {
     });
 }
 sinEspacios(".sinEspacios");
+
+function validarN(inputs) {
+
+    $(inputs).on('keypress', function(e) {
+        tecla = document.all ? e.keyCode : e.which;
+        if (tecla == 8) return true;
+        patron = /[,qwertyuiopñlkvjhfgdsazcxbnmQWERTYFVUIOPÑLKJHGDSAZCBNM<>.;-_""]/;
+        te = String.fromCharCode(tecla);
+        if (patron.test(te)) {
+            //alert("INGRESE V(VERDADERO) O F(FALSO) ");
+            return false;
+        }
+
+    });
+}
+
+validarN(".soloNumeros");
