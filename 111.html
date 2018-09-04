@@ -26,7 +26,8 @@
     box-sizing: border-box;
     padding: 0px;
     transition: all .3s linear 0s;
-    width: 100%;
+    width: 1116px;
+    height: 441px;
     margin-left: auto;
     margin-right: auto;
     background-color: #e5e5e5;
@@ -34,7 +35,9 @@
     background-image: url(imagenes/fondo.jpg);*/
     /* SI SE NECESITA UNA IMAGEN DE FONDO */
     background-size: 100% 100%;
+    background-image: url('img/i1_p81_act111.jpg');
 }
+
 
 #logo {
     display: block;
@@ -82,7 +85,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     color: white;
-    background-color: rgba(103, 103, 103, 1.00)
+    background-color: rgba(103, 103, 103, 1.00);
 }
 
 #contenedoropciones table {
@@ -139,6 +142,17 @@
 .cajas1 {
 
     border: 1px #98007f solid;
+}
+
+.nota-abierta {
+    width: 55px;
+    border: solid;
+    background: none;
+    border-width: 1px;
+    border-color: #98007f;
+    text-align: right;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .actividad1 {
@@ -226,6 +240,11 @@
     text-decoration: overline;
 }
 
+.curvasobre {
+    text-decoration: overline;
+    text-decoration-style: wavy;
+}
+
 .oval {
 
     -moz-border-radius: 50%;
@@ -285,7 +304,7 @@
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad104()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad111()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span> </button>
                 </li>
                 <li>
@@ -319,64 +338,97 @@
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <span><b style="color: #005ca4;">8. </b> <b>Lee</b>, <b>analiza</b> y <b>responde</b>.</span>
+                    <img class="img-responsive" src="img/practica_guiada.png"></img>
+                    <span><b  style="color: #005ca4">1. </b> <b>Une</b> los puntos con líneas y <b>forma</b> los polígonos. Luego, <b>identifícalos</b> y <b>clasifícalos</b>.</span>
                     <br>
-                    <span><b style="color: #005ca4;">a) </b> ¿Cuánto mide el tercer ángulo de un triángulo, si la suma de los otros dos es 140°?</span>
-                    <br>
-                    <span>El tercer ángulo mide <input id="act104txt0" class="saltos2"></input>.</span>
-                    <br>
-                    <br>
-                    <span><b style="color: #005ca4;">b) </b> ¿Cuánto mide cada ángulo de un triángulo equilátero?</span>
-                    <br>
-                    <span>Cada ángulo mide <input id="act104txt1" class="saltos2"></input>.</span>
+                    <div>
+                        <main>
+                            <canvas id="prueba">Este navegador no soporta canvas, visualice la web con un navegador actualizado.</canvas>
+                            <div id="paleta" class="mi_canvas">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-4" align="center">
+                                            <span><span style="background: #DECBE4; border-radius: 15px;padding: 5px">Nombre:</span>
+                                            <input type="text" id="act111txt0" class="saltos2 sinEspacios tetx-lowercase">
+                                            </span>
+                                            <br><span><span style="background: #FFF3D8; border-radius: 15px; padding: 5px;">Tipo de polígono:</span>
+                                            <input type="text" id="act111txt1" class="saltos2 sinEspacios tetx-lowercase">
+                                            </span>
+                                        </div>
+                                        <div class="col-lg-4" align="center"><span><span style="background: #DECBE4; border-radius: 15px;padding: 5px">Nombre:</span>
+                                            <input type="text" id="act111txt2" class="saltos2 sinEspacios tetx-lowercase">
+                                            </span>
+                                            <br><span><span style="background: #FFF3D8; border-radius: 15px; padding: 5px;">Tipo de polígono:</span>
+                                            <input type="text" id="act111txt3" class="saltos2 sinEspacios tetx-lowercase">
+                                            </span>
+                                        </div>
+                                        <div class="col-lg-4" align="center"><span><span style="background: #DECBE4; border-radius: 15px;padding: 5px">Nombre:</span>
+                                            <input type="text" id="act111txt4" class="saltos2 sinEspacios tetx-lowercase">
+                                            </span>
+                                            <br><span><span style="background: #FFF3D8; border-radius: 15px; padding: 5px;">Tipo de polígono:</span>
+                                            <input type="text" id="act111txt5" class="saltos2 sinEspacios tetx-lowercase">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive" id="contenedoropciones">
+                                    <table width="auto">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="9" class="titulotabla">Color</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="celdascoloresdefondo" data-color="red">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="pink">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="orange">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="yellow">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="magenta">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="MEDIUMSEAGREEN">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="green">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="DARKCYAN">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="cyan">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="celdascoloresdefondo" data-color="blue">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="wheat">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="brown">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="white">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="LIGHTGRAY">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="gray">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="LIGHTSLATEGRAY">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="DARKSLATEGRAY">&nbsp;</td>
+                                                <td class="celdascoloresdefondo" data-color="black">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table width="auto" id="opcionesdedibujo">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="5" class="bg-info">Opciones de dibujo</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Grosor pincel:
+                                                    <input onChange="cambiagrosor(this)" name="grosor" type="number" id="grosor" max="100" min="3" step="1" title="Grosor del cursor" value="5">
+                                                </td>
+                                                <td onClick="cambiapincel(this)" id="celdapincelcuadrado" style="cursor:pointer;border:solid 1px black;background-color: white;border-radius: 15px;">Pincel cuadrado</td>
+                                                <td onClick="cambiaaccion(this)" id="xpintar" class="celdaaccion" style="cursor:pointer;border:solid 1px black;background-color: white;border-radius: 15px;">Pintar</td>
+                                                <td rowspan="2" onClick="borrartodo()"><span class="btn btn-danger">Borrar todo</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Grosor borrar:
+                                                    <input onChange="cambiagrosorborrador(this)" name="grosorborrar" type="number" id="grosorborrar" max="100" min="3" step="1" title="Grosor del borrardor" value="10">
+                                                </td>
+                                                <td onClick="cambiapincel(this)" id="celdapincelredondo" style="cursor:pointer;border:solid 1px transparent;border-radius: 15px;">Pincel redondo</td>
+                                                <td onClick="cambiaaccion(this)" id="xborrar" class="celdaaccion" style="cursor:pointer;border:solid 1px transparent;border-radius: 15px;">Borrar</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
                 </div>
-                <div class="text-question">
-                    <br>
-                    <span><b style="color: #005ca4;">9. </b> <b>Completa</b> la tabla y <b>determina</b> qué tipo de triángulo.</span>
-                    <table style="text-align: center;border: 1px solid #009DC5;" class="table table-bordered">
-                        <tr>
-                            <td style="background: #009DC5; color: white;">Triángulo</td>
-                            <td style="background: #9ECB84; color: white;">Ángulo 1</td>
-                            <td style="background: #84C8B2; color: white;">Ángulo 2</td>
-                            <td style="background: #9ECB84; color: white;">Ángulo 3</td>
-                            <td style="background: #C8A3CD; color: white;">Clase de triángulo</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>20°</td>
-                            <td>70°</td>
-                            <td>
-                                <input type="" id="act104txt2" name="" class="saltos2 text-lowercase">
-                            </td>
-                            <td>
-                                <input type="" id="act104txt3" name="" class="saltos2 text-lowercase">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>45°</td>
-                            <td>
-                                <input type="" id="act104txt4" name="" class="saltos2 text-lowercase">
-                            </td>
-                            <td>100°</td>
-                            <td>
-                                <input type="" id="act104txt5" name="" class="saltos2 text-lowercase">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>
-                                <input type="" id="act104txt6" name="" class="saltos2 text-lowercase">
-                            </td>
-                            <td>60°</td>
-                            <td>63°</td>
-                            <td>
-                                <input type="" id="act104txt7" name="" class="saltos2 text-lowercase">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+
             </div>
         </div>
     </div>
@@ -426,29 +478,30 @@
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
     <script src="js/dragNdrop.js"></script>
+    <script src="js/dibujarCANVAS.js"></script>
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
     $("#n_pagina").html("69");
 
-    var correc = ['40°', '60°', '90°', 'rectángulo', '35°', 'obtusángulo', '57°', 'acutángulo', ];
+    var correc = ['triángulo','regular','cuadrilátero','irregular','cuadrado','regular'];
 
-    function actividad104() {
+    function actividad111() {
         var cont = 0;
 
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < 6; i++) {
 
-            var num = $('#act104txt' + [i] + '').val().toLowerCase();
+            var num = $('#act111txt' + [i] + '').val().toLowerCase();
             if (correc[i] == num) {
                 cont = cont + 1;
-                $('#act104txt' + [i] + '').css("background-color", "#00e600");
+                $('#act111txt' + [i] + '').css("background-color", "#00e600");
             } else {
-                $('#act104txt' + [i] + '').css("background-color", "#ff6666");
+                $('#act111txt' + [i] + '').css("background-color", "#ff6666");
 
             }
 
         }
-        var total = (cont * 10) / 8;
+        var total = (cont * 10) / 6;
         $('#txtNota').html(total.toFixed(2));
         document.getElementById('bt_comprobar').disabled = true;
         $('input').attr("disabled", true);

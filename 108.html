@@ -16,117 +16,6 @@
     <link href="css/jquery-ui.min.css" rel="stylesheet">
 </head>
 <style type="text/css">
-.mi_canvas {
-    min-width: 320px;
-}
-
-#prueba {
-    margin-top: 2rem;
-    display: block;
-    box-sizing: border-box;
-    padding: 0px;
-    transition: all .3s linear 0s;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #e5e5e5;
-    /*background-color:rgba(212,185,186,0.2);
-    background-image: url(imagenes/fondo.jpg);*/
-    /* SI SE NECESITA UNA IMAGEN DE FONDO */
-    background-size: 100% 100%;
-}
-
-#logo {
-    display: block;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    z-index: 1;
-    width: 30%;
-    height: auto;
-    max-width: 350px;
-    min-width: 100px;
-}
-
-#contenedoropciones {
-    margin-top: 2rem;
-    padding: 2px;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#contenedoropciones table {
-    background-color: rgba(220, 220, 220, 1.00);
-    border: .25rem solid rgba(188, 185, 185, 1.00);
-    margin-bottom: .5rem;
-    border-spacing: 5px;
-    border-collapse: separate;
-}
-
-#contenedoropciones table:nth-of-type(2) {
-    border-spacing: 5px;
-}
-
-#contenedoropciones table:nth-of-type(2) td {
-    width: 1px;
-    white-space: nowrap;
-}
-
-#contenedoropciones table:nth-of-type(1) td {
-    cursor: pointer;
-}
-
-#contenedoropciones .titulotabla {
-    text-align: center;
-    font-weight: bold;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: white;
-    background-color: rgba(103, 103, 103, 1.00)
-}
-
-#contenedoropciones table {
-    display: inline-table;
-}
-
-.celdascoloresdefondo {
-    width: 20px;
-    height: 10px;
-    border: solid 1px transparent;
-}
-
-@media (max-width: 890px) {
-    /*.mi_canvas {
-      font-size: .750rem;
-    }*/
-    #contenedoropciones,
-    #prueba {
-        width: 98%
-    }
-    #contenedoropciones {
-        margin-left: 1%;
-    }
-}
-
-@media (max-width: 450px) {
-    /*.mi_canvas {
-      font-size: .75rem;
-    }*/
-}
-
-@media (max-width: 1px) {
-    #contenedoropciones #opcionesdedibujo {
-        display: table;
-        width: 100%;
-    }
-    #contenedoropciones #opcionesdedibujo td {
-        display: block;
-        width: auto;
-        text-align: left;
-        margin-top: 5px;
-    }
-}
-
 .cajas {
     max-width: 100%;
     max-height: 200px;
@@ -140,6 +29,23 @@
 
     border: 1px #98007f solid;
 }
+
+
+
+
+
+
+/*.nota-abierta {
+    width: 55px;
+    border: solid;
+    background: none;
+    border-width: 1px;
+    border-color: #98007f;
+    text-align: right;
+    padding: 5px;
+    border-radius: 5px;
+}
+*/
 
 .actividad1 {
     background: #fff;
@@ -226,6 +132,11 @@
     text-decoration: overline;
 }
 
+.curvasobre {
+    text-decoration: overline;
+    text-decoration-style: wavy;
+}
+
 .oval {
 
     -moz-border-radius: 50%;
@@ -285,7 +196,7 @@
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad104()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="calificar_abierta()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span> </button>
                 </li>
                 <li>
@@ -319,63 +230,19 @@
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <span><b style="color: #005ca4;">8. </b> <b>Lee</b>, <b>analiza</b> y <b>responde</b>.</span>
+                    <img src="img/problema.png"><img src="img/conecSociales.png">
                     <br>
-                    <span><b style="color: #005ca4;">a) </b> ¿Cuánto mide el tercer ángulo de un triángulo, si la suma de los otros dos es 140°?</span>
-                    <br>
-                    <span>El tercer ángulo mide <input id="act104txt0" class="saltos2"></input>.</span>
-                    <br>
-                    <br>
-                    <span><b style="color: #005ca4;">b) </b> ¿Cuánto mide cada ángulo de un triángulo equilátero?</span>
-                    <br>
-                    <span>Cada ángulo mide <input id="act104txt1" class="saltos2"></input>.</span>
-                </div>
-                <div class="text-question">
-                    <br>
-                    <span><b style="color: #005ca4;">9. </b> <b>Completa</b> la tabla y <b>determina</b> qué tipo de triángulo.</span>
-                    <table style="text-align: center;border: 1px solid #009DC5;" class="table table-bordered">
-                        <tr>
-                            <td style="background: #009DC5; color: white;">Triángulo</td>
-                            <td style="background: #9ECB84; color: white;">Ángulo 1</td>
-                            <td style="background: #84C8B2; color: white;">Ángulo 2</td>
-                            <td style="background: #9ECB84; color: white;">Ángulo 3</td>
-                            <td style="background: #C8A3CD; color: white;">Clase de triángulo</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>20°</td>
-                            <td>70°</td>
-                            <td>
-                                <input type="" id="act104txt2" name="" class="saltos2 text-lowercase">
-                            </td>
-                            <td>
-                                <input type="" id="act104txt3" name="" class="saltos2 text-lowercase">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>45°</td>
-                            <td>
-                                <input type="" id="act104txt4" name="" class="saltos2 text-lowercase">
-                            </td>
-                            <td>100°</td>
-                            <td>
-                                <input type="" id="act104txt5" name="" class="saltos2 text-lowercase">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>
-                                <input type="" id="act104txt6" name="" class="saltos2 text-lowercase">
-                            </td>
-                            <td>60°</td>
-                            <td>63°</td>
-                            <td>
-                                <input type="" id="act104txt7" name="" class="saltos2 text-lowercase">
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-6">
+                                <input class="nota-abierta" type="text" ></input><span> <b>Observa</b> la circunferencia que representa gráficamente nuestro planeta; en él está marcada la línea ecuatorial.</span>
+                                <br>
+                                <span><b>Determina</b> qué nombre recibe esta línea matemáticamente. <b>Argumenta</b> tu respuesta.</span>
+                                <textarea class="form-control" cols="30" rows="3" style="resize: none;"></textarea>
+                            </div>
+                            <div class="col-lg-6"><img class="img-responsive" src="img/i1_p79_act108.jpg"></img></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -426,36 +293,46 @@
     <script src="js/Utilitario.js"></script>
     <script src="js/validacionesExtras.js"></script>
     <script src="js/dragNdrop.js"></script>
+    <script src="js/dibujarCANVAS.js"></script>
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
     $("#n_pagina").html("69");
+    document.getElementById('nota1').addEventListener('keypress', () => {
+        validNumero(0, 2.5, 1);
+    });
+    document.getElementById('nota1').addEventListener('keyup', () => {
+        validMaxIngreso(document.getElementById('nota1'), 2.5)
+    });
+    document.getElementById('nota2').addEventListener('keypress', () => {
+        validNumero(0, 5, 1);
+    });
+    document.getElementById('nota2').addEventListener('keyup', () => {
+        validMaxIngreso(document.getElementById('nota2'), 5)
+    });
+    document.getElementById('nota3').addEventListener('keypress', () => {
+        validNumero(0, 2.5, 1);
+    });
+    document.getElementById('nota3').addEventListener('keyup', () => {
+        validMaxIngreso(document.getElementById('nota3'), 2.5)
+    });
 
-    var correc = ['40°', '60°', '90°', 'rectángulo', '35°', 'obtusángulo', '57°', 'acutángulo', ];
-
-    function actividad104() {
-        var cont = 0;
-
-        for (var i = 0; i < 8; i++) {
-
-            var num = $('#act104txt' + [i] + '').val().toLowerCase();
-            if (correc[i] == num) {
-                cont = cont + 1;
-                $('#act104txt' + [i] + '').css("background-color", "#00e600");
-            } else {
-                $('#act104txt' + [i] + '').css("background-color", "#ff6666");
-
-            }
-
+    function actividad107() {
+        var nota1 = document.getElementById('nota1').value;
+        var nota2 = document.getElementById('nota2').value;
+        var nota3 = document.getElementById('nota3').value;
+        if ((nota1 == "") || (nota2 == "") || (nota3 == "")) {
+            alert("Ingrese la calificación de la pregunta 1, 2 ó 3");
+        } else {
+            var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3)
+            $('#nota1').css("background-color", "#00e600");
+            $('#nota2').css("background-color", "#00e600");
+            $('#nota3').css("background-color", "#00e600");
+            $('#txtNota').html(total.toFixed(2));
+            document.getElementById('bt_comprobar').disabled = true;
+            $('input').attr("disabled", true);
+            $('#txtAlumno').attr("disabled", false);
         }
-        var total = (cont * 10) / 8;
-        $('#txtNota').html(total.toFixed(2));
-        document.getElementById('bt_comprobar').disabled = true;
-        $('input').attr("disabled", true);
-        $('#txtAlumno').attr("disabled", false);
-
-
-
     }
     </script>
 </body>

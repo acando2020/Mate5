@@ -1,8 +1,8 @@
-
 //Genera un pdf, del elemento html que le indiques
-function mostrar_alerta(text){
+function mostrar_alerta(text) {
 
 }
+
 function save_to_pdf(htmlElementId) {
     var element = document.getElementById(htmlElementId);
     // html2pdf(element);
@@ -10,9 +10,9 @@ function save_to_pdf(htmlElementId) {
     html2pdf(element, {
         margin: 0.5,
         filename: 'actividad.pdf',
-        image: {type: 'jpeg', quality: 0.98},
-        html2canvas: {dpi: 192, letterRendering: true},
-        jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { dpi: 192, letterRendering: true },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
     });
 }
 //coloca el nombre del alumno en el div nombre_alumno
@@ -24,7 +24,7 @@ function save_open_activity_to_local(alumno) {
     $('#nombre_alumno').addClass("no-valid");
     if (valida_existe('txtAlumno')) {
         $('#nombre_alumno').removeClass('no-valid');
-        $('#nombre_alumno').html('').append('Alumno: ' + $(nom).val() + "     Puntaje: " +  $("#txtNota").html() );
+        $('#nombre_alumno').html('').append('Alumno: ' + $(nom).val() + "     Puntaje: " + $("#txtNota").html());
         $('#nombre_alumno').attr('hidden', false);
         $('#botonera').hide();
         ocultar_by_class('ocultable');
@@ -61,24 +61,24 @@ function carga_selects(values) {
             option.value = vals[j];
             elements[i].add(option);
         }
-    }
-    ;
+    };
     document.getElementById('txtNota').innerHTML = ' / 10';
     habilitar_by_class('respuestas');
 }
+
 function iniciar_act_calif_selects(values) {
     carga_selects(values);
     //$(".btn").tooltip('hide');
-//    document.getElementsByClassName('btnRepetir').removeAttribute('disabled');
-//    document.getElementByClassName('btnCalificar').removeAttribute('disabled');
-//    document.getElementByClassName('btnIniciar').setAttribute('disabled', 'true');
+    //    document.getElementsByClassName('btnRepetir').removeAttribute('disabled');
+    //    document.getElementByClassName('btnCalificar').removeAttribute('disabled');
+    //    document.getElementByClassName('btnIniciar').setAttribute('disabled', 'true');
 
     abled('btnRepetir');
     abled('btnCalificar');
     disabled('btnIniciar');
-//    habilitar_by_class('btnRepetir');
-//    habilitar_by_class('btnCalificar');
-//    desabilitar_by_class('btnIniciar');
+    //    habilitar_by_class('btnRepetir');
+    //    habilitar_by_class('btnCalificar');
+    //    desabilitar_by_class('btnIniciar');
 }
 
 function restart_act_calif_selects(values) {
@@ -94,6 +94,7 @@ function abled(className) {
     }
 
 }
+
 function disabled(className) {
     var elems = document.getElementsByClassName(className);
     for (var i = 0; i < elems.length; i++) {
@@ -173,13 +174,13 @@ function comprobar_calificar_txt() {
         } else {
             respuestas[i].classList.add('no-valid');
             respuestas[i].classList.remove('valid');
-        }
-        ;
+        };
     }
     desabilitar_by_class('respuestas');
     desabilitar_by_class('btnCalificar');
     document.getElementById('txtNota').innerHTML = Math.round(nota) + ' / 10';
 }
+
 function comprobar_subrayar() {
     var respuestas = document.getElementsByClassName('respuestas');
     var soluciones = document.getElementsByClassName('solucion');
@@ -194,8 +195,7 @@ function comprobar_subrayar() {
         } else {
             subrayar[i].classList.add('no-valid');
             subrayar[i].classList.remove('valid');
-        }
-        ;
+        };
     }
     desabilitar_by_class('respuestas');
     desabilitar_by_class('btnCalificar');
@@ -211,8 +211,9 @@ function calc_valor_pregunta(respuestas, total) {
     var valor = total / respuestas.length;
     return valor;
 }
+
 function calificar_abierta() {
-     console.log('calificar abiertas')
+    console.log('calificar abiertas')
     var elList = document.getElementsByClassName('nota-abierta');
     var nt = 0.0;
     var vacio = 0;
@@ -234,7 +235,7 @@ function calificar_abierta() {
         alert('La nota no debe exceder los 10 puntos');
         //alert('La nota total no debe exeder de 10 puntos.')
 
-    }else if (vacio > 0) {
+    } else if (vacio > 0) {
         alert('todas las preguntas se deben evaluar');
         $(elList[i]).removeClass('no-valid')
 
@@ -246,10 +247,14 @@ function calificar_abierta() {
         $(".nota-abierta").attr('disabled', true)
         document.getElementById('bt_comprobar').disabled = true;
         $(".btnGuardar").removeClass('disabled')
+        $('input').attr("disabled", true);
+        $('#txtAlumno').attr("disabled", false);
+
     }
 
 
 }
+
 function sinEspacios(inputs) {
     $(inputs).on('keypress', function(e) {
         if (e.which == 32)

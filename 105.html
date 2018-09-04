@@ -285,7 +285,7 @@
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad104()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad105()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span> </button>
                 </li>
                 <li>
@@ -319,63 +319,20 @@
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img class="img-responsive" src="img/practica_individual.png"></img>
-                    <span><b style="color: #005ca4;">8. </b> <b>Lee</b>, <b>analiza</b> y <b>responde</b>.</span>
+
+                    <span><b style="color: #005ca4;">8. </b> Con dos compañeros, <b>busquen</b> en libros, revistas o en internet 3 dibujos o gráficos que incluyan triangulos. <b>Usen</b> las plantillas para medir los ángulos internos de cada triángulo, luego <b>recorten</b> cada ángulo y <b>péguenlo</b> en el espacio siguiente, como indica la figura. Así, <b>verifiquen</b> la propiedad de los triángulos en la que se establece que la suma de todos los ángulos internos de cualquier triángulo es 180°.</span>
                     <br>
-                    <span><b style="color: #005ca4;">a) </b> ¿Cuánto mide el tercer ángulo de un triángulo, si la suma de los otros dos es 140°?</span>
-                    <br>
-                    <span>El tercer ángulo mide <input id="act104txt0" class="saltos2"></input>.</span>
-                    <br>
-                    <br>
-                    <span><b style="color: #005ca4;">b) </b> ¿Cuánto mide cada ángulo de un triángulo equilátero?</span>
-                    <br>
-                    <span>Cada ángulo mide <input id="act104txt1" class="saltos2"></input>.</span>
-                </div>
-                <div class="text-question">
-                    <br>
-                    <span><b style="color: #005ca4;">9. </b> <b>Completa</b> la tabla y <b>determina</b> qué tipo de triángulo.</span>
-                    <table style="text-align: center;border: 1px solid #009DC5;" class="table table-bordered">
-                        <tr>
-                            <td style="background: #009DC5; color: white;">Triángulo</td>
-                            <td style="background: #9ECB84; color: white;">Ángulo 1</td>
-                            <td style="background: #84C8B2; color: white;">Ángulo 2</td>
-                            <td style="background: #9ECB84; color: white;">Ángulo 3</td>
-                            <td style="background: #C8A3CD; color: white;">Clase de triángulo</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>20°</td>
-                            <td>70°</td>
-                            <td>
-                                <input type="" id="act104txt2" name="" class="saltos2 text-lowercase">
-                            </td>
-                            <td>
-                                <input type="" id="act104txt3" name="" class="saltos2 text-lowercase">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>45°</td>
-                            <td>
-                                <input type="" id="act104txt4" name="" class="saltos2 text-lowercase">
-                            </td>
-                            <td>100°</td>
-                            <td>
-                                <input type="" id="act104txt5" name="" class="saltos2 text-lowercase">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>
-                                <input type="" id="act104txt6" name="" class="saltos2 text-lowercase">
-                            </td>
-                            <td>60°</td>
-                            <td>63°</td>
-                            <td>
-                                <input type="" id="act104txt7" name="" class="saltos2 text-lowercase">
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-6"><img class="img-responsive" src="img/i1_p75_act105.jpg"></img>
+                            </div>
+                            <div class="col-lg-6" style="background: url('img/i2_p75_act105.jpg');width: 500px;height: 393px;">
+                                <span style="position: absolute;left: 280px;top: 150px;"><input type="text" id="act105txt0" placeholder="0" class="saltos soloNumeros" style="width: 30px;" maxlength="2"><sup>o</sup></span>
+                                <span style="position: absolute;left: 320px;top: 125px;"><input type="text" id="act105txt1" placeholder="0" class="saltos soloNumeros" style="width: 30px;" maxlength="2"><sup>o</sup></span>
+                                <span style="position: absolute;left: 370px;top: 150px;"><input type="text" id="act105txt2" placeholder="0" class="saltos soloNumeros" style="width: 30px;" maxlength="2"><sup>o</sup></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -431,24 +388,24 @@
     $("#txtNota").html("0");
     $("#n_pagina").html("69");
 
-    var correc = ['40°', '60°', '90°', 'rectángulo', '35°', 'obtusángulo', '57°', 'acutángulo', ];
+    var correc = ['30','60','90',];
 
-    function actividad104() {
+    function actividad105() {
         var cont = 0;
 
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < 3; i++) {
 
-            var num = $('#act104txt' + [i] + '').val().toLowerCase();
+            var num = $('#act105txt' + [i] + '').val().toLowerCase();
             if (correc[i] == num) {
                 cont = cont + 1;
-                $('#act104txt' + [i] + '').css("background-color", "#00e600");
+                $('#act105txt' + [i] + '').css("background-color", "#00e600");
             } else {
-                $('#act104txt' + [i] + '').css("background-color", "#ff6666");
+                $('#act105txt' + [i] + '').css("background-color", "#ff6666");
 
             }
 
         }
-        var total = (cont * 10) / 8;
+        var total = (cont * 10) / 3;
         $('#txtNota').html(total.toFixed(2));
         document.getElementById('bt_comprobar').disabled = true;
         $('input').attr("disabled", true);
