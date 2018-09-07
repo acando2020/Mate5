@@ -134,7 +134,8 @@
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Escribe las respuesta correcta en los espacios en blanco.
+        <b>1.</b> Usa el graduador para medir los ángulos internos de cada uno de los siguientes triángulos. Luego, realiza la suma de los ángulos y, por último, identifica cada triángulo. <br>
+        <b>2.</b> Ponga V si es verdadero ó F si es falso según corresponda.
         <br>
         <span id="ayudas"></span>
     </div>
@@ -289,42 +290,20 @@
                     <br>
                     <input type="text" id="nota5" name="" readonly="readonly" class="nota-abierta"><span><b style="color: #005ca4;">5. </b> <b>Lee</b> cada afirmación, <b>analiza</b> lo expresado y luego <b>completa</b> con una V (verdadero) o una F (falso), según cómo consideres cada proposición.</span>
                     <table>
-                        <tr>
-                            <td><b style="color: #005ca4;">a)</b></td>
-                            <td id="act5Txt0" class="act5txt">
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b style="color: #005ca4;">b)</b></td>
-                            <td id="act5Txt1" class="act5txt">
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b style="color: #005ca4;">c)</b></td>
-                            <td id="act5Txt2" class="act5txt">
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b style="color: #005ca4;">d)</b></td>
-                            <td id="act5Txt3" class="act5txt">
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b style="color: #005ca4;">e)</b></td>
-                            <td id="act5Txt4" class="act5txt">
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b style="color: #005ca4;">f)</b></td>
-                            <td id="act5Txt5" class="act5txt">
-
-                            </td>
-                        </tr>
+                        <ol type="a">
+                            <tr id="act5Txt0" class="act5txt">
+                            </tr>
+                            <tr id="act5Txt1" class="act5txt">
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr id="act5Txt3" class="act5txt">
+                            </tr>
+                            <tr id="act5Txt4" class="act5txt">
+                            </tr>
+                            <tr id="act5Txt5" class="act5txt">
+                            </tr>
+                        </ol>
                     </table>
                 </div>
             </div>
@@ -380,7 +359,7 @@
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
-    $("#n_pagina").html("69");
+    $("#n_pagina").html("74");
 
     function validarN(inputs) {
 

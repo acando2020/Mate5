@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mate 5</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!--Animaciones-->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--Css propio del proyecto-->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fraccion.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/extrasCss.css">
+</head>
+<style type="text/css">
+.mi_canvas {
+    min-width: 320px;
+}
+
+#prueba {
+    margin-top: 2rem;
+    display: block;
+    box-sizing: border-box;
+    padding: 0px;
+    transition: all .3s linear 0s;
+    width: 723px;
+    height: 154px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e5e5e5;
+    /*background-color:rgba(212,185,186,0.2);
+    background-image: url(imagenes/fondo.jpg);*/
+    /* SI SE NECESITA UNA IMAGEN DE FONDO */
+    background-size: 100% 100%;
+    background-image: url('img/i5_p87_act118.jpg');
+}
+
+#prueba1 {
+    margin-top: 2rem;
+    display: block;
+    box-sizing: border-box;
+    padding: 0px;
+    transition: all .3s linear 0s;
+    width: 723px;
+    height: 154px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e5e5e5;
+    /*background-color:rgba(212,185,186,0.2);
+    background-image: url(imagenes/fondo.jpg);*/
+    /* SI SE NECESITA UNA IMAGEN DE FONDO */
+    background-size: 100% 100%;
+    background-image: url('img/i5_p87_act118.jpg');
+}
+
+#logo {
+    display: block;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    z-index: 1;
+    width: 30%;
+    height: auto;
+    max-width: 350px;
+    min-width: 100px;
+}
+
+#contenedoropciones {
+    margin-top: 2rem;
+    padding: 2px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contenedoropciones table {
+    background-color: rgba(220, 220, 220, 1.00);
+    border: .25rem solid rgba(188, 185, 185, 1.00);
+    margin-bottom: .5rem;
+    border-spacing: 5px;
+    border-collapse: separate;
+}
+
+#contenedoropciones table:nth-of-type(2) {
+    border-spacing: 5px;
+}
+
+#contenedoropciones table:nth-of-type(2) td {
+    width: 1px;
+    white-space: nowrap;
+}
+
+#contenedoropciones table:nth-of-type(1) td {
+    cursor: pointer;
+}
+
+#contenedoropciones .titulotabla {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background-color: rgba(103, 103, 103, 1.00);
+}
+
+#contenedoropciones table {
+    display: inline-table;
+}
+
+.celdascoloresdefondo {
+    width: 20px;
+    height: 10px;
+    border: solid 1px transparent;
+}
+
+@media (max-width: 890px) {
+    /*.mi_canvas {
+      font-size: .750rem;
+    }*/
+    #contenedoropciones,
+    #prueba {
+        width: 98%
+    }
+    #contenedoropciones {
+        margin-left: 1%;
+    }
+}
+
+@media (max-width: 450px) {
+    /*.mi_canvas {
+      font-size: .75rem;
+    }*/
+}
+
+@media (max-width: 1px) {
+    #contenedoropciones #opcionesdedibujo {
+        display: table;
+        width: 100%;
+    }
+    #contenedoropciones #opcionesdedibujo td {
+        display: block;
+        width: auto;
+        text-align: left;
+        margin-top: 5px;
+    }
+}
+
+table tr th,
+td div {
+    text-align: center;
+}
+
+table tr th div span {
+    color: black;
+}
+
+.cajas1 {
+
+    border: 1px #98007f solid;
+    width: auto;
+    height: auto;
+    display: grid;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 5px;
+}
+
+
+
+.inputst {
+    text-align: left;
+    border: 1;
+    border-bottom: 1px solid #85BCEB;
+    width: 250px;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.inputst2 {
+    text-align: left;
+    border: 1;
+    border-bottom: 1px solid #85BCEB;
+    width: 50px;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.inputst3 {
+    text-align: left;
+    border: 1;
+    border-bottom: 1px solid #85BCEB;
+    width: 100px;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.nota-abierta1 {
+    width: 55px;
+    border: solid;
+    background: none;
+    border-width: 1px;
+    border-color: #007acc;
+    text-align: right;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cajas {
+    max-width: 95%;
+    max-height: 200px;
+    border: 1px #009900 solid;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px;
+}
+
+.cajasact6 {
+    max-width: 95%;
+    max-height: 200px;
+    border: 1px #009900 solid;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px;
+    width: auto;
+}
+
+.actividad1 {
+    background: #fff;
+}
+
+.saltos {
+    text-align: center;
+    border: 0;
+    border-bottom: 1px solid #85BCEB;
+    width: 50px;
+}
+
+.correcto {
+    color: #ffffff;
+    background-color: #00e600;
+}
+
+.incorrecto {
+    color: #ffffff;
+    background-color: #ff6666;
+}
+
+.desactivar {
+    background-color: #444;
+    color: #888;
+    padding: 8px;
+}
+
+#cabecera .badge {
+    background-color: #232956;
+}
+
+.pintar {
+    background: #005ca4;
+    color: #fff;
+    padding: 2px;
+    border-radius: 15px;
+}
+
+.dndAligned {
+    display: grid;
+}
+
+.inputMult {
+    text-align: center;
+    border: 0;
+    width: 30px;
+}
+
+.saltos2 {
+    text-align: center;
+    border: 1;
+    border-bottom: 1px solid #85BCEB;
+    border-radius: 15px;
+
+    width: 100px;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto; //*margin: calc(50vh - 150px) auto 0;*/
+    background-image: url('img/i5_p87_act118.jpg');
+    border-radius: 3px;
+    box-shadow: 0px 0px 15px 3px #ccc;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+</style>
+
+<body>
+    <div id="nota-informativa" class="nota-ayuda">
+        <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+        Lee cuidadosamente las preguntas, contesta cada una de ellas.
+        <br>
+        <b>6.</b> Se debe hacer click en la imagen <img src="img/i1_p31_act39.png" alt=""> para agregar sucesion correspondiente.
+        <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
+        <br>
+        <span id="ayudas"></span>
+    </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <button class="btn button btnHelp mytooltip" data-info="Mostrar ayuda de la actividad" onclick="mostrar_ayuda()">
+                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_1 btnGuardar mytooltip" data-info="Guardar en local" onclick="$('#myModal').modal('show')">
+                        <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_1 btnEvniar mytooltip" style="display: none !important;" data-info="Enviar a Correo">
+                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_2 btnIniciar mytooltip" style="display: none !important;" disabled data-info="Iniciar">
+                        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_2 btnRepetir mytooltip" data-info="Repetir" onclick="location.reload()">
+                        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="pregunta3()">
+                        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn button button_5 mytooltip display-none" style="display: none !important;" data-info="Pantalla completa" onclick="full_screen_change()">
+                        <span id="full_ico" class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                    </button>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0px;margin-left: 0px; ">
+                <li><span class="notificacion actividad">
+                            <span class="glyphicon glyphicon-list-alt"></span> Actividad <span id='n_cont'>1</span> / <span id='n_ejer'>1</span>
+                    </span>
+                    <span class="notificacion nota">
+                            <span class="glyphicon glyphicon-pencil"></span> Nota <span id="txtNota"></span> / 10
+                    </span>
+                    <span class="notificacion pagina">
+                            <span class="glyphicon glyphicon-bookmark"></span> Pág <i id="n_pagina"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--FIN DE NAVBAR QUE SE AÑADE-->
+    <div class="container espacio">
+        <div class="panel border-preparo" id="activity">
+            <!--modificar el bg- segun la actividad-->
+            <div class="panel-heading bg-preparo">
+                <span class="titulo"><img src="img/icoPRE.png" alt="">Me preparo para mi evaluación</span>
+                <span class="titulo_2 txtAlumno display-none" id="nombre_alumno">Alumno: </span>
+            </div>
+            <div class="panel-body">
+                <br>
+                <!--pregunats de la actividad-->
+                <!--INICIO ACCORDION-->
+                <div class="panel-group" id="accordion">
+                    <!--INICIO NUEVA PESTAÑA DE ACORDION 1 CAMBIER COLLAPSE1 POR EL NOMBRE CORRESPONDIENTE-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <button type="button" class="btn btn-primary" data-toggle="collapse" style="background-image: url(img/algebra_funciones_ico.png); background-repeat: no-repeat; background-position:right;">
+                                    <!--INICIO COLOCAR AQUI LA PREGUNTA CON EL INPUT PARA INDICAR LA NOTA-->
+                                    <div class="text-question">
+                                        <span style="word-break: break-word" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1"><b>Álgebra y funciones (Has click)</b></span>&emsp;&nbsp;
+                                    </div>
+                                    <!--FIN COLOCAR AQUI LA PREGUNTA CON EL INPUT PARA INDICAR LA NOTA-->
+                                </button>
+                            </div>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <!--INICIO COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_1" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>1.- Resuelve</b> el problema.</span>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6">Una clase de colibrí puede aletear hasta 75 veces por segundo.
+                                                <br> ¿Cuántos aleteos dará en un minuto?
+                                                <br>
+                                                <br>
+                                                <span>1 minuto = <input type="number" name="" class="saltos2" id="act1num1"> segundos</span>
+                                                <br>
+                                                <br>
+                                                <input type="text" name="" class="form-control" style="border: 2px dotted red;">
+                                                <br>
+                                                <span><b>R.</b> En un minuto dará <input type="number" name="" class="saltos2" id="act1num2">aleteos.</span></div>
+                                            <div class="col-lg-6"><img class="img-responsive" src="img/i1_p88_act119.jpg"></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_2" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>2.- </b>Con la ayuda de la calculadora, <b>realiza</b> las siguientes multiplicaciones y <b>escribe</b> sus términos.</span>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-4">
+                                                <table style="text-align: center;">
+                                                    <tr>
+                                                        <td><b style="color: #1D71B9">a)</b></td>
+                                                        <td id="act2num1"></td>
+                                                        <td>×</td>
+                                                        <td id="act2num2"></td>
+                                                        <td>=</td>
+                                                        <td>
+                                                            <input type="text" id="act2res0" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>
+                                                            <input type="text" id="act2res1" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                        <td></td>
+                                                        <td>
+                                                            <input type="text" id="act2res2" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                        <td></td>
+                                                        <td>
+                                                            <input type="text" id="act2res3" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <br>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <table style="text-align: center;">
+                                                    <tr>
+                                                        <td><b style="color: #1D71B9">b)</b></td>
+                                                        <td id="act2num3"></td>
+                                                        <td>×</td>
+                                                        <td id="act2num4"></td>
+                                                        <td>=</td>
+                                                        <td>
+                                                            <input type="text" id="act2res4" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>
+                                                            <input type="text" id="act2res5" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                        <td></td>
+                                                        <td>
+                                                            <input type="text" id="act2res6" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                        <td></td>
+                                                        <td>
+                                                            <input type="text" id="act2res7" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <br>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <table style="text-align: center;">
+                                                    <tr>
+                                                        <td><b style="color: #1D71B9">c)</b></td>
+                                                        <td id="act2num5"></td>
+                                                        <td>×</td>
+                                                        <td id="act2num6"></td>
+                                                        <td>=</td>
+                                                        <td>
+                                                            <input type="text" id="act2res8" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>
+                                                            <input type="text" id="act2res9" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                        <td></td>
+                                                        <td>
+                                                            <input type="text" id="act2res10" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                        <td></td>
+                                                        <td>
+                                                            <input type="text" id="act2res11" class="form-control text-lowercase sinEspacios"></input>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_3" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>3.- Realiza</b> mentalmente las multiplicaciones y <b>escribe</b> las respuestas.</span>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-4"><span><b style="color: #005ca4;">a)</b><span id="act3num1"></span></span>
+                                                <br>
+                                                <br><span><b style="color: #005ca4;">b)</b><span id="act3num2"></span>
+                                                <input type="number" id="act5res0" class="saltos2"></input>
+                                                </span>
+                                                <br>
+                                                <br>
+                                            </div>
+                                            <div class="col-lg-4"><span><b style="color: #005ca4;">c)</b><span id="act3num3"></span>
+                                                <input type="number" id="act5res1" class="saltos2"></input>
+                                                </span>
+                                                <br>
+                                                <br><span><b style="color: #005ca4;">d)</b><span id="act3num4"></span>
+                                                <input type="number" id="act5res2" class="saltos2"></input>
+                                                </span>
+                                                <br>
+                                                <br>
+                                            </div>
+                                            <div class="col-lg-4"><span><b style="color: #005ca4;">e)</b><span id="act3num5"></span>
+                                                <input type="number" id="act5res3" class="saltos2"></input>
+                                                </span>
+                                                <br>
+                                                <br><span><b style="color: #005ca4;">f)</b><span id="act3num6"></span>
+                                                <input type="number" id="act5res4" class="saltos2"></input>
+                                                </span>
+                                                <br>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_3" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>3.- Lee</b> y resuelve planteando una sucesión.</span>
+
+                                </div>
+                                <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--FIN NUEVA PESTAÑA DE ACORDION 1-->
+                    <!--INICIO NUEVA PESTAÑA DE ACORDION 2-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <button type="button" class="btn btn-primary" data-toggle="collapse">
+                                    <!--INICIO COLOCAR AQUI LA PREGUNTA CON EL INPUT PARA INDICAR LA NOTA-->
+                                    <div class="text-question">
+                                        <span style="word-break: break-word" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2"><b> Geometría y medida</b></span>
+                                    </div>
+                                    <!--FIN COLOCAR AQUI LA PREGUNTA CON EL INPUT PARA INDICAR LA NOTA-->
+                                </button>
+                            </div>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <!--INICIO COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
+                                <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--FIN NUEVA PESTAÑA DE ACORDION 2-->
+                </div>
+                <!--FIN ACCORDION-->
+            </div>
+        </div>
+    </div>
+    <!-- Modal Guardar PDF-->
+    <div class="modal fade animated pulse" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
+                    <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="modal_form" class="form-horizontal">
+                        <div class="form-group ">
+                            <div class="col-sm-2">
+                                <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
+                            </div>
+                            <div class="col-sm-10">
+                                <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
+                                <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
+                                <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
+                                    <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <span class="glyphicon glyphicon-info-sign error-color" aria-hidden="true"></span> Debes ingresar tu nombre</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--generador de pdf-->
+    <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/activities.js"></script>
+    <script src="js/Utilitario.js"></script>
+    <script src="js/numPaginas.js"></script>
+    <script src="js/validacionesExtras.js"></script>
+    <script src="js/initElementos.js"></script>
+    <script src="js/dragNdrop.js"></script>
+    <script src="js/calcularNotas.js"></script>
+    <script src="js/actividad119.js"></script>
+    <script type="text/javascript">
+    var titulos = 'evaluacion';
+    $("#txtNota").html("0");
+    $("#n_pagina").html("48");
+
+    /* var limpiar = document.getElementById("limpiar");
+     var canvas = document.getElementById("canvas");
+     var ctx = canvas.getContext("2d");
+     var cw = canvas.width = 339,
+         cx = cw / 2;
+     var ch = canvas.height = 227,
+         cy = ch / 2;
+
+     var dibujar = false;
+     var factorDeAlisamiento = 5;
+     var Trazados = [];
+     var puntos = [];
+     ctx.lineJoin = "round";
+
+     limpiar.addEventListener('click', function(evt) {
+         dibujar = false;
+         ctx.clearRect(0, 0, cw, ch);
+         Trazados.length = 0;
+         puntos.length = 0;
+     }, false);
+
+
+     canvas.addEventListener('mousedown', function(evt) {
+         dibujar = true;
+         //ctx.clearRect(0, 0, cw, ch);
+         puntos.length = 0;
+         ctx.beginPath();
+
+     }, false);
+
+     canvas.addEventListener('mouseup', function(evt) {
+         redibujarTrazados();
+     }, false);
+
+     canvas.addEventListener("mouseout", function(evt) {
+         redibujarTrazados();
+     }, false);
+
+     canvas.addEventListener("mousemove", function(evt) {
+         if (dibujar) {
+             var m = oMousePos(canvas, evt);
+             puntos.push(m);
+             ctx.lineTo(m.x, m.y);
+             ctx.stroke();
+         }
+     }, false);
+
+
+
+
+
+     function reducirArray(n, elArray) {
+         var nuevoArray = [];
+         nuevoArray[0] = elArray[0];
+         for (var i = 0; i < elArray.length; i++) {
+             if (i % n == 0) {
+                 nuevoArray[nuevoArray.length] = elArray[i];
+             }
+         }
+         nuevoArray[nuevoArray.length - 1] = elArray[elArray.length - 1];
+         Trazados.push(nuevoArray);
+     }
+
+     function calcularPuntoDeControl(ry, a, b) {
+         var pc = {}
+         pc.x = (ry[a].x + ry[b].x) / 2;
+         pc.y = (ry[a].y + ry[b].y) / 2;
+         return pc;
+     }
+
+     function alisarTrazado(ry) {
+         if (ry.length > 1) {
+             var ultimoPunto = ry.length - 1;
+             ctx.beginPath();
+             ctx.moveTo(ry[0].x, ry[0].y);
+             for (i = 1; i < ry.length - 2; i++) {
+                 var pc = calcularPuntoDeControl(ry, i, i + 1);
+                 ctx.quadraticCurveTo(ry[i].x, ry[i].y, pc.x, pc.y);
+             }
+             ctx.quadraticCurveTo(ry[ultimoPunto - 1].x, ry[ultimoPunto - 1].y, ry[ultimoPunto].x, ry[ultimoPunto].y);
+             ctx.stroke();
+         }
+     }
+
+
+     function redibujarTrazados() {
+         dibujar = false;
+         ctx.clearRect(0, 0, cw, ch);
+         reducirArray(factorDeAlisamiento, puntos);
+         for (var i = 0; i < Trazados.length; i++)
+             alisarTrazado(Trazados[i]);
+     }
+
+     function oMousePos(canvas, evt) {
+         var ClientRect = canvas.getBoundingClientRect();
+         return { //objeto
+             x: Math.round(evt.clientX - ClientRect.left),
+             y: Math.round(evt.clientY - ClientRect.top)
+         }
+     }*/
+    </script>
+</body>
+
+</html>

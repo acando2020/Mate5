@@ -243,10 +243,12 @@
     text-decoration: overline;
 }
 
-.curvasobre {
-    text-decoration: overline;
-    text-decoration-style: wavy;
+.sobrecurva {
+    border:0;
+   border-top: 2px solid #000000;
+   border-radius: 15px;
 }
+
 
 .oval {
 
@@ -267,7 +269,9 @@
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
-        Escribe las respuesta correcta en los espacios en blanco.
+        Escribe la respuesta correcta en los espacios en blanco.
+        <b>1.</b> Usa la circunferencia y traza según se indica en los literales. <br>
+
         <br>
         <span id="ayudas"></span>
     </div>
@@ -412,7 +416,7 @@
                     <br>
                     <span><b style="color: #005ca4">b)</b> El radio es el segmento <input type="text" maxlength="2" name="" class="saltos sobrelinea text-uppercase"></span>
                     <br>
-                    <span><b style="color: #005ca4">c)</b> El arco es <input type="text" maxlength="2" name="" class="saltos sobrelinea text-uppercase"></span>
+                    <span><b style="color: #005ca4">c)</b> El arco es <input type="text" maxlength="2" name="" class="saltos sobrecurva text-uppercase"></span>
                     <br>
                     <span><b style="color: #005ca4">d)</b> El diámetro es el segmento <input type="text" maxlength="2" name="" class="saltos sobrelinea text-uppercase"></span>
                     <br>
@@ -478,7 +482,7 @@
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
-    $("#n_pagina").html("69");
+    $("#n_pagina").html("79");
     document.getElementById('nota1').addEventListener('keypress', () => {
         validNumero(0, 2.5, 1);
     });

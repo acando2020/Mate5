@@ -53,27 +53,27 @@ function actividad102_1() {
 }
 ////////////////////////pregunta 5//////////////////////////////////////
 var act1_5 = [
-    ['<td> Todo triángulo tiene un ángulo recto.</td><td>' +
+    ['<td><li> </li></td><td> Todo triángulo tiene un ángulo recto.</td><td>' +
         '<input type="text" maxlength="1" id="VF0" class="saltos2 text-uppercase"></input>' +
         '</td>'
     ],
-    [' <td> Un triángulo escaleno tiene sus tres lados desiguales.</td><td>' +
+    [' <td><li> </li></td><td> Un triángulo escaleno tiene sus tres lados desiguales.</td><td>' +
         '<input type="text" maxlength="1" id="VF1" class="saltos2 text-uppercase"></input>' +
         '</td>'
     ],
-    ['<td> La suma de los ángulos internos de cualquier triángulo siempre es 120°.</td><td>' +
+    ['<td><li> </li></td><td> La suma de los ángulos internos de cualquier triángulo siempre es 120°.</td><td>' +
         '<input type="text" maxlength="1" id="VF2" class="saltos2 text-uppercase"></input>' +
         '</td>'
     ],
-    [' <td> Un triángulo equilátero es a la vez acutángulo.</td><td>' +
+    [' <td><li> </li></td><td> Un triángulo equilátero es a la vez acutángulo.</td><td>' +
         '<input type="text" maxlength="1" id="VF3" class="saltos2 text-uppercase"></input>' +
         '</td>'
     ],
-    [' <td> Se puede trazar un triángulo cuyos ángulos midan 45º + 45º + 45°.</td><td>' +
+    [' <td><li> </li></td><td> Se puede trazar un triángulo cuyos ángulos midan 45º + 45º + 45°.</td><td>' +
         '<input type="text" maxlength="1" id="VF4" class="saltos2 text-uppercase"></input>' +
         '</td>'
     ],
-    ['<td> Un triángulo isósceles tiene tres lados iguales.</td><td>' +
+    ['<td><li> </li></td><td> Un triángulo isósceles tiene tres lados iguales.</td><td>' +
         '<input type="text" maxlength="1" id="VF5" class="saltos2 text-uppercase"></input>' +
         '</td>'
     ],

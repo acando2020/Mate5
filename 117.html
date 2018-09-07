@@ -160,6 +160,8 @@
 
 
 
+
+
 /*.nota-abierta {
     width: 55px;
     border: solid;
@@ -281,6 +283,7 @@
     <div id="nota-informativa" class="nota-ayuda">
         <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
+        Completa cada hexágono con los números del 1 al 6, sin importar el orden de secuencia. <br>
         Escribe las respuesta correcta en los espacios en blanco.
         <br>
         <span id="ayudas"></span>
@@ -321,7 +324,7 @@
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="actividad116()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="calificar_abierta()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span> </button>
                 </li>
                 <li>
@@ -355,9 +358,9 @@
             <div class="panel-body">
                 <!--pregunats de la actividad-->
                 <div class="text-question">
-                    <img src="img/practica_individual.png"></img>
+                    <img src="img/i2_p85_act117.jpg" class="img-responsive"></img>
                     <br>
-                    <input class="nota-abierta" id="nota1" type="text"></input><span>Completa cada hexágono con los números del 1 al 6, sin importar el orden de secuencia.</span>
+                    <input class="nota-abierta" type="number"></input><span>Completa cada hexágono con los números del 1 al 6, sin importar el orden de secuencia.</span>
                     <br>
                     <span><b style="color: #428bca">•</b> La condición es que en cada hexágono estén los seis números.</span>
                     <br>
@@ -381,15 +384,19 @@
                             <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 60px; top: 300px;"></input>
                             <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 105px; top: 280px;"></input>
                             <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 105px; top: 240px;"></input>
-
-
                             <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 180px; top: 280px;"></input>
                             <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 140px; top: 300px;"></input>
                             <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 140px; top: 340px;"></input>
-
                             <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 180px; top: 365px;"></input>
                             <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 220px; top: 340px;"></input>
                             <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 220px; top: 300px;"></input>
+
+                            <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 300px; top: 215px;"></input>
+                            <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 260px; top: 240px;"></input>
+                            <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 260px; top: 280px;"></input>
+                            <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 300px; top: 300px;"></input>
+                            <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 340px; top: 280px;"></input>
+                            <input class="saltos soloNumeros" maxlength="1" placeholder="0" style="position: absolute; left: 340px; top: 240px;"></input>
                         </div>
                     </div>
                 </div>
@@ -445,9 +452,9 @@
     <script type="text/javascript">
     var titulos = "aplico";
     $("#txtNota").html("0");
-    $("#n_pagina").html("69");
+    $("#n_pagina").html("85");
 
-    document.getElementById('nota1').addEventListener('keypress', () => {
+  /*  document.getElementById('nota1').addEventListener('keypress', () => {
         validNumero(0, 5, 1);
     });
     document.getElementById('nota1').addEventListener('keyup', () => {

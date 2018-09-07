@@ -231,8 +231,11 @@ function calificar_abierta() {
 
     if (parseInt(nt) > 10) {
         $('.nota-abierta').removeClass('valid')
-        $('.nota-abierta').addClass('no-valid')
+
         alert('La nota no debe exceder los 10 puntos');
+         $('.nota-abierta').val("");
+
+        $('.nota-abierta').focus();
         //alert('La nota total no debe exeder de 10 puntos.')
 
     } else if (vacio > 0) {

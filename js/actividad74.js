@@ -560,7 +560,7 @@ function calcularTotal() {
         var nota11_8 = document.getElementById('nota1_8').value;
         var nota11_9 = document.getElementById('nota1_9').value;
         var nota11_10 = document.getElementById('nota1_10').value;
-        var SuperTotal = parseFloat(nota11_1) + parseFloat(nota11_2) + parseFloat(nota11_3) + parseFloat(nota11_4) + parseFloat(nota11_5) + parseFloat(nota11_6) + parseFloat(nota11_7) + parseFloat(nota11_8) + parseFloat(nota11_9) + parseFloat(nota11_10) + parseFloat(nota11_10);
+        var SuperTotal = parseFloat(nota11_1) + parseFloat(nota11_2) + parseFloat(nota11_3) + parseFloat(nota11_4) + parseFloat(nota11_5) + parseFloat(nota11_6) + parseFloat(nota11_7) + parseFloat(nota11_8) + parseFloat(nota11_9) + parseFloat(nota11_10);
 
         $('#txtNota').html(SuperTotal.toFixed(2));
         document.getElementById('bt_comprobar').disabled = true;

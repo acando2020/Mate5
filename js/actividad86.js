@@ -143,7 +143,7 @@ function actividad86_2() {
 
     }
 
-    if (act86_3 == num1) {
+    if (act86_3 == num2) {
         nt3 = 1.25;
         $('#act86_3').css("background", "#00e600");
 
@@ -152,7 +152,7 @@ function actividad86_2() {
 
     }
 
-    if (act86_4 == num1) {
+    if (act86_4 == num2) {
         nt4 = 1.25;
         $('#act86_4').css("background", "#00e600");
 
