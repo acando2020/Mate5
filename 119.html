@@ -27,8 +27,8 @@
     box-sizing: border-box;
     padding: 0px;
     transition: all .3s linear 0s;
-    width: 723px;
-    height: 154px;
+    width: 722px;
+    height: 167px;
     margin-left: auto;
     margin-right: auto;
     background-color: #e5e5e5;
@@ -36,25 +36,7 @@
     background-image: url(imagenes/fondo.jpg);*/
     /* SI SE NECESITA UNA IMAGEN DE FONDO */
     background-size: 100% 100%;
-    background-image: url('img/i5_p87_act118.jpg');
-}
-
-#prueba1 {
-    margin-top: 2rem;
-    display: block;
-    box-sizing: border-box;
-    padding: 0px;
-    transition: all .3s linear 0s;
-    width: 723px;
-    height: 154px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #e5e5e5;
-    /*background-color:rgba(212,185,186,0.2);
-    background-image: url(imagenes/fondo.jpg);*/
-    /* SI SE NECESITA UNA IMAGEN DE FONDO */
-    background-size: 100% 100%;
-    background-image: url('img/i5_p87_act118.jpg');
+    background-image: url('img/i2_p88_act119.jpg');
 }
 
 #logo {
@@ -210,14 +192,16 @@ table tr th div span {
 }
 
 .cajas {
-    max-width: 95%;
-    max-height: 200px;
+    width: auto;
     border: 1px #009900 solid;
     border-radius: 5px;
     padding: 15px;
     margin: 5px;
-}
 
+}
+#caja_img1{
+     mix-blend-mode: multiply;
+}
 .cajasact6 {
     max-width: 95%;
     max-height: 200px;
@@ -285,6 +269,27 @@ table tr th div span {
     width: 100px;
 }
 
+.oval {
+    width: 50px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px #5EC5E8 solid;
+}
+
+.esquinas {
+    border: 1px solid #F5A04C;
+    border-radius: 10px 0px 10px 0px;
+    width: 50px;
+}
+
+.esquinas2 {
+    border: 1px solid #76B82A;
+    border-radius: 10px 0px 10px 0px;
+    width: 50px;
+}
+
+
 canvas {
     display: block;
     margin: 0 auto; //*margin: calc(50vh - 150px) auto 0;*/
@@ -342,7 +347,7 @@ canvas {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="pregunta3()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="calcularTotal()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -544,8 +549,154 @@ canvas {
                                     </div>
                                 </div>
                                 <div class="text-question">
-                                    <input type="text" maxlength="2" id="nota1_3" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>3.- Lee</b> y resuelve planteando una sucesión.</span>
-
+                                    <input type="text" maxlength="2" id="nota1_4" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>4.- Lee</b> y <b>resuelve</b> planteando una sucesión.</span>
+                                    <br>
+                                    <br>
+                                    <span style="text-align: justify;">Mercedes inició la lectura de una novela de 248 páginas. El primer día leyó 8 páginas; el día siguiente, el doble de páginas del anterior; y así sucesivamente hasta terminar de leerla. ¿Cuántas páginas leyó el quinto día? ¿Cuántos días le tomó leer toda la novela?</span>
+                                    <div class="table-responsive" align="center">
+                                        <br>
+                                        <table style="text-align:center;">
+                                            <tr style="text-align:center;">
+                                                <td></td>
+                                                <td align="right"><img class="img-responsive" src="img/flecha1.png"></img>
+                                                </td>
+                                                <td>
+                                                    <input style="text-align:center;" id="act4num0" class="oval sinEspacios text-lowercase" type="text" placeholder="x0"></input>
+                                                </td>
+                                                <td><img class="img-responsive" src="img/flecha2.png"></img>
+                                                </td>
+                                                <td>
+                                                    <input style="text-align:center;" id="act4num1" class="oval sinEspacios text-lowercase" type="text" placeholder="x0"></input>
+                                                </td>
+                                                <td><img class="img-responsive" src="img/flecha2.png"></img>
+                                                </td>
+                                                <td>
+                                                    <input style="text-align:center;" id="act4num2" class="oval sinEspacios text-lowercase" type="text" placeholder="x0"></input>
+                                                </td>
+                                                <td><img class="img-responsive" src="img/flecha2.png"></img>
+                                                </td>
+                                                <td>
+                                                    <input style="text-align:center;" id="act4num3" class="oval sinEspacios text-lowercase" type="text" placeholder="x0"></input>
+                                                </td>
+                                                <td><img class="img-responsive" src="img/flecha3.png"></img>
+                                                </td>
+                                            </tr>
+                                            <tr style="text-align:center;">
+                                                <td></td>
+                                                <td>
+                                                    <input style="text-align:center;" id="act4num4" placeholder="0" type="text" class="esquinas soloNumeros" name="">
+                                                    <br>
+                                                    <input style="text-align:center;" id="act4num5" placeholder="0" type="text" class="esquinas2 soloNumeros" name="" maxlength="1">
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <input style="text-align:center;" id="act4num6" placeholder="0" type="text" class="esquinas soloNumeros" name="">
+                                                    <br>
+                                                    <input style="text-align:center;" id="act4num7" placeholder="0" type="text" class="esquinas2 soloNumeros" name="" maxlength="1">
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <input style="text-align:center;" type="text" placeholder="0" id="act4num8" class="esquinas soloNumeros" name="">
+                                                    <br>
+                                                    <input style="text-align:center;" id="act4num9" placeholder="0" type="text" class="esquinas2 soloNumeros" name="" maxlength="1">
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <input style="text-align:center;" type="text" placeholder="0" id="act4num10" class="esquinas soloNumeros" name="">
+                                                    <br>
+                                                    <input style="text-align:center;" id="act4num11" placeholder="0" type="text" class="esquinas2 soloNumeros" name="" maxlength="1">
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <input style="text-align:center;" id="act4num12" placeholder="0" type="text" class="esquinas soloNumeros" name="">
+                                                    <br>
+                                                    <input style="text-align:center;" id="act4num13" placeholder="0" type="text" class="esquinas2 soloNumeros" name="" maxlength="1">
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                        <span><b>R.</b> El quinto día, Mercedes leyó <input type="number"  id="act4num14" name="" class="saltos2"> páginas, y le tomó <input type="text" name="" class="saltos2"  id="act4num15"> leer toda la novela.</span>
+                                    </div>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_5" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>5.- Resuelve</b> aplicando la estrategia que más facilite el cálculo.</span>
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-6">
+                                            <table>
+                                                <tr>
+                                                    <td><b style="color: #1D71B9">a)</b></td>
+                                                    <td id="act5num11" align="right"></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <input class="form-control"></input>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <input class="form-control"></input>
+                                                    </td>
+                                                    <td>=</td>
+                                                    <td>
+                                                        <input class="form-control"></input>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <input type="number" id="act90_1" placeholder="Total" class="form-control" name="">
+                                                    </td>
+                                                    <td>=</td>
+                                                    <td>
+                                                        <input type="number" id="act90_2" placeholder="Total" class="form-control" name="">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <table>
+                                                <tr>
+                                                    <td><b style="color: #1D71B9">b)</b></td>
+                                                    <td id="act5num12" align="right"></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <input class="form-control"></input>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <input class="form-control"></input>
+                                                    </td>
+                                                    <td>=</td>
+                                                    <td>
+                                                        <input class="form-control"></input>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <input type="number" id="act90_3" placeholder="Total" class="form-control" name="">
+                                                    </td>
+                                                    <td>=</td>
+                                                    <td>
+                                                        <input type="number" id="act90_4" placeholder="Total" class="form-control" name="">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_6" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>6.- Resuelve</b> el problema aplicando la propiedad distributiva de la multiplicación. Carmen exhibe sus esculturas de arcilla en cinco vitrinas con nueve esculturas cada una. Si en el transcurso de la semana vende cuatro esculturas de cada vitrina, ¿con cuántas se queda al final de la semana?</span>
+                                    <div align="center">
+                                        <br>
+                                        <textarea cols="60" rows="3" style="border: 1px dotted red;resize: none;"></textarea>
+                                        <br>
+                                        <span><b style="color: #1D71B9">R.</b> Al final de la semana, Carmen se queda con <input id="act6num1" type="number" name="" class="saltos2"> esculturas.</span>
+                                    </div>
                                 </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
                             </div>
@@ -568,6 +719,187 @@ canvas {
                         <div id="collapse2" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <!--INICIO COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_7" size="2" style="text-align:center" class="nota-abierta" min="0" max="10" readonly>&nbsp;<span><b>7.- Escribe</b> una <b style="color: #22a9f7">V</b> (verdadero) o una <b style="color: #22a9f7">F</b> (falso), según cómo consideres cada afirmación.</span>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <ol type="a">
+                                                <div class="col-lg-12 act7_1" id="act7num0">
+                                                </div>
+                                                <div class="col-lg-12 act7_1" id="act7num1">
+                                                </div>
+                                                <div class="col-lg-12 act7_1" id="act7num2">
+                                                </div>
+                                                <div class="col-lg-12 act7_1" id="act7num3">
+                                                </div>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-question">
+                                    <br>
+                                    <input type="text" maxlength="2" id="nota1_8" size="2" style="text-align:center" class="nota-abierta" min="0" max="10">&nbsp;<span><b>8.- Construye</b> los triángulos que se indican.</span>
+                                    <div>
+                                        <main>
+                                            <canvas id="prueba">Este navegador no soporta canvas, visualice la web con un navegador actualizado.</canvas>
+                                            <div id="paleta" class="mi_canvas">
+                                                <div class="table-responsive" id="contenedoropciones">
+                                                    <table width="auto">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="9" class="titulotabla">Color</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="celdascoloresdefondo" data-color="red">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="pink">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="orange">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="yellow">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="magenta">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="MEDIUMSEAGREEN">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="green">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="DARKCYAN">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="cyan">&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="celdascoloresdefondo" data-color="blue">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="wheat">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="brown">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="white">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="LIGHTGRAY">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="gray">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="LIGHTSLATEGRAY">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="DARKSLATEGRAY">&nbsp;</td>
+                                                                <td class="celdascoloresdefondo" data-color="black">&nbsp;</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table width="auto" id="opcionesdedibujo">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="5" class="bg-info">Opciones de dibujo</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Grosor pincel:
+                                                                    <input onChange="cambiagrosor(this)" name="grosor" type="number" id="grosor" max="100" min="3" step="1" title="Grosor del cursor" value="5">
+                                                                </td>
+                                                                <td onClick="cambiapincel(this)" id="celdapincelcuadrado" style="cursor:pointer;border:solid 1px black;background-color: white;border-radius: 15px;">Pincel cuadrado</td>
+                                                                <td onClick="cambiaaccion(this)" id="xpintar" class="celdaaccion" style="cursor:pointer;border:solid 1px black;background-color: white;border-radius: 15px;">Pintar</td>
+                                                                <td rowspan="2" onClick="borrartodo()"><span class="btn btn-danger">Borrar todo</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Grosor borrar:
+                                                                    <input onChange="cambiagrosorborrador(this)" name="grosorborrar" type="number" id="grosorborrar" max="100" min="3" step="1" title="Grosor del borrardor" value="10">
+                                                                </td>
+                                                                <td onClick="cambiapincel(this)" id="celdapincelredondo" style="cursor:pointer;border:solid 1px transparent;border-radius: 15px;">Pincel redondo</td>
+                                                                <td onClick="cambiaaccion(this)" id="xborrar" class="celdaaccion" style="cursor:pointer;border:solid 1px transparent;border-radius: 15px;">Borrar</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </main>
+                                    </div>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_9" size="2" style="text-align:center" class="nota-abierta" min="0" max="10">&nbsp;<span><b>9.- Mide</b> el radio y el diámetro en la circunferencia. Luego, traza una cuerda y un arco y completa las oraciones.</span>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6" align="center">
+                                                <div style="border-radius: 10px 0px 10px 0px; border: 1px solid #FDE9EB; background:#FDE9EB; "><img style="mix-blend-mode: multiply;" src="img/i3_p88_act119.jpg" class="img-responsive">
+                                                    <div style="background: white; width: 80%;border-radius: 10px 0px 10px 0px; border: 1px solid #FDE9EB;"><span>D = <input type="text" name="" class="saltos2"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>R = <input type="text" name="" class="saltos2"></span> </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div style="border-radius: 10px 0px 10px 0px; border: 2px solid #62C4DE;height: 70px;">Radio: Segmento recto que une el
+                                                    <input type="text" class="saltos" style="width: 100px;"> con
+                                                    <input class="saltos" type="text" style="width: 300px;"></input>
+                                                </div>
+                                                <br>
+                                                <div style="border-radius: 10px 0px 10px 0px; border: 2px solid #E3ECBC;height: 70px;">Diámetro: Segmento de recta que
+                                                    <input class="saltos" type="text" style="width: 100px;"></input> une de la circunferencia
+                                                    <input class="saltos" type="text" style="width: 200px;"></input>.</div>
+                                                <br>
+                                                <div style="border-radius: 10px 0px 10px 0px; border: 2px solid #FDE0C7;height: 70px;">Arco: Parte de la
+                                                    <input type="text" class="saltos" name="" style="width: 150px;"> limitada por dos puntos.</div>
+                                                <br>
+                                                <div style="border-radius: 10px 0px 10px 0px; border: 2px solid #D3DAF0;height: 70px;">Cuerda: Segmento de recta que une dos puntos de
+                                                    <input type="text" class="saltos" style="width: 150px;"></input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-question">
+                                    <input type="text" maxlength="2" id="nota1_10" size="2" style="text-align:center" class="nota-abierta" min="0" max="10">&nbsp;<span><b>10.- Relaciona</b> con líneas cada polígono y su nombre.</span>
+                                    <div align="center">
+                                        <table style="text-align: center;" class="">
+                                            <tr>
+                                                <td rowspan="2">
+                                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas imagen" id="caja_img1"></div>
+                                                </td>
+                                                <td>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4  cajas texto" id="caja_txt1"></div>
+                                                </td>
+                                                <td rowspan="2">
+                                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas imagen" id="caja_img2"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4  cajas texto" id="caja_txt2"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas imagen" id="caja_img3"></div>
+                                                </td>
+                                                <td>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4  cajas texto" id="caja_txt3"></div>
+                                                </td>
+                                                <td rowspan="2">
+                                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas imagen" id="caja_img4"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas texto" id="caja_txt4"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas imagen" id="caja_img5"></div>
+                                                </td>
+                                                <td>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas texto" id="caja_txt5"></div>
+                                                </td>
+                                                <td rowspan="2">
+                                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas imagen" id="caja_img6"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas texto" id="caja_txt6"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas imagen" id="caja_img7"></div>
+                                                </td>
+                                                <td>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas texto" id="caja_txt7"></div>
+                                                </td>
+                                                <td rowspan="2">
+                                                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-5 cajas imagen" id="caja_img8"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 cajas texto" id="caja_txt8" align="center"></div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
                                 <!--FIN COLOCAR AQUI EL DESARROLLO DE LA PREGUNTA-->
                             </div>
                         </div>
@@ -626,112 +958,12 @@ canvas {
     <script src="js/initElementos.js"></script>
     <script src="js/dragNdrop.js"></script>
     <script src="js/calcularNotas.js"></script>
+    <script src="js/dibujarCANVAS.js"></script>
     <script src="js/actividad119.js"></script>
     <script type="text/javascript">
     var titulos = 'evaluacion';
     $("#txtNota").html("0");
     $("#n_pagina").html("48");
-
-    /* var limpiar = document.getElementById("limpiar");
-     var canvas = document.getElementById("canvas");
-     var ctx = canvas.getContext("2d");
-     var cw = canvas.width = 339,
-         cx = cw / 2;
-     var ch = canvas.height = 227,
-         cy = ch / 2;
-
-     var dibujar = false;
-     var factorDeAlisamiento = 5;
-     var Trazados = [];
-     var puntos = [];
-     ctx.lineJoin = "round";
-
-     limpiar.addEventListener('click', function(evt) {
-         dibujar = false;
-         ctx.clearRect(0, 0, cw, ch);
-         Trazados.length = 0;
-         puntos.length = 0;
-     }, false);
-
-
-     canvas.addEventListener('mousedown', function(evt) {
-         dibujar = true;
-         //ctx.clearRect(0, 0, cw, ch);
-         puntos.length = 0;
-         ctx.beginPath();
-
-     }, false);
-
-     canvas.addEventListener('mouseup', function(evt) {
-         redibujarTrazados();
-     }, false);
-
-     canvas.addEventListener("mouseout", function(evt) {
-         redibujarTrazados();
-     }, false);
-
-     canvas.addEventListener("mousemove", function(evt) {
-         if (dibujar) {
-             var m = oMousePos(canvas, evt);
-             puntos.push(m);
-             ctx.lineTo(m.x, m.y);
-             ctx.stroke();
-         }
-     }, false);
-
-
-
-
-
-     function reducirArray(n, elArray) {
-         var nuevoArray = [];
-         nuevoArray[0] = elArray[0];
-         for (var i = 0; i < elArray.length; i++) {
-             if (i % n == 0) {
-                 nuevoArray[nuevoArray.length] = elArray[i];
-             }
-         }
-         nuevoArray[nuevoArray.length - 1] = elArray[elArray.length - 1];
-         Trazados.push(nuevoArray);
-     }
-
-     function calcularPuntoDeControl(ry, a, b) {
-         var pc = {}
-         pc.x = (ry[a].x + ry[b].x) / 2;
-         pc.y = (ry[a].y + ry[b].y) / 2;
-         return pc;
-     }
-
-     function alisarTrazado(ry) {
-         if (ry.length > 1) {
-             var ultimoPunto = ry.length - 1;
-             ctx.beginPath();
-             ctx.moveTo(ry[0].x, ry[0].y);
-             for (i = 1; i < ry.length - 2; i++) {
-                 var pc = calcularPuntoDeControl(ry, i, i + 1);
-                 ctx.quadraticCurveTo(ry[i].x, ry[i].y, pc.x, pc.y);
-             }
-             ctx.quadraticCurveTo(ry[ultimoPunto - 1].x, ry[ultimoPunto - 1].y, ry[ultimoPunto].x, ry[ultimoPunto].y);
-             ctx.stroke();
-         }
-     }
-
-
-     function redibujarTrazados() {
-         dibujar = false;
-         ctx.clearRect(0, 0, cw, ch);
-         reducirArray(factorDeAlisamiento, puntos);
-         for (var i = 0; i < Trazados.length; i++)
-             alisarTrazado(Trazados[i]);
-     }
-
-     function oMousePos(canvas, evt) {
-         var ClientRect = canvas.getBoundingClientRect();
-         return { //objeto
-             x: Math.round(evt.clientX - ClientRect.left),
-             y: Math.round(evt.clientY - ClientRect.top)
-         }
-     }*/
     </script>
 </body>
 
