@@ -475,7 +475,7 @@ function contarRespCorrectaDnD() {
 }
 
 function calcularNotaGeneral(total_nota, r_correctas, op_seleccionadas, total_preguntas) {
-    var result_sobre = 10;
+    var result_sobre = 1;
     //var tiempoReload=4000; //en milisegundos
 
     if (op_seleccionadas < total_nota) {
@@ -513,8 +513,8 @@ function calcularTotal() {
         pregunta4();
         pregunta5();
         pregunta6();
-        contarRespCorrectaDnD();
-        pregunta10();
+        pregunta7();
+        contarRespCorrectaDnD();     
         var nota11_1 = document.getElementById('nota1_1').value;
         var nota11_2 = document.getElementById('nota1_2').value;
         var nota11_3 = document.getElementById('nota1_3').value;
