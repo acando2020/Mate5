@@ -479,6 +479,8 @@ function calcularNotaGeneral(total_nota, r_correctas, op_seleccionadas, total_pr
     //var tiempoReload=4000; //en milisegundos
 
     if (op_seleccionadas < total_nota) {
+        var calculo = 0;
+        $('#nota1_10').val(calculo.toFixed(2) + ' ');
         alert('Debe escoger ' + total_nota + ' respuestas de la pregunta');
 
     } else {
@@ -514,7 +516,7 @@ function calcularTotal() {
         pregunta5();
         pregunta6();
         pregunta7();
-        contarRespCorrectaDnD();     
+        contarRespCorrectaDnD();
         var nota11_1 = document.getElementById('nota1_1').value;
         var nota11_2 = document.getElementById('nota1_2').value;
         var nota11_3 = document.getElementById('nota1_3').value;
