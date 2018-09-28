@@ -14,6 +14,10 @@
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/fraccion.css" rel="stylesheet">
     <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
 </head>
 <style type="text/css">
 .cajas {
@@ -42,6 +46,16 @@
     border-right-style: solid;
     border-color: #1a75ff;
     color: #1a75ff;
+}
+
+.saltos2 {
+    text-align: center;
+    border: 1px solid #C3C7C3;
+    border-bottom: 1px solid #85BCEB;
+    border-radius: 15px;
+
+
+    width: 100px;
 }
 
 
@@ -89,9 +103,8 @@
 }
 
 input {
-
+    text-align: center;
     border: 0;
-    border-bottom: 1px solid #85BCEB;
     width: 30px;
 }
 
@@ -171,14 +184,6 @@ input {
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
         Lee cuidadosamente las preguntas, contesta cada una de ellas.
         <br>
-        <b>1., 6. y 7.</b> Selecciona la respuesta correcta haciendo click en el literal correspondiente.
-        <br>
-        <b>4.</b> Hacer click en los cuadros del gráfico para seleccionar y pintar según corresponda.
-        <br>
-        <b>10.</b> Selecciona la respuesta.
-        <br>
-        <b>11.</b> Utiliza la herramienta de dibujo para realizar el literal c) y d)
-        <br>
         <span id="ayudas"></span>
     </div>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -217,7 +222,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="pregunta1()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="NotaFinal()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -257,11 +262,11 @@ input {
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <input type="text" maxlength="4" size="" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota1" readonly>&nbsp; <b>1. Encuentra</b> <span class="sobre">1 pts</span>
+                                    <input type="text" maxlength="4" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota1" readonly>&nbsp; <b>1. Encuentra</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
                                 <div class="col-md-12 ">
                                     <div class="text-question">
@@ -301,7 +306,7 @@ input {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
                                 <div class="col-md-12 ">
                                     <div class="text-question">
@@ -310,24 +315,58 @@ input {
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="col-lg-6">
-                                                    <table>
+                                                    <table class="">
                                                         <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
+                                                            <td style="background: #f7bdc2; border-radius: 10px 0px 10px 0px;">Sucesión:</td>
+                                                            <td id="act2_1"></td>
+                                                            <td id="act2_2"></td>
+                                                            <td id="act2_3"></td>
+                                                            <td>
+                                                                <input id="act2num0" type="number" class="form-control" placeholder="0">
+                                                            </td>
+                                                            <td>
+                                                                <input id="act2num1" type="number" class="form-control" placeholder="0">
+                                                            </td>
+                                                            <td>
+                                                                <input id="act2num2" type="number" class="form-control" placeholder="0">
+                                                            </td>
+                                                            <td id="act2_7"></td>
                                                         </tr>
                                                     </table>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <table>
-                                                        <tr></tr>
+                                                    <table class="">
+                                                        <tr>
+                                                            <td style="background: #c1dba4; border-radius: 10px 0px 10px 0px;">Patrón:</td>
+                                                            <td>x
+                                                                <input id="act2num3" class="inputfraccciones" placeholder="0" style=" border-radius: 10px 0px 10px 0px;border: 1px solid #42a434"></input>
+                                                            </td>
+                                                        </tr>
                                                     </table>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td><span id="act2_8"></span>
+                                                            <input class="inputfraccciones"></input>
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" placeholder="0×0=0"></input>
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" placeholder="0×0=0"></input>
+                                                        </td>
+                                                        <td><span id="act2_9"></span>
+                                                            <input class="inputfraccciones"></input>
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" placeholder="0÷0=0"></input>
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -342,31 +381,413 @@ input {
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
                                     aria-controls="collapseThree">
                                  <input type="text" maxlength="" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota3" readonly>&nbsp;
-                                    <b>3. Analiza</b> <span class="sobre">1 pts</span>
+                                    <b>3. Realiza</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
                                 <div class="text-question">
-                                    <span><b>3. Analiza</b> y <b>completa</b> la tabla.</span>
-                                    <table class="table">
-                                        <tr>
-                                            <td style="background: #a7d9f4;">Situación</td>
-                                            <td style="background: #fcedd4;">Fracción</td>
-                                            <td style="background: #e2c9da;">Representación gráfica</td>
-                                        </tr>
-                                        <tr class="act3class" id="act03Txt0">
-                                        </tr>
-                                        <tr class="act3class" id="act03Txt1">
-                                        </tr>
-                                        <tr class="act3class" id="act03Txt2">
-                                        </tr>
-                                        <tr class="act3class" id="act03Txt3">
-                                        </tr>
-                                        <tr class="act3class" id="act03Txt4">
-                                        </tr>
-                                    </table>
+                                    <span><b>3. Realiza</b> las siguientes multiplicaciones.</span>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-3 col-xs-12">
+                                                <div style="float: left;width: 100%">
+                                                    <div style="float: left;width: 10%"><b style="color: #005ca4;">a)</b>
+                                                        <br>×
+                                                        <br>
+                                                        <br>+</div>
+                                                    <div style="float: left;width: 90%">
+                                                        <table class="table-bordered">
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num1" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num2" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num3" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num4" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num5" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-top: 2px solid #393939;" id="producto1">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr id="producto2">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="" readonly="readonly">
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-top: 2px solid #393939;" id="resultado1" class="prod">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                            </div>
+                                            <div class="col-lg-3 col-xs-12">
+                                                <div style="float: left;width: 100%">
+                                                    <div style="float: left;width: 10%"><b style="color: #005ca4;">b)</b>
+                                                        <br>×
+                                                        <br>
+                                                        <br>+</div>
+                                                    <div style="float: left;width: 90%">
+                                                        <table class="table-bordered">
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="text" readonly="readonly" class="inputMult" id="num6" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" readonly="readonly" class="inputMult" id="num7" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" readonly="readonly" class="inputMult" id="num8" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" readonly="readonly" class="inputMult" id="num9" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="text" readonly="readonly" maxlength="1" class="inputMult" id="num10" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" readonly="readonly" maxlength="1" class="inputMult" id="num11" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-top: 2px solid #393939;" id="producto2_1">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr id="producto2_2">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="" readonly="readonly">
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-top: 2px solid #393939;" id="resultado2">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                            </div>
+                                            <div class="col-lg-3 col-xs-12">
+                                                <div style="float: left;width: 100%">
+                                                    <div style="float: left;width: 10%"><b style="color: #005ca4;">c)</b>
+                                                        <br>×
+                                                        <br>
+                                                        <br>+</div>
+                                                    <div style="float: left;width: 90%">
+                                                        <table class="table-bordered">
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num12" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num13" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num14" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num15" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num16" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num17" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-top: 2px solid #393939;" id="producto3_1">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr id="producto3_2">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="" readonly="readonly">
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-top: 2px solid #393939;" id="resultado3">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                            </div>
+                                            <div class="col-lg-3 col-xs-12">
+                                                <div style="float: left;width: 100%">
+                                                    <div style="float: left;width: 10%"><b style="color: #005ca4;">d)</b>
+                                                        <br>×
+                                                        <br>
+                                                        <br>+</div>
+                                                    <div style="float: left;width: 90%">
+                                                        <table class="table-bordered">
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num18" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num19" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num20" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num21" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num22" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" readonly="readonly" class="inputMult" id="num23" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-top: 2px solid #393939;" id="producto4_1">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr id="producto4_2">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="" readonly="readonly">
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-top: 2px solid #393939;" id="resultado4">
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" maxlength="1" class="inputMult" name="">
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <br>
                             </div>
@@ -377,264 +798,29 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
                                     aria-controls="collapseFour">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota4" readonly>&nbsp;<b>4. Resuelve</b> <span class="sobre">1 pts</span>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota4" readonly>&nbsp;<b>4. Relaciona</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                             <div class="panel-body">
                                 <div class="text-question">
-                                    <b>4. Resuelve</b> con ayuda de un gráfico. <b>Pinta</b> en el gráfico la respuesta.
-                                    <div class="row">
-                                        <ol type="a">
-                                            <div class="col-lg-12">
-                                                <div class="col-lg-4">
-                                                    <table class="table">
-                                                        <tr>
-                                                            <td><b style="color: #005CA9"><li></li></b></td>
-                                                            <td>¿Qué parte de 7 es 3?</td>
-                                                        </tr>
-                                                        <tr id="tr1">
-                                                            <td colspan="2">
-                                                                <table>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc vacio" readonly></input>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2">
-                                                                <div class="eq-c">
-                                                                    <span style="color:#00a4e2;">R.</span>
-                                                                    <div class="fraction">
-                                                                        <span class="fup"><input class="inputfraccciones" id="act4num0"></input></span>
-                                                                        <span class="bar">/</span>
-                                                                        <span class="fdn"><input class="inputfraccciones" id="act4num1"></input></span>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <table class="table">
-                                                        <tr>
-                                                            <td> <b style="color: #005CA9"><li></li></b></td>
-                                                            <td>En una fiesta se encuentran
-                                                                <div class="fraction">
-                                                                    <span class="fup">1</span>
-                                                                    <span class="bar">/</span>
-                                                                    <span class="fdn">3</span>
-                                                                </div> de mujeres. ¿Cuál es la fracción que representa los hombres?</td>
-                                                        </tr>
-                                                        <tr id="tr2">
-                                                            <td colspan="2">
-                                                                <table>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc1 vacio" readonly></input>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2">
-                                                                <div class="eq-c">
-                                                                    <span style="color:#00a4e2;">R.</span>
-                                                                    <div class="fraction">
-                                                                        <span class="fup"><input class="inputfraccciones" id="act4num2"></input></span>
-                                                                        <span class="bar">/</span>
-                                                                        <span class="fdn"><input class="inputfraccciones" id="act4num3"></input></span>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <table class="table">
-                                                        <tr>
-                                                            <td> <b style="color: #005CA9"><li></li></b></td>
-                                                            <td>Un trabajador hace
-                                                                <div class="fraction">
-                                                                    <span class="fup">6</span>
-                                                                    <span class="bar">/</span>
-                                                                    <span class="fdn">10</span>
-                                                                </div> de una obra ¿cuál es la fracción de la obra que falta?</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2" id="tr3">
-                                                                <table>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                        <td>
-                                                                            <input class="inputfraccciones enc2 vacio" readonly></input>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2">
-                                                                <div class="eq-c">
-                                                                    <span style="color:#00a4e2;">R.</span>
-                                                                    <div class="fraction">
-                                                                        <span class="fup"><input class="inputfraccciones" id="act4num4"></input></span>
-                                                                        <span class="bar">/</span>
-                                                                        <span class="fdn"><input class="inputfraccciones" id="act4num5"></input></span>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </ol>
-                                    </div>
+                                    <b>4. Relaciona</b> los planteamientos con las operaciones que se deben realizar para obtener el resultado. <b>Observa</b> el ejemplo.
+                                    <img class="img-responsive" src="img/i1_p92_act120.jpg"></img>
+                                    <table class="table">
+                                        <tr>
+                                            <td><b style="color: #005ca4;">R. </b>1c;</td>
+                                            <td>2
+                                                <input class="text-lowercase sinEspacios" maxlength="1" id="act4num0" type="" name="" style="border-bottom: 1px solid #51D8FF">;</td>
+                                            <td>3
+                                                <input class="text-lowercase sinEspacios" maxlength="1" id="act4num1" type="" name="" style="border-bottom: 1px solid #51D8FF">;</td>
+                                            <td>4
+                                                <input class="text-lowercase sinEspacios" maxlength="1" id="act4num2" type="" name="" style="border-bottom: 1px solid #51D8FF">;</td>
+                                            <td>5
+                                                <input class="text-lowercase sinEspacios" maxlength="1" id="act4num3" type="" name="" style="border-bottom: 1px solid #51D8FF">
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <br>
                             </div>
@@ -645,66 +831,160 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false"
                                     aria-controls="collapseFive">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota5" readonly>&nbsp;<b>5. Compara</b> <span class="sobre">1 pts</span>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota5" readonly>&nbsp;<b>5. Encuentra</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                             <div class="panel-body">
                                 <div class="text-question">
-                                    <b>5. Compara</b> cada par de fracciones y <b>escribe</b> >,
-                                    < o=, según corresponda. <ol type="a">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="col-lg-6 act5class" id="act05Txt0">
-                                                </div>
-                                                <div class="col-lg-6 act5class" id="act05Txt1">
-                                                </div>
+                                    <b>5. Encuentra</b> el producto de las siguientes multiplicaciones.
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <br>
+                                            <div class="col-lg-4">
+                                                <span><b style="color: #005ca4;">a)</b><span id="act5_1"></span>
+                                                <input type="number" class="saltos2" id="act5num0"></input>
+                                                </span>
+                                                <br>
+                                                <br>
+                                                <span><b style="color: #005ca4;">b)</b><span id="act5_2"></span>
+                                                <input type="number" class="saltos2" id="act5num1"></input>
+                                                </span>
+                                                <br>
+                                                <br>
+                                                <span><b style="color: #005ca4;">c)</b><span id="act5_3"></span>
+                                                <input type="number" class="saltos2" id="act5num2"></input>
+                                                </span>
+                                                <br>
+                                                <br>
                                             </div>
-                                            <div class="col-lg-12">
-                                                <div class="col-lg-6 act5class" id="act05Txt2">
-                                                </div>
-                                                <div class="col-lg-6 act5class" id="act05Txt3">
-                                                </div>
+                                            <div class="col-lg-4">
+                                                <span><b style="color: #005ca4;">d)</b><span id="act5_4"></span>
+                                                <input type="number" class="saltos2" id="act5num3"></input>
+                                                </span>
+                                                <br>
+                                                <br>
+                                                <span><b style="color: #005ca4;">e)</b><span id="act5_5"></span>
+                                                <input type="number" class="saltos2" id="act5num4"></input>
+                                                </span>
+                                                <br>
+                                                <br>
+                                                <span><b style="color: #005ca4;">f)</b><span id="act5_6"></span>
+                                                <input type="number" class="saltos2" id="act5num5"></input>
+                                                </span>
+                                                <br>
+                                                <br>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <span><b style="color: #005ca4;">g)</b><span id="act5_7"></span>
+                                                <input type="number" class="saltos2" id="act5num6"></input>
+                                                </span>
+                                                <br>
+                                                <br>
+                                                <span><b style="color: #005ca4;">h)</b><span id="act5_8"></span>
+                                                <input type="number" class="saltos2" id="act5num7"></input>
+                                                </span>
+                                                <br>
+                                                <br>
+                                                <span><b style="color: #005ca4;">i)</b><span id="act5_9"></span>
+                                                <input type="number" class="saltos2" id="act5num8"></input>
+                                                </span>
+                                                <br>
+                                                <br>
                                             </div>
                                         </div>
-                                        </ol>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <img class="img-responsive" src="img/estadisticas.png"></img>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingSix">
                             <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
                                         aria-controls="collapseSix">
-                                        <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota6" readonly>&nbsp;<b>6. representación decimal</b> <span class="sobre">0,5 pts</span>
+                                        <input type="text" maxlength="4" size="2" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota6" readonly>&nbsp;<b>6. Completa</b> <span class="sobre">1 pts</span>
                                     </a>
                                 </h4>
                         </div>
-                        <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                        <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSix">
                             <div class="panel-body">
                                 <div class="text-question">
-                                    <b>6. </b>La representación decimal de la fracción -
-                                    <div class="fraction">
-                                        <span class="fup">4</span>
-                                        <span class="bar">/</span>
-                                        <span class="fdn">3</span>
-                                    </div>
-                                    <ol type="a">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="col-lg-3 act6class" id="act06Txt0">
-                                                </div>
-                                                <div class="col-lg-3 act6class" id="act06Txt1">
-                                                </div>
-                                                <div class="col-lg-3 act6class" id="act06Txt2">
-                                                </div>
-                                                <div class="col-lg-3 act6class" id="act06Txt3">
-                                                </div>
+                                    <b>6. </b>Al acercarse las vacaciones, Matías hace una encuesta a 20 compañeros para conocer la preferencia de los lugares para vacacionar. El resultado de la encuesta es: playa, 13; Galápagos, 3; región Amazónica, 2; y paseo en el Tren Crucero, 2.
+                                    <br>
+                                    <br> Con los datos de la encuesta de Matías, <b>completa</b> la tabla de conteo y frecuencia y <b>elabora</b> un diagrama de barras horizontales y uno de barras verticales.
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6">
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <td style="background: #0abbe6; color: white;">Lugares preferidos</td>
+                                                        <td style="background: #41b497; color: white;">Conteo</td>
+                                                        <td style="background: #c59bc8; color: white;">Frecuencia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="background: #ebf6fb;">Playa (P)</td>
+                                                        <td>
+                                                            <input id="act6num0" class="form-control" onkeypress="return soloNumeros2(event)"></input>
+                                                        </td>
+                                                        <td>
+                                                            <input id="act6num1" class="form-control"></input>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="background: #ebf6fb;">Galápagos (G)</td>
+                                                        <td>
+                                                            <input id="act6num2" class="form-control" onkeypress="return soloNumeros2(event)"></input>
+                                                        </td>
+                                                        <td>
+                                                            <input id="act6num3" class="form-control"></input>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="background: #ebf6fb;">Amazonía (A)</td>
+                                                        <td>
+                                                            <input id="act6num4" class="form-control" onkeypress="return soloNumeros2(event)"></input>
+                                                        </td>
+                                                        <td>
+                                                            <input id="act6num5" class="form-control"></input>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="background: #ebf6fb;">Tren crucero (T)</td>
+                                                        <td>
+                                                            <input id="act6num6" class="form-control" onkeypress="return soloNumeros2(event)"></input>
+                                                        </td>
+                                                        <td>
+                                                            <input id="act6num7" class="form-control"></input>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="background: #e4d1e8;">Total</td>
+                                                        <td></td>
+                                                        <td>
+                                                            <input id="act6num8" class="form-control"></input>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="col-lg-6"><img class="img-responsive" src="img/i2_p92_act120.jpg"></img>
                                             </div>
                                         </div>
-                                    </ol>
+                                    </div>
+                                    <div class="my-drawing"></div>
+                                    A partir de la observación del gráfico, responde las preguntas.
+                                    <br>
+                                    <br>
+                                    <b style="color: #005ca4;">a)</b> ¿Cuántas personas fueron encuestadas por Matías?
+                                    <input class="form-control"></input>
+                                    <b style="color: #005ca4;">b)</b> ¿Qué lugar fue el preferido?
+                                    <input class="form-control"></input>
+                                    <b style="color: #005ca4;">c)</b> ¿Qué lugares tuvieron la misma votación?
+                                    <input class="form-control"></input>
+                                    <b style="color: #005ca4;">d)</b> ¿Qué lugar del Ecuador te gustaría conocer?
+                                    <input class="form-control"></input>
                                 </div>
                                 <br>
                             </div>
@@ -715,183 +995,24 @@ input {
                             <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false"
                                         aria-controls="collapseSeven">
-                                        <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota7" >&nbsp;<b>7. La fracción</b> <span class="sobre">0,5 pts</span>
+                                        <input type="text" maxlength="4" size="2" style="text-align:center; background: white;" class="nota-abierta" min="0" max="1" id="nota7" >&nbsp;<b>7. Analiza y responde.</b> <span class="sobre">1 pts</span>
                                     </a>
                                 </h4>
                         </div>
                         <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
                             <div class="panel-body">
                                 <div class="text-question">
-                                    <b>7. </b>La fracción que genera el número 0,7 es:
+                                    <b>7. Analiza y responde.</b>
+                                    <br> ¿En qué caso utilizarías un diagrama de doble barra, como el del gráfico?
                                     <div class="row">
-                                        <ol type="a">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="col-lg-3 act7class" id="act07Txt0">
-                                                    </div>
-                                                    <div class="col-lg-3 act7class" id="act07Txt1">
-                                                    </div>
-                                                    <div class="col-lg-3 act7class" id="act07Txt2">
-                                                    </div>
-                                                    <div class="col-lg-3 act7class" id="act07Txt3">
-                                                    </div>
-                                                </div>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6">
+                                                <textarea name="" class="form-control" style="resize: none;"></textarea>
                                             </div>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingEight">
-                            <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false"
-                                        aria-controls="collapseEight">
-                                        <input type="text" maxlength="4" size="2" style="text-align:center; background: white" class="nota-abierta" min="0" max="1" id="nota8">&nbsp;<b>8. Dados</b> <span class="sobre">1 pts</span>
-                                    </a>
-                                </h4>
-                        </div>
-                        <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
-                            <div class="panel-body">
-                                <div class="text-question">
-                                    <span><b>8. </b>Dados los siguientes números racionales:</span>
-                                    <div class="eq-c">
-                                        <div class="fraction">
-                                            <span class="fup">6</span>
-                                            <span class="bar">/</span>
-                                            <span class="fdn">5</span>
-                                        </div>; -
-                                        <div class="fraction">
-                                            <span class="fup">16</span>
-                                            <span class="bar">/</span>
-                                            <span class="fdn">7</span>
-                                        </div>;
-                                        <div class="fraction">
-                                            <span class="fup">4</span>
-                                            <span class="bar">/</span>
-                                            <span class="fdn">3</span>
-                                        </div>; 24; 5,03
-                                    </div>
-                                    <b style="color: #005CA9">a)</b> <b>Ordena</b> los números dados de menor a mayor.
-                                    <input class="form-control"></input>
-                                    <b style="color: #005CA9">b)</b> ¿Cuál es el número entero más próximo al valor de
-                                    <div class="fraction">
-                                        <span class="fup">4</span>
-                                        <span class="bar">/</span>
-                                        <span class="fdn">3</span>
-                                    </div>?
-                                    <input class="form-control"></input>
-                                    <b style="color: #005CA9">c)</b> <b>Halla</b> la diferencia entre el mayor y el menor de todos los números dados.
-                                    <input class="form-control"></input>
-                                    <b style="color: #005CA9">d)</b> <b>Escribe</b> un número racional que esté ubicado entre
-                                    <div class="fraction">
-                                        <span class="fup">6</span>
-                                        <span class="bar">/</span>
-                                        <span class="fdn">5</span>
-                                    </div> y
-                                    <div class="fraction">
-                                        <span class="fup">4</span>
-                                        <span class="bar">/</span>
-                                        <span class="fdn">3</span>
-                                    </div>
-                                    <input class="form-control"></input>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingNine">
-                            <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false"
-                                        aria-controls="collapseNine">
-                                        <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota9" readonly>&nbsp;<b>9. Realiza</b> <span class="sobre">1 pts</span>
-                                    </a>
-                                </h4>
-                        </div>
-                        <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading Nine">
-                            <div class="panel-body">
-                                <div class="text-question">
-                                    <b>9. Realiza</b> las siguientes operaciones.
-                                    <ol type="a">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="col-lg-6 act9class" id="act09Txt0">
-                                                </div>
-                                                <div class="col-lg-6 act9class" id="act09Txt1">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="col-lg-6 act9class" id="act09Txt2">
-                                                </div>
-                                                <div class="col-lg-6 act9class" id="act09Txt3">
-                                                </div>
+                                            <div class="col-lg-6"><img class="img-responsive" src="img/i4_p92_act120.jpg"></img>
                                             </div>
                                         </div>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <img class="img-responsive" src="img/geometria.png"></img>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingTen">
-                            <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false"
-                                        aria-controls="collapseTen">
-                                        <input type="text" maxlength="4" size="2" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota10" readonly>&nbsp;<b>10. Determina </b> <span class="sobre">1 pts</span>
-
-                                    </a>
-                                </h4>
-                        </div>
-                        <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
-                            <div class="panel-body">
-                                <div class="text-question">
-                                    <b>10. </b>Dado el conjunto N = {2, 4, {8}, 10}, <b>determina</b> si las afirmaciones son verdaderas o falsas.
-                                    <ol type="a">
-                                        <table>
-                                            <tr class="act10class" id="act010Txt0" style="background: #fdf6d9;">
-                                            </tr>
-                                            <tr class="act10class" id="act010Txt1" style="background: #e4edbc;">
-                                            </tr>
-                                            <tr class="act10class" id="act010Txt2" style="background: #fdf6d9;">
-                                            </tr>
-                                            <tr class="act10class" id="act010Txt3" style="background: #e4edbc;">
-                                            </tr>
-                                            <tr class="act10class" id="act010Txt4" style="background: #fdf6d9;">
-                                            </tr>
-                                        </table>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingLeven">
-                            <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseLeven" aria-expanded="false"
-                                        aria-controls="collapseLeven">
-                                        <input type="text" maxlength="4" size="2" style="text-align:center; background: white;" class="nota-abierta" min="0" max="1" id="nota11">&nbsp;<b>11. Dados los conjuntos</b> <span class="sobre">1 pts</span>
-
-                                    </a>
-                                </h4>
-                        </div>
-                        <div id="collapseLeven" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingLeven">
-                            <div class="panel-body">
-                                <div class="text-question">
-                                    <b>11. </b>Dados los conjuntos:
-                                    <br> A = {–5, 0, 1, 3}
-                                    <br> B = {–11, –1, 1, 5}.
-                                    <br>
-                                    <b style="color: #005CA9">a)</b> <b>Determina</b> el producto cartesiano A × B.
-                                    <br>
-                                    <textarea name="" class="form-control" rows="5" style="resize: none;"></textarea>
-                                    <br>
-                                    <b style="color: #005CA9">b)</b> <b>Determina</b> el producto cartesiano B × A. ¿Son los mismos pares ordenados que en el anterior literal? ¿Por qué?
-                                    <br>
-                                    <textarea name="" class="form-control" rows="5" style="resize: none;"></textarea>
-                                    <br>
-                                    <div class="my-drawing"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -949,31 +1070,37 @@ input {
         var titulos = "diagnostico";
         $("#txtNota").html("0");
         $("#n_pagina").html("92");
-        /*
-                $(document).ready(function() {
-                    var winHeight = $(window).height();
-                    var winWidth = $(window).width();
-                    //var imageSize = { width: winHeight , height: winHeight };
-                    var watermarkImage = new Image();
-                    watermarkImage.src = 'img/i1_p101_act101.jpg';
-                    var watermarkImage2 = new Image();
-                    watermarkImage2.src = 'img/i7_p98_act100.jpg';
 
-                    LC.init(
-                        document.getElementsByClassName('my-drawing')[0], {
-                            imageURLPrefix: 'imgcanvas',
+        $(document).ready(function() {
+            var winHeight = $(window).height();
+            var winWidth = $(window).width();
+            //var imageSize = { width: winHeight , height: winHeight };
+            var watermarkImage = new Image();
+            watermarkImage.src = 'img/i3_p92_act120.jpg';
+            //var watermarkImage2 = new Image();
+            //watermarkImage2.src = 'img/i7_p98_act100.jpg';
 
-                            watermarkImage: watermarkImage,
-                            watermarkScale: 0.8, // you can scale it
-                            //imageSize: imageSize
-                            backgroundColor: 'white'
+            LC.init(
+                document.getElementsByClassName('my-drawing')[0], {
+                    imageURLPrefix: 'imgcanvas',
 
-                        });
-
-
+                    watermarkImage: watermarkImage,
+                    watermarkScale: 0.8, // you can scale it
+                    //imageSize: imageSize
+                    backgroundColor: 'white'
 
                 });
-        */
+
+
+
+        });
+
+        function soloNumeros2(e) {
+            var key = window.event ? e.which : e.keyCode;
+            if (key < 108 || key > 108) {
+                e.preventDefault();
+            }
+        }
 
         function sinEspacios(inputs) {
             $(inputs).on('keypress', function(e) {
