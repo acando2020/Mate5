@@ -222,7 +222,7 @@ input {
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="pregunta2()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="NotaFinal()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -310,7 +310,7 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
                                     aria-controls="collapseTwo">
-                                     <input type="text" maxlength="" size="" style="text-align:center; background: white;" class="nota-abierta" min="0" max="1" id="nota2">&nbsp;<b>2. Resuelve</b> <span class="sobre">1 pts</span>
+                                     <input type="text" maxlength="" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota2" readonly>&nbsp;<b>2. Resuelve</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
@@ -350,287 +350,15 @@ input {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
                                 <div class="text-question">
                                     <b>3. Realiza</b> las divisiones y <b>comprueba</b>.
                                     <ol type="a">
                                         <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="col-lg-3">
-                                                    <b style="color: #005ca4"><li></li></b>
-                                                    <table class="table-bordered">
-                                                        <tr>
-                                                            <td></td>
-                                                            <td>5</td>
-                                                            <td>8</td>
-                                                            <td>3</td>
-                                                            <td>0</td>
-                                                            <td style="border-left: 2px solid #000000; border-bottom: 2px solid #000000;">7</td>
-                                                            <td style="border-bottom: 2px solid #000000;"></td>
-                                                            <td style="border-bottom: 2px solid #000000;"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                            <td style="border-bottom: 2px solid #000000;">
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                            <td style="border-bottom: 2px solid #000000;">
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td style="border-left: 2px solid #000000;">
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                            <td></td>
-                                                            <td style="border-left: 2px solid #000000;"></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                            <td style="border-bottom: 2px solid #000000;">
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                            <td style="border-bottom: 2px solid #000000;">
-                                                                <input class="inputDiv soloNumeros" maxlength="1"></input>
-                                                            </td>
-                                                            <td></td>
-                                                            <td style="border-left: 2px solid #000000;"></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td style="border-left: 2px solid #000000;"></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td style="border-bottom: 2px solid #000000;">
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td style="border-bottom: 2px solid #000000;">
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td style="border-left: 2px solid #000000;"></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td style="border-left: 2px solid #000000;"></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <b style="color: #005ca4">Comprobación</b>
-                                                    <table class="table-bordered">
-                                                        <tr>
-                                                            <td></td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="border-bottom: 2px solid #000000;">
-                                                            <td>×</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="border-bottom: 2px solid #000000;">
-                                                            <td>+</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                            <td>
-                                                                <input class="inputDiv soloNumeros" maxlength="1">
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <table>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td>6</td>
-                                                            <td>1</td>
-                                                            <td>3</td>
-                                                            <td>4</td>
-                                                            <td>4</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <div class="col-lg-3"></div>
+                                            <div class="col-lg-12 act3class" id="act03Txt1">
+                                            </div>
+                                            <div class="col-lg-12 act3class" id="act03Txt2">
                                             </div>
                                         </div>
                                     </ol>
@@ -639,19 +367,75 @@ input {
                             </div>
                         </div>
                     </div>
-                    <img class="img-responsive" src="img/problema.png"></img>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingFour">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
                                     aria-controls="collapseFour">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota4" readonly>&nbsp;<b>4. Problema</b> <span class="sobre">1 pts</span>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota4" readonly>&nbsp;<b>4. Realiza</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                             <div class="panel-body">
                                 <div class="text-question">
+                                    Con la ayuda de la calculadora, <b>realiza</b> las siguientes divisiones.
+                                    <ol type="a">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-6">
+                                                    <table>
+                                                        <tr class="act4class" id="act04Txt0">
+                                                        </tr>
+                                                        <tr class="act4class" id="act04Txt1">
+                                                        </tr>
+                                                        <tr class="act4class" id="act04Txt2">
+                                                        </tr>
+                                                        <tr class="act4class" id="act04Txt3">
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <table>
+                                                        <tr class="act4class" id="act04Txt4">
+                                                        </tr>
+                                                        <tr class="act4class" id="act04Txt5">
+                                                        </tr>
+                                                        <tr class="act4class" id="act04Txt6">
+                                                        </tr>
+                                                        <tr class="act4class" id="act04Txt7">
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ol>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/problema.png" alt=""><img src="img/conectoCCNN.png" alt="">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota5" readonly>&nbsp;<b>5. Problema</b> <span class="sobre">1 pts</span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+                            <div class="panel-body">
+                                <div class="text-question">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-8" align="justify">Para participar en las conferencias sobre la importancia de las energías alternativas, se han inscrito 7 360 estudiantes de la localidad. Si se planificaron 8 reuniones con un mismo número de estudiantes, ¿cuántos estudiantes habrá en cada conferencia?
+                                                <input class="form-control" style="border:1px dotted #C200A0"></input>
+                                                <span><b style="color: #005ca4">R.</b> En cada conferencia habrá <input class="inputfraccciones soloNumeros" style="border:0;border-bottom: 1px dotted #00ADE6" id="act5num0"></input> estudiantes.</span></div>
+                                            <div class="col-lg-4"><img src="img/i1_p97_act124.jpg" alt="" class="img-responsive"></div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <br>
                             </div>

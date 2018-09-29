@@ -65,7 +65,7 @@ function pregunta1() {
         }
 
     }
-    var total = (cont * 1) / 10;
+    var total = (cont * 2) / 10;
     $('#nota1').val(parseFloat(total).toFixed(2));
     /*$('#txtNota').html(total.toFixed(2));
      document.getElementById('bt_comprobar').disabled = true;
@@ -379,10 +379,493 @@ function pregunta2() {
         }
 
     }
-    var total = (cont * 1) / 44;
+    var total = (cont * 2) / 44;
     $('#nota2').val(parseFloat(total).toFixed(2));
     /*$('#txtNota').html(total.toFixed(2));
      document.getElementById('bt_comprobar').disabled = true;
      $('input').attr("disabled", true);
      $('#txtAlumno').attr("disabled", false);*/
+}
+////////////pregunta3/////////////////////////////////////
+var random3 = [
+    ['<div class="col-lg-6">' +
+        '<b style="color: #005ca4"><li></li></b>' +
+        '<table class="table-bordered">' +
+        '<tr>' +
+        '<td></td>' +
+        '<td>5</td>' +
+        '<td>8</td>' +
+        '<td>3</td>' +
+        '<td>0</td>' +
+        '<td style="border-left: 2px solid #000000; border-bottom: 2px solid #000000;">7</td>' +
+        '<td style="border-bottom: 2px solid #000000;"></td>' +
+        '<td style="border-bottom: 2px solid #000000;"></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>' +
+        '<input id="act3num0" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num1" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num2" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td style="border-left: 2px solid #000000;">' +
+        '<input id="act3num3" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num4" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num5" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num6" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num7" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '<td></td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num8" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num9" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num10" class="inputDiv soloNumeros" maxlength="1"></input>' +
+        '</td>' +
+        '<td></td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num11" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num12" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num13" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num14" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num15" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num16" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '</table>' +
+        '</div>' +
+        '<div class="col-lg-6">' +
+        '<b style="color: #005ca4">Comprobación</b>' +
+        '<table class="table-bordered">' +
+        '<tr>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num17" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num18" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num19" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '<tr style="border-bottom: 2px solid #000000;">' +
+        '<td>×</td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num20" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>' +
+        '<input id="act3num21" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num22" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num23" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num24" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '<tr style="border-bottom: 2px solid #000000;">' +
+        '<td>+</td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num25" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>' +
+        '<input id="act3num26" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num27" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num28" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num29" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '</table>' +
+        '</div>'
+    ],
+    ['<div class="col-lg-6">  <b style="color: #005ca4"><li></li></b>' +
+        '<table class="table-bordered">' +
+        '<tr>' +
+        '<td></td>' +
+        '<td>6</td>' +
+        '<td>1</td>' +
+        '<td>3</td>' +
+        '<td>4</td>' +
+        '<td style="border-bottom: 2px solid #000000;border-left: 2px solid #000000;">4</td>' +
+        '<td style="border-bottom: 2px solid #000000;"></td>' +
+        '<td style="border-bottom: 2px solid #000000;"></td>' +
+        '<td style="border-bottom: 2px solid #000000;"></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>' +
+        '<input id="act3num30" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num31" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td style="border-left: 2px solid #000000;">' +
+        '<input id="act3num32" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num33" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num34" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num35" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num36" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num37" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>' +
+        '<input id="act3num38" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num39" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num40" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num41" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num42" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td></td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num43" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num44" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num45" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td></td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num46" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num47" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num48" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num49" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-bottom: 2px solid #000000;">' +
+        '<input id="act3num50" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num51" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '</table>' +
+        '</div>' +
+        '<div class="col-lg-6">' +
+        '<b style="color: #005ca4">Comprobación</b>' +
+        '<table class="table-bordered">' +
+        '<tr>' +
+        '<td><input id="act3num52" class="inputDiv soloNumeros" maxlength="1"></td>' +
+        '<td>' +
+        '<input id="act3num53" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num54" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num55" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '<tr style="border-bottom: 2px solid #000000;">' +
+        '<td>×</td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num56" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>' +
+        '<input id="act3num57" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num58" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num59" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num60" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '<tr style="border-bottom: 2px solid #000000;">' +
+        '<td>+</td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
+        '<input id="act3num61" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>' +
+        '<input id="act3num62" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num63" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num64" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '<td>' +
+        '<input id="act3num65" class="inputDiv soloNumeros" maxlength="1">' +
+        '</td>' +
+        '</tr>' +
+        '</table>' +
+        '</div>'
+    ],
+];
+var act03Txt = document.getElementsByClassName('act3class');
+
+random3.sort(f_randomico);
+for (i = 0; i < act03Txt.length; i++) {
+    $('#' + act03Txt[i].id).html(random3[i]);
+}
+
+function pregunta3() {
+    var respact2 = ['-', '5', '6', '8', '3', '2', '2', '3', '-', '2', '1', '2', '0', '-', '1', '4', '6', '8', '3', '2', '7', '5', '8', '2', '4', '6', '5', '8', '3', '0', '-', '4', '1', '5', '3', '3', '2', '1', '-', '2', '0', '1', '3', '-', '1', '2', '1', '4', '-', '1', '2', '2', '1', '5', '3', '3', '4', '6', '1', '3', '2', '2', '6', '1', '3', '4', ];
+    var cont = 0;
+    for (var i = 0; i < 66; i++) {
+        var res = $('#act3num' + [i] + '').val().toLowerCase();
+        if (respact2[i] == res) {
+            cont = cont + 1;
+            $('#act3num' + [i] + '').css("background", "#00e600");
+        } else {
+            $('#act3num' + [i] + '').css("background", "#ff6666");
+        }
+
+    }
+    var total = (cont * 2) / 66;
+    $('#nota3').val(parseFloat(total).toFixed(2));
+    /*$('#txtNota').html(total.toFixed(2));
+     document.getElementById('bt_comprobar').disabled = true;
+     $('input').attr("disabled", true);
+     $('#txtAlumno').attr("disabled", false);*/
+}
+////////////////////pregunta4//////////////////////////////
+var random4 = [
+    ['<td><b style="color: #005ca4"><li></li></b></td> <td>783 ÷ 9 =</td> <td> <input id="act4num0" type="number" class="form-control"> </td>'],
+    ['<td><b style="color: #005ca4"><li></li></b></td> <td>2 720 ÷ 4 =</td> <td> <input id="act4num4" type="number" class="form-control"> </td>'],
+    [' <td><b style="color: #005ca4"><li></li></b></td> <td>1 704 ÷ 8 =</td> <td> <input id="act4num1" type="number" class="form-control"> </td>'],
+    [' <td><b style="color: #005ca4"><li></li></b></td> <td>7 356 ÷ 3 =</td> <td> <input id="act4num6" type="number" class="form-control"> </td>'],
+    ['<td><b style="color: #005ca4"><li></li></b></td> <td>5 160 ÷ 8 =</td> <td> <input id="act4num2" type="number" class="form-control"> </td>'],
+    ['<td><b style="color: #005ca4"><li></li></b></td> <td>6 244 ÷ 2 =</td> <td> <input id="act4num5" type="number" class="form-control"> </td>'],
+    [' <td><b style="color: #005ca4"><li></li></b></td> <td>4 320 ÷ 5 =</td> <td> <input id="act4num3" type="number" class="form-control"> </td>'],
+    ['<td><b style="color: #005ca4"><li></li></b></td> <td>11 124 ÷ 6 =</td> <td> <input id="act4num7" type="number" class="form-control"> </td>'],
+];
+var act04Txt = document.getElementsByClassName('act4class');
+
+random4.sort(f_randomico);
+for (i = 0; i < act04Txt.length; i++) {
+    $('#' + act04Txt[i].id).html(random4[i]);
+}
+
+function pregunta4() {
+    var respact2 = ['87', '213', '645', '864', '680', '3122', '2452', '1854', ];
+    var cont = 0;
+    for (var i = 0; i < 8; i++) {
+        var res = $('#act4num' + [i] + '').val().toLowerCase();
+        if (respact2[i] == res) {
+            cont = cont + 1;
+            $('#act4num' + [i] + '').css("background", "#00e600");
+        } else {
+            $('#act4num' + [i] + '').css("background", "#ff6666");
+        }
+
+    }
+    var total = (cont * 2) / 8;
+    $('#nota4').val(parseFloat(total).toFixed(2));
+    /*$('#txtNota').html(total.toFixed(2));
+     document.getElementById('bt_comprobar').disabled = true;
+     $('input').attr("disabled", true);
+     $('#txtAlumno').attr("disabled", false);*/
+}
+//////////////////////////////////
+function pregunta5() {
+    var nt1 = 0;
+    var act5num0 = document.getElementById('act5num0').value;
+    if (act5num0 == 920) {
+        $('#act5num0').css("background", "#00e600");
+        nt1 = 2;
+    } else {
+        $('#act5num0').css("background", "#ff6666");
+    }
+    $('#nota5').val(parseFloat(nt1).toFixed(2));
+}
+
+
+function NotaFinal() {
+    pregunta1();
+    pregunta2();
+    pregunta3();
+    pregunta4();
+    pregunta5();
+    var nota1 = document.getElementById('nota1').value;
+    var nota2 = document.getElementById('nota2').value;
+    var nota3 = document.getElementById('nota3').value;
+    var nota4 = document.getElementById('nota4').value;
+    var nota5 = document.getElementById('nota5').value;
+
+    var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4) + parseFloat(nota5);
+
+    $('#txtNota').html(total.toFixed(2));
+    document.getElementById('bt_comprobar').disabled = true;
+    $('input').attr("disabled", true);
+    $('#txtAlumno').attr("disabled", false);
+
+
 }
