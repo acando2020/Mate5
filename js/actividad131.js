@@ -89,6 +89,127 @@ function pregunta2() {
 
 }
 //////////////////////////
+random3 = [
+    ['<td><b style="color: #005ca4;"><li></li></b></td>' +
+        '<td>¿Qué sucede cuando se divide 2 000 por 100?</td>' +
+        '<td><select class="form-control" id="sel0">' +
+        '<option>----selecciona----</option>' +
+        '<option>Se quitan dos ceros al dividendo.</option>' +
+        '<option>Se quitan tres ceros al dividendo.</option>' +
+        '</select></td>'
+    ],
+    ['<td><b style="color: #005ca4;"><li></li></b></td>' +
+        '<td>¿Qué sucede cuando se divide 900 por 100?</td>' +
+        '<td><select class="form-control" id="sel1">' +
+        '<option>----selecciona----</option>' +
+        '<option>Se quitan dos ceros al dividendo.</option>' +
+        '<option>Se quitan tres ceros al dividendo.</option>' +
+        '</select></td>'
+    ],
+    [' <td><b style="color: #005ca4;"><li></li></b></td>' +
+        '<td>¿Qué sucede cuando se divide 1 000 por 1 000?</td>' +
+        '<td><select class="form-control" id="sel2">' +
+        '<option>----selecciona----</option>' +
+        '<option>Se quitan dos ceros al dividendo.</option>' +
+        '<option>Se quitan tres ceros al dividendo.</option>' +
+        '</select></td>'
+    ],
+
+];
+var act03Txt = document.getElementsByClassName('act3class');
+
+random3.sort(f_randomico);
+for (i = 0; i < act03Txt.length; i++) {
+    $('#' + act03Txt[i].id).html(random3[i]);
+}
+
+function pregunta3() {
+    var respact2 = ['Se quitan dos ceros al dividendo.', 'Se quitan dos ceros al dividendo.', 'Se quitan tres ceros al dividendo.', ];
+    var cont = 0;
+    for (var i = 0; i < 3; i++) {
+        var res = $('#sel' + [i] + ' option:selected').text();
+        if (respact2[i] == res) {
+            cont = cont + 1;
+            $('#sel' + [i] + '').css("background", "#00e600");
+        } else {
+            $('#sel' + [i] + '').css("background", "#ff6666");
+        }
+
+    }
+    var total = (cont * 2.5) / 3;
+    $('#nota3').val(parseFloat(total).toFixed(2));
+
+}
+//////////////////////////
+random4 = [
+    ['<td><b style="color: #005ca4;"><li></li></b></td>' +
+        '<td>3 190</td>' +
+        '<td>÷</td>' +
+        '<td><input id="act4num0" class="inputfraccciones soloNumeros sinEspacios" style="width: 70px;"></input></td>' +
+        '<td>=</td>' +
+        '<td>319</td>'
+    ],
+    ['<td><b style="color: #005ca4;"><li></li></b></td>' +
+        '<td><input id="act4num1" class="inputfraccciones soloNumeros sinEspacios" style="width: 70px;"></input></td>' +
+        '<td>÷</td>' +
+        '<td>100</td>' +
+        '<td>=</td>' +
+        '<td>597</td>'
+    ],
+    ['<td><b style="color: #005ca4;"><li></li></b></td>' +
+        '<td>8 000</td>' +
+        '<td>÷</td>' +
+        '<td>100</td>' +
+        '<td>=</td>' +
+        '<td><input id="act4num2" class="inputfraccciones soloNumeros sinEspacios" style="width: 70px;"></input></td>'
+    ],
+    [' <td><b style="color: #005ca4;"><li></li></b></td>' +
+        '<td>10 000</td>' +
+        '<td>÷</td>' +
+        '<td><input id="act4num3" class="inputfraccciones soloNumeros sinEspacios" style="width: 70px;"></input></td>' +
+        '<td>=</td>' +
+        '<td>10</td>'
+    ],
+    [' <td><b style="color: #005ca4;"><li></li></b></td>' +
+        '<td><input id="act4num4" class="inputfraccciones soloNumeros sinEspacios" style="width: 70px;"></input></td>' +
+        '<td>÷</td>' +
+        '<td>1000</td>' +
+        '<td>=</td>' +
+        '<td>632</td>'
+    ],
+    [' <td><b style="color: #005ca4;"><li></li></b></td>' +
+        '<td>207 000</td>' +
+        '<td>÷</td>' +
+        '<td><input id="act4num5" class="inputfraccciones soloNumeros sinEspacios" style="width: 70px;"></input></td>' +
+        '<td>=</td>' +
+        '<td>207 000</td>'
+    ],
+
+];
+var act04Txt = document.getElementsByClassName('act4class');
+
+random4.sort(f_randomico);
+for (i = 0; i < act04Txt.length; i++) {
+    $('#' + act04Txt[i].id).html(random4[i]);
+}
+
+function pregunta4() {
+    var respact2 = ['10', '59700', '80', '1000', '632000', '1', ];
+    var cont = 0;
+    for (var i = 0; i < 6; i++) {
+        var res = $('#act4num' + [i] + '').val().toLowerCase();
+        if (respact2[i] == res) {
+            cont = cont + 1;
+            $('#act4num' + [i] + '').css("background", "#00e600");
+        } else {
+            $('#act4num' + [i] + '').css("background", "#ff6666");
+        }
+
+    }
+    var total = (cont * 2.5) / 6;
+    $('#nota4').val(parseFloat(total).toFixed(2));
+
+}
 
 function NotaFinal() {
     pregunta1();

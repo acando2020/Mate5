@@ -256,70 +256,57 @@ input {
             </div>
             <div class="panel-body">
                 <!--pregunats de la actividad-->
-                <img src="img/practica_individual.png" alt="">
+                <img class="img-responsive" src="img/practica_individual.png"></img>
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <input type="text" maxlength="4" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota1" readonly>&nbsp; <b>1. Encuentra</b>
+                                    <input type="text" maxlength="4" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota1" readonly>&nbsp; <b>1. Observa</b>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
                                 <div class="col-md-12 ">
                                     <div class="text-question">
-                                        <b>1. Encuentra</b> mentalmente el cociente y <b>escribe</b> la respuesta.
-                                        <ol type="a">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="col-lg-3">
-                                                        <table>
-                                                            <tr>
-                                                                <td><b style="color: #005ca4;"><li></li></b></td>
-                                                                <td>980 ÷ 1 =</td>
-                                                                <td>980</td>
-                                                            </tr>
-                                                            <tr class="act1class" id="act01Txt0">
-                                                            </tr>
-                                                            <tr class="act1class" id="act01Txt1">
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <table>
-                                                            <tr class="act1class" id="act01Txt2">
-                                                            </tr>
-                                                            <tr class="act1class" id="act01Txt3">
-                                                            </tr>
-                                                            <tr class="act1class" id="act01Txt4">
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <table>
-                                                            <tr class="act1class" id="act01Txt5">
-                                                            </tr>
-                                                            <tr class="act1class" id="act01Txt6">
-                                                            </tr>
-                                                            <tr class="act1class" id="act01Txt7">
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <table>
-                                                            <tr class="act1class" id="act01Txt8">
-                                                            </tr>
-                                                            <tr class="act1class" id="act01Txt9">
-                                                            </tr>
-                                                            <tr class="act1class" id="act01Txt10">
-                                                            </tr>
-                                                        </table>
+                                        <b>1. Observa</b> la funda con las canicas y completa los planteamientos. <br>
+                                        <span><b style="color: #005ca4">a)</b> Dentro de la funda hay <input id="act1num0" class="inputfraccciones"></input> casos posibles.</span><br>
+                                        <span><b style="color: #005ca4">b)</b> Hay <input id="act1num1" class="inputfraccciones"></input> casos posibles de que, al sacar una canica, esta sea de color rojo.</span><br>
+                                        <span><b style="color: #005ca4">c)</b>Las canicas <input id="act1num2" class="inputfraccciones" style="width: 60px;"></input> tienen 5 casos favorables.</span><br>
+                                        <span><b style="color: #005ca4">d)</b> Para las canicas <input id="act1num3" class="inputfraccciones" style="width: 60px;"></input> solo hay <input id="act1num4" class="inputfraccciones"></input> casos favorables.</span><br>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="eq-c"><b style="color: #005ca4">e)</b>
+                                                    P<sub>rojo</sub> =
+                                                    <div class="fraction">
+                                                        <span class="fup"><input id="act1num5" class="inputfraccciones sinEspacios soloNumeros"></input></span>
+                                                        <span class="bar">/</span>
+                                                        <span class="fdn"><input id="act1num6" class="inputfraccciones sinEspacios soloNumeros"></input></span>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </ol>
+                                            <div class="col-lg-4">
+                                                <div class="eq-c">
+                                                    P<sub>azul</sub> =
+                                                    <div class="fraction">
+                                                        <span class="fup"><input id="act1num7" class="inputfraccciones sinEspacios soloNumeros"></input></span>
+                                                        <span class="bar">/</span>
+                                                        <span class="fdn"><input id="act1num8" class="inputfraccciones sinEspacios soloNumeros"></input></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="eq-c">
+                                                    P<sub>verde</sub> =
+                                                    <div class="fraction">
+                                                        <span class="fup"><input id="act1num9" class="inputfraccciones sinEspacios soloNumeros"></input></span>
+                                                        <span class="bar">/</span>
+                                                        <span class="fdn"><input id="act1num10" class="inputfraccciones sinEspacios soloNumeros"></input></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><br>
                                     </div>
                                 </div>
                             </div>
@@ -330,32 +317,72 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
                                     aria-controls="collapseTwo">
-                                     <input type="text" maxlength="" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota2" readonly>&nbsp;<b>2. Completa</b>
+                                     <input type="text" maxlength="" size="" style="text-align:center;background: white;" class="nota-abierta" min="0" max="1" id="nota2">&nbsp;<b>2. Escribe</b>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
                                 <div class="col-md-12 ">
                                     <div class="text-question">
-                                        <b>2. Completa</b> la tabla.
-                                        <table class="table table-bordered" style="text-align: center;">
-                                            <tr>
-                                                <td style="background: #009cc5;color: white;">-----------><br>÷</td>
-                                                <td style="background: #41b497;color: white;">1</td>
-                                                <td style="background: #41b497;color: white;">10</td>
-                                                <td style="background: #41b497;color: white;">100</td>
-                                                <td style="background: #41b497;color: white;">1000</td>
-                                            </tr>
-                                            <tr class="act2class" id="act02Txt0">
-                                            </tr>
-                                            <tr class="act2class" id="act02Txt1">
-                                            </tr>
-                                            <tr class="act2class" id="act02Txt2">
-                                            </tr>
-                                            <tr class="act2class" id="act02Txt3">
-                                            </tr>
-                                        </table>
+                                        <b>2. Escribe</b> <span style="color: #009ed3;">V</span> si es verdadera y <span style="color: #009ed3;">F</span> si es falsa cada expresión.
+                                        <ol type="a">
+                                            <table>
+                                                <tr>
+                                                    <td><b style="color: #005ca4"><li></li></b></td>
+                                                    <td style="background: #ceeaf4;">Los sucesos aleatorios son hechos que se pueden predecir.</td>
+                                                    <td><input class="form-control"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b style="color: #005ca4"><li></li></b></td>
+                                                    <td style="background: #d3eae3;">Al escoger entre los números del 1 al 10, la probabilidad de escoger un número par es <div class="fraction">
+                                                            <span class="fup">5</span>
+                                                            <span class="bar">/</span>
+                                                            <span class="fdn">10</span>
+                                                        </div> o
+                                                        <div class="fraction">
+                                                            <span class="fup">1</span>
+                                                            <span class="bar">/</span>
+                                                            <span class="fdn">2</span>
+                                                        </div>
+                                                    </td>
+                                                    <td><input class="form-control"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b style="color: #005ca4"><li></li></b></td>
+                                                    <td>La probabilidad se expresa como una multiplicación.</td>
+                                                    <td><input class="form-control"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b style="color: #005ca4"><li></li></b></td>
+                                                    <td>Al lanzar un dado, la probabilidad de que salga un número impar es <div class="fraction">
+                                                            <span class="fup">1</span>
+                                                            <span class="bar">/</span>
+                                                            <span class="fdn">6</span>
+                                                        </div>
+                                                    </td>
+                                                    <td><input class="form-control"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b style="color: #005ca4"><li></li></b></td>
+                                                    <td>Al lanzar una moneda, la probabilidad de que resulte cara es <div class="fraction">
+                                                            <span class="fup">1</span>
+                                                            <span class="bar">/</span>
+                                                            <span class="fdn">2</span>
+                                                        </div>.</td>
+                                                    <td><input class="form-control"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b style="color: #005ca4"><li></li></b></td>
+                                                    <td>En una funda hay 37 caramelos de coco y 25 de menta; la probabilidad de sacar un caramelo de menta es <div class="fraction">
+                                                            <span class="fup">25</span>
+                                                            <span class="bar">/</span>
+                                                            <span class="fdn">62</span>
+                                                        </div>.</td>
+                                                    <td><input class="form-control"></input></td>
+                                                </tr>
+                                            </table>
+                                        </ol>
                                     </div>
                                 </div>
                             </div>
@@ -368,7 +395,7 @@ input {
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
                                     aria-controls="collapseThree">
                                  <input type="text" maxlength="" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota3" readonly>&nbsp;
-                                    <b>3. Responde</b>
+                                    <b>3. Resuelve</b>
 
                                 </a>
                             </h4>
@@ -376,22 +403,10 @@ input {
                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
                                 <div class="text-question">
-                                    <b>3. Responde</b> las preguntas.
-                                    <ol type="a">
-                                        <table>
-                                            <tr>
-                                                <td><b style="color: #005ca4;"><li></li></b></td>
-                                                <td>¿Qué sucede cuando se divide 5 430 por 10?</td>
-                                                <td>Se quita un cero al dividendo.</td>
-                                            </tr>
-                                            <tr class="act3class" id="act03Txt0">
-                                            </tr>
-                                            <tr class="act3class" id="act03Txt1">
-                                            </tr>
-                                            <tr class="act3class" id="act03Txt2">
-                                            </tr>
-                                        </table>
-                                    </ol>
+                                    <b>3. Resuelve</b> el problema por sucesiones.<br>
+                                    El abuelo tiene 81 años y el nieto tiene 3 años. Si se divide la edad del abuelo por la edad del nieto, se obtiene la edad del padre. Si se divide la edad del padre por la edad del nieto, se tiene la edad del tío. ¿Qué edad tienen el padre y el tío?
+                                    <br>
+                                    <span><b style="color: #005caa;">R.</b> El padre tiene <input id="act2num5" class="inputfraccciones sinEspacios soloNumeros"></input> años y el tío, <input id="act2num6" class="inputfraccciones sinEspacios soloNumeros"></input>años.</span>
                                 </div>
                             </div>
                         </div>
@@ -401,44 +416,86 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
                                     aria-controls="collapseFour">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota4" readonly>&nbsp;<b>4. Escribe</b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota4" readonly>&nbsp;<b>4. Resuelve</b>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                             <div class="panel-body">
                                 <div class="text-question" align="justify">
-                                    <b>4. Escribe</b> el término que falta en cada división.
-                                    <ol type="a">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="col-lg-4">
-                                                    <table style="text-align: center;">
-                                                        <tr class="act4class" id="act04Txt0">
-                                                        </tr>
-                                                        <tr class="act4class" id="act04Txt1">
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <table style="text-align: center;">
-                                                        <tr class="act4class" id="act04Txt2">
-                                                        </tr>
-                                                        <tr class="act4class" id="act04Txt3">
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <table style="text-align: center;">
-                                                        <tr class="act4class" id="act04Txt4">
-                                                        </tr>
-                                                        <tr class="act4class" id="act04Txt5">
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ol>
+                                    <b>4. Resuelve</b> las siguientes divisiones y <b>comprueba</b> el resultado con la calculadora.
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota5" readonly>&nbsp;<b>5. Resuelve</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                            <div class="panel-body">
+                                <div class="text-question" align="justify">
+                                    <b>5. Resuelve</b> las siguientes divisiones y <b>comprueba</b> el resultado con la calculadora.
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingSix">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
+                                    aria-controls="collapseSix">
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota6" readonly>&nbsp;<b>6. Calcula</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                            <div class="panel-body">
+                                <div class="text-question" align="justify">
+                                    <b>6. Calcula</b> el término desconocido en cada caso. <b>Explica</b> tu estrategia.
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingSeven">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false"
+                                    aria-controls="collapseSeven">
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota7" readonly>&nbsp;<b>7. Realiza</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                            <div class="panel-body">
+                                <div class="text-question" align="justify">
+                                    <b>7. Realiza</b> las siguientes operaciones en forma mental y <b>escribe</b> la respuesta.
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingEigth">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEigth" aria-expanded="false"
+                                    aria-controls="collapseEigth">
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota8" readonly>&nbsp;<b>8. Resuelve</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseEigth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEigth">
+                            <div class="panel-body">
+                                <div class="text-question" align="justify">
+                                    <b>8. Resuelve</b> los problemas con operaciones separadas y con operaciones combinadas
                                 </div>
                                 <br>
                             </div>
@@ -492,11 +549,11 @@ input {
         <script src="js/Utilitario.js"></script>
         <script src="js/validacionesExtras.js"></script>
         <script src="js/dragNdrop.js"></script>
-        <script src="js/actividad131.js"></script>
+        <script src="js/actividad141.js"></script>
         <script type="text/javascript">
         var titulos = "aplico";
         $("#txtNota").html("0");
-        $("#n_pagina").html("105");
+        $("#n_pagina").html("110");
 
         /* $(document).ready(function() {
              var winHeight = $(window).height();
