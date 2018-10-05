@@ -4,11 +4,11 @@ var random1 = [
         '<table class="table-bordered">' +
         '<tr>' +
         '<td></td>' +
-        '<td>3</td>' +
+        '<td>4</td>' +
+        '<td>8</td>' +
         '<td>0</td>' +
-        '<td>6</td>' +
-        '<td style="border-left: 2px solid #000000; border-bottom:2px solid #000000;">9</td>' +
-        '<td style="border-bottom:2px solid #000000;"></td>' +
+        '<td style="border-left: 2px solid #000000; border-bottom:2px solid #000000;">1</td>' +
+        '<td style="border-bottom:2px solid #000000;">5</td>' +
         '<td style="border-bottom:2px solid #000000;"></td>' +
         '</tr>' +
         '<tr>' +
@@ -74,16 +74,16 @@ var random1 = [
     ['<b style="color: #005ca4"><li></li></b>' +
         '<table class="table-bordered">' +
         '<tr>' +
-        '<td></td>' +
+        '<td>1</td>' +
         '<td>2</td>' +
+        '<td>4</td>' +
         '<td>8</td>' +
-        '<td>7</td>' +
-        '<td style="border-left: 2px solid #000000; border-bottom:2px solid #000000;">7</td>' +
-        '<td style="border-bottom:2px solid #000000;"></td>' +
+        '<td style="border-left: 2px solid #000000; border-bottom:2px solid #000000;">9</td>' +
+        '<td style="border-bottom:2px solid #000000;">6</td>' +
         '<td style="border-bottom:2px solid #000000;"></td>' +
         '</tr>' +
         '<tr>' +
-        '<td>' +
+        '<td style="border-bottom:2px solid #000000;">' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num11"></input>' +
         '</td>' +
         '<td style="border-bottom:2px solid #000000;">' +
@@ -103,28 +103,28 @@ var random1 = [
         '</tr>' +
         '<tr>' +
         '<td></td>' +
-        '<td></td>' +
         '<td>' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num16"></input>' +
         '</td>' +
         '<td>' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num17"></input>' +
         '</td>' +
+        '<td> <input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num18"></input></td>' +
         '<td style="border-left: 2px solid #000000;"></td>' +
         '<td></td>' +
         '<td></td>' +
         '</tr>' +
         '<tr>' +
-        '<td></td>' +
-        '<td>' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num18" readonly></input>' +
-        '</td>' +
-        '<td style="border-bottom:2px solid #000000;">' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num19"></input>' +
-        '</td>' +
+        '<td style="border-bottom:2px solid #000000;"><input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num19"></input></td>' +
         '<td style="border-bottom:2px solid #000000;">' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num20"></input>' +
         '</td>' +
+        '<td style="border-bottom:2px solid #000000;">' +
+        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num21"></input>' +
+        '</td>' +
+        '<td style="border-bottom:2px solid #000000;">' +
+        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num22"></input>' +
+        '</td>' +
         '<td style="border-left: 2px solid #000000;"></td>' +
         '<td></td>' +
         '<td></td>' +
@@ -134,7 +134,7 @@ var random1 = [
         '<td></td>' +
         '<td></td>' +
         '<td>' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num21"></input>' +
+        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num23"></input>' +
         '</td>' +
         '<td style="border-left: 2px solid #000000;"></td>' +
         '<td></td>' +
@@ -142,142 +142,76 @@ var random1 = [
         '</tr>' +
         '</table>'
     ],
-    ['<b style="color: #005ca4"><li></li></b>' +
+    [' <b style="color: #005ca4"><li></li></b>' +
         '<table class="table-bordered">' +
         '<tr>' +
         '<td></td>' +
+        '<td>9</td>' +
         '<td>4</td>' +
-        '<td>3</td>' +
         '<td>5</td>' +
-        '<td style="border-left: 2px solid #000000; border-bottom:2px solid #000000;">5</td>' +
-        '<td style="border-bottom:2px solid #000000;"></td>' +
+        '<td>0</td>' +
+        '<td style="border-left: 2px solid #000000; border-bottom:2px solid #000000;">4</td>' +
+        '<td style="border-bottom:2px solid #000000;">5</td>' +
         '<td style="border-bottom:2px solid #000000;"></td>' +
         '</tr>' +
         '<tr>' +
         '<td>' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num22"></input>' +
-        '</td>' +
-        '<td style="border-bottom:2px solid #000000;">' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num23"></input>' +
-        '</td>' +
-        '<td style="border-bottom:2px solid #000000;">' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num24"></input>' +
         '</td>' +
-        '<td></td>' +
-        '<td style="border-left: 2px solid #000000;">' +
+        '<td style="border-bottom:2px solid #000000;">' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num25"></input>' +
         '</td>' +
-        '<td>' +
+        '<td style="border-bottom:2px solid #000000;">' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num26"></input>' +
         '</td>' +
         '<td></td>' +
-        '</tr>' +
-        '<tr>' +
         '<td></td>' +
-        '<td></td>' +
-        '<td>' +
+        '<td style="border-left: 2px solid #000000;">' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num27"></input>' +
         '</td>' +
         '<td>' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num28"></input>' +
         '</td>' +
-        '<td style="border-left: 2px solid #000000;"></td>' +
-        '<td></td>' +
-        '<td></td>' +
+        '<td><input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num29"></input></td>' +
         '</tr>' +
         '<tr>' +
         '<td></td>' +
-        '<td style="border-bottom:2px solid #000000;">' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num29"></input>' +
-        '</td>' +
-        '<td style="border-bottom:2px solid #000000;">' +
+        '<td></td>' +
+        '<td>' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num30"></input>' +
         '</td>' +
-        '<td style="border-bottom:2px solid #000000;">' +
+        '<td>' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num31"></input>' +
         '</td>' +
+        '<td></td>' +
         '<td style="border-left: 2px solid #000000;"></td>' +
         '<td></td>' +
         '<td></td>' +
         '</tr>' +
         '<tr>' +
         '<td></td>' +
-        '<td></td>' +
-        '<td></td>' +
-        '<td>' +
+        '<td style="border-bottom:2px solid #000000;">' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num32"></input>' +
         '</td>' +
-        '<td style="border-left: 2px solid #000000;"></td>' +
-        '<td></td>' +
-        '<td></td>' +
-        '</tr>' +
-        '</table>'
-    ],
-    ['<b style="color: #005ca4"><li></li></b>' +
-        '<table class="table-bordered">' +
-        '<tr>' +
-        '<td></td>' +
-        '<td>5</td>' +
-        '<td>2</td>' +
-        '<td>0</td>' +
-        '<td style="border-left: 2px solid #000000; border-bottom:2px solid #000000;">8</td>' +
-        '<td style="border-bottom:2px solid #000000;"></td>' +
-        '<td style="border-bottom:2px solid #000000;"></td>' +
-        '</tr>' +
-        '<tr>' +
-        '<td>' +
+        '<td style="border-bottom:2px solid #000000;">' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num33"></input>' +
         '</td>' +
         '<td style="border-bottom:2px solid #000000;">' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num34"></input>' +
         '</td>' +
-        '<td style="border-bottom:2px solid #000000;">' +
+        '<td></td>' +
+        '<td style="border-left: 2px solid #000000;"></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>' +
+        '<td>' +
         '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num35"></input>' +
         '</td>' +
-        '<td></td>' +
-        '<td style="border-left: 2px solid #000000;">' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num36"></input>' +
-        '</td>' +
-        '<td>' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num37"></input>' +
-        '</td>' +
-        '<td></td>' +
-        '</tr>' +
-        '<tr>' +
-        '<td></td>' +
-        '<td></td>' +
-        '<td>' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num38"></input>' +
-        '</td>' +
-        '<td>' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num39"></input>' +
-        '</td>' +
-        '<td style="border-left: 2px solid #000000;"></td>' +
-        '<td></td>' +
-        '<td></td>' +
-        '</tr>' +
-        '<tr>' +
-        '<td></td>' +
-        '<td style="border-bottom:2px solid #000000;">' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num40"></input>' +
-        '</td>' +
-        '<td style="border-bottom:2px solid #000000;">' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num41"></input>' +
-        '</td>' +
-        '<td style="border-bottom:2px solid #000000;">' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num42"></input>' +
-        '</td>' +
-        '<td style="border-left: 2px solid #000000;"></td>' +
-        '<td></td>' +
-        '<td></td>' +
-        '</tr>' +
-        '<tr>' +
-        '<td></td>' +
-        '<td></td>' +
-        '<td></td>' +
-        '<td>' +
-        '<input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num43"></input>' +
-        '</td>' +
+        '<td> <input class="inputDiv soloNumeros sinEspacios" maxlength="1" id="act1num36"></input></td>' +
         '<td style="border-left: 2px solid #000000;"></td>' +
         '<td></td>' +
         '<td></td>' +
@@ -293,9 +227,9 @@ for (i = 0; i < act01Txt.length; i++) {
 }
 
 function pregunta1() {
-    var respact2 = ['-', '2', '7', '3', '4', '3', '6', '-', '3', '6', '0', '-', '2', '8', '4', '1', '0', '7', '', '-', '7', '0', '-', '4', '0', '8', '7', '3', '5', '-', '3', '5', '0', '-', '4', '8', '6', '5', '4', '0', '-', '4', '0', '0', ];
+    var respact2 = ['-', '4', '5', '3', '2', '3', '0', '-', '3', '0', '0', '-', '9', '6', '5', '3', '2', '8', '8', '-', '2', '8', '8', '0', '-', '9', '0', '2', '1', '0', '4', '5', '-', '4', '5', '0', '0', ];
     var cont = 0;
-    for (var i = 0; i < 44; i++) {
+    for (var i = 0; i < 37; i++) {
         var res = $('#act1num' + [i] + '').val().toLowerCase();
         if (respact2[i] == res) {
             cont = cont + 1;
@@ -305,7 +239,7 @@ function pregunta1() {
         }
 
     }
-    var total = (cont * 2.5) / 44;
+    var total = (cont * 2.5) / 37;
     $('#nota1').val(parseFloat(total).toFixed(2));
     /*$('#txtNota').html(total.toFixed(2));
      document.getElementById('bt_comprobar').disabled = true;
