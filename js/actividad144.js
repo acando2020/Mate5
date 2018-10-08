@@ -469,13 +469,14 @@ function pregunta3() {
      $('input').attr("disabled", true);
      $('#txtAlumno').attr("disabled", false);*/
 }
-///////////////////////pregunta4/////////
-random4 = [
+/////////////pregunta4//////////////////////////
+var random4 = [
     ['<table> <tr> <td><b style="color: #005ca4"><li></li></b></td> <td>5 863 ÷ 13 =</td> <td><input class="inputfraccciones sinEspacios soloNumeros" id="act4num0"></input></td> </tr> </table>'],
-    [' <table> <tr> <td><b style="color: #005ca4"><li></li></b></td> <td>8 085 ÷ 21 =</td> <td><input class="inputfraccciones sinEspacios soloNumeros" id="act4num1"></input></td> </tr> </table>'],
-    [' <table> <tr> <td><b style="color: #005ca4"><li></li></b></td> <td>7 968 ÷ 83 =</td> <td><input class="inputfraccciones sinEspacios soloNumeros" id="act4num2"></input></td> </tr> </table>'],
-    [' <table> <tr> <td><b style="color: #005ca4"><li></li></b></td> <td>46 224 ÷ 54 =</td> <td><input class="inputfraccciones sinEspacios soloNumeros" id="act4num3"></input></td> </tr> </table>'],
+    ['<table> <tr> <td><b style="color: #005ca4"><li></li></b></td> <td>8 085 ÷ 21 =</td> <td><input class="inputfraccciones sinEspacios soloNumeros" id="act4num1"></input></td> </tr> </table>'],
+    ['<table> <tr> <td><b style="color: #005ca4"><li></li></b></td> <td>7 968 ÷ 83 =</td> <td><input class="inputfraccciones sinEspacios soloNumeros" id="act4num2"></input></td> </tr> </table>'],
+    ['<table> <tr> <td><b style="color: #005ca4"><li></li></b></td> <td>46 224 ÷ 54 =</td> <td><input class="inputfraccciones sinEspacios soloNumeros" id="act4num3"></input></td> </tr> </table>']
 ];
+
 var act04Txt = document.getElementsByClassName('act4class');
 
 random4.sort(f_randomico);
@@ -484,7 +485,7 @@ for (i = 0; i < act04Txt.length; i++) {
 }
 
 function pregunta4() {
-    var respact2 = ['451', '385', '96', '856', ]
+    var respact2 = ['451', '385', '96', '856', ];
     var cont = 0;
     for (var i = 0; i < 4; i++) {
         var res = $('#act4num' + [i] + '').val().toLowerCase();
@@ -503,19 +504,120 @@ function pregunta4() {
      $('input').attr("disabled", true);
      $('#txtAlumno').attr("disabled", false);*/
 }
+////////////////////////pregunta5//////////////////
+var random5 = [
+    [' <td><b style="color: #005ca4"><li></li></b></td> <td>8000</td> <td>÷</td> <td>100</td> <td>=</td> <td><input class="inputfraccciones" style="width: 70px;" id="act5num0"></input></td>'],
+    ['<td><b style="color: #005ca4"><li></li></b></td> <td><input class="inputfraccciones" style="width: 70px;" id="act5num1"></input></td> <td>÷</td> <td>1000</td> <td>=</td> <td>10</td>'],
+    [' <td><b style="color: #005ca4"><li></li></b></td> <td>597000</td> <td>÷</td> <td><input class="inputfraccciones" style="width: 70px;" id="act5num2"></input></td> <td>=</td> <td>597</td>'],
+    [' <td><b style="color: #005ca4"><li></li></b></td> <td><input class="inputfraccciones" style="width: 70px;" id="act5num3"></input></td> <td>÷</td> <td>100</td> <td>=</td> <td>6320</td>'],
+    ['<td><b style="color: #005ca4"><li></li></b></td> <td>207300</td> <td>÷</td> <td><input class="inputfraccciones" style="width: 70px;" id="act5num4"></input></td> <td>=</td> <td>20730</td>'],
+    ['<td><b style="color: #005ca4"><li></li></b></td> <td>315840</td> <td>÷</td> <td>10</td> <td>=</td> <td><input class="inputfraccciones" style="width: 70px;" id="act5num5"></input></td>'],
+];
+
+var act05Txt = document.getElementsByClassName('act5class');
+
+random5.sort(f_randomico);
+for (i = 0; i < act05Txt.length; i++) {
+    $('#' + act05Txt[i].id).html(random5[i]);
+}
+
+function pregunta5() {
+    var respact2 = ['80', '10000', '1000', '632000', '10', '31584', ];
+    var cont = 0;
+    for (var i = 0; i < 6; i++) {
+        var res = $('#act5num' + [i] + '').val().toLowerCase();
+        if (respact2[i] == res) {
+            cont = cont + 1;
+            $('#act5num' + [i] + '').css("background", "#00e600");
+        } else {
+            $('#act5num' + [i] + '').css("background", "#ff6666");
+        }
+
+    }
+    var total = (cont * 1) / 6;
+    $('#nota5').val(parseFloat(total).toFixed(2));
+    /*$('#txtNota').html(total.toFixed(2));
+     document.getElementById('bt_comprobar').disabled = true;
+     $('input').attr("disabled", true);
+     $('#txtAlumno').attr("disabled", false);*/
+}
+/////////////////////////pregunta6/////////////////////////
+function pregunta6() {
+    var nt1 = 0;
+    var act6num0 = document.getElementById('act6num0').value;
+    if (act6num0 == 8) {
+        nt1 = 1;
+        $('#act6num0').css("background", "#00e600");
+    } else {
+        $('#act6num0').css("background", "#ff6666");
+    }
+    $('#nota6').val(parseFloat(nt1).toFixed(2));
+}
+////////////pregunta7//////////////////////////
+var random7 = [
+    ['<table> <tr> <td><b style="color: #005ca4"><li></li></b></td> <td colspan="3">208 + (125 ÷ 5) – (8 × 7)</td> </tr> <tr> <td></td> <td><input class="form-control"></input></td> <td>=</td> <td><input class="inputfraccciones" id="act7num0"></input></td> </tr> </table>'],
+    ['<table> <tr> <td><b style="color: #005ca4"><li></li></b></td> <td colspan="2">560 – (3 × 15) – (36 ÷ 9) + 237</td> </tr> <tr> <td></td> <td><input class="form-control"></input></td> <td>=</td> <td><input class="inputfraccciones" id="act7num1"></input></td> </tr> </table>'],
+];
+
+var act07Txt = document.getElementsByClassName('act7class');
+
+random7.sort(f_randomico);
+for (i = 0; i < act07Txt.length; i++) {
+    $('#' + act07Txt[i].id).html(random7[i]);
+}
+
+function pregunta7() {
+    var respact2 = ['177', '748', ];
+    var cont = 0;
+    for (var i = 0; i < 2; i++) {
+        var res = $('#act7num' + [i] + '').val().toLowerCase();
+        if (respact2[i] == res) {
+            cont = cont + 1;
+            $('#act7num' + [i] + '').css("background", "#00e600");
+        } else {
+            $('#act7num' + [i] + '').css("background", "#ff6666");
+        }
+
+    }
+    var total = (cont * 1) / 2;
+    $('#nota7').val(parseFloat(total).toFixed(2));
+    /*$('#txtNota').html(total.toFixed(2));
+     document.getElementById('bt_comprobar').disabled = true;
+     $('input').attr("disabled", true);
+     $('#txtAlumno').attr("disabled", false);*/
+}
+/////////////////////////pregunta8/////////////////////////
+function pregunta8() {
+    var nt1 = 0;
+    var act8num0 = document.getElementById('act8num0').value;
+    if (act8num0 == 9) {
+        nt1 = 1;
+        $('#act8num0').css("background", "#00e600");
+    } else {
+        $('#act8num0').css("background", "#ff6666");
+    }
+    $('#nota8').val(parseFloat(nt1).toFixed(2));
+}
+/////////////////////////pregunta10//////////////////////////////
+function pregunta10() {
+    var respact2 = ['7', '100', ];
+    var cont = 0;
+    for (var i = 0; i < 2; i++) {
+        var res = $('#act10num' + [i] + '').val().toLowerCase();
+        if (respact2[i] == res) {
+            cont = cont + 1;
+            $('#act10num' + [i] + '').css("background", "#00e600");
+        } else {
+            $('#act10num' + [i] + '').css("background", "#ff6666");
+        }
+
+    }
+    var total = (cont * 1) / 2;
+    $('#nota10').val(parseFloat(total).toFixed(2));
+
+}
 
 function NotaFinal() {
-
-    pregunta1();
-    pregunta2();
-    pregunta3();
-    pregunta4();
-    pregunta5();
-    pregunta6();
-    pregunta7();
-    pregunta8();
-    pregunta10();
-
     var nota1 = document.getElementById('nota1').value;
     var nota2 = document.getElementById('nota2').value;
     var nota3 = document.getElementById('nota3').value;
@@ -526,12 +628,35 @@ function NotaFinal() {
     var nota8 = document.getElementById('nota8').value;
     var nota9 = document.getElementById('nota9').value;
     var nota10 = document.getElementById('nota10').value;
-    var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4) + parseFloat(nota5) + parseFloat(nota6) + parseFloat(nota7) + parseFloat(nota8) + parseFloat(nota9) + parseFloat(nota10);
-    $('#txtNota').html(total.toFixed(2));
-    document.getElementById('bt_comprobar').disabled = true;
-    $('input').attr("disabled", true);
-    $('#txtAlumno').attr("disabled", false);
+    if (nota9 == "") {
+        alert("Debe ingresar la nota de la pregunta 9")
+    } else {
+        pregunta1();
+        pregunta2();
+        pregunta3();
+        pregunta4();
+        pregunta5();
+        pregunta6();
+        pregunta7();
+        pregunta8();
+        pregunta10();
 
+        var nota1 = document.getElementById('nota1').value;
+        var nota2 = document.getElementById('nota2').value;
+        var nota3 = document.getElementById('nota3').value;
+        var nota4 = document.getElementById('nota4').value;
+        var nota5 = document.getElementById('nota5').value;
+        var nota6 = document.getElementById('nota6').value;
+        var nota7 = document.getElementById('nota7').value;
+        var nota8 = document.getElementById('nota8').value;
+        var nota9 = document.getElementById('nota9').value;
+        var nota10 = document.getElementById('nota10').value;
+        var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4) + parseFloat(nota5) + parseFloat(nota6) + parseFloat(nota7) + parseFloat(nota8) + parseFloat(nota9) + parseFloat(nota10);
+        $('#txtNota').html(total.toFixed(2));
+        document.getElementById('bt_comprobar').disabled = true;
+        $('input').attr("disabled", true);
+        $('#txtAlumno').attr("disabled", false);
+    }
 
 
 

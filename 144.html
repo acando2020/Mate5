@@ -256,6 +256,7 @@ input {
             </div>
             <div class="panel-body">
                 <!--pregunats de la actividad-->
+                <img class="img-responsive" src="img/alegebra.png"></img>
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
@@ -265,7 +266,7 @@ input {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
                                 <div class="col-md-12 ">
                                     <div class="text-question">
@@ -437,19 +438,21 @@ input {
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                             <div class="panel-body">
-                                <div class="text-question">
-                                    <b>4.</b> Con la ayuda de la calculadora, <b>resuelve</b> las siguientes divisiones.
+                                <div class="text-question" align="justify">
+                                    <b>4. </b>Con la ayuda de la calculadora, <b>resuelve</b> las siguientes divisiones.
                                     <ol type="a">
                                         <div class="row">
-                                            <div class="col-lg-3 act4class" id="act04Txt0">
-                                            </div>
-                                            <div class="col-lg-3 act4class" id="act04Txt1">
-                                            </div>
-                                            <div class="col-lg-3 act4class" id="act04Txt2">
-                                            </div>
-                                            <div class="col-lg-3 act4class" id="act04Txt3">
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-3 act4class" id="act04Txt0">
+                                                </div>
+                                                <div class="col-lg-3 act4class" id="act04Txt1">
+                                                </div>
+                                                <div class="col-lg-3 act4class" id="act04Txt2">
+                                                </div>
+                                                <div class="col-lg-3 act4class" id="act04Txt3">
+                                                </div>
                                             </div>
                                         </div>
                                     </ol>
@@ -463,62 +466,42 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false"
                                     aria-controls="collapseFive">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota5" readonly>&nbsp;<b>5. </b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota5" readonly>&nbsp;<b>5. Calcula</b>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                             <div class="panel-body">
                                 <div class="text-question">
                                     <b>5. Calcula</b> y <b>escribe</b> los términos que faltan en cada división.
-                                    <ol type="a">
-
-                                         <div class="row">
-                                        <div class="col-lg-4">
-                                            <table>
-                                                <tr>
-                                                    <td><b style="color: #005ca4"><li></li></b></td>
-                                                    <td></td>
-                                                    <td><input class="inputfraccciones"></input></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b style="color: #005ca4"><li></li></b></td>
-                                                    <td></td>
-                                                    <td><input class="inputfraccciones"></input></td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <table>
-                                                <tr>
-                                                    <td><b style="color: #005ca4"><li></li></b></td>
-                                                    <td></td>
-                                                    <td><input class="inputfraccciones"></input></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b style="color: #005ca4"><li></li></b></td>
-                                                    <td></td>
-                                                    <td><input class="inputfraccciones"></input></td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <table>
-                                                <tr>
-                                                    <td><b style="color: #005ca4"><li></li></b></td>
-                                                    <td></td>
-                                                    <td><input class="inputfraccciones"></input></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b style="color: #005ca4"><li></li></b></td>
-                                                    <td></td>
-                                                    <td><input class="inputfraccciones"></input></td>
-                                                </tr>
-                                            </table>
-                                        </div>
+                                    <div class="row">
+                                        <ol type="a">
+                                            <div class="col-lg-4">
+                                                <table>
+                                                    <tr class="act5class" id="act05Txt0">
+                                                    </tr>
+                                                    <tr class="act5class" id="act05Txt1">
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <table>
+                                                    <tr class="act5class" id="act05Txt2">
+                                                    </tr>
+                                                    <tr class="act5class" id="act05Txt3">
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <table>
+                                                    <tr class="act5class" id="act05Txt4">
+                                                    </tr>
+                                                    <tr class="act5class" id="act05Txt5">
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </ol>
                                     </div>
-                                    </ol>
-
                                 </div>
                                 <br>
                             </div>
@@ -529,13 +512,21 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
                                     aria-controls="collapseSix">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota6" readonly>&nbsp;<b>6. </b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota6" readonly>&nbsp;<b>6. Resuelve</b>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                             <div class="panel-body">
-                                <div class="text-question"></div>
+                                <div class="text-question">
+                                    <b>6. Resuelve</b> el problema.
+                                    <div class="row"><br>
+                                        <div class="col-lg-10" align="justify">Margarita tiene una tienda de mascotas. Recibe un pedido de 800 latas de comida para gatos. Si vende un promedio de 100 latas mensuales, ¿para cuántos meses le dura el pedido?
+                                            <input class="form-control"></input><br>
+                                            <span><b style="color: #005ca4">R.</b> El pedido le dura para <input id="act6num0" class="inputfraccciones"></input> meses.</span></div>
+                                        <div class="col-lg-2"><img class="img-responsive" src="img/i1_p122_act144.jpg"></img></div>
+                                    </div>
+                                </div>
                                 <br>
                             </div>
                         </div>
@@ -545,13 +536,23 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false"
                                     aria-controls="collapseSeven">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota7" readonly>&nbsp;<b>7. </b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota7" readonly>&nbsp;<b>7. Realiza</b>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
                             <div class="panel-body">
-                                <div class="text-question"></div>
+                                <div class="text-question">
+                                    <b>7. Realiza</b> las siguientes operaciones.
+                                    <div class="row">
+                                        <ol type="a">
+                                            <div class="col-lg-6 act7class" id="act07Txt1">
+                                            </div>
+                                            <div class="col-lg-6 act7class" id="act07Txt2">
+                                            </div>
+                                        </ol>
+                                    </div>
+                                </div>
                                 <br>
                             </div>
                         </div>
@@ -561,29 +562,49 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEigth" aria-expanded="false"
                                     aria-controls="collapseEigth">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota8" readonly>&nbsp;<b>8. </b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota8" readonly>&nbsp;<b>8. Problema</b>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseEigth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEigth">
                             <div class="panel-body">
-                                <div class="text-question"></div>
+                                <div class="text-question">
+                                    <b>8. </b>Los 30 alumnos del 5.° grado planifican una visita al planetario. El profesor les comunica que el bus cobra $ 150 por el día y que cada entrada tiene un valor de $ 3. Si el día de la visita 5 estudiantes no usaron el transporte, ¿cuánto debe pagar cada estudiante?
+                                    <input class="form-control"></input><br>
+                                    <span><b style="color: #005ca4">R.</b> Cada estudiante debe pagar $<input class="inputfraccciones" id="act8num0"></input></span>
+                                </div>
                                 <br>
                             </div>
                         </div>
                     </div>
+                    <img class="img-responsive" src="img/estadisticas.png"></img>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingNine">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false"
                                     aria-controls="collapseNine">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center; background: white;" class="nota-abierta" min="0" max="1" id="nota9">&nbsp;<b>9. </b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center; background: white;" class="nota-abierta" min="0" max="1" id="nota9">&nbsp;<b>9. Realiza</b>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
                             <div class="panel-body">
-                                <div class="text-question"></div>
+                                <div class="text-question" align="justify">
+                                    <b>9. Realiza</b> las posibles combinaciones entre los siguientes conjuntos y <b>escribe</b> los pares ordenados.
+                                    <div class="row">
+                                        <div class="col-lg-6"><img class="img-responsive" src="img/i2_p122_act144.jpg"></img></div>
+                                        <div class="col-lg-6">
+                                            <table style="width: 100%;">
+                                                <tr>
+                                                    <td>A × B =</td>
+                                                    <td><span style="font-size: 50px;">{</span></td>
+                                                    <td><textarea name="" class="form-control" style="resize: none;" rows="5" cols="30"></textarea></td>
+                                                    <td><span style="font-size: 50px;">}</span></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                                 <br>
                             </div>
                         </div>
@@ -593,13 +614,30 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false"
                                     aria-controls="collapseTen">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota10" readonly>&nbsp;<b>10. </b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota10" readonly>&nbsp;<b>10. Analiza</b>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
                             <div class="panel-body">
-                                <div class="text-question"></div>
+                                <div class="text-question">
+                                    <b>10. Analiza</b> y <b>responde</b>.
+                                    <div class="row">
+                                        <div class="col-lg-6">Evelyn compra 7 boletos para la rifa de un televisor. Si en total había 100 boletos y se vendieron todos, ¿qué probabilidad tiene Evelyn de ganar el premio?</div>
+                                        <div class="col-lg-6"><input class="form-control"></input>
+                                            <br>
+                                            <div class="eq-c">
+                                                <b style="color: #005ca4">R.</b>
+                                                P =
+                                                <div class="fraction">
+                                                    <span class="fup"><input class="inputfraccciones sinEspacios soloNumeros" id="act10num0"></input></span>
+                                                    <span class="bar">/</span>
+                                                    <span class="fdn"><input class="inputfraccciones sinEspacios soloNumeros" id="act10num1"></input></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <br>
                             </div>
                         </div>
@@ -656,7 +694,7 @@ input {
         <script type="text/javascript">
         var titulos = "preparo";
         $("#txtNota").html("0");
-        $("#n_pagina").html("101");
+        $("#n_pagina").html("122");
 
         /* $(document).ready(function() {
              var winHeight = $(window).height();
