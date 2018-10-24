@@ -144,38 +144,20 @@ input {
     border-bottom: 3px solid #FF8A00;
 }
 
-.pintar1 {
-
-    border: 5px solid #008FFF;
-    border-radius: 10px 10px 10px 10px;
+.circulo {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #008FFF;
+    border-radius: 100%;
 }
 
-.grafico1 {
-    border: 2px solid #000000;
+.cuadrado {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #FFA800;
 }
 
-.grafico2 {
-    border: 2px solid #000000;
-    background: #008FFF;
-}
-
-.grafico3 {
-    border: 2px solid #000000;
-}
-
-.grafico4 {
-    border: 2px solid #000000;
-    background: #008FFF;
-}
-
-.grafico5 {
-    border: 2px solid #000000;
-}
-
-.grafico6 {
-    border: 2px solid #000000;
-    background: #008FFF;
-}
+.vacio {}
 </style>
 
 <body>
@@ -184,6 +166,9 @@ input {
         <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
         Lee cuidadosamente las preguntas, contesta cada una de ellas.
         <br>
+        <b>1. </b> Utiliza el signo <b>÷</b> para resolver el ejercicio ó alt + 0247.
+        <br>
+        <b>7. </b>Haz un click para encerrar en un circulo y doble click para encerrar en cuadrado.
         <span id="ayudas"></span>
     </div>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -262,11 +247,11 @@ input {
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <input type="text" maxlength="4" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota1" readonly>&nbsp; <b>1. Encuentra</b>
+                                    <input type="text" maxlength="4" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota1" readonly>&nbsp; <b>1. Encuentra</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
                                 <div class="col-md-12 ">
                                     <div class="text-question">
@@ -293,7 +278,7 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
                                     aria-controls="collapseTwo">
-                                     <input type="text" maxlength="" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota2" readonly>&nbsp;<b>2. Resuelve</b>
+                                     <input type="text" maxlength="" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota2" readonly>&nbsp;<b>2. Resuelve</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
@@ -301,93 +286,216 @@ input {
                             <div class="panel-body">
                                 <div class="col-md-12 ">
                                     <div class="text-question">
-                                        <b>2. Resuelve</b> el problema por sucesiones.
-                                        <br><br>
-                                        <span>El Ministerio del Ambiente destina $ 262 144 para ser distribuidos a 4 escuelas de 4 cantones de 4 provincias, que fueron las ganadoras de un concurso sobre energías alternativas, para destinarlos a proyectos escolares de ahorro de energía. ¿Cuánto dinero recibirá cada escuela?</span>
-                                        <div class="table-responsive">
-                                            <table class="">
-                                                <tr style="text-align: center;">
-                                                    <td>
-                                                    </td>
-                                                    <td>
-                                                        ÷
-                                                        <input class="inputfraccciones sinEspacios soloNumeros" id="act2num0"></input>
-                                                    </td>
-                                                    <td></td>
-                                                    <td>
-                                                        ÷
-                                                        <input class="inputfraccciones sinEspacios soloNumeros" id="act2num1"></input>
-                                                    </td>
-                                                    <td></td>
-                                                    <td>
-                                                        ÷
-                                                        <input class="inputfraccciones sinEspacios soloNumeros" id="act2num2"></input>
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                    </td>
-                                                    <td><img class="" src="img/flecha4.jpg"></img>
-                                                    </td>
-                                                    <td></td>
-                                                    <td><img class="" src="img/flecha4.jpg"></img>
-                                                    </td>
-                                                    <td></td>
-                                                    <td><img class="" src="img/flecha4.jpg"></img>
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios soloNumeros" id="act2num3" style="width: 70px;">
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios soloNumeros" style="border: 0;" readonly>
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios soloNumeros" id="act2num4" style="width: 70px;">
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios soloNumeros" style="border: 0;" readonly>
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios soloNumeros" id="act2num5" style="width: 70px;">
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios soloNumeros" style="border: 0;" readonly>
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios soloNumeros" id="act2num6" style="width: 70px;">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios text-lowercase" style="border: 0;" readonly>
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios text-lowercase" style="border: 0;" readonly>
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios text-lowercase" id="act2num7" style="width: 70px;">
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios text-lowercase" style="border: 0;" readonly>
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios text-lowercase" id="act2num8" style="width: 70px;">
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios text-lowercase" style="border: 0;" readonly>
-                                                    </td>
-                                                    <td>
-                                                        <input type="" name="" class="inputfraccciones sinEspacios text-lowercase" id="act2num9" style="width: 70px;">
-                                                    </td>
-                                                </tr>
-                                            </table>
+                                        <b>2. Resuelve</b> las divisiones y en el ejercicio <b style="color: #006AC6">a)</b> escribe los términos.
+                                        <div class="row">
+                                            <div class="col-lg-6"><b style="color: #006AC6">a)</b>
+                                                <div class="table-responsive">
+                                                    <br>
+                                                    <table class="table-bordered" style="text-align: center;">
+                                                        <tr>
+                                                            <td><sup><input class="inputfraccciones text-lowercase sinEspacios" id="act2num17" style="width: 70px;border:1px solid #00a354;border-radius: 10px 0px 10px 0px;" ></input></sup></td>
+                                                            <td>→</td>
+                                                            <td></td>
+                                                            <td>5</td>
+                                                            <td>8</td>
+                                                            <td>3</td>
+                                                            <td>0</td>
+                                                            <td style="border-left: 2px solid #000000; border-bottom: 2px solid #000000;">7</td>
+                                                            <td style="border-bottom: 2px solid #000000;"></td>
+                                                            <td style="border-bottom: 2px solid #000000;"></td>
+                                                            <td>←</td>
+                                                            <td><sup><input class="inputfraccciones text-lowercase sinEspacios" id="act2num18" style="width: 70px;border:1px solid #f7af98;border-radius: 10px 0px 10px 0px;" ></input></sup></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>
+                                                                <input id="act2num0" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td style="border-bottom: 2px solid #000000;">
+                                                                <input id="act2num1" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td style="border-bottom: 2px solid #000000;">
+                                                                <input id="act2num2" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td style="border-left: 2px solid #000000;">
+                                                                <input id="act2num3" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td>
+                                                                <input id="act2num4" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td>
+                                                                <input id="act2num5" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td>←</td>
+                                                            <td><sup><input class="inputfraccciones text-lowercase sinEspacios" id="act2num19" style="width: 70px;border:1px solid #005caa;border-radius: 10px 0px 10px 0px;" ></input></sup></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>
+                                                                <input id="act2num6" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td>
+                                                                <input id="act2num7" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td></td>
+                                                            <td style="border-left: 2px solid #000000;"></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>
+                                                                <input id="act2num8" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td style="border-bottom: 2px solid #000000;">
+                                                                <input id="act2num9" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td style="border-bottom: 2px solid #000000;">
+                                                                <input id="act2num10" class="inputDiv soloNumeros" maxlength="1"></input>
+                                                            </td>
+                                                            <td></td>
+                                                            <td style="border-left: 2px solid #000000;"></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>
+                                                                <input id="act2num11" class="inputDiv soloNumeros" maxlength="1">
+                                                            </td>
+                                                            <td>
+                                                                <input id="act2num12" class="inputDiv soloNumeros" maxlength="1">
+                                                            </td>
+                                                            <td style="border-left: 2px solid #000000;"></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>
+                                                                <input id="act2num13" class="inputDiv soloNumeros" maxlength="1">
+                                                            </td>
+                                                            <td style="border-bottom: 2px solid #000000;">
+                                                                <input id="act2num14" class="inputDiv soloNumeros" maxlength="1">
+                                                            </td>
+                                                            <td style="border-bottom: 2px solid #000000;">
+                                                                <input id="act2num15" class="inputDiv soloNumeros" maxlength="1">
+                                                            </td>
+                                                            <td style="border-left: 2px solid #000000;"></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><sup><input class="inputfraccciones text-lowercase sinEspacios" id="act2num20" style="width: 70px;border:1px solid #b01480;border-radius: 10px 0px 10px 0px;" ></input></sup></td>
+                                                            <td>→</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>
+                                                                <input id="act2num16" class="inputDiv soloNumeros" maxlength="1">
+                                                            </td>
+                                                            <td style="border-left: 2px solid #000000;"></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6"><b style="color: #006AC6">b)</b>
+                                                <table class="table-bordered" style="text-align: center;">
+                                                    <tr>
+                                                        <td> <input class="inputDiv" readonly></input>
+                                                        </td>
+                                                        <td> <input class="inputDiv" readonly value="9"></input>
+                                                        </td>
+                                                        <td> <input class="inputDiv" readonly value="5"></input>
+                                                        </td>
+                                                        <td> <input class="inputDiv" readonly value="6"></input>
+                                                        </td>
+                                                        <td style="border-left: 2px solid #000000;border-bottom: 2px solid #000000;">
+                                                            <input class="inputDiv" readonly value="1"></input>
+                                                        </td>
+                                                        <td style="border-bottom: 2px solid #000000;">
+                                                            <input class="inputDiv" readonly value="8"></input>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>-</td>
+                                                        <td style="border-bottom: 2px solid #000000;">
+                                                            <input id="act2num21" maxlength="1" class="inputDiv">
+                                                        </td>
+                                                        <td style="border-bottom: 2px solid #000000;">
+                                                            <input id="act2num22" maxlength="1" class="inputDiv">
+                                                        </td>
+                                                        <td></td>
+                                                        <td style="border-left: 2px solid #000000;">
+                                                            <input id="act2num23" maxlength="1" class="inputDiv">
+                                                        </td>
+                                                        <td> <input id="act2num24" maxlength="1" class="inputDiv">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <input id="act2num25" maxlength="1" class="inputDiv">
+                                                        </td>
+                                                        <td> <input id="act2num26" maxlength="1" class="inputDiv">
+                                                        </td>
+                                                        <td style="border-left: 2px solid #000000;"></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>-</td>
+                                                        <td style="border-bottom: 2px solid #000000;">
+                                                            <input id="act2num27" maxlength="1" class="inputDiv">
+                                                        </td>
+                                                        <td style="border-bottom: 2px solid #000000;">
+                                                            <input id="act2num28" maxlength="1" class="inputDiv">
+                                                        </td>
+                                                        <td style="border-left: 2px solid #000000;"></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <input id="act2num29" maxlength="1" class="inputDiv">
+                                                        </td>
+                                                        <td style="border-left: 2px solid #000000;"></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </table> <br>
+                                            </div>
                                         </div>
-                                        <br>
-                                        <span><b style="color: #005ca4">R.</b> Cada escuela recibirá para sus proyectos la cantidad de $<input type="" name="" class="inputfraccciones sinEspacios soloNumeros" id="act2num10"  style="width: 70px;">.</span>
                                     </div>
                                 </div>
                             </div>
@@ -400,7 +508,7 @@ input {
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
                                     aria-controls="collapseThree">
                                  <input type="text" maxlength="" size="" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota3" readonly>&nbsp;
-                                    <b>3. Resuelve</b>
+                                    <b>3. Resuelve</b> <span class="sobre">1 pts</span>
 
                                 </a>
                             </h4>
@@ -408,209 +516,15 @@ input {
                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
                                 <div class="text-question">
-                                    <b>3. Resuelve</b> la división, <b>escribe</b> sus términos y <b>comprueba</b>.
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="table-responsive">
-                                                <br>
-                                                <table class="table-bordered">
-                                                    <tr>
-                                                        <td><sup><input class="inputfraccciones text-lowercase sinEspacios" id="act3num30" style="width: 70px;border:1px solid #00a354;border-radius: 10px 0px 10px 0px;" ></input></sup></td>
-                                                        <td>→</td>
-                                                        <td></td>
-                                                        <td>5</td>
-                                                        <td>8</td>
-                                                        <td>3</td>
-                                                        <td>0</td>
-                                                        <td style="border-left: 2px solid #000000; border-bottom: 2px solid #000000;">7</td>
-                                                        <td style="border-bottom: 2px solid #000000;"></td>
-                                                        <td style="border-bottom: 2px solid #000000;"></td>
-                                                        <td>←</td>
-                                                        <td><sup><input class="inputfraccciones text-lowercase sinEspacios" id="act3num31" style="width: 70px;border:1px solid #f7af98;border-radius: 10px 0px 10px 0px;" ></input></sup></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <input id="act3num0" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td style="border-bottom: 2px solid #000000;">
-                                                            <input id="act3num1" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td style="border-bottom: 2px solid #000000;">
-                                                            <input id="act3num2" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td style="border-left: 2px solid #000000;">
-                                                            <input id="act3num3" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td>
-                                                            <input id="act3num4" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td>
-                                                            <input id="act3num5" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td>←</td>
-                                                        <td><sup><input class="inputfraccciones text-lowercase sinEspacios" id="act3num32" style="width: 70px;border:1px solid #005caa;border-radius: 10px 0px 10px 0px;" ></input></sup></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <input id="act3num6" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td>
-                                                            <input id="act3num7" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td></td>
-                                                        <td style="border-left: 2px solid #000000;"></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <input id="act3num8" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td style="border-bottom: 2px solid #000000;">
-                                                            <input id="act3num9" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td style="border-bottom: 2px solid #000000;">
-                                                            <input id="act3num10" class="inputDiv soloNumeros" maxlength="1"></input>
-                                                        </td>
-                                                        <td></td>
-                                                        <td style="border-left: 2px solid #000000;"></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <input id="act3num11" class="inputDiv soloNumeros" maxlength="1">
-                                                        </td>
-                                                        <td>
-                                                            <input id="act3num12" class="inputDiv soloNumeros" maxlength="1">
-                                                        </td>
-                                                        <td style="border-left: 2px solid #000000;"></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <input id="act3num13" class="inputDiv soloNumeros" maxlength="1">
-                                                        </td>
-                                                        <td style="border-bottom: 2px solid #000000;">
-                                                            <input id="act3num14" class="inputDiv soloNumeros" maxlength="1">
-                                                        </td>
-                                                        <td style="border-bottom: 2px solid #000000;">
-                                                            <input id="act3num15" class="inputDiv soloNumeros" maxlength="1">
-                                                        </td>
-                                                        <td style="border-left: 2px solid #000000;"></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><sup><input class="inputfraccciones text-lowercase sinEspacios" id="act3num33" style="width: 70px;border:1px solid #b01480;border-radius: 10px 0px 10px 0px;" ></input></sup></td>
-                                                        <td>→</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <input id="act3num16" class="inputDiv soloNumeros" maxlength="1">
-                                                        </td>
-                                                        <td style="border-left: 2px solid #000000;"></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </table>
+                                    <b>3. Resuelve</b> las divisiones y <b>comprueba</b>.
+                                    <ol type="a">
+                                        <div class="row">
+                                            <div class="col-lg-12 act3class" id="act03Txt1">
+                                            </div>
+                                            <div class="col-lg-12 act3class" id="act03Txt2">
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <b style="color: #005ca4">Comprobación</b>
-                                            <table class="table-bordered">
-                                                <tr>
-                                                    <td></td>
-                                                    <td>
-                                                        <input id="act3num17" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                    <td>
-                                                        <input id="act3num18" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                    <td>
-                                                        <input id="act3num19" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                </tr>
-                                                <tr style="border-bottom: 2px solid #000000;">
-                                                    <td>×</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <input id="act3num20" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <input id="act3num21" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                    <td>
-                                                        <input id="act3num22" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                    <td>
-                                                        <input id="act3num23" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                    <td>
-                                                        <input id="act3num24" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                </tr>
-                                                <tr style="border-bottom: 2px solid #000000;">
-                                                    <td>+</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <input id="act3num25" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <input id="act3num26" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                    <td>
-                                                        <input id="act3num27" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                    <td>
-                                                        <input id="act3num28" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                    <td>
-                                                        <input id="act3num29" class="inputDiv soloNumeros" maxlength="1">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
+                                    </ol>
                                 </div>
                             </div>
                         </div>
@@ -620,41 +534,23 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
                                     aria-controls="collapseFour">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota4" readonly>&nbsp;<b>4. Resuelve</b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota4" readonly>&nbsp;<b>4. Resuelve</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                             <div class="panel-body">
                                 <div class="text-question" align="justify">
-                                    <b>4. </b>Con la ayuda de la calculadora, <b>resuelve</b> las siguientes divisiones.
+                                    <b>4. Responde</b> las preguntas.
                                     <ol type="a">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <table>
-                                                    <tr class="act4class" id="act04Txt0">
-                                                    </tr>
-                                                    <tr class="act4class" id="act04Txt1">
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <table>
-                                                    <tr class="act4class" id="act04Txt2">
-                                                    </tr>
-                                                    <tr class="act4class" id="act04Txt3">
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <table>
-                                                    <tr class="act4class" id="act04Txt4">
-                                                    </tr>
-                                                    <tr class="act4class" id="act04Txt5">
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
+                                        <table class="act4class" id="act04Txt0">
+                                        </table>
+                                        <br>
+                                        <table class="act4class" id="act04Txt1">
+                                        </table>
+                                        <br>
+                                        <table class="act4class" id="act04Txt2">
+                                        </table>
                                     </ol>
                                 </div>
                                 <br>
@@ -666,17 +562,42 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false"
                                     aria-controls="collapseFive">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota5" readonly>&nbsp;<b>5. Resuelve</b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota5" readonly>&nbsp;<b>5. Realiza</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                             <div class="panel-body">
                                 <div class="text-question" align="justify">
-                                    <b>5. Resuelve</b> el problema. <br><br>
-                                    <span>Una empresa constructora contrata los servicios de 336 personas y forma 16 grupos de trabajo para iniciar la instalación de paneles solares. ¿Cuántas personas integran cada grupo de trabajo?</span>
-                                    <br><br>
-                                    <span><b style="color: #005ca4">R.</b> Cada grupo de trabajo está integrado por <input class="inputfraccciones" id="act5num0"></input> personas.</span>
+                                    <b>5. Realiza</b> las siguientes divisiones en forma mental.<br><br>
+                                    <ol type="a">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <table>
+                                                    <tr class="act5class" id="act05Txt0">
+                                                    </tr>
+                                                    <tr class="act5class" id="act05Txt1">
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <table>
+                                                    <tr class="act5class" id="act05Txt2">
+                                                    </tr>
+                                                    <tr class="act5class" id="act05Txt3">
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <table>
+                                                    <tr class="act5class" id="act05Txt4">
+                                                    </tr>
+                                                    <tr class="act5class" id="act05Txt5">
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </ol>
                                 </div>
                                 <br>
                             </div>
@@ -687,42 +608,25 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
                                     aria-controls="collapseSix">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota6" readonly>&nbsp;<b>6. Aplica</b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota6" readonly>&nbsp;<b>6. Resuelve</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                             <div class="panel-body">
                                 <div class="text-question">
-                                    <b>6. Aplica</b> la estrategia de cálculo mental y escribe el cociente de las siguientes divisiones.
-                                    <ol type="a">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <table>
-                                                    <tr class="act6class" id="act06Txt0">
-                                                    </tr>
-                                                    <tr class="act6class" id="act06Txt1">
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <table>
-                                                    <tr class="act6class" id="act06Txt2">
-                                                    </tr>
-                                                    <tr class="act6class" id="act06Txt3">
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <table>
-                                                    <tr class="act6class" id="act06Txt4">
-                                                    </tr>
-                                                    <tr class="act6class" id="act06Txt5">
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </ol>
+                                    <b>6. Resuelve</b> el problema.
+                                    <table>
+                                        <tr>
+                                            <td><b style="color: #005ca4"><li></li></b></td>
+                                            <td colspan="2">En un edificio de apartamentos tienen que colocar 4 vidrios en cada ventana. Si el edificio tiene 72 ventanas y ya han colocado 156 vidrios, ¿cuántos faltan por colocar?</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><input class="form-control" style="border: 2px dotted #ef7c00;"> </input></td>
+                                            <td><b style="color: #005ca4">R.</b> Les faltan por colocar <input type="text" id="act6num0" class="inputfraccciones sinEspacios">vidrios</td>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <br>
                             </div>
@@ -733,19 +637,122 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false"
                                     aria-controls="collapseSeven">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota7" readonly>&nbsp;<b>7. Realiza</b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota7" readonly>&nbsp;<b>7. Encierra</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
                             <div class="panel-body">
                                 <div class="text-question">
-                                    <b>7. Realiza</b> las siguientes operaciones.
+                                    <b>7. Encierra</b> en un círculo los múltiplos de 5 y en un cuadrado los múltiplos de 7.
+                                    <div class="table-responsive">
+                                        <table class="table" style="font-size: 30px;">
+                                            <tr>
+                                                <td class="act7class" id="act07Txt0"></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt1"></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt2"></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt3"></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt4"></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt5"></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt6"></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt7"></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt8"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="act7class" id="act07Txt9"></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt10"></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt11"></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt12"></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt13"></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt14"></td>
+                                                <td></td>
+                                                <td class="act7class" id="act07Txt15"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="img-responsive" src="img/geometria.png"></img>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingEigth">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEigth" aria-expanded="false"
+                                    aria-controls="collapseEigth">
+                                    <input type="text" maxlength="4" size="2" style="text-align:center;background: white;" class="nota-abierta" min="0" max="1" id="nota8">&nbsp;<b>8. Escribe</b> <span class="sobre">1 pts</span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseEigth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEigth">
+                            <div class="panel-body">
+                                <div class="text-question">
+                                    <b>8. Escribe</b> la fórmula del perímetro de las siguientes figuras.
                                     <ol type="a">
                                         <div class="row">
-                                            <div class="col-lg-6 act7class" id="act07Txt0">
+                                            <div class="col-lg-4">
+                                                <table style="text-align: center;">
+                                                    <tr>
+                                                        <td><b style="color: #005ca4"><li></li></b></td>
+                                                        <td colspan="2">Triángulo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>P =</td>
+                                                        <td><input class="form-control"></input></td>
+                                                    </tr>
+                                                </table>
                                             </div>
-                                            <div class="col-lg-6 act7class" id="act07Txt1">
+                                            <div class="col-lg-4">
+                                                <table style="text-align: center;">
+                                                    <tr>
+                                                        <td><b style="color: #005ca4"><li></li></b></td>
+                                                        <td colspan="2">Rectángulo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>P =</td>
+                                                        <td><input class="form-control"></input></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <table style="text-align: center;">
+                                                    <tr>
+                                                        <td><b style="color: #005ca4"><li></li></b></td>
+                                                        <td colspan="2">Rombo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>P =</td>
+                                                        <td><input class="form-control"></input></td>
+                                                    </tr>
+                                                </table>
                                             </div>
                                         </div>
                                     </ol>
@@ -755,84 +762,18 @@ input {
                         </div>
                     </div>
                     <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingEigth">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEigth" aria-expanded="false"
-                                    aria-controls="collapseEigth">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota8" readonly>&nbsp;<b>8. Resuelve</b>
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseEigth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEigth">
-                            <div class="panel-body">
-                                <div class="text-question">
-                                    <b>8. Resuelve</b> con operaciones combinadas.
-                                    <div class="row">
-                                        <div class="col-lg-7" align="justify">José desea comprar un televisor que cuesta $ 1 200 y una computadora que cuesta $ 800. <br>Compartirá con dos de sus hermanos el pago del televisor, en partes iguales, y el pago de la computadora, de la misma manera, con supapá. Por pagar de contado, les hicieron un descuento; el de José fue de $ 35. ¿Cuánto pagará José?
-                                            <input class="form-control"></input><br><br>
-                                            <span><b style="color: #005ca4">R. </b>José pagará $<input class="inputfraccciones" id="act8num0"></input></span>
-                                        </div>
-                                        <div class="col-lg-5"><img class="img-responsive" src="img/i1_p125_act145.jpg"></img></div>
-                                    </div>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                    <img class="img-responsive" src="img/estadisticas.png"></img>
-                    <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingNine">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false"
                                     aria-controls="collapseNine">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center; background: white;" class="nota-abierta" min="0" max="1" id="nota9">&nbsp;<b>9. Analiza</b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center; background: white;" class="nota-abierta" min="0" max="1" id="nota9">&nbsp;<b>9. Traza</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseNine" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNine">
                             <div class="panel-body">
                                 <div class="text-question" align="justify">
-                                    <b>9. Analiza</b> la situación y <b>realiza</b> las combinaciones indicadas:<br><br>
-                                    <span><b style="color: #005ca4">a) </b>por extensión, <b style="color: #005ca4">b) </b>en una tabla de doble entada y <b style="color: #005ca4">c) </b>con un diagrama de Venn.</span>
-                                    <br><br>
-                                    <b style="color: #005ca4">a) </b>
-                                    <table class="table" style="width: 50%;">
-                                        <tr>
-                                            <td align="center">A × B =</td>
-                                            <td><textarea name="" class="form-control" rows="5" cols="30" style="resize: none;"></textarea></td>
-                                        </tr>
-                                    </table>
-                                    <b style="color: #005ca4">b) </b>
-                                    <table class="table" style="text-align: center;">
-                                        <tr>
-                                            <td style="background: #a7ce8d;color: white;"><sub>Act.</sub>\<sup>Días</sup></td>
-                                            <td style="background: #ac95c8;color: white;">Lunes</td>
-                                            <td style="background: #6ab5e5;color: white;">Martes</td>
-                                            <td style="background: #f190a0;color: white;">Miércoles</td>
-                                            <td style="background: #00b4d5;color: white;">Jueves</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="background: #f2f6e0;">Baile</td>
-                                            <td><input class="form-control"></input></td>
-                                            <td><input class="form-control"></input></td>
-                                            <td><input class="form-control"></input></td>
-                                            <td><input class="form-control"></input></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="background: #f2f6e0;">Guitarra</td>
-                                            <td><input class="form-control"></input></td>
-                                            <td><input class="form-control"></input></td>
-                                            <td><input class="form-control"></input></td>
-                                            <td><input class="form-control"></input></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="background: #f2f6e0;">Natación</td>
-                                            <td><input class="form-control"></input></td>
-                                            <td><input class="form-control"></input></td>
-                                            <td><input class="form-control"></input></td>
-                                            <td><input class="form-control"></input></td>
-                                        </tr>
-                                    </table>
+                                    <b>9. Traza</b> los siguientes ángulos.<br><br>
                                     <div class="my-drawing" style="border: 1px solid #000000;"></div>
                                 </div>
                                 <br>
@@ -844,81 +785,15 @@ input {
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false"
                                     aria-controls="collapseTen">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota10" readonly>&nbsp;<b>10. Escribe</b>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center; background: white;" class="nota-abierta" min="0" max="1" id="nota10">&nbsp;<b>10. Dibuja</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+                        <div id="collapseTen" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTen">
                             <div class="panel-body">
                                 <div class="text-question">
-                                    <b>10. Escribe</b> la probabilidad de que salga cada color al girar la ruleta.
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <table>
-                                                <tr>
-                                                    <td><b style="color: #005ca4">a) </b></td>
-                                                    <td>Color azul:</td>
-                                                    <td><input class="form-control text-lowercase"></input></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b style="color: #005ca4">b) </b></td>
-                                                    <td>Color rojo:</td>
-                                                    <td><input class="form-control text-lowercase"></input></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b style="color: #005ca4">c) </b></td>
-                                                    <td>Color verde:</td>
-                                                    <td><input class="form-control text-lowercase"></input></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b style="color: #005ca4">d) </b></td>
-                                                    <td>Color amarillo:</td>
-                                                    <td><input class="form-control text-lowercase"></input></td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="eq-c">
-                                                        P<sub>azul</sub> =
-                                                        <div class="fraction" style="border: 1px solid #B387CD;border-radius: 15%;">
-                                                            <span class="fup"><input class="inputfraccciones sinEspacios soloNumeros" id="act10num0"></input></span>
-                                                            <span class="bar">/</span>
-                                                            <span class="fdn"><input class="inputfraccciones sinEspacios soloNumeros" id="act10num1"></input></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="eq-c">
-                                                        P<sub>rojo</sub> =
-                                                        <div class="fraction" style="border: 1px solid #B387CD;border-radius: 15%;">
-                                                            <span class="fup"><input class="inputfraccciones sinEspacios soloNumeros" id="act10num2"></input></span>
-                                                            <span class="bar">/</span>
-                                                            <span class="fdn"><input class="inputfraccciones sinEspacios soloNumeros" id="act10num3"></input></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="eq-c">
-                                                        P<sub>verde</sub> =
-                                                        <div class="fraction" style="border: 1px solid #B387CD;border-radius: 15%;">
-                                                            <span class="fup"><input class="inputfraccciones sinEspacios soloNumeros" id="act10num4"></input></span>
-                                                            <span class="bar">/</span>
-                                                            <span class="fdn"><input class="inputfraccciones sinEspacios soloNumeros" id="act10num5"></input></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="eq-c">
-                                                        P<sub>amarillo</sub> =
-                                                        <div class="fraction" style="border: 1px solid #B387CD;border-radius: 15%;">
-                                                            <span class="fup"><input class="inputfraccciones sinEspacios soloNumeros" id="act10num6"></input></span>
-                                                            <span class="bar">/</span>
-                                                            <span class="fdn"><input class="inputfraccciones sinEspacios soloNumeros" id="act10num7"></input></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4"><img class="img-responsive" src="img/i3_p125_act145.jpg"></img></div>
-                                    </div>
+                                    <b>10. Dibuja</b> las figuras que se indican.
+                                    <div class="my-drawing" style="border: 1px solid #000000;"></div>
                                 </div>
                                 <br>
                             </div>
@@ -976,21 +851,31 @@ input {
         <script type="text/javascript">
         var titulos = "diagnostico";
         $("#txtNota").html("0");
-        $("#n_pagina").html("124");
+        $("#n_pagina").html("128");
 
         $(document).ready(function() {
             var winHeight = $(window).height();
             var winWidth = $(window).width();
             //var imageSize = { width: winHeight , height: winHeight };
             var watermarkImage = new Image();
-            watermarkImage.src = 'img/i2_p125_act145.jpg';
-            //var watermarkImage2 = new Image();
-            //watermarkImage2.src = 'img/i7_p98_act100.jpg';
+            watermarkImage.src = 'img/i1_p129_act146.jpg';
+            var watermarkImage2 = new Image();
+            watermarkImage2.src = 'img/i2_p129_act146.jpg';
 
-            var lc = LC.init(
+         LC.init(
                 document.getElementsByClassName('my-drawing')[0], {
                     imageURLPrefix: 'imgcanvas',
                     watermarkImage: watermarkImage,
+                    watermarkScale: 0.8, // you can scale it
+                    //imageSize: imageSize
+                    backgroundColor: 'white'
+
+
+                });
+            LC.init(
+                document.getElementsByClassName('my-drawing')[1], {
+                    imageURLPrefix: 'imgcanvas',
+                    watermarkImage: watermarkImage2,
                     watermarkScale: 0.8, // you can scale it
                     //imageSize: imageSize
                     backgroundColor: 'white'
