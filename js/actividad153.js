@@ -217,17 +217,35 @@ function pregunta5() {
         }
 
     }
-    var total = (cont * 2) / 4;
+    var total = (cont * 1) / 4;
     $('#nota5').val(parseFloat(total).toFixed(2));
 
 }
+///////////////////////pregunta6/////////////////////////
+function pregunta6() {
+    var respact2 = ['2', '2', '5', ];
+    var cont = 0;
+    for (var i = 0; i < 3; i++) {
+        var res = $('#act6num' + [i] + '').val().toLowerCase();
+        if (respact2[i] == res) {
+            cont = cont + 1;
+            $('#act6num' + [i] + '').css("background", "#00e600");
+        } else {
+            $('#act6num' + [i] + '').css("background", "#ff6666");
+        }
 
+    }
+    var total = (cont * 1) / 3;
+    $('#nota6').val(parseFloat(total).toFixed(2));
+
+}
 function NotaFinal() {
     var nota1 = document.getElementById('nota1').value;
     var nota2 = document.getElementById('nota2').value;
     var nota3 = document.getElementById('nota3').value;
     var nota4 = document.getElementById('nota4').value;
     var nota5 = document.getElementById('nota5').value;
+    var nota6 = document.getElementById('nota6').value;
     /*var nota5 = document.getElementById('nota5').value;
     var nota6 = document.getElementById('nota6').value;
     var nota7 = document.getElementById('nota7').value;
@@ -242,12 +260,14 @@ function NotaFinal() {
     pregunta3();
     pregunta4();
     pregunta5();
+    pregunta6();
     var nota1 = document.getElementById('nota1').value;
     var nota2 = document.getElementById('nota2').value;
     var nota3 = document.getElementById('nota3').value;
     var nota4 = document.getElementById('nota4').value;
     var nota5 = document.getElementById('nota5').value;
-    var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4) + parseFloat(nota5);
+    var nota6 = document.getElementById('nota6').value;
+    var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4) + parseFloat(nota5) + parseFloat(nota6);
     $('#txtNota').html(total.toFixed(2));
     document.getElementById('bt_comprobar').disabled = true;
     $('input').attr("disabled", true);
