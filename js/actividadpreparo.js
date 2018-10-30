@@ -1,7 +1,12 @@
-$('.btn_mostrar').on('click', function(){ //mostrar todas las preguntas
-    $(".panel-collapse").removeClass('in');
-    $(".panel-collapse").addClass('in');
-    });
+$('.btn_mostrar').on('click', function() { //mostrar todas las preguntas
+    if ($(".panel-collapse").hasClass('in')) {
+        $(".panel-collapse").removeClass('in');
+    } else {
+        $(".panel-collapse").addClass('in');
+    }
+
+
+});
 
 
 /////////////////////////pregunta2//////////////////////////////////////
@@ -49,7 +54,7 @@ for (i = 0; i < act01Txt.length; i++) {
 }
 
 function pregunta1() {
-    var respact2 = ['3', '162', '6', '2', '2', '64', '512', '1024',];
+    var respact2 = ['3', '162', '6', '2', '2', '64', '512', '1024', ];
     var cont = 0;
     for (var i = 0; i < 8; i++) {
         var res = $('#act1num' + [i] + '').val().toLowerCase();
@@ -368,28 +373,28 @@ function NotaFinal() {
     if ((nota8 == "") || (nota9 == "") || (nota10 == "")) {
         alert("Debe ingresar la nota de la pregunta 8, 9 o 10.")
     } else {*/
-        pregunta1();
-        pregunta2();
-        pregunta3();
-        pregunta4();
-        pregunta5();
-        pregunta6();
-        pregunta7();
-        pregunta8();
-        pregunta9();
-        var nota1 = document.getElementById('nota1').value;
-        var nota2 = document.getElementById('nota2').value;
-        var nota3 = document.getElementById('nota3').value;
-        var nota4 = document.getElementById('nota4').value;
-        var nota5 = document.getElementById('nota5').value;
-        var nota6 = document.getElementById('nota6').value;
-        var nota7 = document.getElementById('nota7').value;
-        var nota8 = document.getElementById('nota8').value;
-        var nota9 = document.getElementById('nota9').value;
-        var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4) + parseFloat(nota5) + parseFloat(nota6) + parseFloat(nota7) + parseFloat(nota8) + parseFloat(nota9);
-        $('#txtNota').html(total.toFixed(2));
-        document.getElementById('bt_comprobar').disabled = true;
-        $('input').attr("disabled", true);
-        $('#txtAlumno').attr("disabled", false);
+    pregunta1();
+    pregunta2();
+    pregunta3();
+    pregunta4();
+    pregunta5();
+    pregunta6();
+    pregunta7();
+    pregunta8();
+    pregunta9();
+    var nota1 = document.getElementById('nota1').value;
+    var nota2 = document.getElementById('nota2').value;
+    var nota3 = document.getElementById('nota3').value;
+    var nota4 = document.getElementById('nota4').value;
+    var nota5 = document.getElementById('nota5').value;
+    var nota6 = document.getElementById('nota6').value;
+    var nota7 = document.getElementById('nota7').value;
+    var nota8 = document.getElementById('nota8').value;
+    var nota9 = document.getElementById('nota9').value;
+    var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4) + parseFloat(nota5) + parseFloat(nota6) + parseFloat(nota7) + parseFloat(nota8) + parseFloat(nota9);
+    $('#txtNota').html(total.toFixed(2));
+    document.getElementById('bt_comprobar').disabled = true;
+    $('input').attr("disabled", true);
+    $('#txtAlumno').attr("disabled", false);
     //}
 }

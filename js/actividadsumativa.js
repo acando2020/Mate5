@@ -1,3 +1,12 @@
+$('.btn_mostrar').on('click', function() { //mostrar todas las preguntas
+    if ($(".panel-collapse").hasClass('in')) {
+        $(".panel-collapse").removeClass('in');
+    } else {
+        $(".panel-collapse").addClass('in');
+    }
+
+
+});
 /////////////////////////pregunta1//////////////////////////////////////
 
 
@@ -99,7 +108,10 @@ $('#nume2').html(num2);
 //////////////////////////////////////
 $('#num3').html(num3);
 $('#num4').html(num4);
+$('#nume3').html(num3);
+$('#nume4').html(num4);
 var mxcd = [];
+mcd();
 
 function mcd() {
     var mcd = 0;
@@ -117,7 +129,9 @@ function mcd() {
 }
 
 
+
 var mncm = [];
+mcm();
 
 function mcm() {
     var mcm = 0;
@@ -126,9 +140,41 @@ function mcm() {
     mcm = (a / mcd(a, b)) * b;
     mncm.push(mcm);
 }
+//////////////////////parte2//////////////////////////////
+var mxcd2 = [];
+
+mcd2();
+
+function mcd2() {
+    var mcd = 0;
+    var a = Math.max(num3, num4);
+    var b = Math.min(num3, num4);
+    do {
+        mcd = b;
+        b = a % b;
+        a = mcd;
+        mxcd2.push(mcd);
+        mxcd2.sort((a, b) => a - b);
+    } while (b != 0) {
+        return mcd;
+    }
+}
+
+
+
+var mncm2 = [];
+mcm2();
+
+function mcm2() {
+    var mcm = 0;
+    var a = Math.max(num3, num4);
+    var b = Math.min(num3, num4);
+    mcm = (a / mcd2(a, b)) * b;
+    mncm2.push(mcm);
+}
 
 function pregunta5() {
-    var respact2 = [mxcd[0], mncm[0], '', '', ];
+    var respact2 = [mncm[0], mxcd[0], mncm2[0], mxcd2[0], ];
     var cont = 0;
     for (var i = 0; i < 4; i++) {
         var res = $('#act5num' + [i] + '').val().toLowerCase();
@@ -140,11 +186,52 @@ function pregunta5() {
         }
 
     }
-    var total = (cont * 1) / 4;
+    var total = (cont * 2) / 4;
     $('#nota5').val(parseFloat(total).toFixed(2));
 
 }
 
+function pregunta6() {
+    var respact2 = ['200', '2', '3', '2', ];
+    var cont = 0;
+    for (var i = 0; i < 4; i++) {
+        var res = $('#act6num' + [i] + '').val().toLowerCase();
+        if (respact2[i] == res) {
+            cont = cont + 1;
+            $('#act6num' + [i] + '').css("background", "#00e600");
+        } else {
+            $('#act6num' + [i] + '').css("background", "#ff6666");
+        }
+
+    }
+    var total = (cont * 1) / 4;
+    $('#nota6').val(parseFloat(total).toFixed(2));
+
+}
+
+function pregunta7() {
+    var nt1 = 0;
+    var act7num0 = document.getElementById('act7num0').value;
+    if (act7num0 == 15) {
+        nt1 = 1;
+        $('#act7num0').css("background", "#00e600");
+    } else {
+        $('#act7num0').css("background", "#ff6666");
+    }
+    $('#nota7').val(parseFloat(nt1).toFixed(2));
+}
+
+function pregunta8() {
+    var nt1 = 0;
+    var act8num0 = document.getElementById('act8num0').value;
+    if (act8num0 == 400) {
+        nt1 = 1;
+        $('#act8num0').css("background", "#00e600");
+    } else {
+        $('#act8num0').css("background", "#ff6666");
+    }
+    $('#nota8').val(parseFloat(nt1).toFixed(2));
+}
 
 
 function NotaFinal() {
@@ -161,7 +248,6 @@ function NotaFinal() {
     pregunta6();
     pregunta7();
     pregunta8();
-    pregunta9();
     var nota1 = document.getElementById('nota1').value;
     var nota2 = document.getElementById('nota2').value;
     var nota3 = document.getElementById('nota3').value;
@@ -170,8 +256,7 @@ function NotaFinal() {
     var nota6 = document.getElementById('nota6').value;
     var nota7 = document.getElementById('nota7').value;
     var nota8 = document.getElementById('nota8').value;
-    var nota9 = document.getElementById('nota9').value;
-    var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4) + parseFloat(nota5) + parseFloat(nota6) + parseFloat(nota7) + parseFloat(nota8) + parseFloat(nota9);
+    var total = parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3) + parseFloat(nota4) + parseFloat(nota5) + parseFloat(nota6) + parseFloat(nota7) + parseFloat(nota8);
     $('#txtNota').html(total.toFixed(2));
     document.getElementById('bt_comprobar').disabled = true;
     $('input').attr("disabled", true);

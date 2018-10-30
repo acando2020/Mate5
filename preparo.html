@@ -218,7 +218,7 @@
                     </button>
                 </li>
                 <li>
-                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="pregunta5()">
+                    <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="bt_comprobar" onclick="NotaFinal()">
                         <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     </button>
                 </li>
@@ -263,7 +263,7 @@
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
                                 <div class="col-md-12 ">
                                     <div class="text-question">
@@ -440,7 +440,7 @@
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                             <div class="panel-body">
                                 <div class="text-question">
                                     <b>5. Calcula</b> y <b>escribe</b> los términos que faltan en cada división.
@@ -477,6 +477,48 @@
                         <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                             <div class="panel-body">
                                 <div class="text-question">
+                                    <b>6. Resuelve</b> el problema.
+                                    <div class="row">
+                                        <br>
+                                        <div class="col-lg-6" align="justify">
+                                            En la banda de la confraternidad de una institución educativa, los músicos de los instrumentos de percusión tocan en lapsos de 8 minutos, y los músicos de los instrumentos de viento tocan en lapsos de 5 minutos. Si empiezan al mismo tiempo, ¿en cuántos minutos volverán a tocar juntos?.
+                                        </div>
+                                        <div class="col-lg-3" align="center">
+                                            <table>
+                                                <tr>
+                                                    <td><input id="act6num0" class="inputfraccciones sinEspacios"></input></td>
+                                                    <td style="border-left:1px solid #000000; border-right: 1px solid #000000;"><input id="act6num1" class="inputfraccciones sinEspacios"></input></td>
+                                                    <td><input id="act6num2" class="inputfraccciones sinEspacios"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input id="act6num3" class="inputfraccciones sinEspacios"></input></td>
+                                                    <td style="border-left:1px solid #000000; border-right: 1px solid #000000;"><input id="act6num4" class="inputfraccciones sinEspacios"></input></td>
+                                                    <td><input id="act6num5" class="inputfraccciones sinEspacios"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input id="act6num6" class="inputfraccciones sinEspacios"></input></td>
+                                                    <td style="border-left:1px solid #000000; border-right: 1px solid #000000;"><input id="act6num7" class="inputfraccciones sinEspacios"></input></td>
+                                                    <td><input id="act6num8" class="inputfraccciones sinEspacios"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input id="act6num9" class="inputfraccciones sinEspacios"></input></td>
+                                                    <td style="border-left:1px solid #000000; border-right: 1px solid #000000;"><input id="act6num10" class="inputfraccciones sinEspacios"></input></td>
+                                                    <td><input id="act6num11" class="inputfraccciones sinEspacios"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td style="border-left:1px solid #000000; border-right: 1px solid #000000;"><input id="act6num12" class="inputfraccciones sinEspacios"></input></td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                            <br>
+                                        </div>
+                                        <div class="col-lg-3" align="center">
+                                            <input type="" class="form-control" style="border: 1px dotted #851f81;" name="">
+                                            <br>
+                                            <b style="color: #005caa;">R. </b>Volverán a tocar al mismo tiempo en <input id="act6num13" class="inputfraccciones sinEspacios"></input> minutos.
+                                        </div>
+                                    </div>
                                 </div>
                                 <br>
                             </div>
@@ -494,140 +536,178 @@
                         <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
                             <div class="panel-body">
                                 <div class="text-question">
+                                    <b>7. Resuelve</b> el problema.
+                                    <div class="row">
+                                        <div class="col-lg-8" align="justify">David tiene 24 chocolates y Margarita, 18. Si desean repartirlos entre sus compañeros de clase, de modo que todos tengan la misma cantidad y que sea la mayor posible, ¿cuántos chocolates repartirán a cada persona? ¿A cuántos compañeros repartirán los chocolates?
+                                        </div>
+                                        <div class="col-lg-4"><img src="img/i1_p163_actpreparo.jpg" alt="" class="img-responsive"></img>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4" align="center">
+                                            <table>
+                                                <tr>
+                                                    <td><input class="inputfraccciones sinEspacios" id="act7num0"></input></td>
+                                                    <td style="border-left: 1px solid #000000; border-right: 1px solid #000000;"><input class="inputfraccciones sinEspacios" id="act7num1"></input></td>
+                                                    <td><input class="inputfraccciones sinEspacios" id="act7num2"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input class="inputfraccciones sinEspacios" id="act7num3"></input></td>
+                                                    <td style="border-left: 1px solid #000000; border-right: 1px solid #000000;"><input class="inputfraccciones sinEspacios" id="act7num4"></input></td>
+                                                    <td><input class="inputfraccciones sinEspacios" id="act7num5"></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input class="inputfraccciones sinEspacios" id="act7num6"></input></td>
+                                                    <td style="border-left: 1px solid #000000; border-right: 1px solid #000000;"><input class="inputfraccciones sinEspacios" id="act7num7"></input></td>
+                                                    <td><input class="inputfraccciones sinEspacios" id="act7num8"></input></td>
+                                                </tr>
+                                            </table>
+                                            <br>
+                                        </div>
+                                        <div class="col-lg-4" align="center"><input class="form-control" style="border: 2px dotted #851f81;"></input>
+                                        </div>
+                                        <div class="col-lg-4" align="justify"><b style="color: #005caa;">R. </b>David y Margarita repartirán <input class="inputfraccciones sinEspacios" id="act7num9"></input> chocolates cada uno. David los repartirá a <input class="inputfraccciones sinEspacios" id="act7num10"></input> compañeros y Margarita, a <input class="inputfraccciones sinEspacios" id="act7num11"></input>.
+                                        </div>
+                                    </div>
                                     <br>
                                 </div>
                             </div>
                         </div>
-                        <img class="img-responsive" src="img/geometria.png"></img>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingEigth">
-                                <h4 class="panel-title">
+                    </div>
+                    <img class="img-responsive" src="img/geometria.png"></img>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingEigth">
+                            <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEigth" aria-expanded="false"
                                     aria-controls="collapseEigth">
                                     <input type="text" maxlength="4" size="2" style="text-align:center" class="nota-abierta" min="0" max="1" id="nota8" readonly>&nbsp;<b>8. Problema</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
-                            </div>
-                            <div id="collapseEigth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEigth">
-                                <div class="panel-body">
-                                    <div class="text-question">
-
-                                    </div>
-                                    <br>
+                        </div>
+                        <div id="collapseEigth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEigth">
+                            <div class="panel-body">
+                                <div class="text-question" align="justify">
+                                    <b>8. </b>Miguel colocó una fila de azulejos en el borde de una piscina cuadrada que mide 12 metros de lado. ¿En cuántos metros colocó azulejos Miguel?
+                                    <br><br>
+                                    <span><b style="color: #005ca4">R.</b> Miguel colocó azulejos en<input class="inputfraccciones" id="act8num0"></input> metros alrededor de la piscina.</span>
                                 </div>
+                                <br>
                             </div>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingNine">
-                                <h4 class="panel-title">
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingNine">
+                            <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false"
                                     aria-controls="collapseNine">
-                                    <input type="text" maxlength="4" size="2" style="text-align:center; background: white;" class="nota-abierta" min="0" max="1" id="nota9">&nbsp;<b>9. Problema</b> <span class="sobre">1 pts</span>
+                                    <input type="text" maxlength="4" size="2" style="text-align:center;" class="nota-abierta" min="0" max="1" id="nota9" readonly>&nbsp;<b>9. Problema</b> <span class="sobre">1 pts</span>
                                 </a>
                             </h4>
-                            </div>
-                            <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
-                                <div class="panel-body">
-                                    <div class="text-question" align="justify">
-
-                                    </div>
-                                    <br>
+                        </div>
+                        <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+                            <div class="panel-body">
+                                <div class="text-question" align="justify">
+                                    <b>9. </b> Daniela compra un cartón de 4 kg que contiene 8 paquetes de galletas. ¿Cuántos gramos pesa cada paquete?
+                                    <br><br>
+                                    <span><b style="color: #005ca4">R.</b> Cada paquete pesa <input class="inputfraccciones" id="act9num0"></input> gramos.</span>
                                 </div>
+                                <br>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Modal Guardar PDF-->
-            <div class="modal fade animated pulse" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal conLevent-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
-                            <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form id="modal_form" class="form-horizontal">
-                                <div class="form-group ">
-                                    <div class="col-sm-2">
-                                        <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
-                                        <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
-                                        <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
-                                            <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <span class="glyphicon glyphicon-info-sign error-color" aria-hidden="true"></span> Debes ingresar tu nombre</div>
-                                    </div>
+        </div>
+        <!-- Modal Guardar PDF-->
+        <div class="modal fade animated pulse" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal conLevent-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
+                        <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="modal_form" class="form-horizontal">
+                            <div class="form-group ">
+                                <div class="col-sm-2">
+                                    <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
                                 </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+                                <div class="col-sm-10">
+                                    <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
+                                    <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
+                                    <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
+                                        <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <span class="glyphicon glyphicon-info-sign error-color" aria-hidden="true"></span> Debes ingresar tu nombre</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
-            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-            <script src="js/jquery.min.js"></script>
-            <script src="js/jquery-ui.js"></script>
-            <!-- Include all compiled plugins (below), or include individual files as needed -->
-            <script src="js/bootstrap.min.js"></script>
-            <!--generador de pdf-->
-            <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
-            <script src="js/screenfull.js"></script>
-            <script src="js/helper.js"></script>
-            <script src="js/activities.js"></script>
-            <script src="js/Utilitario.js"></script>
-            <script src="js/validacionesExtras.js"></script>
-            <script src="js/dragNdrop.js"></script>
-            <script src="js/actividadpreparo.js"></script>
-            <script type="text/javascript">
-            var titulos = "preparo";
-            $("#txtNota").html("0");
-            $("#n_pagina").html("162");
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <!--generador de pdf-->
+        <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+        <script src="js/screenfull.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/activities.js"></script>
+        <script src="js/Utilitario.js"></script>
+        <script src="js/validacionesExtras.js"></script>
+        <script src="js/dragNdrop.js"></script>
+        <script src="js/actividadpreparo.js"></script>
+        <script type="text/javascript">
+        var titulos = "preparo";
+        $("#txtNota").html("0");
+        $("#n_pagina").html("162");
 
-            /* $(document).ready(function() {
-                 var winHeight = $(window).height();
-                 var winWidth = $(window).width();
-                 //var imageSize = { width: winHeight , height: winHeight };
-                 var watermarkImage = new Image();
-                 watermarkImage.src = 'img/i3_p92_act120.jpg';
-                 //var watermarkImage2 = new Image();
-                 //watermarkImage2.src = 'img/i7_p98_act100.jpg';
+        /* $(document).ready(function() {
+             var winHeight = $(window).height();
+             var winWidth = $(window).width();
+             //var imageSize = { width: winHeight , height: winHeight };
+             var watermarkImage = new Image();
+             watermarkImage.src = 'img/i3_p92_act120.jpg';
+             //var watermarkImage2 = new Image();
+             //watermarkImage2.src = 'img/i7_p98_act100.jpg';
 
-                 LC.init(
-                     document.getElementsByClassName('my-drawing')[0], {
-                         imageURLPrefix: 'imgcanvas',
+             LC.init(
+                 document.getElementsByClassName('my-drawing')[0], {
+                     imageURLPrefix: 'imgcanvas',
 
-                         watermarkImage: watermarkImage,
-                         watermarkScale: 0.8, // you can scale it
-                         //imageSize: imageSize
-                         backgroundColor: 'white'
+                     watermarkImage: watermarkImage,
+                     watermarkScale: 0.8, // you can scale it
+                     //imageSize: imageSize
+                     backgroundColor: 'white'
 
-                     });
+                 });
 
 
 
-             });*/
+         });*/
 
-            function soloNumeros2(e) {
-                var key = window.event ? e.which : e.keyCode;
-                if (key < 108 || key > 108) {
-                    e.preventDefault();
-                }
+        function soloNumeros2(e) {
+            var key = window.event ? e.which : e.keyCode;
+            if (key < 108 || key > 108) {
+                e.preventDefault();
             }
+        }
 
-            function sinEspacios(inputs) {
-                $(inputs).on('keypress', function(e) {
-                    if (e.which == 32)
-                        return false;
-                });
-            }
-            sinEspacios(".sinEspacios");
-            </script>
+        function sinEspacios(inputs) {
+            $(inputs).on('keypress', function(e) {
+                if (e.which == 32)
+                    return false;
+            });
+        }
+        sinEspacios(".sinEspacios");
+        </script>
 </body>
 
 </html>

@@ -23,6 +23,8 @@ function save_open_activity_to_local(alumno) {
     var A_guardar = "";
     $('#nombre_alumno').addClass("no-valid");
     if (valida_existe('txtAlumno')) {
+        $(".panel-collapse").removeClass('in');
+        $(".panel-collapse").addClass('in');
         $('#nombre_alumno').removeClass('no-valid');
         $('#nombre_alumno').html('').append('Alumno: ' + $(nom).val() + "     Puntaje: " + $("#txtNota").html());
         $('#nombre_alumno').attr('hidden', false);
@@ -233,7 +235,7 @@ function calificar_abierta() {
         $('.nota-abierta').removeClass('valid')
 
         alert('La nota no debe exceder los 10 puntos');
-         $('.nota-abierta').val("");
+        $('.nota-abierta').val("");
 
         $('.nota-abierta').focus();
         //alert('La nota total no debe exeder de 10 puntos.')
