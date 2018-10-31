@@ -97,10 +97,10 @@ function pregunta4() {
 
 }
 ///////////////////////pregunta5/////////////////////////////////////////////////////////////////
-var num1 = Math.floor((Math.random() * 20) + 10);
-var num2 = Math.floor((Math.random() * 40) + 20);
-var num3 = Math.floor((Math.random() * 20) + 10);
-var num4 = Math.floor((Math.random() * 40) + 20);
+var num1 = Math.floor((Math.random() * 20) + 5);
+var num2 = Math.floor((Math.random() * 25) + 15);
+var num3 = Math.floor((Math.random() * 20) + 5);
+var num4 = Math.floor((Math.random() * 25) + 15);
 $('#num1').html(num1);
 $('#num2').html(num2);
 $('#nume1').html(num1);

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MATEMÁTICA 5</title>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap-->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <!--Animaciones-->
+        <link href="css/animate.css" rel="stylesheet">
+        <!--Css propio del proyecto-->
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/fraccion.css" rel="stylesheet">
+        <link href="css/jquery-ui.min.css" rel="stylesheet">
+        
+            <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+</head>
+<style type="text/css">
+    .preguntas{
+        font-size: 17px;
+        padding-top: 20px;
+    }
+    .n0{
+        color: #1AA218;
+        font-size: 23px;
+    }
+
+    .n1{
+        color: #D44B0B;
+        font-size: 23px;
+    }
+
+    .n2{
+        color: #3768F7;
+        font-size: 23px;
+    }
+
+    .np0{
+        color: #25B48B;
+        font-size: 23px;
+    }
+
+    .np1{
+        color: #EF435B;
+        font-size: 23px;
+    }
+
+    .np2{
+        color: #1C2E85;
+        font-size: 18px;
+    }
+
+    .nr0{
+        color: #25B48B;
+        font-size: 30px;
+    }
+
+    .np3{
+        color: #7E7E7E;
+        font-size: 25px;
+    }
+
+    .linea{
+        text-decoration:overline; 
+        text-decoration-color: #D44B0B;
+        border: none;
+    }
+
+    .linea1{
+        text-decoration:overline; 
+        text-decoration-color: #3768F7;
+        border: none;
+    }
+
+    .literal{
+        color: #485699;
+        font-size: 23px;
+    }
+
+    .num{
+        background-color: #F9C797;
+        font-size: 21px;        
+        border-top-left-radius:15px;
+        border-top-right-radius:0;
+        border-bottom-right-radius:15px;
+        border-bottom-left-radius:0;
+    }
+    .num1{
+        background-color: #E2C2F3;
+        font-size: 21px;        
+        border-top-left-radius:15px;
+        border-top-right-radius:0;
+        border-bottom-right-radius:15px;
+        border-bottom-left-radius:0;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .num2{
+        background-color: #C2F3CB;
+        font-size: 21px;        
+        border-top-left-radius:15px;
+        border-top-right-radius:0;
+        border-bottom-right-radius:15px;
+        border-bottom-left-radius:0;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .encabezados{
+        color: white;
+        font-size: 23px;
+    }
+
+    .actividad1{
+        background: #fff;       
+    }
+    .correcto{
+        color: #ffffff;
+        background-color: #8FB435;
+        font-weight: 700;
+    }
+    .incorrecto{
+        color: #ffffff;
+        background-color: #E76E80;
+        font-weight: 700;
+    }
+    @media (max-width: 770px) {
+      .cajas {
+        clear: left;
+      }      
+
+    }
+
+    .fraction {
+        display: inline-block;
+        vertical-align: middle; 
+        margin: 0 0.2em 0.4ex;
+        text-align: center;
+    }
+    .fraction > span {
+        display: block;
+        padding-top: 0.15em;
+    }
+    .fraction span.fdn {border-top: thin solid #636363;}
+    .fraction span.bar {display: none;}
+
+    .radical {
+    position: relative;
+    font-size: 1.6em;
+    vertical-align: middle;
+    }
+    .n-root {
+        position: absolute;
+        top: -0.333em;
+        left: 0.333em;
+        font-size: 45%;
+    }
+    .radicand { 
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #EF435B;
+    }
+
+    .radicand1 { 
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #1C2E85;
+    }
+
+    .radicand2 { 
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #D70D22;
+    }  
+
+    .radicand3 { 
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #25B48B;
+    }
+
+
+    .input_xs{
+        height: 22px;
+        padding: 2px 5px;
+        font-size: 12px;
+        line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
+        border-radius: 3px;
+        text-align: center;        
+    }
+
+    .expoR{
+        top: -20px;
+        position: relative;
+    }
+
+    .eR{
+        top: -10px;
+        position: relative;
+        font-size: 15px;
+    }
+
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+
+    input[type=number] { -moz-appearance:textfield; }
+
+
+
+    .respuestas{
+        font-size: 17px; 
+        color: #8444DC;
+    }
+
+
+    .checkmark {    
+        height: 25px;
+        width: 25px; 
+        top: 7px; 
+        position: relative;      
+    }
+
+
+
+        .r_imgCartel{
+        min-height: 120px;
+        border: 1px solid #09B68E;
+        margin-bottom: 15px;
+        padding: 3px;
+    }
+@media (max-width: 770px) {
+    .cajas {
+        clear: left;
+      }
+   .imgCartel img{
+        padding: 8px;
+        max-width: 20%;
+    }
+    .r_imgCartel{
+        min-height: 40px;
+        border: 1px solid #09B68E;
+    }
+    .r_imgCartel img{
+        max-height: 40%;
+    }
+}
+
+
+
+
+</style>
+
+<body>
+    <div id="nota-informativa" class="nota-ayuda">
+       <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+        <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
+        
+        <br>
+        
+        <b>Realiza los cálculos y responde en los espacios en blanco según se solicita.<br>
+        Actividad 13: Arrastra las imágenes de las figuras geométricas a los recuadros que contienen las respuestas segun corresponda.<br>
+        Una vez arrastrada la imagen ya no la podrás quitar.</b>
+
+        <br><br>
+        <span id="ayudas"></span>
+    </div>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <button class="btn button btnHelp mytooltip" data-info="Mostrar ayuda de la actividad" onclick="mostrar_ayuda()">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_1 btnGuardar mytooltip" data-info="Guardar en local" onclick="$('#myModal').modal('show')">
+                            <span  class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li >
+                        <button class="btn button button_1 btnEvniar mytooltip" style="display: none !important;" data-info="Enviar a Correo">
+                            <span  class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </button>
+                    </li >
+                    <li >
+                        <button class="btn button button_2 btnIniciar mytooltip" style="display: none !important;" disabled data-info="Iniciar" >
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_2 btnRepetir mytooltip"  data-info="Repetir" onclick="location.reload()" >
+                            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="Calificar">
+                            <span  class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_5 mytooltip display-none" style="display: none !important;" data-info="Pantalla completa" onclick="full_screen_change()">
+                            <span id="full_ico" class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-right: 0px;margin-left: 0px; ">
+                    <li><span  class="notificacion actividad display-none" >
+                            <span class="glyphicon glyphicon-list-alt"></span> Actividad <span id='n_cont'>1</span> / <span id='n_ejer'>1</span>
+                        </span>
+                        <span  class="notificacion nota" >
+                            <span class="glyphicon glyphicon-pencil"></span> Nota <span id="txtNota" ></span> <span id="txtNota1" style="display: none;"></span>/ 10
+                        </span>
+                        <span  class="notificacion pagina" >
+                            <span class="glyphicon glyphicon-bookmark"></span> Pág <i id="n_pagina"></i>
+                        </span>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+<!--FIN DE NAVBAR QUE SE AÑADE-->
+    <div class="container espacio">
+        <div class="panel border-aplico" id="activity"> 
+                <!--modificar el bg- segun la actividad-->
+                <div class="panel-heading bg-aplico">
+                    <span class="titulo"><img src="img/icoA.png"> Aplico para aprender</span>
+                    <span class="titulo_2 txtAlumno display-none" id="nombre_alumno" >Alumno: </span>
+                    
+                </div>
+
+                <div class="panel-body"> 
+            <button class="btn-link btn_mostrar">Mostrar Preguntas</button><br><br>
+        <div class="row">
+            <div class="col-sm-8"><img src="img/practica_individual.png" class="img-responsive"></div>           
+        </div> 
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Actividad 1</a>
+                </h4>
+                </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            1. En los graderíos de una cancha se eliminan las barandas que delimitan las regiones cuadradas, como se observa en la figura. ¿Cuántos metros de barandas fueron eliminados?<br><br>
+
+
+                            <div class="table-responsive col-sm-3">
+                                <table class="table table-hover table-responsive table-borderless">
+                                    <tbody align="center">
+                                        <tr><td colspan="12"><span id="nBD0" class="np2"></span>cm</td></tr>
+                                        <tr>
+                                            <td><br><span id="nBD1" class="np2"></span>cm</td>
+                                            <td><img src="img/i1_p155_act1.jpg" class="img-responsive"></td>
+                                            <td><br><span id="nBD2" class="np2"></span>cm</td>
+                                        </tr>
+                                        <tr><td colspan="12"><span id="nBD3" class="np2"></span>cm</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-responsive col-sm-3">
+                                <table class="table table-hover table-responsive table-borderless">
+                                    <tbody align="center">
+                                        <tr><td colspan="12"><span id="nBD4" class="np2"></span>cm</td></tr>
+                                        <tr>
+                                            <td><br><span id="nBD5" class="np2"></span>cm</td>
+                                            <td><img src="img/i1_p155_act1.jpg" class="img-responsive"></td>
+                                            <td><br><span id="nBD6" class="np2"></span>cm</td>
+                                        </tr>
+                                        <tr><td colspan="12"><span id="nBD7" class="np2"></span>cm</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-responsive col-sm-3">
+                                <table class="table table-hover table-responsive table-borderless">
+                                    <tbody align="center">
+                                        <tr><td colspan="12"><span id="nBD8" class="np2"></span>cm</td></tr>
+                                        <tr>
+                                            <td><br><span id="nBD9" class="np2"></span>cm</td>
+                                            <td><img src="img/i1_p155_act1.jpg" class="img-responsive"></td>
+                                            <td><br><span id="nBD10" class="np2"></span>cm</td>
+                                        </tr>
+                                        <tr><td colspan="12"><span id="nBD11" class="np2"></span>cm</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-responsive col-sm-3">
+                                <table class="table table-hover table-responsive table-borderless">
+                                    <tbody align="center">
+                                        <tr><td colspan="12"><span id="nBD12" class="np2"></span>cm</td></tr>
+                                        <tr>
+                                            <td><br><span id="nBD13" class="np2"></span>cm</td>
+                                            <td><img src="img/i1_p155_act1.jpg" class="img-responsive"></td>
+                                            <td><br><span id="nBD14" class="np2"></span>cm</td>
+                                        </tr>
+                                        <tr><td colspan="12"><span id="nBD15" class="np2"></span>cm</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+
+
+                           <div class="col-sm-12" align="center"><br><br>
+                               <span class="np1">R.  </span>Se eliminaron &nbsp;&nbsp;<input type="number" id="rEMC0" class="form-control respuestas" style="width: 70px;">&nbsp;&nbsp; metros de barandas.
+                           </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Actividad 2</a>
+                </h4>
+                </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline" align="justify">
+                            2. Ernesto corta plataformas para colocarlas en una pared del patio para que su gato pueda jugar. Alrededor de cada una coloca una cinta metálica. Teniendo en cuenta que la medida de los lados es la misma para todas las figuras y es de <span class="np0" id="nPCC0"></span> centímetros, si corta <span class="np0" id="nPCC1"></span> con forma de triángulos equiláteros y <span class="np0" id="nPCC2"></span> con forma de heptágonos, ¿qué cantidad de cinta metálica necesita?<br><br>
+
+                            <div align="center">
+                                <span class="np1">R. </span> Ernesto necesita &nbsp;&nbsp;<input type="number" class="form-control respuestas" id="rPCC0" style="width: 90px;">&nbsp;&nbsp; centimetros.
+                            </div>                            
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Actividad 3</a>
+                </h4>
+                </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            <div class="col-sm-7" align="justify">
+                                3. El patio de la escuela de Fátima tiene forma de un octógono regular. <br><br>
+                                Si tiene un perímetro de <span class="np2" id="nCLM0"></span> metros, ¿cuánto mide cada lado? <br><br>
+
+                                    <span class="np1">R. </span>  Cada lado del patio mide &nbsp;&nbsp;<input type="number" class="form-control respuestas" id="rCLM0" style="width: 90px;">&nbsp;&nbsp; metros.
+
+                            </div>
+                            <div class="col-sm-5" align="center">
+                                <img src="img/i1_p155_act3.jpg" class="img-responsive">
+                            </div>
+                            
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Actividad 4</a>
+                </h4>
+                </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            <div class="col-sm-8" align="justify">
+                                4. Julio y Nancy realizan un diagrama como el que muestra la figura. Si colocan un cordón azul alrededor de los hexágonos, un cordón blanco alrededor de los cuadrados y un cordónmorado alrededor de los triángulos, ¿cuál es la  longitud de los diferentes cordones?<br><br><br><br>
+
+                                    <span class="np1">R. </span> Julio y Nancy necesitan <input type="number" class="form-control respuestas" id="rDMF0" style="width: 70px;"> centímetros de cordón azul, <input type="number" class="form-control respuestas" id="rDMF1" style="width: 70px;"> centímetros de color blanco y <input type="number" class="form-control respuestas" id="rDMF2" style="width: 70px;"> centímetros de cordón morado.
+
+                            </div>
+                            <div class="col-sm-4" align="center">
+                                <img src="img/i1_p155_act4.jpg" class="img-responsive">
+                            </div>
+                            
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Actividad 5</a>
+                </h4>
+                </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline"> 
+
+                            <div class="col-sm-8" align="justify">
+                                5. Marco elabora lámparas con forma de pentágonos regulares. Si utilizó <span class="np1" id="nELP0"></span> centímetros de tiras de madera y el lado de cada lámpara mide <span class="np1" id="nELP1"></span> centímetros, ¿cuántas lámparas elaboró?<br><br><br>
+                             
+                                <div align="center">
+                                    <span class="np1">R. </span> Marco elaboró &nbsp;&nbsp;<input type="number" id="rELP0" class="form-control respuestas" style="width: 90px;">&nbsp;&nbsp; lámparas.
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <img src="img/i1_p155_act5.jpg" class="img-responsive">
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Actividad 6</a>
+                </h4>
+                </div>
+                    <div id="collapse6" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline"> 
+                            <div class="col-sm-8" align="justify">
+                                6. Andrés desea decorar los bordes de la vela blanca de su bote. ¿Cuántos metros de cinta deberá comprar?<br><br>
+                                <div align="center">
+                                    <span class="np1">R. </span> Andrés necesita &nbsp;&nbsp;<input type="number" id="rBVB0" class="form-control respuestas" style="width: 90px;">&nbsp;&nbsp; metros de cinta para decorar la vela.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4" style="background-color: #C3A1C8;" align="center">
+                                <span class="np2" id="nBVB0"></span>cm
+                                <img src="img/i1_p155_act6.png" class="img-responsive">
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div>
+                <img src="img/estudios_sociales.png" class="img-responsive">
+            </div>
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">Actividad 7</a>
+                </h4>
+                </div>
+                    <div id="collapse7" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline"> 
+                            <div class="col-sm-8" align="justify">
+                                7. Daniel necesita resolver el siguiente problema para su proyecto Historia de los grandes monumentos del mundo.<br>
+                                    Los jardines del Taj Mahal están divididos en cuadrados iguales, de <span class="np1" id="nPPH0"></span> regiones cuadradas, y cada lado mide <span class="np1" id="nPPH1"></span> metros. Cuántos metros tiene en total la suma de los perímetros de todos los jardines? <br><br>
+
+                                    <div align="center">
+                                        <span class="np1">R. </span> El perímetro total es de &nbsp;&nbsp;<input type="number" id="rPPH0" class="form-control respuestas" style="width: 90px;">&nbsp;&nbsp; metros.
+                                    </div>
+                            </div>
+                            <div class="col-sm-4" align="center">
+                                <img src="img/i1_p155_act7.png" class="img-responsive">
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div>
+                <img src="img/ciencias_naturales.png" class="img-responsive">
+            </div>
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Actividad 8</a>
+                </h4>
+                </div>
+                    <div id="collapse8" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline"> 
+
+                            <div class="col-sm-8" align="justify">
+                                8. Para su proyecto de Ciencias Naturales, los niños de 5.° grado construyeron en el huerto de la escuela un semillero de forma cuadrada y colocaron ladrillos a su alrededor. Si cada lado mide <span class="np0" id="nPCN0"></span> metros, ¿qué extensión ocupan los ladrillos? <br><br>
+                                <span class="np1">R. </span> Los niños colocaron los ladrillos en &nbsp;&nbsp;<input type="number" id="rPCN0" class="form-control respuestas" style="width: 90px;">&nbsp;&nbsp; metros alrededor del semillero.    
+                            </div>
+                            <div class="col-sm-4" align="center">
+                                <img src="img/i1_p155_act8.jpg" class="img-responsive">
+                            </div>
+                            
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">Actividad 9</a>
+                </h4>
+                </div>
+                    <div id="collapse9" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline"> 
+
+                            <div class="col-sm-8" align="justify"><br>
+                                Reinaldo tiene una huerta de forma cuadrada. Para proteger las siembras, coloca una cerca de tres vueltas de alambre de púas. Mientras lo colocaba, una de las vueltas de alambre se rompió. Si cada lado de la huerta mide <span class="np0" id="nHFC0"></span> metros, ¿cuántos metros de alambre de púas colocó Reinaldo?<br><br>
+
+                                <div align="center">
+                                    <span class="np1">R. </span> Reinaldo colocó &nbsp;&nbsp;<input type="number" id="rHFC0" class="form-control respuestas" style="width: 70px;">&nbsp;&nbsp; metros de alambre de púas.    
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4" align="center">
+                                <img src="img/i1_p155_act9.jpg" class="img-responsive">
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">Actividad 10</a>
+                </h4>
+                </div>
+                    <div id="collapse10" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            <div class="col-sm-8" align="justify">
+                                <br>
+                                Anita elabora <span class="np2" id="nEMI0"></span> manteles individuales con forma de octógono regular, y coloca un encaje al filo de todos ellos. Si en total utilizó <span class="np2" id="nEMI1"></span> centímetros de encaje, ¿cuánto mide cada lado del individual?<br><br>
+
+
+                                <div align="center">
+                                    <span class="np1">R. </span> Cada lado mide &nbsp;&nbsp;<input type="number" id="rEMI0" class="form-control respuestas" style="width: 70px;">&nbsp;&nbsp; centímetros.    
+                                </div>
+                            </div>
+                            <div class="col-sm-4" align="center">
+                                <img src="img/i1_p155_act10.jpg" class="img-responsive">
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">                                                                                                              
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse11">Actividad 11</a>
+                    </h4>
+                </div>
+                <div id="collapse11" class="panel-collapse collapse">
+                    <div class="panel-body preguntas form-group form-inline"> 
+
+                        <div class="col-sm-8" align="justify">
+                            <br>
+                            Elisa compra <span class="n0" id="nCBM0">20</span> bases para los maceteros de la escuela. Las bases tienen forma de pentágono regular con una medida de <span class="n0" id="nCBM1">17</span> centímetros de lado. Coloca un borde de un alambre de color al filo de cada base. Si compró un rollo de <span class="n0" id="nCBM2">2000</span> centímetros, ¿cuánto alambre le sobró? Exprésalo en metros.<br><br>
+
+
+                            <div align="center">
+                                <span class="np1">R. </span> A Elisa le sobraron &nbsp;&nbsp;<input type="number" id="rCBM0" class="form-control respuestas" style="width: 70px;">&nbsp;&nbsp; metros de alambre.    
+                            </div>
+                        </div>
+                        <div class="col-sm-4" align="center">
+                            <img src="img/i1_p155_act11.jpg" class="img-responsive">
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">                                                                                                              
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse12">Actividad 12</a>
+                    </h4>
+                </div>
+                <div id="collapse12" class="panel-collapse collapse">
+                    <div class="panel-body preguntas form-group form-inline"> 
+
+                        <div class="col-sm-8" align="justify">
+                            <br>
+                            Para su proyecto de Ciencias Naturales sobre las abejas, Jairo construye una maqueta como la de la figura. Cada lado de los hexágonos mide <span class="n0" id="nPCCNN0"></span> centímetros. Si pinta los bordes de todos los hexágonos, ¿cuántos centímetros pinta?.<br><br>
+
+
+                            <div align="center">
+                                <span class="np1">R. </span> Pinta &nbsp;&nbsp;<input type="number" id="rPCCNN0" class="form-control respuestas" style="width: 70px;">&nbsp;&nbsp; centímetros.    
+                            </div>
+                        </div>
+                        <div class="col-sm-4" align="center">
+                            <img src="img/i1_p155_act12.jpg" class="img-responsive">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">                                                                                                              
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse13">Actividad 13</a>
+                    </h4>
+                </div>
+                <div id="collapse13" class="panel-collapse collapse">
+                    <div class="panel-body preguntas form-group form-inline"> 
+
+                        Marcia <b>elabora</b> un cartel con diversos polígonos y sus perímetros para una presentación ante sus compañeros. <b>Ayuda</b> a Marcia a completar el cartel para su presentación. <b>Relaciona</b> cada figura con su perímetro.<br><br>
+
+                        <div class="imgCartel" align="center"></div>
+
+                        <div class="col-sm-12" align="center" id="destinosCartel">
+                            <br><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <!-- Modal Guardar PDF-->
+        <div class="modal fade animated pulse" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
+                        <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="modal_form" class="form-horizontal">
+                            <div class="form-group ">
+                                <div class="col-sm-2">
+                                    <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
+                                </div>  
+                                <div class="col-sm-10"> 
+                                    <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
+                                    <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
+                                    <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
+                                        <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <span class="glyphicon glyphicon-info-sign error-color"  aria-hidden="true"></span>
+                                        Debes ingresar tu nombre</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>        
+            </div>
+        </div>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <!--generador de pdf-->
+        <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+        <script src="js/screenfull.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/activities.js"></script>
+        <script src="js/Utilitario.js"></script>
+        <script src="js/tema11_1.js"></script>
+
+        <script type="text/javascript">
+            $("#n_pagina").html('155');
+            $( ".btnCalificar" ).bind( "click", function() {
+                CalificacionAbierta();
+            });
+        </script>
+</body>
+</html>

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MATEMÁTICA 5</title>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap-->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <!--Animaciones-->
+        <link href="css/animate.css" rel="stylesheet">
+        <!--Css propio del proyecto-->
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/fraccion.css" rel="stylesheet">
+        <link href="css/jquery-ui.min.css" rel="stylesheet">
+        
+            <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+</head>
+<style type="text/css">
+    .preguntas{
+        font-size: 17px;
+        padding-top: 20px;
+    }
+    .n0{
+        color: #D70D22;
+        font-size: 23px;
+    }
+
+    .n1{
+        color: #D44B0B;
+        font-size: 23px;
+    }
+
+    .n2{
+        color: #3768F7;
+        font-size: 23px;
+    }
+
+    .np0{
+        color: #25B48B;
+        font-size: 23px;
+    }
+
+    .np1{
+        color: #EF435B;
+        font-size: 23px;
+    }
+
+    .np2{
+        color: #1C2E85;
+        font-size: 23px;
+    }
+
+    .nr0{
+        color: #25B48B;
+        font-size: 30px;
+    }
+
+    .np3{
+        color: #7E7E7E;
+        font-size: 25px;
+    }
+
+    .linea{
+        text-decoration:overline; 
+        text-decoration-color: #D44B0B;
+        border: none;
+    }
+
+    .linea1{
+        text-decoration:overline; 
+        text-decoration-color: #3768F7;
+        border: none;
+    }
+
+    .literal{
+        color: #485699;
+        font-size: 23px;
+    }
+
+    .num{
+        background-color: #F9C797;
+        font-size: 21px;        
+        border-top-left-radius:15px;
+        border-top-right-radius:0;
+        border-bottom-right-radius:15px;
+        border-bottom-left-radius:0;
+    }
+    .num1{
+        background-color: #E2C2F3;
+        font-size: 21px;        
+        border-top-left-radius:15px;
+        border-top-right-radius:0;
+        border-bottom-right-radius:15px;
+        border-bottom-left-radius:0;
+    }
+    .num2{
+        background-color: #C2F3CB;
+        font-size: 21px;        
+        border-top-left-radius:15px;
+        border-top-right-radius:0;
+        border-bottom-right-radius:15px;
+        border-bottom-left-radius:0;
+    }
+    .encabezados{
+        color: white;
+        font-size: 23px;
+    }
+
+    .actividad1{
+        background: #fff;       
+    }
+    .correcto{
+        color: #ffffff;
+        background-color: #8FB435;
+        font-weight: 700;
+    }
+    .incorrecto{
+        color: #ffffff;
+        background-color: #E76E80;
+        font-weight: 700;
+    }
+    @media (max-width: 770px) {
+      .cajas {
+        clear: left;
+      }      
+
+    }
+
+    .fraction {
+        display: inline-block;
+        vertical-align: middle; 
+        margin: 0 0.2em 0.4ex;
+        text-align: center;
+    }
+    .fraction > span {
+        display: block;
+        padding-top: 0.15em;
+    }
+    .fraction span.fdn {border-top: thin solid #636363;}
+    .fraction span.bar {display: none;}
+
+    .radical {
+    position: relative;
+    font-size: 1.6em;
+    vertical-align: middle;
+    }
+    .n-root {
+        position: absolute;
+        top: -0.333em;
+        left: 0.333em;
+        font-size: 45%;
+    }
+    .radicand { 
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #EF435B;
+    }
+
+    .radicand1 { 
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #1C2E85;
+    }
+
+    .radicand2 { 
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #D70D22;
+    }  
+
+    .radicand3 { 
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #25B48B;
+    }
+
+
+    .input_xs{
+        height: 22px;
+        padding: 2px 5px;
+        font-size: 12px;
+        line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
+        border-radius: 3px;
+        text-align: center;        
+    }
+
+    .expoR{
+        top: -20px;
+        position: relative;
+    }
+
+    .eR{
+        top: -10px;
+        position: relative;
+        font-size: 15px;
+    }
+
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+
+    input[type=number] { -moz-appearance:textfield; }
+
+
+
+    .respuestas{
+        font-size: 17px; 
+        color: #8444DC;
+    }
+
+</style>
+
+<body>
+    <div id="nota-informativa" class="nota-ayuda">
+       <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+        <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
+        Responde en los espacios en blanco según se solicita<br><br>
+         <b>
+           El simbolo de multiplicación que debes utilizar es la equis x  Ej: 1x1x1<br>
+           No ingreses más texto de lo solicitado ya que afectará tu calificación.<br>
+        </b>
+
+        <br>
+        <span id="ayudas"></span>
+    </div>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <button class="btn button btnHelp mytooltip" data-info="Mostrar ayuda de la actividad" onclick="mostrar_ayuda()">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_1 btnGuardar mytooltip" data-info="Guardar en local" onclick="$('#myModal').modal('show')">
+                            <span  class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li >
+                        <button class="btn button button_1 btnEvniar mytooltip" style="display: none !important;" data-info="Enviar a Correo">
+                            <span  class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </button>
+                    </li >
+                    <li >
+                        <button class="btn button button_2 btnIniciar mytooltip" style="display: none !important;" disabled data-info="Iniciar" >
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_2 btnRepetir mytooltip"  data-info="Repetir" onclick="location.reload()" >
+                            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="Calificar">
+                            <span  class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_5 mytooltip display-none" style="display: none !important;" data-info="Pantalla completa" onclick="full_screen_change()">
+                            <span id="full_ico" class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-right: 0px;margin-left: 0px; ">
+                    <li><span  class="notificacion actividad display-none" >
+                            <span class="glyphicon glyphicon-list-alt"></span> Actividad <span id='n_cont'>1</span> / <span id='n_ejer'>1</span>
+                        </span>
+                        <span  class="notificacion nota" >
+                            <span class="glyphicon glyphicon-pencil"></span> Nota <span id="txtNota" ></span> <span id="txtNota1" style="display: none;"></span>/ 10
+                        </span>
+                        <span  class="notificacion pagina" >
+                            <span class="glyphicon glyphicon-bookmark"></span> Pág <i id="n_pagina"></i>
+                        </span>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+<!--FIN DE NAVBAR QUE SE AÑADE-->
+    <div class="container espacio">
+        <div class="panel border-aplico" id="activity"> 
+                <!--modificar el bg- segun la actividad-->
+                <div class="panel-heading bg-aplico">
+                    <span class="titulo"><img src="img/icoA.png"> Aplico para aprender</span>
+                    <span class="titulo_2 txtAlumno display-none" id="nombre_alumno" >Alumno: </span>
+                    
+                </div>
+
+                <div class="panel-body"> 
+            <button class="btn-link btn_mostrar">Mostrar Preguntas</button><br><br>
+        <div class="row">
+            <div class="col-sm-8"><img src="img/practica_individual.png" class="img-responsive"></div>           
+        </div> 
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Actividad 1</a>
+                </h4>
+                </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            1. <b>Encuentra</b> los factores primos mediante el árbol de factores.<br><br>
+
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td colspan="3"><input type="number" id="nEFP1" class="form-control respuestas" style="width: 60px;" readonly ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="number" id="nEFP2" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                            <td>X</td>
+                                            <td><input type="number" id="nEFP3" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td>X</td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>                                       
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nEFP4"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEFP0" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+
+
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td colspan="3"><input type="number" id="nEFP5" class="form-control respuestas" style="width: 60px;" readonly ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="number" id="nEFP6" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                            <td>X</td>
+                                            <td><input type="number" id="nEFP7" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td>X</td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>                                       
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nEFP8"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEFP1" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+
+
+
+
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td colspan="3"><input type="number" id="nEFP9" class="form-control respuestas" style="width: 60px;" readonly ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="number" id="nEFP10" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                            <td>X</td>
+                                            <td><input type="number" id="nEFP11" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td>X</td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>                                       
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nEFP12"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEFP2" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+
+
+
+
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td colspan="3"><input type="number" id="nEFP13" class="form-control respuestas" style="width: 60px;" readonly ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="number" id="nEFP14" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                            <td>X</td>
+                                            <td><input type="number" id="nEFP15" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td>X</td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>                                       
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nEFP16"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEFP3" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+                            
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Actividad 2</a>
+                </h4>
+                </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            2. <b>Descompón</b> los siguientes números en sus factores primos mediante divisiones sucesivas, empleando el método abreviado.
+                            <br><br>
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td><input type="number" id="nDFP1" class="form-control respuestas" style="width: 60px;" readonly></td>
+                                            <td><img src="img/i2_p141_act2.png" class="img-responsive"></td>
+                                            <td><input type="number" id="nDFP2" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td><img src="img/i1_p141_act2.png" class="img-responsive"></td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>                                       
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nDFP3"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rDFP0" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+
+
+
+
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td><input type="number" id="nDFP4" class="form-control respuestas" style="width: 60px;" readonly></td>
+                                            <td><img src="img/i2_p141_act2.png" class="img-responsive"></td>
+                                            <td><input type="number" id="nDFP5" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td><img src="img/i1_p141_act2.png" class="img-responsive"></td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>                                       
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nDFP6"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rDFP1" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+
+
+
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td><input type="number" id="nDFP7" class="form-control respuestas" style="width: 60px;" readonly></td>
+                                            <td><img src="img/i2_p141_act2.png" class="img-responsive"></td>
+                                            <td><input type="number" id="nDFP8" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td><img src="img/i1_p141_act2.png" class="img-responsive"></td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>                                       
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nDFP9"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rDFP2" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+
+
+
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td><input type="number" id="nDFP10" class="form-control respuestas" style="width: 60px;" readonly></td>
+                                            <td><img src="img/i2_p141_act2.png" class="img-responsive"></td>
+                                            <td><input type="number" id="nDFP11" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td><img src="img/i1_p141_act2.png" class="img-responsive"></td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>                                       
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nDFP12"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rDFP3" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Actividad 3</a>
+                </h4>
+                </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            3. <b>Expresa</b> cada número como el producto de factores primos.<br><br>
+
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">a)</span>
+                                <span class="np1 col-sm-2" id="nEPFP0"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEPFP0" class="form-control respuestas" placeholder="Ej: 1x1x1x1"><br><br>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">b)</span>
+                                <span class="np1 col-sm-2" id="nEPFP1"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEPFP1" class="form-control respuestas" placeholder="Ej: 1x1x1x1"><br><br>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">c)</span>
+                                <span class="np1 col-sm-2" id="nEPFP2"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEPFP2" class="form-control respuestas" placeholder="Ej: 1x1x1x1"><br><br>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">d)</span>
+                                <span class="np1 col-sm-2" id="nEPFP3"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEPFP3" class="form-control respuestas" placeholder="Ej: 1x1x1x1"><br><br>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">e)</span>
+                                <span class="np1 col-sm-2" id="nEPFP4"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEPFP4" class="form-control respuestas" placeholder="Ej: 1x1x1x1"><br><br>
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">f)</span>
+                                <span class="np1 col-sm-2" id="nEPFP5"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEPFP5" class="form-control respuestas" placeholder="Ej: 1x1x1x1"><br><br>
+                            </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Actividad 4</a>
+                </h4>
+                </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            4. <b>Encuentra</b> el número compuesto que se forma con los siguientes factores primos.<br><br>
+
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">a)</span>
+                                <span id="nENC0" class="np0 col-sm-7"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="number" id="rENC0" class="form-control respuestas" style="width: 90px;"><br><br>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">b)</span>
+                                <span id="nENC1" class="np0 col-sm-7"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="number" id="rENC1" class="form-control respuestas" style="width: 90px;"><br><br>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">c)</span>
+                                <span id="nENC2" class="np0 col-sm-7"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="number" id="rENC2" class="form-control respuestas" style="width: 90px;"><br><br>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">d)</span>
+                                <span id="nENC3" class="np0 col-sm-7"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="number" id="rENC3" class="form-control respuestas" style="width: 90px;"><br><br>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">e)</span>
+                                <span id="nENC4" class="np0 col-sm-7"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="number" id="rENC4" class="form-control respuestas" style="width: 90px;"><br><br>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <span class="col-sm-1">f)</span>
+                                <span id="nENC5" class="np0 col-sm-7"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="number" id="rENC5" class="form-control respuestas" style="width: 90px;"><br><br>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div>
+                <img src="img/problema.png" class="img-responsive">
+            </div>
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">                                                                                                              
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Problema</a>
+                </h4>
+                </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                           <div class="col-sm-8"><br> 
+                               Carolina y Nelson juegan a colocar sus <span class="np2" id="nPCL0"></span> lápices de colores en cajitas, de manera que en la primera guardan la mitad de <span class="np2" id="nPCL1"></span>; en la segunda, la mitad de esa cantidad; en la tercera, la mitad de esa nueva cantidad; y las que sobran, en otra caja. ¿Cuántos lápices de colores colocaron en cada caja? Utiliza la descomposición en factores primos.                         
+                           </div>
+                           <div class="col-sm-4" align="center">
+                               <img src="img/i1_p141_act5.jpg" class="img-responsive">
+                           </div>
+
+                            <div class="col-sm-12">
+                                <span class="np1">R.</span> En la primera caja guardan <input type="number" id="rPCL0" class="form-control respuestas" style="width: 50px;"> lápices de colores; en la segunda, <input type="number" id="rPCL1" class="form-control respuestas" style="width: 50px;">; en la tercera, <input type="number" id="rPCL2" class="form-control respuestas" style="width: 50px;">; y en la cuarta <input type="number" id="rPCL3" class="form-control respuestas" style="width: 50px;">.
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+    <!-- Modal Guardar PDF-->
+        <div class="modal fade animated pulse" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
+                        <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="modal_form" class="form-horizontal">
+                            <div class="form-group ">
+                                <div class="col-sm-2">
+                                    <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
+                                </div>  
+                                <div class="col-sm-10"> 
+                                    <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
+                                    <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
+                                    <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
+                                        <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <span class="glyphicon glyphicon-info-sign error-color"  aria-hidden="true"></span>
+                                        Debes ingresar tu nombre</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>        
+            </div>
+        </div>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <!--generador de pdf-->
+        <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+        <script src="js/screenfull.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/activities.js"></script>
+        <script src="js/Utilitario.js"></script>
+        <script src="js/tema6_1.js"></script>
+
+        <script type="text/javascript">
+            $("#n_pagina").html('141');
+            $( ".btnCalificar" ).bind( "click", function() {
+                CalificacionAbierta();
+            });
+        </script>
+</body>
+</html>

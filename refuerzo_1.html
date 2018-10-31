@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MATEMÁTICA 5</title>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap-->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <!--Animaciones-->
+        <link href="css/animate.css" rel="stylesheet">
+        <!--Css propio del proyecto-->
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/fraccion.css" rel="stylesheet">
+        <link href="css/jquery-ui.min.css" rel="stylesheet">
+
+            <link rel="stylesheet" type="text/css" href="css/literallycanvas.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/react-with-addons.js"></script>
+    <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+
+</head>
+<style type="text/css">
+    .preguntas{
+        font-size: 17px;
+        padding-top: 20px;
+    }
+    .n0{
+        color: #D70D22;
+        font-size: 23px;
+    }
+
+    .n1{
+        color: #D44B0B;
+        font-size: 23px;
+    }
+
+    .n2{
+        color: #3768F7;
+        font-size: 23px;
+    }
+
+    .np0{
+        color: #25B48B;
+        font-size: 23px;
+    }
+
+    .np1{
+        color: #EF435B;
+        font-size: 23px;
+    }
+
+    .np2{
+        color: #1C2E85;
+        font-size: 23px;
+    }
+
+    .nr0{
+        color: #25B48B;
+        font-size: 30px;
+    }
+
+    .np3{
+        color: #7E7E7E;
+        font-size: 25px;
+    }
+
+    .linea{
+        text-decoration:overline;
+        text-decoration-color: #D44B0B;
+        border: none;
+    }
+
+    .linea1{
+        text-decoration:overline;
+        text-decoration-color: #3768F7;
+        border: none;
+    }
+
+    .literal{
+        color: #485699;
+        font-size: 23px;
+    }
+
+    .num{
+        background-color: #F9C797;
+        font-size: 21px;
+        border-top-left-radius:15px;
+        border-top-right-radius:0;
+        border-bottom-right-radius:15px;
+        border-bottom-left-radius:0;
+    }
+    .num1{
+        background-color: #E2C2F3;
+        font-size: 21px;
+        border-top-left-radius:15px;
+        border-top-right-radius:0;
+        border-bottom-right-radius:15px;
+        border-bottom-left-radius:0;
+    }
+    .num2{
+        background-color: #C2F3CB;
+        font-size: 21px;
+        border-top-left-radius:15px;
+        border-top-right-radius:0;
+        border-bottom-right-radius:15px;
+        border-bottom-left-radius:0;
+    }
+    .encabezados{
+        color: white;
+        font-size: 23px;
+    }
+
+    .actividad1{
+        background: #fff;
+    }
+    .correcto{
+        color: #ffffff;
+        background-color: #8FB435;
+        font-weight: 700;
+    }
+    .incorrecto{
+        color: #ffffff;
+        background-color: #E76E80;
+        font-weight: 700;
+    }
+    @media (max-width: 770px) {
+      .cajas {
+        clear: left;
+      }
+
+    }
+
+    .fraction {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0.2em 0.4ex;
+        text-align: center;
+    }
+    .fraction > span {
+        display: block;
+        padding-top: 0.15em;
+    }
+    .fraction span.fdn {border-top: thin solid #636363;}
+    .fraction span.bar {display: none;}
+
+    .radical {
+    position: relative;
+    font-size: 1.6em;
+    vertical-align: middle;
+    }
+    .n-root {
+        position: absolute;
+        top: -0.333em;
+        left: 0.333em;
+        font-size: 45%;
+    }
+    .radicand {
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #EF435B;
+    }
+
+    .radicand1 {
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #1C2E85;
+    }
+
+    .radicand2 {
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #D70D22;
+    }
+
+    .radicand3 {
+        padding: 0.25em 0.25em;
+        border-top: thin black solid;
+        border-color: #25B48B;
+    }
+
+
+    .input_xs{
+        height: 22px;
+        padding: 2px 5px;
+        font-size: 12px;
+        line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
+        border-radius: 3px;
+        text-align: center;
+    }
+
+    .expoR{
+        top: -20px;
+        position: relative;
+    }
+
+    .eR{
+        top: -10px;
+        position: relative;
+        font-size: 15px;
+    }
+
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] { -moz-appearance:textfield; }
+
+
+
+    .respuestas{
+        font-size: 17px;
+        color: #8444DC;
+    }
+
+
+    .checkmark {
+        height: 25px;
+        width: 25px;
+    }
+
+
+
+
+</style>
+
+<body>
+    <div id="nota-informativa" class="nota-ayuda">
+       <button type="button" class="close" onclick="cerrar_ayuda()" aria-label="Close"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+        <!--ACA ESCRIBIR TEXTO DE LA AYUDA DE LA ACTIVIDAD-->
+        Responde en los espacios en blanco según se solicita<br><br>
+         <b>
+
+        Actividad 1,2: Selecciona la operación (+,-,*,÷), el patrón y a partir de ello continua la sucesión.<br><br>
+
+        Actividad 4: Si no se visuliza los números subraya el área con el mouse, así los podrás ver.<br><br>
+
+        Actividad 3, 5, 6, 10: Para separar los números de tus respuetas debes utilizar la coma , <br>
+           También debes escribir tus respuetsas en orden de menor a mayor. Ej: 1,2,3,4,5
+           No ingreses más texto de lo solicitado ya que afectará tu calificación.<br><br>
+
+
+
+        Actividad 11: El signo de multiplicación que debes utilizar es la x  Ej: 1x2x3x4x5 <br>
+           No ingreses más texto de lo solicitado ya que afectará tu calificación.<br><br>
+
+        Actividad 12: la respuesta <b>M ∩ :</b> debe contener <span style="font-size: 19px;">máximo 2 valores</span> Ej: 1,2<br>
+
+
+
+        </b>
+        <br>
+        <span id="ayudas"></span>
+    </div>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <button class="btn button btnHelp mytooltip" data-info="Mostrar ayuda de la actividad" onclick="mostrar_ayuda()">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_1 btnGuardar mytooltip" data-info="Guardar en local" onclick="$('#myModal').modal('show')">
+                            <span  class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li >
+                        <button class="btn button button_1 btnEvniar mytooltip" style="display: none !important;" data-info="Enviar a Correo">
+                            <span  class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </button>
+                    </li >
+                    <li >
+                        <button class="btn button button_2 btnIniciar mytooltip" style="display: none !important;" disabled data-info="Iniciar" >
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_2 btnRepetir mytooltip"  data-info="Repetir" onclick="location.reload()" >
+                            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_3 btnCalificar mytooltip" data-info="Calificar / Comprobar" id="Calificar">
+                            <span  class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn button button_5 mytooltip display-none" style="display: none !important;" data-info="Pantalla completa" onclick="full_screen_change()">
+                            <span id="full_ico" class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                        </button>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-right: 0px;margin-left: 0px; ">
+                    <li><span  class="notificacion actividad display-none" >
+                            <span class="glyphicon glyphicon-list-alt"></span> Actividad <span id='n_cont'>1</span> / <span id='n_ejer'>1</span>
+                        </span>
+                        <span  class="notificacion nota" >
+                            <span class="glyphicon glyphicon-pencil"></span> Nota <span id="txtNota" ></span> <span id="txtNota1" style="display: none;"></span>/ 10
+                        </span>
+                        <span  class="notificacion pagina" >
+                            <span class="glyphicon glyphicon-bookmark"></span> Pág <i id="n_pagina"></i>
+                        </span>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+<!--FIN DE NAVBAR QUE SE AÑADE-->
+    <div class="container espacio">
+        <div class="panel border-refuerzo" id="activity">
+                <!--modificar el bg- segun la actividad-->
+                <div class="panel-heading bg-refuerzo">
+                    <span class="titulo"><img src="img/icoD.png"> Refuerzo mis destrezas</span>
+                    <span class="titulo_2 txtAlumno display-none" id="nombre_alumno" >Alumno: </span>
+
+                </div>
+
+                <div class="panel-body">
+            <button class="btn-link btn_mostrar">Mostrar Preguntas</button><br><br>
+        <div class="row">
+            <div class="col-sm-8"><img src="img/practica_individual.png" class="img-responsive"></div>
+        </div>
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Actividad 1</a>
+                </h4>
+                </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            1. <b>Encuentra</b> el patrón y <b>completa</b> la sucesión.<br><br>
+
+                            <div id="sucesion0"></div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Actividad 2</a>
+                </h4>
+                </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            2. <b>Genera</b> una sucesión con el patrón señalado.
+                            <br><br>
+
+                            <div id="pregunta1_0"></div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Actividad 3</a>
+                </h4>
+                </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            3. <b>Escribe</b> los primeros cinco múltiplos de cada número.
+                            <br><br>
+
+                            <ol id="multiplos0" type="a"></ol>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Actividad 4</a>
+                </h4>
+                </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            4. <b>Completa</b> la respuesta.
+                            <br><br>
+                            Sandra quiere saber cuáles de estos números son múltiplos comunes de &nbsp;&nbsp;<span class="np1" id="nMC0"></span> &nbsp;&nbsp;y&nbsp;&nbsp; <span class="np1" id="nMC1"></span>.<br><br>
+
+
+                            <div id="multiplos1"></div>
+                            <br><br>
+                            <span class="np1">R.&nbsp;&nbsp;</span> Los múltiplos comunes son &nbsp;&nbsp; <input type="text" id="rMC0" class="form-control respuestas">
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Actividad 5</a>
+                </h4>
+                </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            5. <b>Encuentra</b> los divisores de los siguientes números.
+                            <br><br>
+
+                            <ol id="divisores0" type="a"></ol>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <div style="float: left;position: relative;width: 60px;height: 40px;bottom: 8px;" data-toggle="tooltip" title="Puntaje solo para los gráficos">
+                    <input type="number" id="calificacion0" placeholder="Puntaje/0.25" style="width: 110px;" class="form-control">
+                </div>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse6" style="margin-left: 70px;">Actividad 6</a>
+                </h4>
+                </div>
+                    <div id="collapse6" class="panel-collapse collapse in">
+                        <div class="panel-body preguntas form-group form-inline">
+                            6. <b>Encuentra</b> los divisores comunes de las siguientes parejas de números y <b>represéntalos</b> en el diagrama.
+                            <br><br>
+
+                            <div class="col-sm-12">
+                                <div class="col-sm-6 table-responsive">
+                                    <span class="col-sm-1">a)</span>
+                                    <span class="col-sm-11">
+                                        <br><br>
+                                        <span class="col-sm-2 np1">D<sub id="nED0C0"></sub></span> &nbsp;&nbsp;=&nbsp;&nbsp;<span style="font-size: 30px;">
+                                        {<input type="text" id="rED0C0" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1,2,3">}</span>
+                                        <br><br>
+
+                                        <span class="col-sm-2 np1">D<sub id="nED1C0"></sub></span> &nbsp;&nbsp;=&nbsp;&nbsp;<span style="font-size: 30px;">
+                                        {<input type="text" id="rED1C0" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1,2,3">}</span>
+                                        <br><br>
+
+                                        <span class="col-sm-5 np1"><span style="font-size: 17px;">Divisores comunes entre </span><span id="nEDC0_0"></span> y <span id="nEDC1_0"></span></span> &nbsp;&nbsp;=&nbsp;&nbsp;<span style="font-size: 30px;">
+                                        {<input type="text" id="rED2C0" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1,2,3">}</span>
+                                        <br><br><br><br>
+                                    </span>
+                                </div>
+                                <div class="col-sm-6 table-responsive">
+
+                                        <div class="my-drawing img-responsive"></div>
+                                        <br>
+
+                                        <script>
+                                        var backgroundImage = new Image()
+                                        backgroundImage.src = 'img/i1_p146_act6.png';
+                                        var winHeight = $(window).height();
+                                        var winWidth = $(window).width();
+                                        var lc = LC.init(
+                                            document.getElementsByClassName('my-drawing')[0], { imageURLPrefix: 'imgcanvas',
+                                                      backgroundShapes: [
+                                                        LC.createShape(
+                                                      'Image', {x: 0, y: 0, image: backgroundImage}),
+                                                        ] }
+                                        );
+                                        lc.respondToSizeChange();
+                                        </script>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="col-sm-12">
+                                <div class="col-sm-6 table-responsive">
+                                    <br><br>
+                                    <span class="col-sm-1">b)</span>
+                                    <span class="col-sm-11">
+                                        <span class="col-sm-2 np2">D<sub id="nED0C1"></sub></span> &nbsp;&nbsp;=&nbsp;&nbsp;<span style="font-size: 30px;">
+                                        {<input type="text" id="rED0C1" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1,2,3">}</span>
+                                        <br><br>
+
+                                        <span class="col-sm-2 np2">D<sub id="nED1C1"></sub></span> &nbsp;&nbsp;=&nbsp;&nbsp;<span style="font-size: 30px;">
+                                        {<input type="text" id="rED1C1" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1,2,3">}</span>
+                                        <br><br>
+
+                                        <span class="col-sm-5 np2"><span style="font-size: 17px;">Divisores comunes entre </span><span id="nEDC0_1"></span> y <span id="nEDC1_1"></span></span> &nbsp;&nbsp;=&nbsp;&nbsp;<span style="font-size: 30px;">
+                                        {<input type="text" id="rED2C1" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1,2,3">}</span>
+                                        <br><br>
+                                    </span>
+                                </div>
+                                <div class="col-sm-6 table-responsive">
+
+                                        <div class="my-drawing img-responsive"></div>
+                                        <br>
+
+                                        <script>
+                                        var backgroundImage = new Image()
+                                        backgroundImage.src = 'img/i2_p146_act6.png';
+                                        var winHeight = $(window).height();
+                                        var winWidth = $(window).width();
+                                        var lc = LC.init(
+                                            document.getElementsByClassName('my-drawing')[1], { imageURLPrefix: 'imgcanvas',
+                                                      backgroundShapes: [
+                                                        LC.createShape(
+                                                      'Image', {x: 0, y: 0, image: backgroundImage}),
+                                                        ] }
+                                        );
+                                        lc.respondToSizeChange();
+                                        </script>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">Actividad 7</a>
+                </h4>
+                </div>
+                    <div id="collapse7" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            7. <b>Escribe</b> V si es verdadero y F si es falso cada enunciado.<br><br>
+
+                            <ol type="a" id="escribeVF"></ol>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Actividad 8</a>
+                </h4>
+                </div>
+                    <div id="collapse8" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            8. <b>Realiza</b> los cambios que podrías hacer con los dígitos para que cada número sea divisible por 4.
+                            <br><br>
+                            <ol type="a" id="cambiosDg0"></ol>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">Actividad 9</a>
+                </h4>
+                </div>
+                    <div id="collapse9" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            9. <b>Usa</b> los criterios de divisibilidad y <b>marca</b> con <b>✓</b> cuando el número de la columna sea divisor del número de la fila. <br><br>
+
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered">
+                                    <tbody align="center">
+                                        <tr style="background-color: #DE4B36; color: white;">
+                                            <td colspan="12">Divisible por</td>
+                                        </tr>
+                                        <tr style="background-color: #7161CA; color: white;">
+                                            <td style="background-color: #61CAA2;">Número</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                            <td>6</td>
+                                            <td>9</td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="nUCD0" class="np2"></td>
+                                            <td id="cUCD0"><input class="checkmark" type="checkbox" id="rUCD0" value=""></td>
+                                            <td id="cUCD1"><input class="checkmark" type="checkbox" id="rUCD1" value=""></td>
+                                            <td id="cUCD2"><input class="checkmark" type="checkbox" id="rUCD2" value=""></td>
+                                            <td id="cUCD3"><input class="checkmark" type="checkbox" id="rUCD3" value=""></td>
+                                            <td id="cUCD4"><input class="checkmark" type="checkbox" id="rUCD4" value=""></td>
+                                            <td id="cUCD5"><input class="checkmark" type="checkbox" id="rUCD5" value=""></td>
+                                            <td id="cUCD6"><input class="checkmark" type="checkbox" id="rUCD6" value=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="nUCD1" class="np2"></td>
+                                            <td id="cUCD7"><input class="checkmark" type="checkbox" id="rUCD7" value=""></td>
+                                            <td id="cUCD8"><input class="checkmark" type="checkbox" id="rUCD8" value=""></td>
+                                            <td id="cUCD9"><input class="checkmark" type="checkbox" id="rUCD9" value=""></td>
+                                            <td id="cUCD10"><input class="checkmark" type="checkbox" id="rUCD10" value=""></td>
+                                            <td id="cUCD11"><input class="checkmark" type="checkbox" id="rUCD11" value=""></td>
+                                            <td id="cUCD12"><input class="checkmark" type="checkbox" id="rUCD12" value=""></td>
+                                            <td id="cUCD13"><input class="checkmark" type="checkbox" id="rUCD13" value=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="nUCD2" class="np2"></td>
+                                            <td id="cUCD14"><input class="checkmark" type="checkbox" id="rUCD14" value=""></td>
+                                            <td id="cUCD15"><input class="checkmark" type="checkbox" id="rUCD15" value=""></td>
+                                            <td id="cUCD16"><input class="checkmark" type="checkbox" id="rUCD16" value=""></td>
+                                            <td id="cUCD17"><input class="checkmark" type="checkbox" id="rUCD17" value=""></td>
+                                            <td id="cUCD18"><input class="checkmark" type="checkbox" id="rUCD18" value=""></td>
+                                            <td id="cUCD19"><input class="checkmark" type="checkbox" id="rUCD19" value=""></td>
+                                            <td id="cUCD20"><input class="checkmark" type="checkbox" id="rUCD20" value=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="nUCD3" class="np2"></td>
+                                            <td id="cUCD21"><input class="checkmark" type="checkbox" id="rUCD21" value=""></td>
+                                            <td id="cUCD22"><input class="checkmark" type="checkbox" id="rUCD22" value=""></td>
+                                            <td id="cUCD23"><input class="checkmark" type="checkbox" id="rUCD23" value=""></td>
+                                            <td id="cUCD24"><input class="checkmark" type="checkbox" id="rUCD24" value=""></td>
+                                            <td id="cUCD25"><input class="checkmark" type="checkbox" id="rUCD25" value=""></td>
+                                            <td id="cUCD26"><input class="checkmark" type="checkbox" id="rUCD26" value=""></td>
+                                            <td id="cUCD27"><input class="checkmark" type="checkbox" id="rUCD27" value=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="nUCD4" class="np2"></td>
+                                            <td id="cUCD28"><input class="checkmark" type="checkbox" id="rUCD28" value=""></td>
+                                            <td id="cUCD29"><input class="checkmark" type="checkbox" id="rUCD29" value=""></td>
+                                            <td id="cUCD30"><input class="checkmark" type="checkbox" id="rUCD30" value=""></td>
+                                            <td id="cUCD31"><input class="checkmark" type="checkbox" id="rUCD31" value=""></td>
+                                            <td id="cUCD32"><input class="checkmark" type="checkbox" id="rUCD32" value=""></td>
+                                            <td id="cUCD33"><input class="checkmark" type="checkbox" id="rUCD33" value=""></td>
+                                            <td id="cUCD34"><input class="checkmark" type="checkbox" id="rUCD34" value=""></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">Actividad 10</a>
+                </h4>
+                </div>
+                <div id="collapse10" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            10. <b>Escribe</b> los divisores de cada número y <b>determina</b> si son primos o compuestos.
+                            <br><br>
+
+
+
+
+
+                            <ol type="a" id="divisoresPC"></ol>
+                        </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse11">Actividad 11</a>
+                </h4>
+                </div>
+                    <div id="collapse11" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            11. <b>Encuentra</b> los factores primos mediante el árbol de factores y divisiones sucesivas.
+                            <br><br>
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td colspan="3"><input type="number" id="nEFP1" class="form-control respuestas" style="width: 60px;" readonly ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="number" id="nEFP2" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                            <td>X</td>
+                                            <td><input type="number" id="nEFP3" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td>X</td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nEFP4"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEFP0" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+
+
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td colspan="3"><input type="number" id="nEFP5" class="form-control respuestas" style="width: 60px;" readonly ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="number" id="nEFP6" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                            <td>X</td>
+                                            <td><input type="number" id="nEFP7" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td>X</td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nEFP8"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEFP1" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+
+
+
+
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td colspan="3"><input type="number" id="nEFP9" class="form-control respuestas" style="width: 60px;" readonly ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="number" id="nEFP10" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                            <td>X</td>
+                                            <td><input type="number" id="nEFP11" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td>X</td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nEFP12"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEFP2" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+
+
+
+
+
+                            <div class="col-sm-3 table-responsive" style="border-right: 1px solid; border-right-color: #FF4606; border-right-style: dashed;">
+                                <table class="table table-borderless">
+                                    <tbody align="center">
+                                        <tr>
+                                            <td colspan="3"><input type="number" id="nEFP13" class="form-control respuestas" style="width: 60px;" readonly ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="number" id="nEFP14" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                            <td>X</td>
+                                            <td><input type="number" id="nEFP15" class="form-control respuestas" style="width: 50px;" readonly></td>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                            <td>X</td>
+                                            <td><textarea class="form-control respuestas" style="width: 50px;" rows="6"></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <br><br>
+
+                                <span class="np1" id="nEFP16"></span> &nbsp;&nbsp;=&nbsp;&nbsp;
+                                <input type="text" id="rEFP3" class="form-control respuestas" style="width: 150px;" placeholder="Ej: 1x1x1x1">
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse12">Actividad 12</a>
+                </h4>
+                </div>
+                    <div id="collapse12" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            12. <b>Encuentra</b> los divisores de los siguientes números.
+                            <br><br>
+
+                            <div id="descomponer0"></div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse13">Actividad 13</a>
+                </h4>
+                </div>
+                    <div id="collapse13" class="panel-collapse collapse">
+                        <div class="panel-body preguntas form-group form-inline">
+                            13. <b>Resuelve</b> el problema.<br><br>
+
+                            Gabriel tiene dos cables de luz, uno rojo de <span class="np0" id="nPGr0"></span> centímetros y uno azul de <span class="np0" id="nPGr1"></span> centímetros. Él quiere cortar los cables en pedazos de la misma longitud, sin que sobre. ¿Cuál es la longitud máxima que puede cortar? ¿Cuántos pedazos de cable de cada color obtendrá?<br><br>
+
+                            <span class="np1">R. &nbsp;&nbsp;</span>
+                            La longitud máxima de cada pedazo que puede cortar Gabriel es <input type="number" id="rGPr0" class="form-control respuestas" style="width: 60px;"> centímetros.&nbsp;&nbsp; Él obtendrá <input type="number" id="rGPr1" class="form-control respuestas" style="width: 60px;"> pedazos del cable rojo y <input type="number" id="rGPr2" class="form-control respuestas" style="width: 60px;"> pedazos del cable azul.
+
+                    </div>
+                </div>
+            </div>
+
+
+
+    <!-- Modal Guardar PDF-->
+        <div class="modal fade animated pulse" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" onclick="$('#myModal').modal('hide')">&times;</button>
+                        <h4 class="modal-title">Guarda esta actividad en tu computadora</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="modal_form" class="form-horizontal">
+                            <div class="form-group ">
+                                <div class="col-sm-2">
+                                    <label id="lbl_nombre" for="txtAlumno">Alumno: </label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <!--el input para ingresar el nombre del alumno debe se txt_alumno-->
+                                    <input type="text" class="form-control nombre " id="txtAlumno" placeholder="Ingrese tu nombre">
+                                    <div class="alert alert-danger display-none" id="txtAlumnoAlert" role="alert">
+                                        <button type="button" class="close" onclick="o$('#myModal').modal('hide')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <span class="glyphicon glyphicon-info-sign error-color"  aria-hidden="true"></span>
+                                        Debes ingresar tu nombre</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" onclick="save_open_activity_to_local('txtAlumno')">Guardar</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <!--generador de pdf-->
+        <script src="js/html2pdf/html2pdf.bundle.min.js"></script>
+        <script src="js/screenfull.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/activities.js"></script>
+        <script src="js/Utilitario.js"></script>
+        <script src="js/refuerzo_1.js"></script>
+
+        <script type="text/javascript">
+            $("#n_pagina").html('146');
+            $( ".btnCalificar" ).bind( "click", function() {
+                CalificacionAbierta();
+            });
+        </script>
+</body>
+</html>
